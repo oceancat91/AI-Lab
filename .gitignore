@@ -1,4 +1,4 @@
-# 系统文件、Python 缓存和虚拟环境
+﻿# 系统文件、Python 缓存和虚拟环境
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -31,6 +31,11 @@ tmp/
 # （根目录的这两份是实验一的本地记录，不再随仓库发布）
 AGENTS.md
 WORKFLOW.md
+
+# 例外：实验一的规范文档属于该实验的交付内容，需要入库
+# （AGENTS.md 目前仅存于远端，本地已无副本，取回后再放行）
+!/Lab01/WORKFLOW.md
+!/Lab01/AGENTS.md
 /*.docx
 /*.pdf
 /predictions.csv
