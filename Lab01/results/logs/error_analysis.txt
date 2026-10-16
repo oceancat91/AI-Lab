@@ -1,0 +1,29 @@
+阶段7：验证集诊断与报告图（实测）
+命令：python run_analysis.py
+SEED=42; VAL_SIZE=0.2
+两次诊断拟合与旧实验指标一致；训练/验证划分指纹一致。
+代表性错例：每模型最多4个高频混淆对，各选源记录索引最小的错例。
+源索引是从0开始的CSV解析记录位置，不是文件物理行号。
+未保存正文；标题只用作定位，邮箱与URL已脱敏。人工检视状态：待完成。
+
+nb: train acc=0.973872, val acc=0.898236, val macro-F1=0.898422, gap=+0.075636
+svc: train acc=0.999830, val acc=0.945047, val macro-F1=0.944995, gap=+0.054783
+nb idx=431 0->6 pair_count=20: Re: images of earth
+nb idx=1103 1->2 pair_count=18: Driver for S3801 2MB Card
+nb idx=21 7->2 pair_count=15: Switch-mode power supply
+nb idx=150 7->6 pair_count=14: ATARI 2600 Processors
+svc idx=67 2->1 pair_count=8: Re: DOS 6.0
+svc idx=21 7->2 pair_count=8: Switch-mode power supply
+svc idx=798 2->7 pair_count=6: Re: 17" monitor with RGB/sync to VGA ??
+svc idx=2375 0->1 pair_count=4: Speedstar 24 - how to program the TrueColor mode ?
+
+局限：
+Only two diagnostic fits are recomputed here; C1/D/E1/F1 plots use recorded measured values.
+Validation participated in selection; its selected score is not an unbiased generalization estimate.
+Seed standard deviation is descriptive and is not a significance test for paired configurations.
+MLP C1/D3/D4 reached the 20-iteration budget; their reported values are not converged results.
+Class IDs remain numeric because no official label-name mapping was supplied.
+Top coefficients/probability contrasts are diagnostic associations, not causal error explanations.
+
+本阶段总耗时：15.58 s；含诊断拟合与绘图。
+未运行新的调参；所有数值表只保存派生指标，不保存可复用模型或词表。

@@ -1,0 +1,91 @@
+==============================================================================
+阶段 3 · 预处理与特征工程  feature_summary
+generated_at: 2026-09-28T15:07:46
+==============================================================================
+
+配置（A0 基线）
+  scope           = full（全文）
+  配置来源        = TfidfVectorizer 全默认（B1–B4 从该默认态逐个翻转一个字段）
+  随机种子        = 42
+  验证集比例      = 0.20
+  指标            = accuracy（主）, macro_f1（辅）
+
+向量化器实际参数
+  analyzer           = word
+  binary             = False
+  decode_error       = strict
+  dtype              = <class 'numpy.float64'>
+  encoding           = utf-8
+  input              = content
+  lowercase          = True
+  max_df             = 1.0
+  max_features       = None
+  min_df             = 1
+  ngram_range        = [1, 1]
+  norm               = l2
+  preprocessor       = None
+  smooth_idf         = True
+  stop_words         = None
+  strip_accents      = None
+  sublinear_tf       = False
+  token_pattern      = (?u)\b\w\w+\b
+  tokenizer          = None
+  use_idf            = True
+  vocabulary         = None
+
+划分（沿用阶段 2）
+  训练集 = 5894 行   验证集 = 1474 行
+  train_index_sha256 = cba4264dff7a61e67763038cd2e7fdc698678ac01bf3048a3355fdb7ea30b757
+  val_index_sha256   = 42afb78f46303d7c20449d8f04a1e59903aa64a6c15ab12f9bf5021fe132d245
+  与阶段 2 记录一致 = True
+
+文本范围统计（全量训练数据 7368 条，与阶段 1 同基准）
+  正文为空 = 12   正文非空 = 7356   头部为空 = 0
+  阶段 1 记录：n_empty_body = 12，n_with_header_block = 7356
+  注：阶段 1 的键名 n_with_header_block 实为「正文非空」计数（命名误导）；
+      实测全部文档都有空行分隔，故「无分隔符」分支不可达。
+
+特征矩阵
+  词表规模 = 99901
+  Xtr = (5894, 99901)  nnz=914072  稀疏度=0.998448
+  Xval= (1474, 99901)  nnz=214253  稀疏度=0.998545
+  全零行：训练集 0 / 验证集 0
+
+防泄露检查
+  训练集 token 数 = 99901
+  验证集 token 数 = 33995（其中验证集独有 7981）
+  词表是训练集 token 的子集 = True
+  词表与训练集 token 完全相等 = True（全默认配置下可精确断言）
+  保护强度：若改用「训练集+验证集」拟合，词表将从 99901 增至 107882（多出 7981 个词）
+    差值 > 0 说明该约束有效而非空转。
+  transform 不改变词表 = True；重复 transform 幂等 = True
+
+断言
+  [PASS] 划分指纹与阶段 2 记录一致（确证沿用同一划分）
+         train=cba4264dff7a… / val=42afb78f4630…
+  [PASS] 文本范围的空正文计数与阶段 1 记录一致
+         body 为空 12（阶段 1 记 12）；正文非空 7356（阶段 1 记 7356）
+  [PASS] 特征矩阵形状正确且两侧第二维相同
+         Xtr=(5894, 99901)  Xval=(1474, 99901)
+  [PASS] 词表只含训练集出现过的 token（无验证集泄露）
+         词表 99901 个；训练集 token 99901 个；验证集独有 token 7981 个
+  [PASS] 全默认配置下词表恰等于训练集 token 集合（更强断言）
+         精确相等可达 = True，实际相等 = True
+  [PASS] transform 不改变已拟合的词表（验证集未参与拟合）
+         词表前后一致 = True；重复 transform 结果一致 = True
+  [PASS] 验证集特征行数等于验证集文档数（transform 未丢样本）
+         1474 行 / 1474 文档
+
+产物约束
+  词表已落盘 = False   特征矩阵已落盘 = False
+  说明：只落盘派生数值与配置；词表与特征矩阵属训练中间产物，用完即弃
+
+依赖版本
+  numpy          2.2.6
+  pandas         2.3.3
+  scikit-learn   1.7.2
+
+==============================================================================
+SUMMARY  assertions=7  failed=0
+结论：全部通过
+==============================================================================

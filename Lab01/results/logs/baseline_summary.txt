@@ -1,0 +1,97 @@
+======================================================================================
+阶段 4 · 基线（MultinomialNB）与下限参考  baseline_summary
+generated_at: 2026-09-28T15:26:19
+======================================================================================
+
+配置（A0）
+  文本范围        = full（全文）
+  向量化器        = TfidfVectorizer 全默认（词表 99901 维）
+  模型            = MultinomialNB，alpha=1.0（默认，未调参）
+  随机种子        = 42
+  划分            = train 5894 / val 1474（VAL_SIZE=0.20，沿用阶段 2）
+  指标            = accuracy（主）, macro_f1（辅）
+  随机水平        = 1 / 10 = 0.1000
+
+结果（训练集与验证集同时给出，用于判断是否过拟合）
+  模型                  train_acc   train_f1    val_acc     val_f1    gap_acc
+  ----------------------------------------------------------------------------------
+  NB (baseline)        0.973872   0.973988   0.898236   0.898422  +0.075636
+  floor_majority       0.101289   0.018395   0.101764   0.018473  -0.000474
+  floor_stratified     0.102986   0.102999   0.092266   0.092355  +0.010720
+  floor_uniform        0.097557   0.097610   0.094301   0.094070  +0.003256
+
+  基线相对最好下限的验证准确率提升 = +0.796472
+  基线训练集与验证集准确率之差（gap）= +0.075636（越接近 0 越无过拟合）
+
+逐类指标（验证集）
+  class  precision     recall         f1  support
+  ------------------------------------------------
+      0   0.954955   0.726027   0.824903      146
+      1   0.887324   0.851351   0.868966      148
+      2   0.755814   0.884354   0.815047      147
+      3   0.907285   0.925676   0.916388      148
+      4   0.953642   0.960000   0.956811      150
+      5   0.973333   0.979866   0.976589      149
+      6   0.736041   0.973154   0.838150      149
+      7   0.947826   0.736486   0.828897      148
+      8   0.986014   0.952703   0.969072      148
+      9   0.985915   0.992908   0.989399      141
+
+混淆矩阵（验证集，行=真实，列=预测）
+              0      1      2      3      4      5      6      7      8      9
+       0    106      9      8      0      0      1     20      2      0      0
+       1      0    126     18      0      0      0      4      0      0      0
+       2      0      6    130      2      1      0      6      2      0      0
+       3      1      0      0    137      4      2      1      0      2      1
+       4      0      0      0      2    144      0      3      0      0      1
+       5      0      0      0      3      0    146      0      0      0      0
+       6      2      1      0      0      0      0    145      1      0      0
+       7      1      0     15      6      2      1     14    109      0      0
+       8      1      0      1      1      0      0      3      1    141      0
+       9      0      0      0      0      0      0      1      0      0    140
+
+断言
+  [PASS] 使用 A0 特征（全文 + TF-IDF 全默认）
+         scope=full，is_default_config=True
+  [PASS] 词表规模与阶段 3 记录一致
+         本次 99901 / 阶段 3 记 99901
+  [PASS] 划分指纹与阶段 2 记录一致
+         train=cba4264dff7a… / val=42afb78f4630…
+  [PASS] 样本数与阶段 2 记录一致
+         train=5894 / val=1474
+  [PASS] X_tr 非负（MultinomialNB 的前提）
+         min = 0.000000
+  [PASS] 训练集与验证集的 accuracy 与 macro_f1 均已计算（不做单一数字判断）
+         指标为 accuracy, macro_f1
+  [PASS] 指标取值均在 [0, 1]
+         train acc=0.973872 / val acc=0.898236
+  [PASS] 验证集含全部 10 个类别
+         实际 10 类
+  [PASS] 基线验证准确率优于全部下限参考
+         基线 0.898236 > 最好的下限 0.101764
+  [PASS] 三个下限参考的准确率都落在随机水平附近（|acc - 0.10| < 0.03）
+         floor_majority=0.1018；floor_stratified=0.0923；floor_uniform=0.0943
+
+产物约束
+  模型已落盘 = False（只落盘派生数值与配置；模型属训练中间产物，用完即弃）
+  逐类指标 -> results/logs/baseline_per_class.csv
+  混淆矩阵 -> results/logs/baseline_confusion_matrix.csv
+  图表按阶段分工留到阶段 7
+
+说明
+  - Baseline measurement only; no hyperparameter search and no model selection in this stage.
+  - floor_* are magnitude anchors, not model candidates; they do not enter the model comparison table.
+  - Both train and validation metrics are reported; overfitting cannot be judged from a single number.
+  - The unlabeled test set remains sealed until stage 6; it is not referenced here.
+  - Metrics were fixed in config.py before any experiment: accuracy (primary) and macro-F1 (secondary).
+
+依赖版本
+  numpy          2.2.6
+  pandas         2.3.3
+  scikit-learn   1.7.2
+  总耗时 2.77 s
+
+======================================================================================
+SUMMARY  assertions=10  failed=0
+结论：全部通过
+======================================================================================

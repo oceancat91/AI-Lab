@@ -1,0 +1,57 @@
+# 系统文件、Python 缓存和虚拟环境
+.DS_Store
+Thumbs.db
+desktop.ini
+__MACOSX/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# 模型和训练中间对象
+*.pkl
+*.joblib
+*.npz
+*.npy
+*.model
+*.pt
+*.ckpt
+
+# 临时文件、备份和重复打包
+tmp/
+*.zip
+*.bak
+*.orig
+*~
+
+# 本地历史规范与根目录中的私人报告副本
+# （根目录的这两份是实验一的本地记录，不再随仓库发布）
+AGENTS.md
+WORKFLOW.md
+/*.docx
+/*.pdf
+/predictions.csv
+
+# 例外：实验二的规范文档属于该实验的交付内容，需要入库
+# 注意：父目录规则被否定时，父目录本身不能被排除，故用 !Lab02/ 放行该目录
+!Lab02/
+!Lab02/AGENTS.md
+!Lab02/WORKFLOW.md
+
+# 已跟踪的实验摘要继续保留，庞杂的本地控制台和旧验收记录不新增发布
+# 注意：路径必须跟随实际目录（Lab01 与 Lab02 若移动目录，此处需同步修改）
+/Lab01/results/logs/*
+!/Lab01/results/logs/cleanup_validation.json
+!/Lab01/results/logs/cleanup_validation.txt
+
+# 实验二的 Python 缓存与诊断脚本不发布（experiments/innovation 等实验证据仍入库）
+/Lab02/lab2-search/__pycache__/
+/Lab02/tmp/
+
+# 本机凭据
+.env
+.env.*
+!.env.example

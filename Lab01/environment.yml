@@ -1,0 +1,74 @@
+# 实验一 · 文本分类 —— conda 环境定义
+#
+# 用法：
+#   conda env create -f environment.yml
+#   conda activate project1
+#
+# 建立日期：2026-09-28
+# 实测通过（win-64）：python 3.10.21 / numpy 2.2.6 / pandas 2.3.3 /
+#                     scipy 1.15.2 / scikit-learn 1.7.2 /
+#                     matplotlib 3.10.9 / seaborn 0.13.2
+#
+# ===========================================================================
+# 【关键】BLAS 后端必须显式指定为 OpenBLAS
+# ===========================================================================
+# 不要依赖默认解析结果。conda-forge 在本机默认会选 Intel MKL
+# （libblas-3.11.0-*_mkl + mkl-2026.1.0），该组合存在缺陷：
+# 首次调用 BLAS 时进程直接原生崩溃，无 Python 异常可捕获：
+#
+#     Windows fatal exception: code 0xc06d007f
+#
+# 最小复现（约 10 行）：
+#     import numpy as np
+#     a = np.arange(9, dtype=float).reshape(3, 3)
+#     np.dot(a, a)      # <-- 在此崩溃
+#
+# 0xc06d007f 是 MSVC 延迟加载失败（ERROR_MOD_NOT_FOUND），
+# 即 MKL 的运行时 DLL 未能被正确加载。
+#
+# 现象具有强迷惑性：崩溃点常常出现在 matplotlib 渲染路径
+# （matplotlib 的 transform 内部会调用 np.dot），极易误判为
+# "matplotlib 坏了"。实际上纯 matplotlib 不碰 BLAS 时一切正常，
+# 而任何触发 BLAS 的代码都会崩。
+#
+# 下面三条 pin 强制换成 OpenBLAS，实测修复：
+#   libblas    3.11.0  11_h8455456_mkl  -->  11_h0adab6e_openblas
+#   libcblas   3.11.0  11_h2a3cdd5_mkl  -->  11_h2a8eebe_openblas
+#   liblapack  3.11.0  11_hf9ab0e9_mkl  -->  11_hd232482_openblas
+#   (+ libopenblas 0.3.34，同时移除 mkl)
+#
+# 若手工建环境，等价命令为：
+#     conda install -n project1 "libblas=*=*openblas" -c conda-forge
+#
+# ===========================================================================
+# 【注意】Anaconda 默认频道的 ToS
+# ===========================================================================
+# conda 的 ToS 校验发生在加载本文件之前，会先读取全局 .condarc。
+# 若 .condarc 中仍含 `defaults`，会报 CondaToSNonInteractiveError。
+# 本机已做如下全局配置：
+#   用户级 .condarc       → channels: [conda-forge]
+#   conda 根目录 .condarc → channels: []（已清空 defaults）
+# 若在别的机器上复现失败，请先执行：
+#   conda config --add channels conda-forge
+#   conda config --remove channels defaults --file <conda_root>\.condarc
+
+name: project1
+
+channels:
+  - conda-forge
+  # nodefaults 显式禁用 Anaconda 默认源（repo.anaconda.com/pkgs/*），
+  # 与上面的全局配置形成双重保险。
+  - nodefaults
+
+dependencies:
+  - python=3.10
+  - numpy=2.2.6
+  - pandas=2.3.3
+  - scipy=1.15.2
+  - scikit-learn=1.7.2
+  - matplotlib=3.10.9
+  - seaborn=0.13.2
+  # BLAS 后端：必须是 OpenBLAS，不能用默认的 MKL（见文件头说明）
+  - libblas=*=*openblas
+  - libcblas=*=*openblas
+  - liblapack=*=*openblas
