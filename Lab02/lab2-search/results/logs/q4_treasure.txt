@@ -1,0 +1,91 @@
+========================================================================================
+产物: q4_treasure
+阶段: 阶段 3   脚本: run_q4.py
+命令: python run_q4.py
+开始: 2026-10-16T01:47:41+08:00   结束: 2026-10-16T01:47:41+08:00   耗时: 0.0816s
+退出码: 0
+环境: python 3.11.17 | Windows-10-10.0.26200-SP0 | conda=lab2-search
+========================================================================================
+
+[输入与指纹]
+  case_file                    cases/pdf_examples/q4_treasure.json
+  case_sha256                  2db9b90b4dc6c0162568386aa88b1fbfa191385557b695d2dc6c3191b698637b
+  board_fingerprint            627d430e463009e50cc762d9de6d3334ac041fdd568919667033c330b2017a81
+  treasure_values              {"T1": {"position": [0, 6], "value": 9}, "T2": {"position": [2, 2], "value": 6}, "T3": {"position": [4, 4], "value": 7}, "T4": {"position": [6, 0], "value": 7}}
+
+[参数]
+  depths                       [2, 4]
+  depth_semantics              H = 双方合计的选择步数（ply），已由 PDF 期望输出验证
+  orders                       ["asc", "desc", "trace_desc"]
+  tie_break                    博弈搜索平局取先出现者（与状态展开顺序一致）
+
+[结果]
+  distance_matrix              {"nodes": ["A", "B", "T1", "T2", "T3", "T4"], "matrix": {"A": {"A": 0.0, "B": 12.0, "T1": 10.0, "T2": 4.0, "T3": 8.0, "T4": 8.0}, "B": {"A": 12.0, "B": 0.0, ...
+  state_representation         {"initial": {"pos_a": [0, 0], "pos_b": [6, 6], "remaining": ["T1", "T2", "T3", "T4"], "score_a": 0.0, "score_b": 0.0, "utility": 0.0, "to_move": "A", "depth"...
+  search_by_depth: 4 条记录
+    depth | algorithm | best_target | value | visited_nodes | generated_edges | pruned_edges | cutoffs | leaf_reads | expected_target | expected_value
+    2 | Minimax | T2 | -1.0 | 17 | 16 | 0 | 0 | 12 | T2 | -1
+    2 | Alpha-beta | T2 | -1.0 | 13 | 12 | 4 | 2 | 8 | T2 | -1
+    4 | Minimax | T3 | 3.0 | 65 | 64 | 0 | 0 | 24 | T3 | 3
+    4 | Alpha-beta | T3 | 3.0 | 47 | 46 | 6 | 12 | 16 | T3 | 3
+  depth_decision_difference    {"H2": {"best_target": "T2", "best_value": -1}, "H4": {"best_target": "T3", "best_value": 3}, "target_changed": true, "value_delta": 4}
+  depth_scan: 7 条记录
+    depth | minimax | alpha_beta
+    0 | {"value": 0.0, "best_target": null, "visited_nodes": 1, "pruned_edges": 0} | {"value": 0.0, "best_target": null, "visited_nodes": 1, "pruned_edges": 0}
+    1 | {"value": 2.0, "best_target": "T2", "visited_nodes": 5, "pruned_edges": 0} | {"value": 2.0, "best_target": "T2", "visited_nodes": 5, "pruned_edges": 0}
+    2 | {"value": -1.0, "best_target": "T2", "visited_nodes": 17, "pruned_edges": 0} | {"value": -1.0, "best_target": "T2", "visited_nodes": 13, "pruned_edges": 4}
+    3 | {"value": 2.0, "best_target": "T2", "visited_nodes": 41, "pruned_edges": 0} | {"value": 2.0, "best_target": "T2", "visited_nodes": 26, "pruned_edges": 7}
+    4 | {"value": 3.0, "best_target": "T3", "visited_nodes": 65, "pruned_edges": 0} | {"value": 3.0, "best_target": "T3", "visited_nodes": 47, "pruned_edges": 6}
+    5 | {"value": 3.0, "best_target": "T3", "visited_nodes": 65, "pruned_edges": 0} | {"value": 3.0, "best_target": "T3", "visited_nodes": 47, "pruned_edges": 6}
+    6 | {"value": 3.0, "best_target": "T3", "visited_nodes": 65, "pruned_edges": 0} | {"value": 3.0, "best_target": "T3", "visited_nodes": 47, "pruned_edges": 6}
+  order_effect: 6 条记录
+    order | depth | minimax | alpha_beta
+    asc | 2 | {"value": -1.0, "best_target": "T2", "visited_nodes": 17, "pruned_edges": 0, "cutoffs": 0} | {"value": -1.0, "best_target": "T2", "visited_nodes": 13, "pruned_edges": 4, "cutoffs": 2}
+    asc | 4 | {"value": 3.0, "best_target": "T3", "visited_nodes": 65, "pruned_edges": 0, "cutoffs": 0} | {"value": 3.0, "best_target": "T3", "visited_nodes": 47, "pruned_edges": 6, "cutoffs": 12}
+    desc | 2 | {"value": -1.0, "best_target": "T2", "visited_nodes": 17, "pruned_edges": 0, "cutoffs": 0} | {"value": -1.0, "best_target": "T2", "visited_nodes": 16, "pruned_edges": 1, "cutoffs": 1}
+    desc | 4 | {"value": 3.0, "best_target": "T3", "visited_nodes": 65, "pruned_edges": 0, "cutoffs": 0} | {"value": 3.0, "best_target": "T3", "visited_nodes": 46, "pruned_edges": 5, "cutoffs": 12}
+    trace_desc | 2 | {"value": -1.0, "best_target": "T2", "visited_nodes": 17, "pruned_edges": 0, "cutoffs": 0} | {"value": -1.0, "best_target": "T2", "visited_nodes": 11, "pruned_edges": 6, "cutoffs": 3}
+    trace_desc | 4 | {"value": 3.0, "best_target": "T3", "visited_nodes": 65, "pruned_edges": 0, "cutoffs": 0} | {"value": 3.0, "best_target": "T3", "visited_nodes": 37, "pruned_edges": 8, "cutoffs": 12}
+  reference_h2                 {"best_target": "T2", "value": -1.0}
+  memo_comparison_H4           {"plain": {"value": 3.0, "counters": {"visited_nodes": 47, "generated_edges": 46, "pruned_edges": 6, "leaf_reads": 16, "cutoffs": 12, "cache_hits": 0, "max_d...
+
+[断言] 共 31 条，通过 31，失败 0
+  [PASS] 距离矩阵规模为 6×6  <- actual=[6, 6] expected=[6, 6]
+  [PASS] 距离矩阵对称（无向移动）  <- 不对称对=[]
+  [PASS] 对角线为 0（同点距离按定义取 0）
+  [PASS] 全部 30 个有序对均由 A* 求得并与 Dijkstra 一致  <- 不一致=[]
+  [PASS] 有序对数量（6×6 去掉对角线 = 30）  <- actual=30 expected=30
+  [PASS] 距离矩阵与 WORKFLOW.md 3.4 的诊断值逐条一致（实现未漂移）  <- 不一致=[]
+  [PASS] 状态四要素齐备（PDF 任务 2：双方位置、剩余宝藏、累计收益、当前玩家）
+  [PASS] 初始剩余宝藏为四个  <- actual=4 expected=4
+  [PASS] 初始玩家为 A（MAX）  <- actual='A' expected='A'
+  [PASS] H=2 Minimax：最优首步与 PDF 期望一致  <- actual='T2' expected='T2'
+  [PASS] H=2 Minimax：最优收益差 U 与 PDF 期望一致  <- actual=-1.0 expected=-1
+  [PASS] H=2 Alpha-beta：最优首步与 PDF 期望一致  <- actual='T2' expected='T2'
+  [PASS] H=2 Alpha-beta：最优收益差 U 与 PDF 期望一致  <- actual=-1.0 expected=-1
+  [PASS] H=2：Minimax 与 Alpha-beta 的 U 相同（剪枝不改变博弈值）  <- actual=-1.0 expected=-1.0
+  [PASS] H=2：Minimax 与 Alpha-beta 的最优首步相同  <- actual='T2' expected='T2'
+  [PASS] H=4 Minimax：最优首步与 PDF 期望一致  <- actual='T3' expected='T3'
+  [PASS] H=4 Minimax：最优收益差 U 与 PDF 期望一致  <- actual=3.0 expected=3
+  [PASS] H=4 Alpha-beta：最优首步与 PDF 期望一致  <- actual='T3' expected='T3'
+  [PASS] H=4 Alpha-beta：最优收益差 U 与 PDF 期望一致  <- actual=3.0 expected=3
+  [PASS] H=4：Minimax 与 Alpha-beta 的 U 相同（剪枝不改变博弈值）  <- actual=3.0 expected=3.0
+  [PASS] H=4：Minimax 与 Alpha-beta 的最优首步相同  <- actual='T3' expected='T3'
+  [PASS] H=2 与 H=4 给出**不同**的首步（截断搜索误导的证据）  <- H2=T2 H4=T3
+  [PASS] H ≥ 4 的结果与 H=4 完全相同（4 个宝藏取完即终止 → H=4 是完全搜索）  <- H4=(3.0, 'T3') H5=(3.0, 'T3') H6=(3.0, 'T3')
+  [PASS] H=2：三种访问顺序下 Alpha-beta 的 U 完全相同（顺序不改变博弈值）  <- values={-1.0}
+  [PASS] H=2：三种访问顺序下最优首步完全相同  <- targets={'T2'}
+  [PASS] H=4：三种访问顺序下 Alpha-beta 的 U 完全相同（顺序不改变博弈值）  <- values={3.0}
+  [PASS] H=4：三种访问顺序下最优首步完全相同  <- targets={'T3'}
+  [PASS] H=4：访问顺序**确实**改变了 Alpha-beta 的访问节点数（否则该对照形同虚设）  <- visited_by_order={'asc': 47, 'desc': 46, 'trace_desc': 37}
+  [PASS] H=2 与不经过搜索引擎的手写实现一致（首步）  <- actual='T2' expected='T2'
+  [PASS] H=2 与不经过搜索引擎的手写实现一致（U）  <- actual=-1.0 expected=-1
+  [PASS] 置换表版本与普通 Alpha-beta 的 U 相同  <- actual=3.0 expected=3.0
+
+[说明与未验证项]
+  - 距离矩阵为**程序用 A* 现算**的结果（不硬编码）。完整路径也一并落盘，便于报告展示单条 d(A,Ti) 的计算过程。
+  - H=2 实测：Minimax 访问 17 个节点、Alpha-beta 访问 13 个（剪枝 2 次，未生成的边 4 条）。
+  - H=4 实测：Minimax 访问 65 个节点、Alpha-beta 访问 47 个（剪枝 12 次，未生成的边 6 条）。
+  - H=4 各顺序的 Alpha-beta 访问节点数：{'asc': 47, 'desc': 46, 'trace_desc': 37}。该差异就是“访问顺序影响剪枝效果”的实测证据。
+  - 置换表实测：访问节点 47 → 47，命中 0 次（H=4）。该数据是创新点 F2 在自设更大博弈规模上继续验证的起点。
+  - 未验证项：PDF 未给出距离矩阵本身，故矩阵只能与「A* 与 Dijkstra 相互一致」以及「WORKFLOW.md 3.4 的诊断值」对照；不存在官方矩阵可比。

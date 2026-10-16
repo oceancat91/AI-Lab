@@ -1,0 +1,68 @@
+========================================================================================
+产物: q1_maze
+阶段: 阶段 1-2   脚本: run_q1.py
+命令: python run_q1.py
+开始: 2026-10-16T01:47:33+08:00   结束: 2026-10-16T01:47:33+08:00   耗时: 0.0634s
+退出码: 0
+环境: python 3.11.17 | Windows-10-10.0.26200-SP0 | conda=lab2-search
+========================================================================================
+
+[输入与指纹]
+  case_file                    cases/pdf_examples/q1_maze.json
+  case_sha256                  663fdbbc731a377a7783dfc7377d78eeaf5e9c6f1f302ecd7b8f046f08f294ec
+  tie_break_rule               (f, h, tie_seq, node) 入堆；tie_break=True 时 f 相同优先 h 小者
+
+[参数]
+  heuristic                    manhattan
+  tie_break                    True
+  case_source                  PDF 第 3-5 页（cases/pdf_examples/q1_maze.json）
+
+[结果]
+  pdf_case                     {"input": {"start": [0, 0], "goal": [3, 4], "rows": 5, "cols": 5, "grid_fingerprint": "85da101e3ad751ca0ece885897c7fab4978f286e94ce10e7a45177034acbb226"}, "s...
+  tie_break_effect             {"tie_break_true": {"steps": 7, "expanded_nodes": 14, "path": [[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]]}, "tie_break_false": {"steps":...
+  boundary_cases: 6 条记录
+    case | found | steps | answer | expanded_nodes | self_designed
+    start_equals_goal | True | 0 | [[0, 0]] | 1 | True
+    no_obstacles | True | 6 | [[0, 0], [1, 0], [2, 0], [3, 0], [3, 1], [3, 2], [3, 3]] | 7 | True
+    walled_off_goal | False | None | [] | 4 | True
+    blocked_start | False | None | [] | 0 | True
+    single_corridor | True | 3 | [[0, 0], [0, 1], [0, 2], [0, 3]] | 4 | True
+    goal_is_start_neighbour | True | 1 | [[0, 0], [0, 1]] | 2 | True
+
+[断言] 共 29 条，通过 29，失败 0
+  [PASS] 题面用例找到路径
+  [PASS] 最短步数与 PDF 期望一致  <- actual=7 expected=7
+  [PASS] 路径合法（连续、不穿障碍、无重复）  <- ok
+  [PASS] A* 步数与独立 BFS 实现一致（最优性复核）  <- actual=7 expected=7
+  [PASS] 路径代价等于步数（题目一每步代价 1）  <- cost=7.0 steps=7
+  [PASS] 路径长度与 PDF 示例路径一致（含起终点坐标数）  <- actual=8 expected=8
+  [PASS] 路径与 PDF 示例逐坐标一致  <- actual=[[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]]
+  [PASS] 平局规则改变不改变最短步数  <- actual=7 expected=7
+  [PASS] 平局规则改变不改变路径  <- actual=[[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]] expected=[[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]]
+  [PASS] 平局规则改变**确实**改变了扩展顺序（否则本对照形同虚设）  <- tie_break=True 前 6 个: [(0, 0), (1, 0), (2, 0), (3, 0), (3, 1), (3, 2)] | tie_break=False 前 6 个: [(0, 0), (1, 0), (0, 1), (2, 0), (0, 2), (3, 0)]
+  [PASS] 边界用例 start_equals_goal：是否找到路径  <- actual=True expected=True
+  [PASS] 边界用例 start_equals_goal：步数  <- actual=0 expected=0
+  [PASS] 边界用例 start_equals_goal：路径合法  <- ok
+  [PASS] 边界用例 start_equals_goal：路径内容  <- actual=[[0, 0]] expected=[[0, 0]]
+  [PASS] 边界用例 no_obstacles：是否找到路径  <- actual=True expected=True
+  [PASS] 边界用例 no_obstacles：步数  <- actual=6 expected=6
+  [PASS] 边界用例 no_obstacles：路径合法  <- ok
+  [PASS] 边界用例 walled_off_goal：是否找到路径  <- actual=False expected=False
+  [PASS] 边界用例 walled_off_goal：无解返回空列表  <- actual=[] expected=[]
+  [PASS] 边界用例 blocked_start：是否找到路径  <- actual=False expected=False
+  [PASS] 边界用例 blocked_start：无解返回空列表  <- actual=[] expected=[]
+  [PASS] 边界用例 single_corridor：是否找到路径  <- actual=True expected=True
+  [PASS] 边界用例 single_corridor：步数  <- actual=3 expected=3
+  [PASS] 边界用例 single_corridor：路径合法  <- ok
+  [PASS] 边界用例 single_corridor：路径内容  <- actual=[[0, 0], [0, 1], [0, 2], [0, 3]] expected=[[0, 0], [0, 1], [0, 2], [0, 3]]
+  [PASS] 边界用例 goal_is_start_neighbour：是否找到路径  <- actual=True expected=True
+  [PASS] 边界用例 goal_is_start_neighbour：步数  <- actual=1 expected=1
+  [PASS] 边界用例 goal_is_start_neighbour：路径合法  <- ok
+  [PASS] 边界用例 goal_is_start_neighbour：路径内容  <- actual=[[0, 0], [0, 1]] expected=[[0, 0], [0, 1]]
+
+[说明与未验证项]
+  - PDF 第 5 页注明「可能存在多条相同长度的最短路径，输出任意一条即可」，故「逐坐标一致」是更强的观察而非判据；硬判据是「最短步数 7 + 路径合法」。
+  - 实测（本题面用例）：平局规则改变扩展顺序，但扩展节点数恰好相同（tie_break=True: 14，False: 14）——因此**不能从这个用例推断**「平局规则不影响节点数」。
+  - 更普遍的实测见 run_experiments.py 的 E1 分组：在 42 个自设迷宫用例中，有 17 个用例的扩展节点数随平局规则改变（如 20×20 的一例为 62 vs 282）。故报告引用节点数时必须声明平局规则，且效率类结论要说明所用规则。
+  - 边界用例均为**自设**（PDF 题目一未提供不可达、起点=终点等样例），已在产物中标注 self_designed=True。
+  - 题目一的输出约定 = 坐标序列，无解返回 []；题目二的无解返回 -1。两者不同，已在 README 与 WORKFLOW.md 中显式声明（避免混用）。

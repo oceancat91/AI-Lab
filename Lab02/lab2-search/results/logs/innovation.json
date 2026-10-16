@@ -1,0 +1,2233 @@
+{
+  "name": "innovation",
+  "stage": "阶段 7",
+  "script": "run_innovation.py",
+  "command": "python run_innovation.py",
+  "started_at": "2026-10-16T01:45:25+08:00",
+  "finished_at": "2026-10-16T01:45:26+08:00",
+  "elapsed_seconds": 0.5762,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {
+    "q1_case_sha256": "0431c5f9b528f794a99fcdca7d445cfda4603bab460ca51567e178c5ebb35ea8",
+    "q4_case_sha256": "5e3ca67e6c6f8189cfec1e1b894109c0ccb70c9feb87334b60a743dbb6d90fd5",
+    "large_game_specs": [
+      [
+        9,
+        9,
+        6
+      ],
+      [
+        11,
+        11,
+        7
+      ],
+      [
+        13,
+        13,
+        7
+      ],
+      [
+        13,
+        13,
+        8
+      ]
+    ]
+  },
+  "params": {
+    "innovation_candidates": [
+      "F1 双向 A*（替代 D8 实测为负结果的加权 A*）",
+      "F2 置换表缓存",
+      "F3 子节点访问顺序（含理想排序上界）",
+      "F4 迭代加深"
+    ],
+    "discipline": "每个创新点必须配对照数字；负结果如实记录",
+    "metric_policy": {
+      "primary_metric": "expanded_nodes",
+      "primary_metric_note": "节点扩展数；确定性、可复算，不受机器负载影响",
+      "secondary_metrics": [
+        "generated_nodes",
+        "pruned_nodes",
+        "max_frontier_size",
+        "pushes"
+      ],
+      "time_metric": "wall_clock_seconds",
+      "time_metric_note": "仅作量级参考；受机器负载影响，必须声明是否单次、重复次数与波动范围",
+      "timing_repeats": 3,
+      "tie_break_rule": "(f, h, tie_seq, node) 四元组入堆；tie_break=True 时 f 相同优先 h 小者",
+      "compare_rule": "同组实验必须使用同一输入实例；除声明变量外所有参数逐字段相等",
+      "significance": "不做统计显著性检验；只报告实测差值与跨用例分布（均值、极差）"
+    },
+    "seed": 42
+  },
+  "results": {
+    "f1_bidirectional": [
+      {
+        "group": "F1",
+        "label": "pdf_maze",
+        "input_fingerprint": "85da101e3ad751ca0ece885897c7fab4978f286e94ce10e7a45177034acbb226",
+        "one_way_found": true,
+        "one_way_steps": 7,
+        "one_way_expanded": 14,
+        "bi_found": true,
+        "bi_steps": 7,
+        "bi_expanded": 16,
+        "bi_generated": 20,
+        "ratio": 1.142857
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p20_reach_0",
+        "input_fingerprint": "e527833b55fddd61fbd051ad4243d71268879a371e8214e576d7d6d047eb7f23",
+        "one_way_found": true,
+        "one_way_steps": 8,
+        "one_way_expanded": 9,
+        "bi_found": true,
+        "bi_steps": 8,
+        "bi_expanded": 21,
+        "bi_generated": 33,
+        "ratio": 2.333333
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p20_sealed_1",
+        "input_fingerprint": "37ec6d60f8dacafd4954240d058cfc49766a4390744a985189dccad9847fbe4a",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 19,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 20,
+        "bi_generated": 27
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p20_reach_2",
+        "input_fingerprint": "cfd31df55ceb7d9fe5186a8691c08743114c2f1b0918b61f1e18b50a0564911b",
+        "one_way_found": true,
+        "one_way_steps": 8,
+        "one_way_expanded": 13,
+        "bi_found": true,
+        "bi_steps": 8,
+        "bi_expanded": 20,
+        "bi_generated": 29,
+        "ratio": 1.538462
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p20_sealed_3",
+        "input_fingerprint": "7f37ddc3ce04082ff006f47280f4d2c6edde79bbdcbcf577de00535dd94c051f",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 16,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 17,
+        "bi_generated": 17
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p20_reach_4",
+        "input_fingerprint": "76c6cbc54e57b5bfa9cb739aa4d28c82bb7b3967c0e33978b1edc7280ca3ccd0",
+        "one_way_found": true,
+        "one_way_steps": 8,
+        "one_way_expanded": 10,
+        "bi_found": true,
+        "bi_steps": 8,
+        "bi_expanded": 22,
+        "bi_generated": 35,
+        "ratio": 2.2
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p20_sealed_5",
+        "input_fingerprint": "5c2f831f87c07a0272aad2d49dbb50caa6bf1be80fda5da233f492339a4e0d0d",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 0,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 0,
+        "bi_generated": 0
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p35_reach_0",
+        "input_fingerprint": "6c5194f77371dd0f1aa71389a718404940e47e729d21b9b49f18546e60c608ac",
+        "one_way_found": true,
+        "one_way_steps": 8,
+        "one_way_expanded": 9,
+        "bi_found": true,
+        "bi_steps": 8,
+        "bi_expanded": 21,
+        "bi_generated": 30,
+        "ratio": 2.333333
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p35_sealed_1",
+        "input_fingerprint": "093dbd7be336e3d765c66dc86a4e533f122267d1526ad860b2ebf3d51d91a533",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 0,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 0,
+        "bi_generated": 0
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p35_reach_2",
+        "input_fingerprint": "0b10af20e4839a2e984887c9d6a207c9c8827ee18a8a723276142ad040d3740c",
+        "one_way_found": true,
+        "one_way_steps": 8,
+        "one_way_expanded": 9,
+        "bi_found": true,
+        "bi_steps": 8,
+        "bi_expanded": 19,
+        "bi_generated": 22,
+        "ratio": 2.111111
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p35_sealed_3",
+        "input_fingerprint": "943d1fcbeae3be55ce6ed7260dbc287079aebbeb3a175ebe44c7cad86a317f5f",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 12,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 13,
+        "bi_generated": 13
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p35_reach_4",
+        "input_fingerprint": "6a5afbe55058efeb47c1f258347180f3dd1eab9bbdf540bef4a2dd875485840e",
+        "one_way_found": true,
+        "one_way_steps": 8,
+        "one_way_expanded": 10,
+        "bi_found": true,
+        "bi_steps": 8,
+        "bi_expanded": 12,
+        "bi_generated": 15,
+        "ratio": 1.2
+      },
+      {
+        "group": "F1",
+        "label": "maze_5x5_p35_sealed_5",
+        "input_fingerprint": "aa6409fcbb054bd1f234a889eb02f4d5fda08e17bdc2b6e68f9f7c44176193f9",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 0,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 0,
+        "bi_generated": 0
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p20_reach_0",
+        "input_fingerprint": "514a2a9d7afe78221d316d40c9019012ce2830ce9da3bfba2da1fa2f38d7f4bf",
+        "one_way_found": true,
+        "one_way_steps": 38,
+        "one_way_expanded": 62,
+        "bi_found": true,
+        "bi_steps": 38,
+        "bi_expanded": 283,
+        "bi_generated": 471,
+        "ratio": 4.564516
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p20_sealed_1",
+        "input_fingerprint": "62c9e0b36f74ad1b771bc94beb6d263762cdda238f4fd732e1e8cf3b59cd255c",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 304,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 305,
+        "bi_generated": 450
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p20_reach_2",
+        "input_fingerprint": "6d2b178d31583c4c10527c07af928acfd8bdfbcf0334f1c0b6c4a354e3f2e66c",
+        "one_way_found": true,
+        "one_way_steps": 38,
+        "one_way_expanded": 53,
+        "bi_found": true,
+        "bi_steps": 38,
+        "bi_expanded": 306,
+        "bi_generated": 517,
+        "ratio": 5.773585
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p20_sealed_3",
+        "input_fingerprint": "930aa2119c1f46ff7cfc07319c45f6c066615e795b8a972591ddbf517cc478f2",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 323,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 324,
+        "bi_generated": 501
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p20_reach_4",
+        "input_fingerprint": "0b937ea468225b8d99da63e2f6818df13ce22214ec985228c4c3de1248215bd8",
+        "one_way_found": true,
+        "one_way_steps": 38,
+        "one_way_expanded": 61,
+        "bi_found": true,
+        "bi_steps": 38,
+        "bi_expanded": 237,
+        "bi_generated": 376,
+        "ratio": 3.885246
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p20_sealed_5",
+        "input_fingerprint": "a5e233821f621780db8f899c13178b68c17316325de3bbb4b85d3849538d4b38",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 313,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 314,
+        "bi_generated": 476
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p35_reach_0",
+        "input_fingerprint": "38490b878342a6157db3abd56747d352ea6156e75892877ce1dc579b3777ea92",
+        "one_way_found": true,
+        "one_way_steps": 38,
+        "one_way_expanded": 48,
+        "bi_found": true,
+        "bi_steps": 38,
+        "bi_expanded": 172,
+        "bi_generated": 255,
+        "ratio": 3.583333
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p35_sealed_1",
+        "input_fingerprint": "cd6fa46c17ea323797cbb75c50f76ab4c0038086ae6f99b2feeececb04fd268e",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 219,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 220,
+        "bi_generated": 288
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p35_reach_2",
+        "input_fingerprint": "1b1ff5ca6bec0ef2cf721eb7dc2fee687f2a69ed06809e2679defc54d0c8d53d",
+        "one_way_found": true,
+        "one_way_steps": 38,
+        "one_way_expanded": 71,
+        "bi_found": true,
+        "bi_steps": 38,
+        "bi_expanded": 77,
+        "bi_generated": 106,
+        "ratio": 1.084507
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p35_sealed_3",
+        "input_fingerprint": "1994121408db209708250376d90afd679cc301b1fc475f127d2328f0f8b7cff4",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 155,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 156,
+        "bi_generated": 206
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p35_reach_4",
+        "input_fingerprint": "ef913602c8e0494fc253bf4e1d96510ac351170d342e94d727971a1df2cd7083",
+        "one_way_found": true,
+        "one_way_steps": 38,
+        "one_way_expanded": 103,
+        "bi_found": true,
+        "bi_steps": 38,
+        "bi_expanded": 111,
+        "bi_generated": 164,
+        "ratio": 1.07767
+      },
+      {
+        "group": "F1",
+        "label": "maze_20x20_p35_sealed_5",
+        "input_fingerprint": "36987c763f7ae85632f9f2ee4ccb12eace6843f11ed55372d767fd36e89b05e2",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 0,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 0,
+        "bi_generated": 0
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p20_reach_0",
+        "input_fingerprint": "120d1c37f16160d9a04c34111eb5f7875f5a3693bc08a180522caa260cb893b2",
+        "one_way_found": true,
+        "one_way_steps": 80,
+        "one_way_expanded": 203,
+        "bi_found": true,
+        "bi_steps": 80,
+        "bi_expanded": 998,
+        "bi_generated": 1644,
+        "ratio": 4.916256
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p20_sealed_1",
+        "input_fingerprint": "52d24f458b374dc357b388075cd64b9b0cf421661f6e87320b8e3175a05ff8d9",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 0,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 0,
+        "bi_generated": 0
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p20_reach_2",
+        "input_fingerprint": "ebdf6a22de2c7ca4c8e8e047828b8160cfa74c6ceb8d89c3a647dc817ffab1fb",
+        "one_way_found": true,
+        "one_way_steps": 80,
+        "one_way_expanded": 179,
+        "bi_found": true,
+        "bi_steps": 80,
+        "bi_expanded": 998,
+        "bi_generated": 1654,
+        "ratio": 5.575419
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p20_sealed_3",
+        "input_fingerprint": "777aae3fef0b054c969cf78aea3df02ea56038cf10574e0c232e7de769a2074e",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 1319,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 1320,
+        "bi_generated": 2020
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p20_reach_4",
+        "input_fingerprint": "ed00dc4fadc8198c70ca6bc51cbd5804dc7d58f99dc3cfc2200bead4f29b6be6",
+        "one_way_found": true,
+        "one_way_steps": 80,
+        "one_way_expanded": 156,
+        "bi_found": true,
+        "bi_steps": 80,
+        "bi_expanded": 1114,
+        "bi_generated": 1879,
+        "ratio": 7.141026
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p20_sealed_5",
+        "input_fingerprint": "33e11218b10ceb18c7aa277d41907b8edbfdac1ac95b62932018a7a19d61663b",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 1330,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 1331,
+        "bi_generated": 2062
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p35_reach_0",
+        "input_fingerprint": "1de717b9d89889c63888e89b8e862094ffa7062fa8c33dace76abbd31f204a2c",
+        "one_way_found": true,
+        "one_way_steps": 80,
+        "one_way_expanded": 217,
+        "bi_found": true,
+        "bi_steps": 80,
+        "bi_expanded": 324,
+        "bi_generated": 482,
+        "ratio": 1.493088
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p35_sealed_1",
+        "input_fingerprint": "0126cfa834e3bede72fc1c8e656a1885b574ae07dcd8837ef36fac21a5da2ab6",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 925,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 926,
+        "bi_generated": 1246
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p35_reach_2",
+        "input_fingerprint": "d5e40bbf57c90c932a2c791502d965a606bf05d5c93d4776d3d19b6695e3e908",
+        "one_way_found": true,
+        "one_way_steps": 80,
+        "one_way_expanded": 285,
+        "bi_found": true,
+        "bi_steps": 80,
+        "bi_expanded": 373,
+        "bi_generated": 550,
+        "ratio": 1.308772
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p35_sealed_3",
+        "input_fingerprint": "ff60397ba7be230be6b36db031a3449e8943ea83f6d3e98b52fe25850b83b516",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 909,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 910,
+        "bi_generated": 1195
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p35_reach_4",
+        "input_fingerprint": "59c4e0fc6a39fb45feb5eb43fab0c9ce6792febd9ced85746b44b352554207e2",
+        "one_way_found": true,
+        "one_way_steps": 80,
+        "one_way_expanded": 320,
+        "bi_found": true,
+        "bi_steps": 80,
+        "bi_expanded": 396,
+        "bi_generated": 605,
+        "ratio": 1.2375
+      },
+      {
+        "group": "F1",
+        "label": "maze_41x41_p35_sealed_5",
+        "input_fingerprint": "e797440878bd6df9917ff60893cd8e88feb3ed68b49bd257089971b0a79a1e00",
+        "one_way_found": false,
+        "one_way_steps": 0,
+        "one_way_expanded": 1050,
+        "bi_found": false,
+        "bi_steps": 0,
+        "bi_expanded": 1051,
+        "bi_generated": 1376
+      }
+    ],
+    "f1_summary": {
+      "cases": 19,
+      "ratio_min": 1.07767,
+      "ratio_max": 7.141026,
+      "ratio_mean": 2.868422,
+      "cases_better": 0,
+      "cases_worse": 19,
+      "cases_equal": 0
+    },
+    "f2_memo": [
+      {
+        "group": "F2",
+        "label": "big_9x9_t6",
+        "rows": 9,
+        "cols": 9,
+        "treasures": 6,
+        "depth": 6,
+        "board_fingerprint": "d1c1a46205497d33e61ef9228326cdec5b578ea1d63e31a71f3af38a155e84f9",
+        "treasure_values": {
+          "T1": 6,
+          "T2": 11,
+          "T3": 12,
+          "T4": 12,
+          "T5": 11,
+          "T6": 12
+        },
+        "plain_value": 10.0,
+        "memo_value": 10.0,
+        "plain_visited": 870,
+        "memo_visited": 850,
+        "memo_hits": 17,
+        "plain_cutoffs": 314,
+        "memo_cutoffs": 305,
+        "reduction_percent": 2.2989
+      },
+      {
+        "group": "F2",
+        "label": "big_11x11_t7",
+        "rows": 11,
+        "cols": 11,
+        "treasures": 7,
+        "depth": 7,
+        "board_fingerprint": "16d4a4ed6da4b28a5577ff097e72d0e09e8f8cbc251660dc2d62b4d79903b6c6",
+        "treasure_values": {
+          "T1": 5,
+          "T2": 5,
+          "T3": 7,
+          "T4": 4,
+          "T5": 6,
+          "T6": 9,
+          "T7": 7
+        },
+        "plain_value": 1.0,
+        "memo_value": 1.0,
+        "plain_visited": 2502,
+        "memo_visited": 2443,
+        "memo_hits": 28,
+        "plain_cutoffs": 793,
+        "memo_cutoffs": 772,
+        "reduction_percent": 2.3581
+      },
+      {
+        "group": "F2",
+        "label": "big_13x13_t7",
+        "rows": 13,
+        "cols": 13,
+        "treasures": 7,
+        "depth": 7,
+        "board_fingerprint": "74847fbcf15741221b838e2e0f76ac40653585434d2c975e6343131f160bb215",
+        "treasure_values": {
+          "T1": 5,
+          "T2": 8,
+          "T3": 4,
+          "T4": 10,
+          "T5": 12,
+          "T6": 8,
+          "T7": 5
+        },
+        "plain_value": 3.0,
+        "memo_value": 3.0,
+        "plain_visited": 2872,
+        "memo_visited": 2697,
+        "memo_hits": 91,
+        "plain_cutoffs": 996,
+        "memo_cutoffs": 917,
+        "reduction_percent": 6.0933
+      },
+      {
+        "group": "F2",
+        "label": "big_13x13_t8",
+        "rows": 13,
+        "cols": 13,
+        "treasures": 8,
+        "depth": 8,
+        "board_fingerprint": "704aabeb382dc46b315b11eb6e37aa51765dfdf83a1e85fb264d56560df2b79a",
+        "treasure_values": {
+          "T1": 9,
+          "T2": 6,
+          "T3": 4,
+          "T4": 7,
+          "T5": 6,
+          "T6": 6,
+          "T7": 10,
+          "T8": 8
+        },
+        "plain_value": 8.0,
+        "memo_value": 8.0,
+        "plain_visited": 8085,
+        "memo_visited": 7751,
+        "memo_hits": 215,
+        "plain_cutoffs": 2748,
+        "memo_cutoffs": 2573,
+        "reduction_percent": 4.1311
+      }
+    ],
+    "f2_summary": {
+      "cases": 4,
+      "cases_with_hits": 4,
+      "max_hits": 215,
+      "reduction_min": 2.2989,
+      "reduction_max": 6.0933
+    },
+    "f3_order": [
+      {
+        "group": "F3",
+        "label": "tree_d3_b2_0",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "input_fingerprint": "08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5",
+        "identity_visited": 7,
+        "identity_value": 15.0,
+        "reversed_visited": 6,
+        "reversed_value": 15.0,
+        "rotate_visited": 6,
+        "rotate_value": 15.0,
+        "greedy_visited": 7,
+        "greedy_value": 15.0,
+        "ideal_visited": 6,
+        "worst_visited": 7,
+        "ideal_value": 15.0,
+        "worst_value": 15.0,
+        "minimax_visited": 7
+      },
+      {
+        "group": "F3",
+        "label": "tree_d3_b2_1",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "input_fingerprint": "d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed",
+        "identity_visited": 6,
+        "identity_value": 8.0,
+        "reversed_visited": 7,
+        "reversed_value": 8.0,
+        "rotate_visited": 7,
+        "rotate_value": 8.0,
+        "greedy_visited": 7,
+        "greedy_value": 8.0,
+        "ideal_visited": 6,
+        "worst_visited": 7,
+        "ideal_value": 8.0,
+        "worst_value": 8.0,
+        "minimax_visited": 7
+      },
+      {
+        "group": "F3",
+        "label": "tree_d3_b2_2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "input_fingerprint": "c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5",
+        "identity_visited": 7,
+        "identity_value": 4.0,
+        "reversed_visited": 7,
+        "reversed_value": 4.0,
+        "rotate_visited": 7,
+        "rotate_value": 4.0,
+        "greedy_visited": 7,
+        "greedy_value": 4.0,
+        "ideal_visited": 6,
+        "worst_visited": 7,
+        "ideal_value": 4.0,
+        "worst_value": 4.0,
+        "minimax_visited": 7
+      },
+      {
+        "group": "F3",
+        "label": "tree_d3_b2_3",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "input_fingerprint": "5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14",
+        "identity_visited": 7,
+        "identity_value": 17.0,
+        "reversed_visited": 7,
+        "reversed_value": 17.0,
+        "rotate_visited": 7,
+        "rotate_value": 17.0,
+        "greedy_visited": 7,
+        "greedy_value": 17.0,
+        "ideal_visited": 6,
+        "worst_visited": 7,
+        "ideal_value": 17.0,
+        "worst_value": 17.0,
+        "minimax_visited": 7
+      },
+      {
+        "group": "F3",
+        "label": "tree_d3_b3_0",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "input_fingerprint": "e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c",
+        "identity_visited": 11,
+        "identity_value": 10.0,
+        "reversed_visited": 13,
+        "reversed_value": 10.0,
+        "rotate_visited": 12,
+        "rotate_value": 10.0,
+        "greedy_visited": 12,
+        "greedy_value": 10.0,
+        "ideal_visited": 9,
+        "worst_visited": 13,
+        "ideal_value": 10.0,
+        "worst_value": 10.0,
+        "minimax_visited": 13
+      },
+      {
+        "group": "F3",
+        "label": "tree_d3_b3_1",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "input_fingerprint": "6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42",
+        "identity_visited": 13,
+        "identity_value": 10.0,
+        "reversed_visited": 11,
+        "reversed_value": 10.0,
+        "rotate_visited": 11,
+        "rotate_value": 10.0,
+        "greedy_visited": 13,
+        "greedy_value": 10.0,
+        "ideal_visited": 9,
+        "worst_visited": 13,
+        "ideal_value": 10.0,
+        "worst_value": 10.0,
+        "minimax_visited": 13
+      },
+      {
+        "group": "F3",
+        "label": "tree_d3_b3_2",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "input_fingerprint": "364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300",
+        "identity_visited": 10,
+        "identity_value": 6.0,
+        "reversed_visited": 13,
+        "reversed_value": 6.0,
+        "rotate_visited": 11,
+        "rotate_value": 6.0,
+        "greedy_visited": 12,
+        "greedy_value": 6.0,
+        "ideal_visited": 9,
+        "worst_visited": 13,
+        "ideal_value": 6.0,
+        "worst_value": 6.0,
+        "minimax_visited": 13
+      },
+      {
+        "group": "F3",
+        "label": "tree_d3_b3_3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "input_fingerprint": "35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255",
+        "identity_visited": 10,
+        "identity_value": 6.0,
+        "reversed_visited": 13,
+        "reversed_value": 6.0,
+        "rotate_visited": 13,
+        "rotate_value": 6.0,
+        "greedy_visited": 12,
+        "greedy_value": 6.0,
+        "ideal_visited": 9,
+        "worst_visited": 13,
+        "ideal_value": 6.0,
+        "worst_value": 6.0,
+        "minimax_visited": 13
+      },
+      {
+        "group": "F3",
+        "label": "tree_d4_b3_0",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "input_fingerprint": "0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8",
+        "identity_visited": 33,
+        "identity_value": 8.0,
+        "reversed_visited": 33,
+        "reversed_value": 8.0,
+        "rotate_visited": 31,
+        "rotate_value": 8.0,
+        "greedy_visited": 38,
+        "greedy_value": 8.0,
+        "ideal_visited": 24,
+        "worst_visited": 38,
+        "ideal_value": 8.0,
+        "worst_value": 8.0,
+        "minimax_visited": 40
+      },
+      {
+        "group": "F3",
+        "label": "tree_d4_b3_1",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "input_fingerprint": "a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50",
+        "identity_visited": 33,
+        "identity_value": 12.0,
+        "reversed_visited": 29,
+        "reversed_value": 12.0,
+        "rotate_visited": 33,
+        "rotate_value": 12.0,
+        "greedy_visited": 37,
+        "greedy_value": 12.0,
+        "ideal_visited": 24,
+        "worst_visited": 40,
+        "ideal_value": 12.0,
+        "worst_value": 12.0,
+        "minimax_visited": 40
+      },
+      {
+        "group": "F3",
+        "label": "tree_d4_b3_2",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "input_fingerprint": "4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513",
+        "identity_visited": 29,
+        "identity_value": 9.0,
+        "reversed_visited": 32,
+        "reversed_value": 9.0,
+        "rotate_visited": 28,
+        "rotate_value": 9.0,
+        "greedy_visited": 35,
+        "greedy_value": 9.0,
+        "ideal_visited": 24,
+        "worst_visited": 37,
+        "ideal_value": 9.0,
+        "worst_value": 9.0,
+        "minimax_visited": 40
+      },
+      {
+        "group": "F3",
+        "label": "tree_d4_b3_3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "input_fingerprint": "591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e",
+        "identity_visited": 30,
+        "identity_value": 15.0,
+        "reversed_visited": 27,
+        "reversed_value": 15.0,
+        "rotate_visited": 30,
+        "rotate_value": 15.0,
+        "greedy_visited": 33,
+        "greedy_value": 15.0,
+        "ideal_visited": 24,
+        "worst_visited": 36,
+        "ideal_value": 15.0,
+        "worst_value": 15.0,
+        "minimax_visited": 40
+      },
+      {
+        "group": "F3",
+        "label": "tree_d5_b2_0",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "input_fingerprint": "ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba",
+        "identity_visited": 27,
+        "identity_value": 8.0,
+        "reversed_visited": 23,
+        "reversed_value": 8.0,
+        "rotate_visited": 23,
+        "rotate_value": 8.0,
+        "greedy_visited": 28,
+        "greedy_value": 8.0,
+        "ideal_visited": 18,
+        "worst_visited": 31,
+        "ideal_value": 8.0,
+        "worst_value": 8.0,
+        "minimax_visited": 31
+      },
+      {
+        "group": "F3",
+        "label": "tree_d5_b2_1",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "input_fingerprint": "517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986",
+        "identity_visited": 23,
+        "identity_value": 13.0,
+        "reversed_visited": 28,
+        "reversed_value": 13.0,
+        "rotate_visited": 28,
+        "rotate_value": 13.0,
+        "greedy_visited": 23,
+        "greedy_value": 13.0,
+        "ideal_visited": 18,
+        "worst_visited": 31,
+        "ideal_value": 13.0,
+        "worst_value": 13.0,
+        "minimax_visited": 31
+      },
+      {
+        "group": "F3",
+        "label": "tree_d5_b2_2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "input_fingerprint": "f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b",
+        "identity_visited": 27,
+        "identity_value": 10.0,
+        "reversed_visited": 26,
+        "reversed_value": 10.0,
+        "rotate_visited": 26,
+        "rotate_value": 10.0,
+        "greedy_visited": 28,
+        "greedy_value": 10.0,
+        "ideal_visited": 18,
+        "worst_visited": 31,
+        "ideal_value": 10.0,
+        "worst_value": 10.0,
+        "minimax_visited": 31
+      },
+      {
+        "group": "F3",
+        "label": "tree_d5_b2_3",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "input_fingerprint": "36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2",
+        "identity_visited": 29,
+        "identity_value": 9.0,
+        "reversed_visited": 25,
+        "reversed_value": 9.0,
+        "rotate_visited": 25,
+        "rotate_value": 9.0,
+        "greedy_visited": 30,
+        "greedy_value": 9.0,
+        "ideal_visited": 18,
+        "worst_visited": 31,
+        "ideal_value": 9.0,
+        "worst_value": 9.0,
+        "minimax_visited": 31
+      },
+      {
+        "group": "F3",
+        "label": "tree_d5_b3_0",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "input_fingerprint": "55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254",
+        "identity_visited": 71,
+        "identity_value": 6.0,
+        "reversed_visited": 79,
+        "reversed_value": 6.0,
+        "rotate_visited": 84,
+        "rotate_value": 6.0,
+        "greedy_visited": 81,
+        "greedy_value": 6.0,
+        "ideal_visited": 37,
+        "worst_visited": 121,
+        "ideal_value": 6.0,
+        "worst_value": 6.0,
+        "minimax_visited": 121
+      },
+      {
+        "group": "F3",
+        "label": "tree_d5_b3_1",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "input_fingerprint": "821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a",
+        "identity_visited": 69,
+        "identity_value": 7.0,
+        "reversed_visited": 90,
+        "reversed_value": 7.0,
+        "rotate_visited": 77,
+        "rotate_value": 7.0,
+        "greedy_visited": 80,
+        "greedy_value": 7.0,
+        "ideal_visited": 37,
+        "worst_visited": 120,
+        "ideal_value": 7.0,
+        "worst_value": 7.0,
+        "minimax_visited": 121
+      },
+      {
+        "group": "F3",
+        "label": "tree_d5_b3_2",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "input_fingerprint": "bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974",
+        "identity_visited": 81,
+        "identity_value": 8.0,
+        "reversed_visited": 56,
+        "reversed_value": 8.0,
+        "rotate_visited": 81,
+        "rotate_value": 8.0,
+        "greedy_visited": 90,
+        "greedy_value": 8.0,
+        "ideal_visited": 37,
+        "worst_visited": 117,
+        "ideal_value": 8.0,
+        "worst_value": 8.0,
+        "minimax_visited": 121
+      },
+      {
+        "group": "F3",
+        "label": "tree_d5_b3_3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "input_fingerprint": "c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9",
+        "identity_visited": 103,
+        "identity_value": 10.0,
+        "reversed_visited": 59,
+        "reversed_value": 10.0,
+        "rotate_visited": 71,
+        "rotate_value": 10.0,
+        "greedy_visited": 113,
+        "greedy_value": 10.0,
+        "ideal_visited": 37,
+        "worst_visited": 121,
+        "ideal_value": 10.0,
+        "worst_value": 10.0,
+        "minimax_visited": 121
+      },
+      {
+        "group": "F3",
+        "label": "tree_d6_b3_0",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "input_fingerprint": "e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21",
+        "identity_visited": 135,
+        "identity_value": 10.0,
+        "reversed_visited": 194,
+        "reversed_value": 10.0,
+        "rotate_visited": 193,
+        "rotate_value": 10.0,
+        "greedy_visited": 166,
+        "greedy_value": 10.0,
+        "ideal_visited": 88,
+        "worst_visited": 337,
+        "ideal_value": 10.0,
+        "worst_value": 10.0,
+        "minimax_visited": 364
+      },
+      {
+        "group": "F3",
+        "label": "tree_d6_b3_1",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "input_fingerprint": "da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead",
+        "identity_visited": 212,
+        "identity_value": 10.0,
+        "reversed_visited": 160,
+        "reversed_value": 10.0,
+        "rotate_visited": 196,
+        "rotate_value": 10.0,
+        "greedy_visited": 250,
+        "greedy_value": 10.0,
+        "ideal_visited": 88,
+        "worst_visited": 322,
+        "ideal_value": 10.0,
+        "worst_value": 10.0,
+        "minimax_visited": 364
+      },
+      {
+        "group": "F3",
+        "label": "tree_d6_b3_2",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "input_fingerprint": "86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1",
+        "identity_visited": 168,
+        "identity_value": 11.0,
+        "reversed_visited": 175,
+        "reversed_value": 11.0,
+        "rotate_visited": 143,
+        "rotate_value": 11.0,
+        "greedy_visited": 191,
+        "greedy_value": 11.0,
+        "ideal_visited": 88,
+        "worst_visited": 291,
+        "ideal_value": 11.0,
+        "worst_value": 11.0,
+        "minimax_visited": 364
+      },
+      {
+        "group": "F3",
+        "label": "tree_d6_b3_3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "input_fingerprint": "f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e",
+        "identity_visited": 152,
+        "identity_value": 12.0,
+        "reversed_visited": 130,
+        "reversed_value": 12.0,
+        "rotate_visited": 184,
+        "rotate_value": 12.0,
+        "greedy_visited": 180,
+        "greedy_value": 12.0,
+        "ideal_visited": 88,
+        "worst_visited": 332,
+        "ideal_value": 12.0,
+        "worst_value": 12.0,
+        "minimax_visited": 364
+      }
+    ],
+    "f3_summary": {
+      "cases": 24,
+      "best_fixed_vs_ideal": 1.355291,
+      "note": "比值 = 最佳固定顺序访问数 / 理想排序访问数；1.0 表示固定顺序已达理想"
+    },
+    "f4_iterative_deepening": [
+      {
+        "group": "F4",
+        "label": "H=2",
+        "direct_visited": 13,
+        "iterative_total_visited": 19,
+        "overhead_ratio": 1.461538,
+        "final_value": -1.0,
+        "per_depth": [
+          {
+            "depth": 0,
+            "visited": 1,
+            "value": 0.0
+          },
+          {
+            "depth": 1,
+            "visited": 5,
+            "value": 2.0
+          },
+          {
+            "depth": 2,
+            "visited": 13,
+            "value": -1.0
+          }
+        ]
+      },
+      {
+        "group": "F4",
+        "label": "H=4",
+        "direct_visited": 47,
+        "iterative_total_visited": 92,
+        "overhead_ratio": 1.957447,
+        "final_value": 3.0,
+        "per_depth": [
+          {
+            "depth": 0,
+            "visited": 1,
+            "value": 0.0
+          },
+          {
+            "depth": 1,
+            "visited": 5,
+            "value": 2.0
+          },
+          {
+            "depth": 2,
+            "visited": 13,
+            "value": -1.0
+          },
+          {
+            "depth": 3,
+            "visited": 26,
+            "value": 2.0
+          },
+          {
+            "depth": 4,
+            "visited": 47,
+            "value": 3.0
+          }
+        ]
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "label": "F1[pdf_maze]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[pdf_maze]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=7 bi=7"
+    },
+    {
+      "label": "F1[pdf_maze]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[pdf_maze]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=7.0 one=7.0"
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_0]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_0]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=8 bi=8"
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_0]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_0]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=8.0 one=8.0"
+    },
+    {
+      "label": "F1[maze_5x5_p20_sealed_1]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p20_sealed_1]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_2]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_2]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=8 bi=8"
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_2]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_2]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=8.0 one=8.0"
+    },
+    {
+      "label": "F1[maze_5x5_p20_sealed_3]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p20_sealed_3]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_4]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_4]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=8 bi=8"
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_4]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_5x5_p20_reach_4]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=8.0 one=8.0"
+    },
+    {
+      "label": "F1[maze_5x5_p20_sealed_5]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p20_sealed_5]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_0]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_0]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=8 bi=8"
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_0]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_0]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=8.0 one=8.0"
+    },
+    {
+      "label": "F1[maze_5x5_p35_sealed_1]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p35_sealed_1]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_2]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_2]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=8 bi=8"
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_2]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_2]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=8.0 one=8.0"
+    },
+    {
+      "label": "F1[maze_5x5_p35_sealed_3]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p35_sealed_3]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_4]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_4]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=8 bi=8"
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_4]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_5x5_p35_reach_4]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=8.0 one=8.0"
+    },
+    {
+      "label": "F1[maze_5x5_p35_sealed_5]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_5x5_p35_sealed_5]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_0]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_0]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=38 bi=38"
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_0]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_0]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=38.0 one=38.0"
+    },
+    {
+      "label": "F1[maze_20x20_p20_sealed_1]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p20_sealed_1]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_2]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_2]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=38 bi=38"
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_2]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_2]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=38.0 one=38.0"
+    },
+    {
+      "label": "F1[maze_20x20_p20_sealed_3]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p20_sealed_3]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_4]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_4]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=38 bi=38"
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_4]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_20x20_p20_reach_4]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=38.0 one=38.0"
+    },
+    {
+      "label": "F1[maze_20x20_p20_sealed_5]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p20_sealed_5]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_0]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_0]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=38 bi=38"
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_0]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_0]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=38.0 one=38.0"
+    },
+    {
+      "label": "F1[maze_20x20_p35_sealed_1]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p35_sealed_1]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_2]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_2]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=38 bi=38"
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_2]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_2]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=38.0 one=38.0"
+    },
+    {
+      "label": "F1[maze_20x20_p35_sealed_3]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p35_sealed_3]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_4]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_4]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=38 bi=38"
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_4]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_20x20_p35_reach_4]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=38.0 one=38.0"
+    },
+    {
+      "label": "F1[maze_20x20_p35_sealed_5]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_20x20_p35_sealed_5]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_0]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_0]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=80 bi=80"
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_0]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_0]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=80.0 one=80.0"
+    },
+    {
+      "label": "F1[maze_41x41_p20_sealed_1]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p20_sealed_1]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_2]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_2]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=80 bi=80"
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_2]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_2]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=80.0 one=80.0"
+    },
+    {
+      "label": "F1[maze_41x41_p20_sealed_3]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p20_sealed_3]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_4]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_4]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=80 bi=80"
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_4]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_41x41_p20_reach_4]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=80.0 one=80.0"
+    },
+    {
+      "label": "F1[maze_41x41_p20_sealed_5]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p20_sealed_5]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_0]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_0]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=80 bi=80"
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_0]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_0]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=80.0 one=80.0"
+    },
+    {
+      "label": "F1[maze_41x41_p35_sealed_1]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p35_sealed_1]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_2]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_2]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=80 bi=80"
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_2]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_2]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=80.0 one=80.0"
+    },
+    {
+      "label": "F1[maze_41x41_p35_sealed_3]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p35_sealed_3]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_4]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_4]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=80 bi=80"
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_4]：双向搜索返回的路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "F1[maze_41x41_p35_reach_4]：双向路径代价与单向一致",
+      "passed": true,
+      "detail": "bi=80.0 one=80.0"
+    },
+    {
+      "label": "F1[maze_41x41_p35_sealed_5]：两种搜索的『是否可达』一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1[maze_41x41_p35_sealed_5]：两种搜索的最短步数一致（正确性优先）",
+      "passed": true,
+      "detail": "one=0 bi=0"
+    },
+    {
+      "label": "F1：已如实记录为负结果（更差用例数 > 更好用例数）",
+      "passed": true,
+      "detail": "更好=0 持平=0 更差=19"
+    },
+    {
+      "label": "F2[big_9x9_t6]：置换表不改变博弈值",
+      "passed": true,
+      "detail": "plain=10.0 memo=10.0"
+    },
+    {
+      "label": "F2[big_9x9_t6]：置换表命中计数 ≥ 0 且不超过访问数",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F2[big_11x11_t7]：置换表不改变博弈值",
+      "passed": true,
+      "detail": "plain=1.0 memo=1.0"
+    },
+    {
+      "label": "F2[big_11x11_t7]：置换表命中计数 ≥ 0 且不超过访问数",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F2[big_13x13_t7]：置换表不改变博弈值",
+      "passed": true,
+      "detail": "plain=3.0 memo=3.0"
+    },
+    {
+      "label": "F2[big_13x13_t7]：置换表命中计数 ≥ 0 且不超过访问数",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F2[big_13x13_t8]：置换表不改变博弈值",
+      "passed": true,
+      "detail": "plain=8.0 memo=8.0"
+    },
+    {
+      "label": "F2[big_13x13_t8]：置换表命中计数 ≥ 0 且不超过访问数",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F2：存在命中 > 0 的用例（否则该优化无从体现）",
+      "passed": true,
+      "detail": "命中用例=['big_9x9_t6', 'big_11x11_t7', 'big_13x13_t7', 'big_13x13_t8']"
+    },
+    {
+      "label": "F3[tree_d3_b2_0]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d3_b2_0]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "F3[tree_d3_b2_0]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=6 固定顺序最小=6"
+    },
+    {
+      "label": "F3[tree_d3_b2_1]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d3_b2_1]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "F3[tree_d3_b2_1]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=6 固定顺序最小=6"
+    },
+    {
+      "label": "F3[tree_d3_b2_2]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d3_b2_2]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=4.0 expected=4.0"
+    },
+    {
+      "label": "F3[tree_d3_b2_2]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=6 固定顺序最小=7"
+    },
+    {
+      "label": "F3[tree_d3_b2_3]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d3_b2_3]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=17.0 expected=17.0"
+    },
+    {
+      "label": "F3[tree_d3_b2_3]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=6 固定顺序最小=7"
+    },
+    {
+      "label": "F3[tree_d3_b3_0]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d3_b3_0]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "F3[tree_d3_b3_0]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=9 固定顺序最小=11"
+    },
+    {
+      "label": "F3[tree_d3_b3_1]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d3_b3_1]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "F3[tree_d3_b3_1]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=9 固定顺序最小=11"
+    },
+    {
+      "label": "F3[tree_d3_b3_2]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d3_b3_2]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "F3[tree_d3_b3_2]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=9 固定顺序最小=10"
+    },
+    {
+      "label": "F3[tree_d3_b3_3]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d3_b3_3]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "F3[tree_d3_b3_3]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=9 固定顺序最小=10"
+    },
+    {
+      "label": "F3[tree_d4_b3_0]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d4_b3_0]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "F3[tree_d4_b3_0]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=24 固定顺序最小=31"
+    },
+    {
+      "label": "F3[tree_d4_b3_1]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d4_b3_1]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "F3[tree_d4_b3_1]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=24 固定顺序最小=29"
+    },
+    {
+      "label": "F3[tree_d4_b3_2]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d4_b3_2]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "F3[tree_d4_b3_2]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=24 固定顺序最小=28"
+    },
+    {
+      "label": "F3[tree_d4_b3_3]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d4_b3_3]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "F3[tree_d4_b3_3]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=24 固定顺序最小=27"
+    },
+    {
+      "label": "F3[tree_d5_b2_0]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d5_b2_0]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "F3[tree_d5_b2_0]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=18 固定顺序最小=23"
+    },
+    {
+      "label": "F3[tree_d5_b2_1]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d5_b2_1]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=13.0 expected=13.0"
+    },
+    {
+      "label": "F3[tree_d5_b2_1]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=18 固定顺序最小=23"
+    },
+    {
+      "label": "F3[tree_d5_b2_2]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d5_b2_2]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "F3[tree_d5_b2_2]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=18 固定顺序最小=26"
+    },
+    {
+      "label": "F3[tree_d5_b2_3]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d5_b2_3]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "F3[tree_d5_b2_3]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=18 固定顺序最小=25"
+    },
+    {
+      "label": "F3[tree_d5_b3_0]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d5_b3_0]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "F3[tree_d5_b3_0]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=37 固定顺序最小=71"
+    },
+    {
+      "label": "F3[tree_d5_b3_1]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d5_b3_1]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0"
+    },
+    {
+      "label": "F3[tree_d5_b3_1]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=37 固定顺序最小=69"
+    },
+    {
+      "label": "F3[tree_d5_b3_2]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d5_b3_2]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "F3[tree_d5_b3_2]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=37 固定顺序最小=56"
+    },
+    {
+      "label": "F3[tree_d5_b3_3]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d5_b3_3]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "F3[tree_d5_b3_3]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=37 固定顺序最小=59"
+    },
+    {
+      "label": "F3[tree_d6_b3_0]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d6_b3_0]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "F3[tree_d6_b3_0]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=88 固定顺序最小=135"
+    },
+    {
+      "label": "F3[tree_d6_b3_1]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d6_b3_1]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "F3[tree_d6_b3_1]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=88 固定顺序最小=160"
+    },
+    {
+      "label": "F3[tree_d6_b3_2]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d6_b3_2]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=11.0 expected=11.0"
+    },
+    {
+      "label": "F3[tree_d6_b3_2]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=88 固定顺序最小=143"
+    },
+    {
+      "label": "F3[tree_d6_b3_3]：四种固定顺序的根值一致",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "F3[tree_d6_b3_3]：理想/反理想排序的根值也与之一致",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "F3[tree_d6_b3_3]：理想排序的访问数 ≤ 各固定顺序",
+      "passed": true,
+      "detail": "ideal=88 固定顺序最小=130"
+    },
+    {
+      "label": "F4[H=2]：迭代加深最后一层的结果与直接搜索一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F4[H=4]：迭代加深最后一层的结果与直接搜索一致",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "F1–F4 四组实验均已执行",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "assertions_total": 197,
+    "assertions_passed": 197,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "F1 实测（**负结果**）：在 19 个可达用例上，双向 A* / 单向 A* 的扩展节点数比值 最小 1.078、最大 7.141、均值 2.868；更优 0 例、更差 19 例、持平 0 例。两种搜索的返回值与路径代价在所有用例上完全一致（正确性通过）。",
+    "F1 负结果的成因分析（实测 + 推断，已区分）：后向方向的「进入代价」必须用「离开该格时的邻居权值」来定义（`ReverseGrid.entry_cost`），本实现取邻居的**最小值**，于是后向启发函数与后向代价之间不再满足一致性条件；结果是后向 f 值长期偏小、持续被优先扩展，在 41×41 空旷网格上扩展到 1682 个节点（单向 A* 仅 81 个）。**推断部分**：若改用「邻居权值的最大值」作后向代价，后向 f 会更保守、扩展更少，但会改变后向搜索的正确性前提；本实验**未做**该变体的实测，故不能断言它能带来收益。结论：双向 A* 在本实验的输入与启发函数下不是有效优化，如实记录。",
+    "F2 实测：4 个自设大规模博弈中，4 个出现置换表命中（最多 215 次）；访问节点数减少 2.3%~6.1%。收益随规模增长（宝藏数与棋盘越大命中越多），但在题面 4 宝藏的小规模上命中为 0 —— 说明**缓存的价值依赖状态重复度**，不能脱离规模宣称有效。",
+    "F3 实测：在 24 个自设树上，「最佳固定顺序 / 理想排序」的访问数比值均值为 1.355。**理想排序需要预先知道每个子树的真实价值**（实战中要额外花代价估算），故它只是可达收益的**上界参照**，不是可直接部署的策略；报告引用时必须声明这一局限。",
+    "F4 实测：迭代加深的总访问数为直接搜索的 [1.461538, 1.957447]（H=2 / H=4）。本问题的搜索树很小且没有「提前命中」的机会，故迭代加深**只增加开销**；它的价值在于时间受限时能返回一个可用解，本实验未构造该场景（如实记为未验证）。"
+  ]
+}

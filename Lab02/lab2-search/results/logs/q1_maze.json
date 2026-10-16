@@ -1,0 +1,575 @@
+{
+  "name": "q1_maze",
+  "stage": "阶段 1-2",
+  "script": "run_q1.py",
+  "command": "python run_q1.py",
+  "started_at": "2026-10-16T01:47:33+08:00",
+  "finished_at": "2026-10-16T01:47:33+08:00",
+  "elapsed_seconds": 0.0634,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {
+    "case_file": "cases/pdf_examples/q1_maze.json",
+    "case_sha256": "663fdbbc731a377a7783dfc7377d78eeaf5e9c6f1f302ecd7b8f046f08f294ec",
+    "tie_break_rule": "(f, h, tie_seq, node) 入堆；tie_break=True 时 f 相同优先 h 小者"
+  },
+  "params": {
+    "heuristic": "manhattan",
+    "tie_break": true,
+    "case_source": "PDF 第 3-5 页（cases/pdf_examples/q1_maze.json）"
+  },
+  "results": {
+    "pdf_case": {
+      "input": {
+        "start": [
+          0,
+          0
+        ],
+        "goal": [
+          3,
+          4
+        ],
+        "rows": 5,
+        "cols": 5,
+        "grid_fingerprint": "85da101e3ad751ca0ece885897c7fab4978f286e94ce10e7a45177034acbb226"
+      },
+      "search": {
+        "found": true,
+        "cost": 7.0,
+        "steps": 7,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "heuristic": "manhattan",
+        "tie_break": true,
+        "queue": "heapq",
+        "start": [
+          0,
+          0
+        ],
+        "goal": [
+          3,
+          4
+        ],
+        "stats": {
+          "expanded_nodes": 14,
+          "generated_nodes": 16,
+          "pushes": 17,
+          "improvements": 16,
+          "duplicate_pops": 0,
+          "max_frontier_size": 4,
+          "max_depth": 7
+        }
+      },
+      "answer": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "expected": {
+        "expected_path": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "expected_steps": 7,
+        "note": "PDF 注明「可能存在多条相同长度的最短路径，输出任意一条即可」，故逐坐标一致不是必要条件，最短步数 7 才是硬判据。"
+      },
+      "expanded_order_head": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ]
+    },
+    "tie_break_effect": {
+      "tie_break_true": {
+        "steps": 7,
+        "expanded_nodes": 14,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "tie_break_false": {
+        "steps": 7,
+        "expanded_nodes": 14,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    "boundary_cases": [
+      {
+        "case": "start_equals_goal",
+        "found": true,
+        "steps": 0,
+        "answer": [
+          [
+            0,
+            0
+          ]
+        ],
+        "expanded_nodes": 1,
+        "self_designed": true
+      },
+      {
+        "case": "no_obstacles",
+        "found": true,
+        "steps": 6,
+        "answer": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "expanded_nodes": 7,
+        "self_designed": true
+      },
+      {
+        "case": "walled_off_goal",
+        "found": false,
+        "steps": null,
+        "answer": [],
+        "expanded_nodes": 4,
+        "self_designed": true
+      },
+      {
+        "case": "blocked_start",
+        "found": false,
+        "steps": null,
+        "answer": [],
+        "expanded_nodes": 0,
+        "self_designed": true
+      },
+      {
+        "case": "single_corridor",
+        "found": true,
+        "steps": 3,
+        "answer": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "expanded_nodes": 4,
+        "self_designed": true
+      },
+      {
+        "case": "goal_is_start_neighbour",
+        "found": true,
+        "steps": 1,
+        "answer": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "expanded_nodes": 2,
+        "self_designed": true
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "label": "题面用例找到路径",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "最短步数与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual=7 expected=7"
+    },
+    {
+      "label": "路径合法（连续、不穿障碍、无重复）",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "A* 步数与独立 BFS 实现一致（最优性复核）",
+      "passed": true,
+      "detail": "actual=7 expected=7"
+    },
+    {
+      "label": "路径代价等于步数（题目一每步代价 1）",
+      "passed": true,
+      "detail": "cost=7.0 steps=7"
+    },
+    {
+      "label": "路径长度与 PDF 示例路径一致（含起终点坐标数）",
+      "passed": true,
+      "detail": "actual=8 expected=8"
+    },
+    {
+      "label": "路径与 PDF 示例逐坐标一致",
+      "passed": true,
+      "detail": "actual=[[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]]"
+    },
+    {
+      "label": "平局规则改变不改变最短步数",
+      "passed": true,
+      "detail": "actual=7 expected=7"
+    },
+    {
+      "label": "平局规则改变不改变路径",
+      "passed": true,
+      "detail": "actual=[[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]] expected=[[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]]"
+    },
+    {
+      "label": "平局规则改变**确实**改变了扩展顺序（否则本对照形同虚设）",
+      "passed": true,
+      "detail": "tie_break=True 前 6 个: [(0, 0), (1, 0), (2, 0), (3, 0), (3, 1), (3, 2)] | tie_break=False 前 6 个: [(0, 0), (1, 0), (0, 1), (2, 0), (0, 2), (3, 0)]"
+    },
+    {
+      "label": "边界用例 start_equals_goal：是否找到路径",
+      "passed": true,
+      "detail": "actual=True expected=True"
+    },
+    {
+      "label": "边界用例 start_equals_goal：步数",
+      "passed": true,
+      "detail": "actual=0 expected=0"
+    },
+    {
+      "label": "边界用例 start_equals_goal：路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "边界用例 start_equals_goal：路径内容",
+      "passed": true,
+      "detail": "actual=[[0, 0]] expected=[[0, 0]]"
+    },
+    {
+      "label": "边界用例 no_obstacles：是否找到路径",
+      "passed": true,
+      "detail": "actual=True expected=True"
+    },
+    {
+      "label": "边界用例 no_obstacles：步数",
+      "passed": true,
+      "detail": "actual=6 expected=6"
+    },
+    {
+      "label": "边界用例 no_obstacles：路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "边界用例 walled_off_goal：是否找到路径",
+      "passed": true,
+      "detail": "actual=False expected=False"
+    },
+    {
+      "label": "边界用例 walled_off_goal：无解返回空列表",
+      "passed": true,
+      "detail": "actual=[] expected=[]"
+    },
+    {
+      "label": "边界用例 blocked_start：是否找到路径",
+      "passed": true,
+      "detail": "actual=False expected=False"
+    },
+    {
+      "label": "边界用例 blocked_start：无解返回空列表",
+      "passed": true,
+      "detail": "actual=[] expected=[]"
+    },
+    {
+      "label": "边界用例 single_corridor：是否找到路径",
+      "passed": true,
+      "detail": "actual=True expected=True"
+    },
+    {
+      "label": "边界用例 single_corridor：步数",
+      "passed": true,
+      "detail": "actual=3 expected=3"
+    },
+    {
+      "label": "边界用例 single_corridor：路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "边界用例 single_corridor：路径内容",
+      "passed": true,
+      "detail": "actual=[[0, 0], [0, 1], [0, 2], [0, 3]] expected=[[0, 0], [0, 1], [0, 2], [0, 3]]"
+    },
+    {
+      "label": "边界用例 goal_is_start_neighbour：是否找到路径",
+      "passed": true,
+      "detail": "actual=True expected=True"
+    },
+    {
+      "label": "边界用例 goal_is_start_neighbour：步数",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "边界用例 goal_is_start_neighbour：路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "边界用例 goal_is_start_neighbour：路径内容",
+      "passed": true,
+      "detail": "actual=[[0, 0], [0, 1]] expected=[[0, 0], [0, 1]]"
+    }
+  ],
+  "summary": {
+    "assertions_total": 29,
+    "assertions_passed": 29,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "PDF 第 5 页注明「可能存在多条相同长度的最短路径，输出任意一条即可」，故「逐坐标一致」是更强的观察而非判据；硬判据是「最短步数 7 + 路径合法」。",
+    "实测（本题面用例）：平局规则改变扩展顺序，但扩展节点数恰好相同（tie_break=True: 14，False: 14）——因此**不能从这个用例推断**「平局规则不影响节点数」。",
+    "更普遍的实测见 run_experiments.py 的 E1 分组：在 42 个自设迷宫用例中，有 17 个用例的扩展节点数随平局规则改变（如 20×20 的一例为 62 vs 282）。故报告引用节点数时必须声明平局规则，且效率类结论要说明所用规则。",
+    "边界用例均为**自设**（PDF 题目一未提供不可达、起点=终点等样例），已在产物中标注 self_designed=True。",
+    "题目一的输出约定 = 坐标序列，无解返回 []；题目二的无解返回 -1。两者不同，已在 README 与 WORKFLOW.md 中显式声明（避免混用）。"
+  ]
+}

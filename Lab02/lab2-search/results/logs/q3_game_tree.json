@@ -1,0 +1,2953 @@
+{
+  "name": "q3_game_tree",
+  "stage": "阶段 1-2",
+  "script": "run_q3.py",
+  "command": "python run_q3.py",
+  "started_at": "2026-10-16T01:47:38+08:00",
+  "finished_at": "2026-10-16T01:47:39+08:00",
+  "elapsed_seconds": 0.1065,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {
+    "case_file": "cases/pdf_examples/q3_tree.json",
+    "case_sha256": "53799eec1a214348dbe6c34e0148eba1801e6ef7f2b54ceea9ffcafe55ebee68",
+    "tree_fingerprint": "4be5329e60abbdc68e084a9e2ad27c76d6aa94eccc23f98b4c7fa2407d1bc408",
+    "leaf_values_left_to_right": [
+      3.0,
+      5.0,
+      6.0,
+      9.0,
+      6.0,
+      9.0,
+      1.0,
+      2.0
+    ]
+  },
+  "params": {
+    "algorithm_baseline": "Minimax（无剪枝，A1 基线）",
+    "tie_break": "平局取先出现者（与子节点从左到右的顺序一致）",
+    "order_modes": [
+      "identity（从左到右）",
+      "reversed",
+      "rotate",
+      "greedy（贪婪排序）"
+    ],
+    "case_source": "PDF 第 8-13 页（cases/pdf_examples/q3_tree.json）"
+  },
+  "results": {
+    "pdf_derivation_check": {
+      "max_layer_values": [
+        5.0,
+        9.0,
+        2.0
+      ],
+      "min_layer_values": [
+        5.0,
+        2.0
+      ],
+      "shared_node": true
+    },
+    "eight_leaf_variant": {
+      "case_file": "cases/pdf_examples/q3_tree_pdf_input_variant.json",
+      "case_sha256": "8d9c58538590ba805ebbf3eba13194b3bc3db58a7f32fcbe7b71ce99bd55499b",
+      "leaf_count": 8,
+      "max_layer_values": [
+        5.0,
+        9.0,
+        9.0,
+        2.0
+      ],
+      "root_value": 5.0
+    },
+    "pdf_case": {
+      "input": {
+        "leaf_values": [
+          3.0,
+          5.0,
+          6.0,
+          9.0,
+          6.0,
+          9.0,
+          1.0,
+          2.0
+        ],
+        "node_count": 15,
+        "leaf_count": 8,
+        "tree_fingerprint": "4be5329e60abbdc68e084a9e2ad27c76d6aa94eccc23f98b4c7fa2407d1bc408"
+      },
+      "minimax": {
+        "value": 5.0,
+        "visited": 15,
+        "leaf_reads": 8
+      },
+      "alpha_beta": {
+        "value": 5.0,
+        "visited": 14,
+        "leaf_reads": 7,
+        "cutoffs": 2,
+        "pruned_edges": 1
+      },
+      "expected_value": 5,
+      "visit_ratio": 0.933333
+    },
+    "reference_implementation": {
+      "value": 5.0
+    },
+    "pdf_tree_order_effect": [
+      {
+        "label": "pdf_tree_identity",
+        "order_mode": "identity",
+        "minimax_value": 5.0,
+        "alpha_beta_value": 5.0,
+        "minimax_visited": 15,
+        "alpha_beta_visited": 14,
+        "alpha_beta_cutoffs": 2,
+        "alpha_beta_pruned_edges": 1,
+        "alpha_beta_leaf_reads": 7,
+        "minimax_leaf_reads": 8,
+        "visit_ratio": 0.933333,
+        "same_value": true,
+        "_minimax_order": [],
+        "_alpha_beta_order": []
+      },
+      {
+        "label": "pdf_tree_reversed",
+        "order_mode": "reversed",
+        "minimax_value": 5.0,
+        "alpha_beta_value": 5.0,
+        "minimax_visited": 15,
+        "alpha_beta_visited": 14,
+        "alpha_beta_cutoffs": 1,
+        "alpha_beta_pruned_edges": 1,
+        "alpha_beta_leaf_reads": 7,
+        "minimax_leaf_reads": 8,
+        "visit_ratio": 0.933333,
+        "same_value": true,
+        "_minimax_order": [],
+        "_alpha_beta_order": []
+      },
+      {
+        "label": "pdf_tree_rotate",
+        "order_mode": "rotate",
+        "minimax_value": 5.0,
+        "alpha_beta_value": 5.0,
+        "minimax_visited": 15,
+        "alpha_beta_visited": 14,
+        "alpha_beta_cutoffs": 1,
+        "alpha_beta_pruned_edges": 1,
+        "alpha_beta_leaf_reads": 7,
+        "minimax_leaf_reads": 8,
+        "visit_ratio": 0.933333,
+        "same_value": true,
+        "_minimax_order": [],
+        "_alpha_beta_order": []
+      },
+      {
+        "label": "pdf_tree_greedy",
+        "order_mode": "greedy",
+        "minimax_value": 5.0,
+        "alpha_beta_value": 5.0,
+        "minimax_visited": 15,
+        "alpha_beta_visited": 14,
+        "alpha_beta_cutoffs": 2,
+        "alpha_beta_pruned_edges": 1,
+        "alpha_beta_leaf_reads": 7,
+        "minimax_leaf_reads": 8,
+        "visit_ratio": 0.933333,
+        "same_value": true,
+        "_minimax_order": [],
+        "_alpha_beta_order": []
+      }
+    ],
+    "pdf_tree_visited_by_order": {
+      "identity": 14,
+      "reversed": 14,
+      "rotate": 14,
+      "greedy": 14
+    },
+    "self_designed_trees": [
+      {
+        "label": "tree_d3_b2_0",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "leaf_values_seed": 2863768495,
+        "fingerprint": "08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5",
+        "reference_value": 15.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d3_b2_0/identity",
+            "order_mode": "identity",
+            "minimax_value": 15.0,
+            "alpha_beta_value": 15.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 0,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d3_b2_0/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 15.0,
+            "alpha_beta_value": 15.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 6,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 3,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 0.857143,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d3_b2_0/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 15.0,
+            "alpha_beta_value": 15.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 6,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 3,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 0.857143,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d3_b2_0/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 15.0,
+            "alpha_beta_value": 15.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 0,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d3_b2_1",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "leaf_values_seed": 854663590,
+        "fingerprint": "d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed",
+        "reference_value": 8.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d3_b2_1/identity",
+            "order_mode": "identity",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 6,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 3,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 0.857143,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d3_b2_1/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d3_b2_1/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d3_b2_1/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d3_b2_2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "leaf_values_seed": 400085245,
+        "fingerprint": "c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5",
+        "reference_value": 4.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d3_b2_2/identity",
+            "order_mode": "identity",
+            "minimax_value": 4.0,
+            "alpha_beta_value": 4.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d3_b2_2/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 4.0,
+            "alpha_beta_value": 4.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d3_b2_2/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 4.0,
+            "alpha_beta_value": 4.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d3_b2_2/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 4.0,
+            "alpha_beta_value": 4.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d3_b2_3",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "leaf_values_seed": 2791508975,
+        "fingerprint": "5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14",
+        "reference_value": 17.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d3_b2_3/identity",
+            "order_mode": "identity",
+            "minimax_value": 17.0,
+            "alpha_beta_value": 17.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d3_b2_3/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 17.0,
+            "alpha_beta_value": 17.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 0,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d3_b2_3/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 17.0,
+            "alpha_beta_value": 17.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 0,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d3_b2_3/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 17.0,
+            "alpha_beta_value": 17.0,
+            "minimax_visited": 7,
+            "alpha_beta_visited": 7,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 4,
+            "minimax_leaf_reads": 4,
+            "visit_ratio": 1.0,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d3_b3_0",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "leaf_values_seed": 2397468824,
+        "fingerprint": "e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c",
+        "reference_value": 10.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d3_b3_0/identity",
+            "order_mode": "identity",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 11,
+            "alpha_beta_cutoffs": 2,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 7,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.846154,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d3_b3_0/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 13,
+            "alpha_beta_cutoffs": 0,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 9,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d3_b3_0/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 12,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 8,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.923077,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d3_b3_0/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 12,
+            "alpha_beta_cutoffs": 2,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 8,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.923077,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d3_b3_1",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "leaf_values_seed": 3820357481,
+        "fingerprint": "6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42",
+        "reference_value": 10.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d3_b3_1/identity",
+            "order_mode": "identity",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 13,
+            "alpha_beta_cutoffs": 0,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 9,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d3_b3_1/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 11,
+            "alpha_beta_cutoffs": 2,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 7,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.846154,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d3_b3_1/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 11,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 7,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.846154,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d3_b3_1/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 13,
+            "alpha_beta_cutoffs": 0,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 9,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 1.0,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d3_b3_2",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "leaf_values_seed": 295144736,
+        "fingerprint": "364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300",
+        "reference_value": 6.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d3_b3_2/identity",
+            "order_mode": "identity",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 10,
+            "alpha_beta_cutoffs": 2,
+            "alpha_beta_pruned_edges": 3,
+            "alpha_beta_leaf_reads": 6,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.769231,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d3_b3_2/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 13,
+            "alpha_beta_cutoffs": 0,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 9,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d3_b3_2/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 11,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 7,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.846154,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d3_b3_2/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 12,
+            "alpha_beta_cutoffs": 2,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 8,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.923077,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d3_b3_3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "leaf_values_seed": 1490831701,
+        "fingerprint": "35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255",
+        "reference_value": 6.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d3_b3_3/identity",
+            "order_mode": "identity",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 10,
+            "alpha_beta_cutoffs": 2,
+            "alpha_beta_pruned_edges": 3,
+            "alpha_beta_leaf_reads": 6,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.769231,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d3_b3_3/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 13,
+            "alpha_beta_cutoffs": 1,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 9,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d3_b3_3/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 13,
+            "alpha_beta_cutoffs": 0,
+            "alpha_beta_pruned_edges": 0,
+            "alpha_beta_leaf_reads": 9,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 1.0,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d3_b3_3/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 13,
+            "alpha_beta_visited": 12,
+            "alpha_beta_cutoffs": 2,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 8,
+            "minimax_leaf_reads": 9,
+            "visit_ratio": 0.923077,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d4_b3_0",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "leaf_values_seed": 338530043,
+        "fingerprint": "0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8",
+        "reference_value": 8.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d4_b3_0/identity",
+            "order_mode": "identity",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 33,
+            "alpha_beta_cutoffs": 5,
+            "alpha_beta_pruned_edges": 7,
+            "alpha_beta_leaf_reads": 20,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.825,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d4_b3_0/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 33,
+            "alpha_beta_cutoffs": 7,
+            "alpha_beta_pruned_edges": 7,
+            "alpha_beta_leaf_reads": 20,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.825,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d4_b3_0/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 31,
+            "alpha_beta_cutoffs": 6,
+            "alpha_beta_pruned_edges": 9,
+            "alpha_beta_leaf_reads": 18,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.775,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d4_b3_0/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 38,
+            "alpha_beta_cutoffs": 5,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 25,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.95,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d4_b3_1",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "leaf_values_seed": 1054760401,
+        "fingerprint": "a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50",
+        "reference_value": 12.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d4_b3_1/identity",
+            "order_mode": "identity",
+            "minimax_value": 12.0,
+            "alpha_beta_value": 12.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 33,
+            "alpha_beta_cutoffs": 6,
+            "alpha_beta_pruned_edges": 7,
+            "alpha_beta_leaf_reads": 20,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.825,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d4_b3_1/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 12.0,
+            "alpha_beta_value": 12.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 29,
+            "alpha_beta_cutoffs": 8,
+            "alpha_beta_pruned_edges": 11,
+            "alpha_beta_leaf_reads": 16,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.725,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d4_b3_1/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 12.0,
+            "alpha_beta_value": 12.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 33,
+            "alpha_beta_cutoffs": 6,
+            "alpha_beta_pruned_edges": 7,
+            "alpha_beta_leaf_reads": 20,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.825,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d4_b3_1/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 12.0,
+            "alpha_beta_value": 12.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 37,
+            "alpha_beta_cutoffs": 6,
+            "alpha_beta_pruned_edges": 3,
+            "alpha_beta_leaf_reads": 24,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.925,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d4_b3_2",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "leaf_values_seed": 2743897702,
+        "fingerprint": "4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513",
+        "reference_value": 9.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d4_b3_2/identity",
+            "order_mode": "identity",
+            "minimax_value": 9.0,
+            "alpha_beta_value": 9.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 29,
+            "alpha_beta_cutoffs": 7,
+            "alpha_beta_pruned_edges": 11,
+            "alpha_beta_leaf_reads": 16,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.725,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d4_b3_2/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 9.0,
+            "alpha_beta_value": 9.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 32,
+            "alpha_beta_cutoffs": 4,
+            "alpha_beta_pruned_edges": 8,
+            "alpha_beta_leaf_reads": 19,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.8,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d4_b3_2/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 9.0,
+            "alpha_beta_value": 9.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 28,
+            "alpha_beta_cutoffs": 7,
+            "alpha_beta_pruned_edges": 12,
+            "alpha_beta_leaf_reads": 15,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.7,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d4_b3_2/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 9.0,
+            "alpha_beta_value": 9.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 35,
+            "alpha_beta_cutoffs": 7,
+            "alpha_beta_pruned_edges": 5,
+            "alpha_beta_leaf_reads": 22,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.875,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d4_b3_3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "leaf_values_seed": 883128537,
+        "fingerprint": "591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e",
+        "reference_value": 15.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d4_b3_3/identity",
+            "order_mode": "identity",
+            "minimax_value": 15.0,
+            "alpha_beta_value": 15.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 30,
+            "alpha_beta_cutoffs": 6,
+            "alpha_beta_pruned_edges": 10,
+            "alpha_beta_leaf_reads": 17,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.75,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d4_b3_3/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 15.0,
+            "alpha_beta_value": 15.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 27,
+            "alpha_beta_cutoffs": 7,
+            "alpha_beta_pruned_edges": 13,
+            "alpha_beta_leaf_reads": 14,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.675,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d4_b3_3/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 15.0,
+            "alpha_beta_value": 15.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 30,
+            "alpha_beta_cutoffs": 6,
+            "alpha_beta_pruned_edges": 10,
+            "alpha_beta_leaf_reads": 17,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.75,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d4_b3_3/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 15.0,
+            "alpha_beta_value": 15.0,
+            "minimax_visited": 40,
+            "alpha_beta_visited": 33,
+            "alpha_beta_cutoffs": 6,
+            "alpha_beta_pruned_edges": 7,
+            "alpha_beta_leaf_reads": 20,
+            "minimax_leaf_reads": 27,
+            "visit_ratio": 0.825,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d5_b2_0",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "leaf_values_seed": 2855888222,
+        "fingerprint": "ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba",
+        "reference_value": 8.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d5_b2_0/identity",
+            "order_mode": "identity",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 27,
+            "alpha_beta_cutoffs": 3,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 13,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.870968,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d5_b2_0/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 23,
+            "alpha_beta_cutoffs": 4,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 11,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.741935,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d5_b2_0/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 23,
+            "alpha_beta_cutoffs": 4,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 11,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.741935,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d5_b2_0/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 28,
+            "alpha_beta_cutoffs": 3,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 14,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.903226,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d5_b2_1",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "leaf_values_seed": 2780219554,
+        "fingerprint": "517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986",
+        "reference_value": 13.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d5_b2_1/identity",
+            "order_mode": "identity",
+            "minimax_value": 13.0,
+            "alpha_beta_value": 13.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 23,
+            "alpha_beta_cutoffs": 4,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 11,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.741935,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d5_b2_1/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 13.0,
+            "alpha_beta_value": 13.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 28,
+            "alpha_beta_cutoffs": 4,
+            "alpha_beta_pruned_edges": 3,
+            "alpha_beta_leaf_reads": 13,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.903226,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d5_b2_1/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 13.0,
+            "alpha_beta_value": 13.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 28,
+            "alpha_beta_cutoffs": 4,
+            "alpha_beta_pruned_edges": 3,
+            "alpha_beta_leaf_reads": 13,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.903226,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d5_b2_1/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 13.0,
+            "alpha_beta_value": 13.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 23,
+            "alpha_beta_cutoffs": 4,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 11,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.741935,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d5_b2_2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "leaf_values_seed": 912911677,
+        "fingerprint": "f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b",
+        "reference_value": 10.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d5_b2_2/identity",
+            "order_mode": "identity",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 27,
+            "alpha_beta_cutoffs": 2,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 13,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.870968,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d5_b2_2/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 26,
+            "alpha_beta_cutoffs": 5,
+            "alpha_beta_pruned_edges": 3,
+            "alpha_beta_leaf_reads": 12,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.83871,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d5_b2_2/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 26,
+            "alpha_beta_cutoffs": 5,
+            "alpha_beta_pruned_edges": 3,
+            "alpha_beta_leaf_reads": 12,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.83871,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d5_b2_2/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 28,
+            "alpha_beta_cutoffs": 2,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 14,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.903226,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d5_b2_3",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "leaf_values_seed": 2225800733,
+        "fingerprint": "36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2",
+        "reference_value": 9.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d5_b2_3/identity",
+            "order_mode": "identity",
+            "minimax_value": 9.0,
+            "alpha_beta_value": 9.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 29,
+            "alpha_beta_cutoffs": 6,
+            "alpha_beta_pruned_edges": 2,
+            "alpha_beta_leaf_reads": 14,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.935484,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d5_b2_3/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 9.0,
+            "alpha_beta_value": 9.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 25,
+            "alpha_beta_cutoffs": 4,
+            "alpha_beta_pruned_edges": 4,
+            "alpha_beta_leaf_reads": 11,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.806452,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d5_b2_3/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 9.0,
+            "alpha_beta_value": 9.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 25,
+            "alpha_beta_cutoffs": 4,
+            "alpha_beta_pruned_edges": 4,
+            "alpha_beta_leaf_reads": 11,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.806452,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d5_b2_3/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 9.0,
+            "alpha_beta_value": 9.0,
+            "minimax_visited": 31,
+            "alpha_beta_visited": 30,
+            "alpha_beta_cutoffs": 6,
+            "alpha_beta_pruned_edges": 1,
+            "alpha_beta_leaf_reads": 15,
+            "minimax_leaf_reads": 16,
+            "visit_ratio": 0.967742,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d5_b3_0",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "leaf_values_seed": 801828239,
+        "fingerprint": "55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254",
+        "reference_value": 6.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d5_b3_0/identity",
+            "order_mode": "identity",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 71,
+            "alpha_beta_cutoffs": 16,
+            "alpha_beta_pruned_edges": 23,
+            "alpha_beta_leaf_reads": 40,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.586777,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d5_b3_0/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 79,
+            "alpha_beta_cutoffs": 10,
+            "alpha_beta_pruned_edges": 12,
+            "alpha_beta_leaf_reads": 49,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.652893,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d5_b3_0/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 84,
+            "alpha_beta_cutoffs": 14,
+            "alpha_beta_pruned_edges": 19,
+            "alpha_beta_leaf_reads": 50,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.694215,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d5_b3_0/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 6.0,
+            "alpha_beta_value": 6.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 81,
+            "alpha_beta_cutoffs": 16,
+            "alpha_beta_pruned_edges": 13,
+            "alpha_beta_leaf_reads": 50,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.669421,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d5_b3_1",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "leaf_values_seed": 578835012,
+        "fingerprint": "821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a",
+        "reference_value": 7.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d5_b3_1/identity",
+            "order_mode": "identity",
+            "minimax_value": 7.0,
+            "alpha_beta_value": 7.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 69,
+            "alpha_beta_cutoffs": 16,
+            "alpha_beta_pruned_edges": 22,
+            "alpha_beta_leaf_reads": 39,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.570248,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d5_b3_1/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 7.0,
+            "alpha_beta_value": 7.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 90,
+            "alpha_beta_cutoffs": 13,
+            "alpha_beta_pruned_edges": 16,
+            "alpha_beta_leaf_reads": 55,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.743802,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d5_b3_1/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 7.0,
+            "alpha_beta_value": 7.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 77,
+            "alpha_beta_cutoffs": 13,
+            "alpha_beta_pruned_edges": 17,
+            "alpha_beta_leaf_reads": 46,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.636364,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d5_b3_1/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 7.0,
+            "alpha_beta_value": 7.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 80,
+            "alpha_beta_cutoffs": 16,
+            "alpha_beta_pruned_edges": 11,
+            "alpha_beta_leaf_reads": 50,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.661157,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d5_b3_2",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "leaf_values_seed": 3090387877,
+        "fingerprint": "bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974",
+        "reference_value": 8.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d5_b3_2/identity",
+            "order_mode": "identity",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 81,
+            "alpha_beta_cutoffs": 15,
+            "alpha_beta_pruned_edges": 16,
+            "alpha_beta_leaf_reads": 49,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.669421,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d5_b3_2/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 56,
+            "alpha_beta_cutoffs": 11,
+            "alpha_beta_pruned_edges": 17,
+            "alpha_beta_leaf_reads": 32,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.46281,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d5_b3_2/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 81,
+            "alpha_beta_cutoffs": 15,
+            "alpha_beta_pruned_edges": 19,
+            "alpha_beta_leaf_reads": 48,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.669421,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d5_b3_2/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 8.0,
+            "alpha_beta_value": 8.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 90,
+            "alpha_beta_cutoffs": 15,
+            "alpha_beta_pruned_edges": 7,
+            "alpha_beta_leaf_reads": 58,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.743802,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d5_b3_3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "leaf_values_seed": 3192232522,
+        "fingerprint": "c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9",
+        "reference_value": 10.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d5_b3_3/identity",
+            "order_mode": "identity",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 103,
+            "alpha_beta_cutoffs": 16,
+            "alpha_beta_pruned_edges": 18,
+            "alpha_beta_leaf_reads": 63,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.85124,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d5_b3_3/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 59,
+            "alpha_beta_cutoffs": 11,
+            "alpha_beta_pruned_edges": 17,
+            "alpha_beta_leaf_reads": 34,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.487603,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d5_b3_3/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 71,
+            "alpha_beta_cutoffs": 15,
+            "alpha_beta_pruned_edges": 20,
+            "alpha_beta_leaf_reads": 41,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.586777,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d5_b3_3/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 121,
+            "alpha_beta_visited": 113,
+            "alpha_beta_cutoffs": 16,
+            "alpha_beta_pruned_edges": 8,
+            "alpha_beta_leaf_reads": 73,
+            "minimax_leaf_reads": 81,
+            "visit_ratio": 0.933884,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d6_b3_0",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "leaf_values_seed": 1304579170,
+        "fingerprint": "e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21",
+        "reference_value": 10.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d6_b3_0/identity",
+            "order_mode": "identity",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 135,
+            "alpha_beta_cutoffs": 38,
+            "alpha_beta_pruned_edges": 58,
+            "alpha_beta_leaf_reads": 71,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.370879,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d6_b3_0/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 194,
+            "alpha_beta_cutoffs": 42,
+            "alpha_beta_pruned_edges": 50,
+            "alpha_beta_leaf_reads": 113,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.532967,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d6_b3_0/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 193,
+            "alpha_beta_cutoffs": 48,
+            "alpha_beta_pruned_edges": 63,
+            "alpha_beta_leaf_reads": 108,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.53022,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d6_b3_0/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 166,
+            "alpha_beta_cutoffs": 38,
+            "alpha_beta_pruned_edges": 27,
+            "alpha_beta_leaf_reads": 102,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.456044,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d6_b3_1",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "leaf_values_seed": 667395634,
+        "fingerprint": "da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead",
+        "reference_value": 10.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d6_b3_1/identity",
+            "order_mode": "identity",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 212,
+            "alpha_beta_cutoffs": 48,
+            "alpha_beta_pruned_edges": 71,
+            "alpha_beta_leaf_reads": 118,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.582418,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d6_b3_1/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 160,
+            "alpha_beta_cutoffs": 45,
+            "alpha_beta_pruned_edges": 60,
+            "alpha_beta_leaf_reads": 87,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.43956,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d6_b3_1/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 196,
+            "alpha_beta_cutoffs": 47,
+            "alpha_beta_pruned_edges": 57,
+            "alpha_beta_leaf_reads": 112,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.538462,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d6_b3_1/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 10.0,
+            "alpha_beta_value": 10.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 250,
+            "alpha_beta_cutoffs": 48,
+            "alpha_beta_pruned_edges": 33,
+            "alpha_beta_leaf_reads": 156,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.686813,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d6_b3_2",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "leaf_values_seed": 1611106614,
+        "fingerprint": "86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1",
+        "reference_value": 11.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d6_b3_2/identity",
+            "order_mode": "identity",
+            "minimax_value": 11.0,
+            "alpha_beta_value": 11.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 168,
+            "alpha_beta_cutoffs": 42,
+            "alpha_beta_pruned_edges": 61,
+            "alpha_beta_leaf_reads": 92,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.461538,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d6_b3_2/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 11.0,
+            "alpha_beta_value": 11.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 175,
+            "alpha_beta_cutoffs": 44,
+            "alpha_beta_pruned_edges": 51,
+            "alpha_beta_leaf_reads": 100,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.480769,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d6_b3_2/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 11.0,
+            "alpha_beta_value": 11.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 143,
+            "alpha_beta_cutoffs": 40,
+            "alpha_beta_pruned_edges": 56,
+            "alpha_beta_leaf_reads": 77,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.392857,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d6_b3_2/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 11.0,
+            "alpha_beta_value": 11.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 191,
+            "alpha_beta_cutoffs": 42,
+            "alpha_beta_pruned_edges": 38,
+            "alpha_beta_leaf_reads": 115,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.524725,
+            "same_value": true
+          }
+        }
+      },
+      {
+        "label": "tree_d6_b3_3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "leaf_values_seed": 2772045470,
+        "fingerprint": "f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e",
+        "reference_value": 12.0,
+        "by_order": {
+          "identity": {
+            "label": "tree_d6_b3_3/identity",
+            "order_mode": "identity",
+            "minimax_value": 12.0,
+            "alpha_beta_value": 12.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 152,
+            "alpha_beta_cutoffs": 43,
+            "alpha_beta_pruned_edges": 65,
+            "alpha_beta_leaf_reads": 80,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.417582,
+            "same_value": true
+          },
+          "reversed": {
+            "label": "tree_d6_b3_3/reversed",
+            "order_mode": "reversed",
+            "minimax_value": 12.0,
+            "alpha_beta_value": 12.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 130,
+            "alpha_beta_cutoffs": 36,
+            "alpha_beta_pruned_edges": 54,
+            "alpha_beta_leaf_reads": 69,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.357143,
+            "same_value": true
+          },
+          "rotate": {
+            "label": "tree_d6_b3_3/rotate",
+            "order_mode": "rotate",
+            "minimax_value": 12.0,
+            "alpha_beta_value": 12.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 184,
+            "alpha_beta_cutoffs": 42,
+            "alpha_beta_pruned_edges": 51,
+            "alpha_beta_leaf_reads": 106,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.505495,
+            "same_value": true
+          },
+          "greedy": {
+            "label": "tree_d6_b3_3/greedy",
+            "order_mode": "greedy",
+            "minimax_value": 12.0,
+            "alpha_beta_value": 12.0,
+            "minimax_visited": 364,
+            "alpha_beta_visited": 180,
+            "alpha_beta_cutoffs": 43,
+            "alpha_beta_pruned_edges": 37,
+            "alpha_beta_leaf_reads": 108,
+            "minimax_leaf_reads": 243,
+            "visit_ratio": 0.494505,
+            "same_value": true
+          }
+        }
+      }
+    ],
+    "pruning_ratio_distribution": {
+      "metric": "alpha_beta_visited / minimax_visited（identity 顺序）",
+      "min": 0.370879,
+      "max": 1.0,
+      "mean": 0.762342,
+      "stdev": 0.180813,
+      "n": 24
+    },
+    "order_effect_self_designed": [
+      {
+        "label": "tree_d3_b2_0",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "visited_identity": 7,
+        "visited_reversed": 6,
+        "visited_greedy": 7,
+        "spread": 1,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d3_b2_1",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "visited_identity": 6,
+        "visited_reversed": 7,
+        "visited_greedy": 7,
+        "spread": 1,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d3_b2_2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "visited_identity": 7,
+        "visited_reversed": 7,
+        "visited_greedy": 7,
+        "spread": 0,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d3_b2_3",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "visited_identity": 7,
+        "visited_reversed": 7,
+        "visited_greedy": 7,
+        "spread": 0,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d3_b3_0",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "visited_identity": 11,
+        "visited_reversed": 13,
+        "visited_greedy": 12,
+        "spread": 2,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d3_b3_1",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "visited_identity": 13,
+        "visited_reversed": 11,
+        "visited_greedy": 13,
+        "spread": 2,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d3_b3_2",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "visited_identity": 10,
+        "visited_reversed": 13,
+        "visited_greedy": 12,
+        "spread": 3,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d3_b3_3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "visited_identity": 10,
+        "visited_reversed": 13,
+        "visited_greedy": 12,
+        "spread": 3,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d4_b3_0",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "visited_identity": 33,
+        "visited_reversed": 33,
+        "visited_greedy": 38,
+        "spread": 7,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d4_b3_1",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "visited_identity": 33,
+        "visited_reversed": 29,
+        "visited_greedy": 37,
+        "spread": 8,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d4_b3_2",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "visited_identity": 29,
+        "visited_reversed": 32,
+        "visited_greedy": 35,
+        "spread": 7,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d4_b3_3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "visited_identity": 30,
+        "visited_reversed": 27,
+        "visited_greedy": 33,
+        "spread": 6,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d5_b2_0",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "visited_identity": 27,
+        "visited_reversed": 23,
+        "visited_greedy": 28,
+        "spread": 5,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d5_b2_1",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "visited_identity": 23,
+        "visited_reversed": 28,
+        "visited_greedy": 23,
+        "spread": 5,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d5_b2_2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "visited_identity": 27,
+        "visited_reversed": 26,
+        "visited_greedy": 28,
+        "spread": 2,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d5_b2_3",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "visited_identity": 29,
+        "visited_reversed": 25,
+        "visited_greedy": 30,
+        "spread": 5,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d5_b3_0",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "visited_identity": 71,
+        "visited_reversed": 79,
+        "visited_greedy": 81,
+        "spread": 13,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d5_b3_1",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "visited_identity": 69,
+        "visited_reversed": 90,
+        "visited_greedy": 80,
+        "spread": 21,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d5_b3_2",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "visited_identity": 81,
+        "visited_reversed": 56,
+        "visited_greedy": 90,
+        "spread": 34,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d5_b3_3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "visited_identity": 103,
+        "visited_reversed": 59,
+        "visited_greedy": 113,
+        "spread": 54,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d6_b3_0",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "visited_identity": 135,
+        "visited_reversed": 194,
+        "visited_greedy": 166,
+        "spread": 59,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d6_b3_1",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "visited_identity": 212,
+        "visited_reversed": 160,
+        "visited_greedy": 250,
+        "spread": 90,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d6_b3_2",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "visited_identity": 168,
+        "visited_reversed": 175,
+        "visited_greedy": 191,
+        "spread": 48,
+        "value_all_same": true
+      },
+      {
+        "label": "tree_d6_b3_3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "visited_identity": 152,
+        "visited_reversed": 130,
+        "visited_greedy": 180,
+        "spread": 54,
+        "value_all_same": true
+      }
+    ],
+    "boundary_cases": [
+      {
+        "case": "single_leaf_root",
+        "value": 7.0,
+        "expected": 7,
+        "note": "只有根节点的单叶树"
+      },
+      {
+        "case": "single_child_nodes",
+        "value": 5.0,
+        "expected": 5,
+        "note": "内部节点只有一个子节点"
+      },
+      {
+        "case": "all_ties",
+        "value": 4.0,
+        "expected": 4,
+        "note": "多个子节点取值相同（平局）"
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "label": "题面树先序叶值为 3,5,6,9,6,9,1,2（第 9 页示意图：max2 被两个 MIN 共享）",
+      "passed": true,
+      "detail": "actual=[3.0, 5.0, 6.0, 9.0, 6.0, 9.0, 1.0, 2.0] expected=[3, 5, 6, 9, 6, 9, 1, 2]"
+    },
+    {
+      "label": "题面树叶子引用数为 8（共享子树出现两次）",
+      "passed": true,
+      "detail": "actual=8 expected=8"
+    },
+    {
+      "label": "题面树唯一叶子对象数为 6（max2 的两对叶子被共享）",
+      "passed": true,
+      "detail": "actual=6 expected=6"
+    },
+    {
+      "label": "题面树唯一对象数为 12（1 根 + 2 MIN + 3 MAX + 6 叶 = 12，max2 被共享）",
+      "passed": true,
+      "detail": "actual=12 expected=12"
+    },
+    {
+      "label": "字面结构（8 叶变体）唯一对象数为 15",
+      "passed": true,
+      "detail": "actual=15 expected=15"
+    },
+    {
+      "label": "MAX 层取值为 5, 9, 2（与 PDF 第 13 页叙述一致）",
+      "passed": true,
+      "detail": "actual=[5.0, 9.0, 2.0] expected=[5.0, 9.0, 2.0]"
+    },
+    {
+      "label": "MIN 层取值为 5, 2（与 PDF 第 13 页叙述一致）",
+      "passed": true,
+      "detail": "actual=[5.0, 2.0] expected=[5.0, 2.0]"
+    },
+    {
+      "label": "第二个 MIN 的第一个子节点与第一个 MIN 的第二个子节点是同一对象（第 9 页示意图的共享结构）",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "8 叶字面输入变体的根值同样是 5（故期望输出无法区分两种解释）",
+      "passed": true,
+      "detail": "actual=5.0 expected=5"
+    },
+    {
+      "label": "8 叶变体的 MAX 层取值为 5,9,9,2，与第 13 页叙述不符（说明它是输入侧的笔误）",
+      "passed": true,
+      "detail": "actual=[5.0, 9.0, 9.0, 2.0]"
+    },
+    {
+      "label": "同一份 JSON 用例：共享建树（6 叶）与字面建树（8 叶）根值相同",
+      "passed": true,
+      "detail": "actual=5.0 expected=5.0"
+    },
+    {
+      "label": "共享建树把结构相同的子树合并（唯一对象数 12 < 15）",
+      "passed": true,
+      "detail": "dedup=12 literal=15"
+    },
+    {
+      "label": "Minimax 结果与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual=5.0 expected=5"
+    },
+    {
+      "label": "Alpha-beta 结果与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual=5.0 expected=5"
+    },
+    {
+      "label": "Minimax 与 Alpha-beta 结果相同（剪枝不改变博弈值）",
+      "passed": true,
+      "detail": "actual=5.0 expected=5.0"
+    },
+    {
+      "label": "与独立朴素递归实现一致（交叉核对）",
+      "passed": true,
+      "detail": "actual=5.0 expected=5"
+    },
+    {
+      "label": "与 PDF 自述的推导一致（MAX->5,9,2；MIN->5,2；根 MAX->5）",
+      "passed": true,
+      "detail": "actual=5.0 expected=5"
+    },
+    {
+      "label": "题面树上 Alpha-beta 的访问节点数**少于** Minimax（剪枝确实发生）",
+      "passed": true,
+      "detail": "minimax=15 alpha_beta=14"
+    },
+    {
+      "label": "题面树上四种访问顺序的 Alpha-beta 结果完全相同（顺序不改变博弈值）",
+      "passed": true,
+      "detail": "values={5.0}"
+    },
+    {
+      "label": "tree_d3_b2_0[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d3_b2_0[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d3_b2_0[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d3_b2_0[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d3_b2_0：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d3_b2_0[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d3_b2_1[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d3_b2_1[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d3_b2_1[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d3_b2_1[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d3_b2_1：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d3_b2_1[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d3_b2_2[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=4.0 expected=4.0"
+    },
+    {
+      "label": "tree_d3_b2_2[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=4.0 expected=4.0"
+    },
+    {
+      "label": "tree_d3_b2_2[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=4.0 expected=4.0"
+    },
+    {
+      "label": "tree_d3_b2_2[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=4.0 expected=4.0"
+    },
+    {
+      "label": "tree_d3_b2_2：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=4.0 expected=4.0"
+    },
+    {
+      "label": "tree_d3_b2_2[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d3_b2_3[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=17.0 expected=17.0"
+    },
+    {
+      "label": "tree_d3_b2_3[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=17.0 expected=17.0"
+    },
+    {
+      "label": "tree_d3_b2_3[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=17.0 expected=17.0"
+    },
+    {
+      "label": "tree_d3_b2_3[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=17.0 expected=17.0"
+    },
+    {
+      "label": "tree_d3_b2_3：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=17.0 expected=17.0"
+    },
+    {
+      "label": "tree_d3_b2_3[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d3_b3_0[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_0[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_0[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_0[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_0：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_0[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d3_b3_1[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_1[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_1[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_1[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_1：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d3_b3_1[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d3_b3_2[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_2[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_2[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_2[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_2：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_2[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d3_b3_3[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_3[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_3[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_3[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_3：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d3_b3_3[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d4_b3_0[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d4_b3_0[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d4_b3_0[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d4_b3_0[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d4_b3_0：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d4_b3_0[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d4_b3_1[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d4_b3_1[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d4_b3_1[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d4_b3_1[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d4_b3_1：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d4_b3_1[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d4_b3_2[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d4_b3_2[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d4_b3_2[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d4_b3_2[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d4_b3_2：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d4_b3_2[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d4_b3_3[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d4_b3_3[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d4_b3_3[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d4_b3_3[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d4_b3_3：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=15.0 expected=15.0"
+    },
+    {
+      "label": "tree_d4_b3_3[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d5_b2_0[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b2_0[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b2_0[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b2_0[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b2_0：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b2_0[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d5_b2_1[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=13.0 expected=13.0"
+    },
+    {
+      "label": "tree_d5_b2_1[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=13.0 expected=13.0"
+    },
+    {
+      "label": "tree_d5_b2_1[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=13.0 expected=13.0"
+    },
+    {
+      "label": "tree_d5_b2_1[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=13.0 expected=13.0"
+    },
+    {
+      "label": "tree_d5_b2_1：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=13.0 expected=13.0"
+    },
+    {
+      "label": "tree_d5_b2_1[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d5_b2_2[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b2_2[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b2_2[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b2_2[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b2_2：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b2_2[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d5_b2_3[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d5_b2_3[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d5_b2_3[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d5_b2_3[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d5_b2_3：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=9.0 expected=9.0"
+    },
+    {
+      "label": "tree_d5_b2_3[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d5_b3_0[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d5_b3_0[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d5_b3_0[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d5_b3_0[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d5_b3_0：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=6.0 expected=6.0"
+    },
+    {
+      "label": "tree_d5_b3_0[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d5_b3_1[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0"
+    },
+    {
+      "label": "tree_d5_b3_1[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0"
+    },
+    {
+      "label": "tree_d5_b3_1[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0"
+    },
+    {
+      "label": "tree_d5_b3_1[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0"
+    },
+    {
+      "label": "tree_d5_b3_1：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0"
+    },
+    {
+      "label": "tree_d5_b3_1[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d5_b3_2[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b3_2[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b3_2[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b3_2[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b3_2：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=8.0 expected=8.0"
+    },
+    {
+      "label": "tree_d5_b3_2[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d5_b3_3[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b3_3[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b3_3[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b3_3[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b3_3：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d5_b3_3[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d6_b3_0[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_0[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_0[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_0[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_0：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_0[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d6_b3_1[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_1[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_1[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_1[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_1：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=10.0 expected=10.0"
+    },
+    {
+      "label": "tree_d6_b3_1[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d6_b3_2[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=11.0 expected=11.0"
+    },
+    {
+      "label": "tree_d6_b3_2[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=11.0 expected=11.0"
+    },
+    {
+      "label": "tree_d6_b3_2[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=11.0 expected=11.0"
+    },
+    {
+      "label": "tree_d6_b3_2[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=11.0 expected=11.0"
+    },
+    {
+      "label": "tree_d6_b3_2：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=11.0 expected=11.0"
+    },
+    {
+      "label": "tree_d6_b3_2[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "tree_d6_b3_3[identity]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d6_b3_3[reversed]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d6_b3_3[rotate]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d6_b3_3[greedy]：Minimax 与 Alpha-beta 同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d6_b3_3：Minimax 与朴素递归参照实现同值",
+      "passed": true,
+      "detail": "actual=12.0 expected=12.0"
+    },
+    {
+      "label": "tree_d6_b3_3[identity]：Alpha-beta 访问节点数不超过 Minimax",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "自设树用例数",
+      "passed": true,
+      "detail": "actual=24 expected=24"
+    },
+    {
+      "label": "自设树规模确实大于题面树（叶子数 > 6 的用例）",
+      "passed": true,
+      "detail": "叶子数=[4, 9, 16, 27, 81, 243]"
+    },
+    {
+      "label": "全部自设树在四种访问顺序下 U 均不变（顺序不影响结果）",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "存在访问顺序**确实**改变开销的自设树（否则顺序对照形同虚设）",
+      "passed": true,
+      "detail": "有差异的用例数=22/24"
+    },
+    {
+      "label": "边界：单叶树返回该叶值",
+      "passed": true,
+      "detail": "actual=7.0 expected=7"
+    },
+    {
+      "label": "边界：单子节点链回传正确（min(1)=1, min(5)=5, max=5）",
+      "passed": true,
+      "detail": "actual=5.0 expected=5"
+    },
+    {
+      "label": "边界：平局时返回该值（取先出现者）",
+      "passed": true,
+      "detail": "actual=4.0 expected=4"
+    },
+    {
+      "label": "U4：6 叶结构（本实现）与 8 叶字面输入结构的根值相同",
+      "passed": true,
+      "detail": "actual=5.0 expected=5.0"
+    }
+  ],
+  "summary": {
+    "assertions_total": 171,
+    "assertions_passed": 171,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "U4 的实测结论（**修正了初版记录，也修正了本次中途的一个错误推断**）：PDF 内部有三种结构口径：(A) 第 10-11 页 JSON 字面 = 8 叶、15 个对象；(B) 第 12 页构建代码字面（min2 复用 max2）= 8 个叶子对象、12 个对象；(C) 第 9 页示意图 + 第 13 页推导 = 6 叶、12 个对象。**三者的 MAX 层取值都是 5, 9, 2，根值都是 5** —— 我起初以为「只有 6 叶结构能复现第 13 页的 5, 9, 2」，实测证明该推断是错的：8 叶结构同样得到 5, 9, 2（因为它多出的 max4 取值 9，与 max2 相同，MIN 层取 min 后不影响结果）。因此**期望输出无法区分三种口径**，唯一可机械区分的是结构：叶子读取数 8 vs 8、唯一对象数 15 vs 12 vs 12。本实现采用 (C)（与示意图和第 12 页代码一致、对象数 12），并把 (A) 单独留证（cases/pdf_examples/q3_tree_pdf_input_variant.json）。这是一处「结构歧义」而非「答案歧义」，报告以脚注说明即可。",
+    "规模限制（实测）：题面树 Minimax 访问 15 个节点，Alpha-beta 访问 14 个，仅减少 1 个（6.7%）。**该用例不足以论证剪枝收益**，报告中的剪枝结论必须使用下方自设的更大规模树。",
+    "题面树四种顺序的 Alpha-beta 访问节点数：{'identity': 14, 'reversed': 14, 'rotate': 14, 'greedy': 14} —— 差异很小，同样说明该用例不适合论证顺序效应。",
+    "剪枝收益（Alpha-beta / Minimax 访问节点数）在 24 个自设树上：最小 0.371、最大 1.000、均值 0.762。规模效应见报告中「深度/分支 × 剪枝」一图。",
+    "顺序效应（实测）：22/24 个自设树上，四种顺序的 Alpha-beta 访问节点数不同；最大极差 90 个节点（用例 tree_d6_b3_1）。",
+    "边界用例均为**自设**（PDF 题目三未给出退化结构样例）。",
+    "U4 处理：正式实现采用 6 叶结构（与第 9 页示意图、第 12 页代码、第 13 页推导一致），8 叶字面输入单独留证；两者根值均为 5.0。报告需以脚注说明该不一致，并说明「为何选择 6 叶」的证据是第 13 页的逐层推导。"
+  ]
+}

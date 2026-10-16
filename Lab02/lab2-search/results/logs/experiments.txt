@@ -1,0 +1,606 @@
+========================================================================================
+产物: experiments
+阶段: 阶段 4-5   脚本: run_experiments.py
+命令: python run_experiments.py --group all
+开始: 2026-10-16T01:40:21+08:00   结束: 2026-10-16T01:40:22+08:00   耗时: 0.5848s
+退出码: 0
+环境: python 3.11.17 | Windows-10-10.0.26200-SP0 | conda=lab2-search
+========================================================================================
+
+[输入与指纹]
+  seed                         42
+  cases_sha256                 {"q1": "0431c5f9b528f794a99fcdca7d445cfda4603bab460ca51567e178c5ebb35ea8", "q2": "93e09b0bb73a7ca8bfed790bfddc4cca306634079778dcae6761de8bd12d1348", "q3": "6...
+
+[参数]
+  baseline_config              {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2}
+  factor_keys                  ["heuristic", "queue_kind", "tie_break", "weight", "order", "pruning", "depth"]
+  multi_factor_allowed         {"d1": "对照组内刻意换启发函数，但同一行内 heuristic/queue/tie_break 的其余项固定"}
+  metric_policy                {"primary_metric": "expanded_nodes", "primary_metric_note": "节点扩展数；确定性、可复算，不受机器负载影响", "secondary_metrics": ["generated_nodes", "pruned_nodes", "max_frontier_...
+  self_designed_cases_note     D1(大规模)/D3/D5/D7/E1/E2/E4 使用自设用例；输入指纹随产物落盘，可按 selfcases.py 的种子确定性重建。
+
+[结果]
+  groups_requested             ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "e1", "e2", "e3", "e4"]
+  d1_pdf_maze: 3 条记录
+    group | label | input | changed | config | delta_check | found | cost | steps | path | expanded_nodes | generated_nodes | pushes | duplicate_pops | max_frontier_size | max_depth | expansion_order_sha256
+    D1 | pdf_maze/zero | 题面迷宫 5x5 | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | True | 7.0 | 7 | [[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]] | 17 | 18 | 18 | 0 | 3 | 7 | 20f2fde11e2c18fdc2b642a4898e1b3d517c82880e86f2959fcb019d3d7a79c9
+    D1 | pdf_maze/manhattan | 题面迷宫 5x5 | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | True | 7.0 | 7 | [[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]] | 14 | 16 | 17 | 0 | 4 | 7 | 57b2f7d6b8922ac3618cd83b607c9c596978535d495af1a5c80d86e9a9cb94f2
+    D1 | pdf_maze/min_weight | 题面迷宫 5x5 | {"heuristic": "min_weight"} | {"heuristic": "min_weight", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | True | 7.0 | 7 | [[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]] | 17 | 18 | 18 | 0 | 3 | 7 | 20f2fde11e2c18fdc2b642a4898e1b3d517c82880e86f2959fcb019d3d7a79c9
+  d1_large_mazes: 24 条记录
+    group | label | input | input_fingerprint | changed | config | delta_check | found | cost | steps | path | expanded_nodes | generated_nodes | pushes | duplicate_pops | max_frontier_size | max_depth | expansion_order_sha256
+    D1 | maze_41x41_p20_reach_0/zero | 41x41 自设迷宫（wall_prob=0.20, reachable=True） | b45908e2626ed958590803e5b80c94bf456d85e103d1c80346d959c7941f1bbd | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [5, 1], [5, 2], [5, 3], [6, 3], [7, 3], [7, 4], [8, 4], [8, 5], [9, 5], [9, 6], [10, 6], [11, 6], [12, 6], [... | 1355 | 2130 | 1355 | 0 | 41 | 80 | ac72dd5b594d5ba69cee98b61db7b6a651d790997d0da695a9736971643f9007
+    D1 | maze_41x41_p20_reach_0/manhattan | 41x41 自设迷宫（wall_prob=0.20, reachable=True） | b45908e2626ed958590803e5b80c94bf456d85e103d1c80346d959c7941f1bbd | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [5, 1], [5, 2], [5, 3], [6, 3], [7, 3], [7, 4], [8, 4], [8, 5], [9, 5], [9, 6], [10, 6], [11, 6], [12, 6], [... | 203 | 350 | 319 | 0 | 117 | 80 | 7862c69df12e0ffcdc72be093bfd0271c6b75868da4c4ec5e57fd6da564b98ca
+    D1 | maze_41x41_p20_sealed_1/zero | 41x41 自设迷宫（wall_prob=0.20, reachable=False） | 202a71c22de58b797d32463188ae9c9cd952a0367b12c0ba88276cd605f11a30 | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | False | None | None | [] | 0 | 0 | 0 | 0 | 0 | 0 | 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+    D1 | maze_41x41_p20_sealed_1/manhattan | 41x41 自设迷宫（wall_prob=0.20, reachable=False） | 202a71c22de58b797d32463188ae9c9cd952a0367b12c0ba88276cd605f11a30 | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | False | None | None | [] | 0 | 0 | 0 | 0 | 0 | 0 | 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+    D1 | maze_41x41_p20_reach_2/zero | 41x41 自设迷宫（wall_prob=0.20, reachable=True） | 44f4a43b7b9c75c0ff6f804aa084d1c2fe53ea0a92b19e5a7cb04df398adfd1c | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1], [11, 1], [12, 1], [13, 1], [13, 2], [14, 2], [14, 3], [15, ... | 1353 | 2116 | 1353 | 0 | 36 | 80 | 511720cbf88302473b1ba666cf1ff1bc6b26d35ae7adc28f3d56bc67402e1d1d
+    D1 | maze_41x41_p20_reach_2/manhattan | 41x41 自设迷宫（wall_prob=0.20, reachable=True） | 44f4a43b7b9c75c0ff6f804aa084d1c2fe53ea0a92b19e5a7cb04df398adfd1c | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1], [11, 1], [12, 1], [13, 1], [13, 2], [14, 2], [14, 3], [15, ... | 179 | 322 | 297 | 0 | 119 | 80 | 453e29b16e63510300b9b8d12013df8482c1cdd7462e8019bf20e1cdd294de05
+    D1 | maze_41x41_p20_sealed_3/zero | 41x41 自设迷宫（wall_prob=0.20, reachable=False） | 6a5c336fcbee792665abd0f7b16be6f7ae7cf29b2c9b5825f8a5fb988f10775b | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | False | None | None | [] | 1319 | 2020 | 1319 | 0 | 40 | 82 | 32588ce96cae776e3cf3f933db5e2a999649cbd9376a59f5e878db096a10b111
+    D1 | maze_41x41_p20_sealed_3/manhattan | 41x41 自设迷宫（wall_prob=0.20, reachable=False） | 6a5c336fcbee792665abd0f7b16be6f7ae7cf29b2c9b5825f8a5fb988f10775b | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | False | None | None | [] | 1319 | 2020 | 1670 | 351 | 337 | 82 | d047cf32ceec9159dc8ee72149556e738b9c8c5d582a3a9e0eb12f95534ec862
+    D1 | maze_41x41_p20_reach_4/zero | 41x41 自设迷宫（wall_prob=0.20, reachable=True） | 6c99cd2206df1a15632b6451c7f9f5500820bb9adb5142ff260f626d6a939cf9 | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [7, 2], [7, 3], [8, 3], [9, 3], [10, 3], [11, 3], [12, 3], [13, 3], [14, 3], [15, 3]... | 1369 | 2186 | 1369 | 0 | 38 | 80 | 72bac4220003ae192f0c3242951e92947d19ccfb9975b87eb5771828fd7c8134
+    D1 | maze_41x41_p20_reach_4/manhattan | 41x41 自设迷宫（wall_prob=0.20, reachable=True） | 6c99cd2206df1a15632b6451c7f9f5500820bb9adb5142ff260f626d6a939cf9 | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [7, 2], [7, 3], [8, 3], [9, 3], [10, 3], [11, 3], [12, 3], [13, 3], [14, 3], [15, 3]... | 156 | 299 | 268 | 0 | 113 | 80 | 14c5ec2c059d785579a71daf40edfc7ad1ef0f266cc908c5890799cf70642b10
+    D1 | maze_41x41_p20_sealed_5/zero | 41x41 自设迷宫（wall_prob=0.20, reachable=False） | f520388c08e89d1e2c797b17f3a81f2c5a6c13790473ff4b58c3ce47ba9ffb32 | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | False | None | None | [] | 1330 | 2062 | 1330 | 0 | 47 | 78 | e51a7e742149daf4f2d48d298ef488115b7b14aec13284d94dd79c6d1d68baf4
+    D1 | maze_41x41_p20_sealed_5/manhattan | 41x41 自设迷宫（wall_prob=0.20, reachable=False） | f520388c08e89d1e2c797b17f3a81f2c5a6c13790473ff4b58c3ce47ba9ffb32 | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | False | None | None | [] | 1330 | 2062 | 1757 | 427 | 416 | 78 | efebf2c9fb7745cb16d4e04333f8fb5a7eff65e9fe745250b92b51ee306c1e0d
+    D1 | maze_41x41_p35_reach_0/zero | 41x41 自设迷宫（wall_prob=0.35, reachable=True） | 2f86134f3934f096aa0a3363fa32c81b5f4d6f7777cd2d088cf31618dd8c59e5 | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | True | 80.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 1028 | 1397 | 1031 | 0 | 29 | 80 | 35b05e8e14861b228b3ce34802493a03aea4c3f4b333b322e3dc53c1ce7ff68a
+    D1 | maze_41x41_p35_reach_0/manhattan | 41x41 自设迷宫（wall_prob=0.35, reachable=True） | 2f86134f3934f096aa0a3363fa32c81b5f4d6f7777cd2d088cf31618dd8c59e5 | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | True | 80.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 217 | 340 | 312 | 0 | 96 | 80 | 8245cd82f072bf2bccc547c67d590858c2fa672f91edd15348335c32a3fd5a18
+    D1 | maze_41x41_p35_sealed_1/zero | 41x41 自设迷宫（wall_prob=0.35, reachable=False） | a648e6754a4172a18fdb32ac69932aad317feb12852229b87363da16d9e40208 | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | False | None | None | [] | 925 | 1246 | 925 | 0 | 27 | 96 | 47b0c6a73832bb852f790c59f35e02eb79b1d0df731ba32607f7230f8add3eb3
+    D1 | maze_41x41_p35_sealed_1/manhattan | 41x41 自设迷宫（wall_prob=0.35, reachable=False） | a648e6754a4172a18fdb32ac69932aad317feb12852229b87363da16d9e40208 | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | False | None | None | [] | 925 | 1246 | 1033 | 108 | 125 | 96 | 5dd57b348253586174db029cc52d8b99184a0ee895c2cf80fd714eb559cd3956
+    D1 | maze_41x41_p35_reach_2/zero | 41x41 自设迷宫（wall_prob=0.35, reachable=True） | 1a109df5ce66b2e0b893cda8dd26b767457a920f6c515427119142f9ed02e08d | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | True | 80.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 884 | 1154 | 890 | 0 | 23 | 80 | 312b28f17d65d15fd13d806e527ac30651bc81bbe4f60918d920217b3d439643
+    D1 | maze_41x41_p35_reach_2/manhattan | 41x41 自设迷宫（wall_prob=0.35, reachable=True） | 1a109df5ce66b2e0b893cda8dd26b767457a920f6c515427119142f9ed02e08d | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | True | 80.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 285 | 429 | 392 | 0 | 108 | 80 | f2dffdf92b27db0e67ba561ee6ef3bdcfcd9f31b3ba32797085fab7b01f61731
+    D1 | maze_41x41_p35_sealed_3/zero | 41x41 自设迷宫（wall_prob=0.35, reachable=False） | dd2e1b45beb304ad14769cb814bae78d7b5688e2f27c04cc795ec0f43cb0da0e | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | False | None | None | [] | 909 | 1195 | 909 | 0 | 27 | 90 | 90244100e8a12463b738dd5ed2382e82318cd2589e752499335e9e2938aa6b04
+    D1 | maze_41x41_p35_sealed_3/manhattan | 41x41 自设迷宫（wall_prob=0.35, reachable=False） | dd2e1b45beb304ad14769cb814bae78d7b5688e2f27c04cc795ec0f43cb0da0e | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | False | None | None | [] | 909 | 1195 | 1007 | 98 | 104 | 90 | 93057681fd5b470d5f716e9752c6fc917f6337561e171d708143135dd489a24e
+    D1 | maze_41x41_p35_reach_4/zero | 41x41 自设迷宫（wall_prob=0.35, reachable=True） | ead95d66508f00761ea29f5f26a6f08f0747003ccd8bcca3955a4ab36891f1aa | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | True | 80.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 1093 | 1476 | 1097 | 0 | 31 | 80 | 66197a9aa6e4169e5567a8dca66becc8a6b161ed990999a29b3783958de16c06
+    D1 | maze_41x41_p35_reach_4/manhattan | 41x41 自设迷宫（wall_prob=0.35, reachable=True） | ead95d66508f00761ea29f5f26a6f08f0747003ccd8bcca3955a4ab36891f1aa | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | True | 80.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 320 | 506 | 458 | 0 | 139 | 80 | be555bdd9d5735056a7b3f138fa11575b0f66321c43b6328c5f74155dab38716
+    D1 | maze_41x41_p35_sealed_5/zero | 41x41 自设迷宫（wall_prob=0.35, reachable=False） | 0ce140af1a6c98cae29159b3c4a3b23a4231b8e157badbeae252b12e1c00080c | {"heuristic": "zero"} | {"heuristic": "zero", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {"heuristic": "zero"}} | False | None | None | [] | 1050 | 1376 | 1050 | 0 | 26 | 98 | 1bd06c4022b63f85a98ff8b775bbd29463f5201bc326136d75d832396a8ad382
+    D1 | maze_41x41_p35_sealed_5/manhattan | 41x41 自设迷宫（wall_prob=0.35, reachable=False） | 0ce140af1a6c98cae29159b3c4a3b23a4231b8e157badbeae252b12e1c00080c | {"heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | {"undeclared": {}, "overdeclared": {}, "same_as_baseline": {}} | False | None | None | [] | 1050 | 1376 | 1136 | 86 | 105 | 98 | aa322b986a71c3c39aecb352e22fab9526e80649fe27da0de5badccf64dbf917
+  d2_queue: 8 条记录
+    group | label | changed | config | found | cost | steps | path | expanded_nodes | generated_nodes | pushes | duplicate_pops | max_frontier_size | max_depth | expansion_order_sha256
+    D2 | pdf_maze/heapq | {"queue_kind": "heapq", "heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | True | 7.0 | 7 | [[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]] | 14 | 16 | 17 | 0 | 4 | 7 | 57b2f7d6b8922ac3618cd83b607c9c596978535d495af1a5c80d86e9a9cb94f2
+    D2 | pdf_maze/linear | {"queue_kind": "linear", "heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "linear", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | True | 7.0 | 7 | [[0, 0], [0, 1], [0, 2], [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]] | 14 | 16 | 17 | 0 | 4 | 7 | 57b2f7d6b8922ac3618cd83b607c9c596978535d495af1a5c80d86e9a9cb94f2
+    D2 | maze_41x41_p20_reach_0/heapq | {"queue_kind": "heapq", "heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [5, 1], [5, 2], [5, 3], [6, 3], [7, 3], [7, 4], [8, 4], [8, 5], [9, 5], [9, 6], [10, 6], [11, 6], [12, 6], [... | 203 | 350 | 319 | 0 | 117 | 80 | 7862c69df12e0ffcdc72be093bfd0271c6b75868da4c4ec5e57fd6da564b98ca
+    D2 | maze_41x41_p20_reach_0/linear | {"queue_kind": "linear", "heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "linear", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [5, 1], [5, 2], [5, 3], [6, 3], [7, 3], [7, 4], [8, 4], [8, 5], [9, 5], [9, 6], [10, 6], [11, 6], [12, 6], [... | 203 | 350 | 319 | 0 | 117 | 80 | 7862c69df12e0ffcdc72be093bfd0271c6b75868da4c4ec5e57fd6da564b98ca
+    D2 | maze_41x41_p20_reach_2/heapq | {"queue_kind": "heapq", "heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1], [11, 1], [12, 1], [13, 1], [13, 2], [14, 2], [14, 3], [15, ... | 179 | 322 | 297 | 0 | 119 | 80 | 453e29b16e63510300b9b8d12013df8482c1cdd7462e8019bf20e1cdd294de05
+    D2 | maze_41x41_p20_reach_2/linear | {"queue_kind": "linear", "heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "linear", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [3, 0], [4, 0], [4, 1], [5, 1], [6, 1], [7, 1], [8, 1], [9, 1], [10, 1], [11, 1], [12, 1], [13, 1], [13, 2], [14, 2], [14, 3], [15, ... | 179 | 322 | 297 | 0 | 119 | 80 | 453e29b16e63510300b9b8d12013df8482c1cdd7462e8019bf20e1cdd294de05
+    D2 | maze_41x41_p20_reach_4/heapq | {"queue_kind": "heapq", "heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "heapq", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [7, 2], [7, 3], [8, 3], [9, 3], [10, 3], [11, 3], [12, 3], [13, 3], [14, 3], [15, 3]... | 156 | 299 | 268 | 0 | 113 | 80 | 14c5ec2c059d785579a71daf40edfc7ad1ef0f266cc908c5890799cf70642b10
+    D2 | maze_41x41_p20_reach_4/linear | {"queue_kind": "linear", "heuristic": "manhattan"} | {"heuristic": "manhattan", "queue_kind": "linear", "tie_break": true, "weight": 1.0, "order": "asc", "pruning": "off", "depth": 2} | True | 80.0 | 80 | [[0, 0], [1, 0], [2, 0], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1], [7, 2], [7, 3], [8, 3], [9, 3], [10, 3], [11, 3], [12, 3], [13, 3], [14, 3], [15, 3]... | 156 | 299 | 268 | 0 | 113 | 80 | 14c5ec2c059d785579a71daf40edfc7ad1ef0f266cc908c5890799cf70642b10
+  d3_order_x_pruning: 192 条记录
+    group | label | depth | branching | leaf_count | order_mode | input_fingerprint | changed | value | visited_nodes | generated_edges | pruned_edges | cutoffs | leaf_reads | max_depth
+    D3 | tree_d3_b2_0/identity/mm | 3 | 2 | 4 | identity | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"order": "identity", "pruning": "off"} | 15.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_0/identity/ab | 3 | 2 | 4 | identity | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"order": "identity", "pruning": "on"} | 15.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_0/reversed/mm | 3 | 2 | 4 | reversed | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"order": "reversed", "pruning": "off"} | 15.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_0/reversed/ab | 3 | 2 | 4 | reversed | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"order": "reversed", "pruning": "on"} | 15.0 | 6 | 5 | 1 | 1 | 3 | 2
+    D3 | tree_d3_b2_0/rotate/mm | 3 | 2 | 4 | rotate | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"order": "rotate", "pruning": "off"} | 15.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_0/rotate/ab | 3 | 2 | 4 | rotate | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"order": "rotate", "pruning": "on"} | 15.0 | 6 | 5 | 1 | 1 | 3 | 2
+    D3 | tree_d3_b2_0/greedy/mm | 3 | 2 | 4 | greedy | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"order": "greedy", "pruning": "off"} | 15.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_0/greedy/ab | 3 | 2 | 4 | greedy | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"order": "greedy", "pruning": "on"} | 15.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_1/identity/mm | 3 | 2 | 4 | identity | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"order": "identity", "pruning": "off"} | 8.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_1/identity/ab | 3 | 2 | 4 | identity | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"order": "identity", "pruning": "on"} | 8.0 | 6 | 5 | 1 | 1 | 3 | 2
+    D3 | tree_d3_b2_1/reversed/mm | 3 | 2 | 4 | reversed | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"order": "reversed", "pruning": "off"} | 8.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_1/reversed/ab | 3 | 2 | 4 | reversed | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"order": "reversed", "pruning": "on"} | 8.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D3 | tree_d3_b2_1/rotate/mm | 3 | 2 | 4 | rotate | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"order": "rotate", "pruning": "off"} | 8.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_1/rotate/ab | 3 | 2 | 4 | rotate | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"order": "rotate", "pruning": "on"} | 8.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D3 | tree_d3_b2_1/greedy/mm | 3 | 2 | 4 | greedy | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"order": "greedy", "pruning": "off"} | 8.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_1/greedy/ab | 3 | 2 | 4 | greedy | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"order": "greedy", "pruning": "on"} | 8.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D3 | tree_d3_b2_2/identity/mm | 3 | 2 | 4 | identity | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"order": "identity", "pruning": "off"} | 4.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_2/identity/ab | 3 | 2 | 4 | identity | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"order": "identity", "pruning": "on"} | 4.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D3 | tree_d3_b2_2/reversed/mm | 3 | 2 | 4 | reversed | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"order": "reversed", "pruning": "off"} | 4.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_2/reversed/ab | 3 | 2 | 4 | reversed | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"order": "reversed", "pruning": "on"} | 4.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D3 | tree_d3_b2_2/rotate/mm | 3 | 2 | 4 | rotate | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"order": "rotate", "pruning": "off"} | 4.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_2/rotate/ab | 3 | 2 | 4 | rotate | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"order": "rotate", "pruning": "on"} | 4.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D3 | tree_d3_b2_2/greedy/mm | 3 | 2 | 4 | greedy | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"order": "greedy", "pruning": "off"} | 4.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_2/greedy/ab | 3 | 2 | 4 | greedy | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"order": "greedy", "pruning": "on"} | 4.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D3 | tree_d3_b2_3/identity/mm | 3 | 2 | 4 | identity | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"order": "identity", "pruning": "off"} | 17.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_3/identity/ab | 3 | 2 | 4 | identity | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"order": "identity", "pruning": "on"} | 17.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D3 | tree_d3_b2_3/reversed/mm | 3 | 2 | 4 | reversed | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"order": "reversed", "pruning": "off"} | 17.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_3/reversed/ab | 3 | 2 | 4 | reversed | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"order": "reversed", "pruning": "on"} | 17.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_3/rotate/mm | 3 | 2 | 4 | rotate | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"order": "rotate", "pruning": "off"} | 17.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_3/rotate/ab | 3 | 2 | 4 | rotate | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"order": "rotate", "pruning": "on"} | 17.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_3/greedy/mm | 3 | 2 | 4 | greedy | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"order": "greedy", "pruning": "off"} | 17.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D3 | tree_d3_b2_3/greedy/ab | 3 | 2 | 4 | greedy | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"order": "greedy", "pruning": "on"} | 17.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D3 | tree_d3_b3_0/identity/mm | 3 | 3 | 9 | identity | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"order": "identity", "pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_0/identity/ab | 3 | 3 | 9 | identity | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"order": "identity", "pruning": "on"} | 10.0 | 11 | 10 | 2 | 2 | 7 | 2
+    D3 | tree_d3_b3_0/reversed/mm | 3 | 3 | 9 | reversed | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"order": "reversed", "pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_0/reversed/ab | 3 | 3 | 9 | reversed | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"order": "reversed", "pruning": "on"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_0/rotate/mm | 3 | 3 | 9 | rotate | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"order": "rotate", "pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_0/rotate/ab | 3 | 3 | 9 | rotate | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"order": "rotate", "pruning": "on"} | 10.0 | 12 | 11 | 1 | 1 | 8 | 2
+    D3 | tree_d3_b3_0/greedy/mm | 3 | 3 | 9 | greedy | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"order": "greedy", "pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_0/greedy/ab | 3 | 3 | 9 | greedy | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"order": "greedy", "pruning": "on"} | 10.0 | 12 | 11 | 1 | 2 | 8 | 2
+    D3 | tree_d3_b3_1/identity/mm | 3 | 3 | 9 | identity | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"order": "identity", "pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_1/identity/ab | 3 | 3 | 9 | identity | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"order": "identity", "pruning": "on"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_1/reversed/mm | 3 | 3 | 9 | reversed | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"order": "reversed", "pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_1/reversed/ab | 3 | 3 | 9 | reversed | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"order": "reversed", "pruning": "on"} | 10.0 | 11 | 10 | 2 | 2 | 7 | 2
+    D3 | tree_d3_b3_1/rotate/mm | 3 | 3 | 9 | rotate | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"order": "rotate", "pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_1/rotate/ab | 3 | 3 | 9 | rotate | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"order": "rotate", "pruning": "on"} | 10.0 | 11 | 10 | 2 | 1 | 7 | 2
+    D3 | tree_d3_b3_1/greedy/mm | 3 | 3 | 9 | greedy | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"order": "greedy", "pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_1/greedy/ab | 3 | 3 | 9 | greedy | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"order": "greedy", "pruning": "on"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_2/identity/mm | 3 | 3 | 9 | identity | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"order": "identity", "pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_2/identity/ab | 3 | 3 | 9 | identity | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"order": "identity", "pruning": "on"} | 6.0 | 10 | 9 | 3 | 2 | 6 | 2
+    D3 | tree_d3_b3_2/reversed/mm | 3 | 3 | 9 | reversed | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"order": "reversed", "pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_2/reversed/ab | 3 | 3 | 9 | reversed | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"order": "reversed", "pruning": "on"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_2/rotate/mm | 3 | 3 | 9 | rotate | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"order": "rotate", "pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_2/rotate/ab | 3 | 3 | 9 | rotate | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"order": "rotate", "pruning": "on"} | 6.0 | 11 | 10 | 2 | 1 | 7 | 2
+    D3 | tree_d3_b3_2/greedy/mm | 3 | 3 | 9 | greedy | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"order": "greedy", "pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_2/greedy/ab | 3 | 3 | 9 | greedy | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"order": "greedy", "pruning": "on"} | 6.0 | 12 | 11 | 1 | 2 | 8 | 2
+    D3 | tree_d3_b3_3/identity/mm | 3 | 3 | 9 | identity | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"order": "identity", "pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_3/identity/ab | 3 | 3 | 9 | identity | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"order": "identity", "pruning": "on"} | 6.0 | 10 | 9 | 3 | 2 | 6 | 2
+    D3 | tree_d3_b3_3/reversed/mm | 3 | 3 | 9 | reversed | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"order": "reversed", "pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_3/reversed/ab | 3 | 3 | 9 | reversed | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"order": "reversed", "pruning": "on"} | 6.0 | 13 | 12 | 0 | 1 | 9 | 2
+    D3 | tree_d3_b3_3/rotate/mm | 3 | 3 | 9 | rotate | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"order": "rotate", "pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_3/rotate/ab | 3 | 3 | 9 | rotate | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"order": "rotate", "pruning": "on"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_3/greedy/mm | 3 | 3 | 9 | greedy | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"order": "greedy", "pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D3 | tree_d3_b3_3/greedy/ab | 3 | 3 | 9 | greedy | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"order": "greedy", "pruning": "on"} | 6.0 | 12 | 11 | 1 | 2 | 8 | 2
+    D3 | tree_d4_b3_0/identity/mm | 4 | 3 | 27 | identity | 0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8 | {"order": "identity", "pruning": "off"} | 8.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_0/identity/ab | 4 | 3 | 27 | identity | 0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8 | {"order": "identity", "pruning": "on"} | 8.0 | 33 | 32 | 7 | 5 | 20 | 3
+    D3 | tree_d4_b3_0/reversed/mm | 4 | 3 | 27 | reversed | 0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8 | {"order": "reversed", "pruning": "off"} | 8.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_0/reversed/ab | 4 | 3 | 27 | reversed | 0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8 | {"order": "reversed", "pruning": "on"} | 8.0 | 33 | 32 | 7 | 7 | 20 | 3
+    D3 | tree_d4_b3_0/rotate/mm | 4 | 3 | 27 | rotate | 0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8 | {"order": "rotate", "pruning": "off"} | 8.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_0/rotate/ab | 4 | 3 | 27 | rotate | 0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8 | {"order": "rotate", "pruning": "on"} | 8.0 | 31 | 30 | 9 | 6 | 18 | 3
+    D3 | tree_d4_b3_0/greedy/mm | 4 | 3 | 27 | greedy | 0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8 | {"order": "greedy", "pruning": "off"} | 8.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_0/greedy/ab | 4 | 3 | 27 | greedy | 0927ed9270549ff3f6d87d32f141eaa188aa86456829e2edf5367e4a4b7a63c8 | {"order": "greedy", "pruning": "on"} | 8.0 | 38 | 37 | 2 | 5 | 25 | 3
+    D3 | tree_d4_b3_1/identity/mm | 4 | 3 | 27 | identity | a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50 | {"order": "identity", "pruning": "off"} | 12.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_1/identity/ab | 4 | 3 | 27 | identity | a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50 | {"order": "identity", "pruning": "on"} | 12.0 | 33 | 32 | 7 | 6 | 20 | 3
+    D3 | tree_d4_b3_1/reversed/mm | 4 | 3 | 27 | reversed | a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50 | {"order": "reversed", "pruning": "off"} | 12.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_1/reversed/ab | 4 | 3 | 27 | reversed | a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50 | {"order": "reversed", "pruning": "on"} | 12.0 | 29 | 28 | 11 | 8 | 16 | 3
+    D3 | tree_d4_b3_1/rotate/mm | 4 | 3 | 27 | rotate | a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50 | {"order": "rotate", "pruning": "off"} | 12.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_1/rotate/ab | 4 | 3 | 27 | rotate | a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50 | {"order": "rotate", "pruning": "on"} | 12.0 | 33 | 32 | 7 | 6 | 20 | 3
+    D3 | tree_d4_b3_1/greedy/mm | 4 | 3 | 27 | greedy | a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50 | {"order": "greedy", "pruning": "off"} | 12.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_1/greedy/ab | 4 | 3 | 27 | greedy | a7b8d432bc66b9af8f6093b172bc3c2cbe3cdbf5ef0591d83d5a8a054e9aea50 | {"order": "greedy", "pruning": "on"} | 12.0 | 37 | 36 | 3 | 6 | 24 | 3
+    D3 | tree_d4_b3_2/identity/mm | 4 | 3 | 27 | identity | 4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513 | {"order": "identity", "pruning": "off"} | 9.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_2/identity/ab | 4 | 3 | 27 | identity | 4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513 | {"order": "identity", "pruning": "on"} | 9.0 | 29 | 28 | 11 | 7 | 16 | 3
+    D3 | tree_d4_b3_2/reversed/mm | 4 | 3 | 27 | reversed | 4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513 | {"order": "reversed", "pruning": "off"} | 9.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_2/reversed/ab | 4 | 3 | 27 | reversed | 4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513 | {"order": "reversed", "pruning": "on"} | 9.0 | 32 | 31 | 8 | 4 | 19 | 3
+    D3 | tree_d4_b3_2/rotate/mm | 4 | 3 | 27 | rotate | 4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513 | {"order": "rotate", "pruning": "off"} | 9.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_2/rotate/ab | 4 | 3 | 27 | rotate | 4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513 | {"order": "rotate", "pruning": "on"} | 9.0 | 28 | 27 | 12 | 7 | 15 | 3
+    D3 | tree_d4_b3_2/greedy/mm | 4 | 3 | 27 | greedy | 4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513 | {"order": "greedy", "pruning": "off"} | 9.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_2/greedy/ab | 4 | 3 | 27 | greedy | 4f503ea28c16b9625b6caa94be49913c38154bb65064863e4faef3e12ea5f513 | {"order": "greedy", "pruning": "on"} | 9.0 | 35 | 34 | 5 | 7 | 22 | 3
+    D3 | tree_d4_b3_3/identity/mm | 4 | 3 | 27 | identity | 591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e | {"order": "identity", "pruning": "off"} | 15.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_3/identity/ab | 4 | 3 | 27 | identity | 591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e | {"order": "identity", "pruning": "on"} | 15.0 | 30 | 29 | 10 | 6 | 17 | 3
+    D3 | tree_d4_b3_3/reversed/mm | 4 | 3 | 27 | reversed | 591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e | {"order": "reversed", "pruning": "off"} | 15.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_3/reversed/ab | 4 | 3 | 27 | reversed | 591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e | {"order": "reversed", "pruning": "on"} | 15.0 | 27 | 26 | 13 | 7 | 14 | 3
+    D3 | tree_d4_b3_3/rotate/mm | 4 | 3 | 27 | rotate | 591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e | {"order": "rotate", "pruning": "off"} | 15.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_3/rotate/ab | 4 | 3 | 27 | rotate | 591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e | {"order": "rotate", "pruning": "on"} | 15.0 | 30 | 29 | 10 | 6 | 17 | 3
+    D3 | tree_d4_b3_3/greedy/mm | 4 | 3 | 27 | greedy | 591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e | {"order": "greedy", "pruning": "off"} | 15.0 | 40 | 39 | 0 | 0 | 27 | 3
+    D3 | tree_d4_b3_3/greedy/ab | 4 | 3 | 27 | greedy | 591572481d99e931a678f49babfc9865b7e176210b08665ba286c6df5ffe4b7e | {"order": "greedy", "pruning": "on"} | 15.0 | 33 | 32 | 7 | 6 | 20 | 3
+    D3 | tree_d5_b2_0/identity/mm | 5 | 2 | 16 | identity | ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba | {"order": "identity", "pruning": "off"} | 8.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_0/identity/ab | 5 | 2 | 16 | identity | ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba | {"order": "identity", "pruning": "on"} | 8.0 | 27 | 26 | 2 | 3 | 13 | 4
+    D3 | tree_d5_b2_0/reversed/mm | 5 | 2 | 16 | reversed | ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba | {"order": "reversed", "pruning": "off"} | 8.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_0/reversed/ab | 5 | 2 | 16 | reversed | ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba | {"order": "reversed", "pruning": "on"} | 8.0 | 23 | 22 | 2 | 4 | 11 | 4
+    D3 | tree_d5_b2_0/rotate/mm | 5 | 2 | 16 | rotate | ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba | {"order": "rotate", "pruning": "off"} | 8.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_0/rotate/ab | 5 | 2 | 16 | rotate | ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba | {"order": "rotate", "pruning": "on"} | 8.0 | 23 | 22 | 2 | 4 | 11 | 4
+    D3 | tree_d5_b2_0/greedy/mm | 5 | 2 | 16 | greedy | ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba | {"order": "greedy", "pruning": "off"} | 8.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_0/greedy/ab | 5 | 2 | 16 | greedy | ab04c05c65401de8d0ba202f6c28c23039e550cbf5787465e2dafac0fc7f7eba | {"order": "greedy", "pruning": "on"} | 8.0 | 28 | 27 | 1 | 3 | 14 | 4
+    D3 | tree_d5_b2_1/identity/mm | 5 | 2 | 16 | identity | 517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986 | {"order": "identity", "pruning": "off"} | 13.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_1/identity/ab | 5 | 2 | 16 | identity | 517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986 | {"order": "identity", "pruning": "on"} | 13.0 | 23 | 22 | 2 | 4 | 11 | 4
+    D3 | tree_d5_b2_1/reversed/mm | 5 | 2 | 16 | reversed | 517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986 | {"order": "reversed", "pruning": "off"} | 13.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_1/reversed/ab | 5 | 2 | 16 | reversed | 517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986 | {"order": "reversed", "pruning": "on"} | 13.0 | 28 | 27 | 3 | 4 | 13 | 4
+    D3 | tree_d5_b2_1/rotate/mm | 5 | 2 | 16 | rotate | 517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986 | {"order": "rotate", "pruning": "off"} | 13.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_1/rotate/ab | 5 | 2 | 16 | rotate | 517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986 | {"order": "rotate", "pruning": "on"} | 13.0 | 28 | 27 | 3 | 4 | 13 | 4
+    D3 | tree_d5_b2_1/greedy/mm | 5 | 2 | 16 | greedy | 517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986 | {"order": "greedy", "pruning": "off"} | 13.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_1/greedy/ab | 5 | 2 | 16 | greedy | 517e45344c82355193e07c478fa5f2cbf327a67651f11f39bff969f58cd11986 | {"order": "greedy", "pruning": "on"} | 13.0 | 23 | 22 | 2 | 4 | 11 | 4
+    D3 | tree_d5_b2_2/identity/mm | 5 | 2 | 16 | identity | f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b | {"order": "identity", "pruning": "off"} | 10.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_2/identity/ab | 5 | 2 | 16 | identity | f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b | {"order": "identity", "pruning": "on"} | 10.0 | 27 | 26 | 2 | 2 | 13 | 4
+    D3 | tree_d5_b2_2/reversed/mm | 5 | 2 | 16 | reversed | f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b | {"order": "reversed", "pruning": "off"} | 10.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_2/reversed/ab | 5 | 2 | 16 | reversed | f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b | {"order": "reversed", "pruning": "on"} | 10.0 | 26 | 25 | 3 | 5 | 12 | 4
+    D3 | tree_d5_b2_2/rotate/mm | 5 | 2 | 16 | rotate | f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b | {"order": "rotate", "pruning": "off"} | 10.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_2/rotate/ab | 5 | 2 | 16 | rotate | f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b | {"order": "rotate", "pruning": "on"} | 10.0 | 26 | 25 | 3 | 5 | 12 | 4
+    D3 | tree_d5_b2_2/greedy/mm | 5 | 2 | 16 | greedy | f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b | {"order": "greedy", "pruning": "off"} | 10.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_2/greedy/ab | 5 | 2 | 16 | greedy | f33d5b88c1bfc32a8b7ce0f94dafb80ae3e2e6d3e639b548ea04e52a6354fa5b | {"order": "greedy", "pruning": "on"} | 10.0 | 28 | 27 | 1 | 2 | 14 | 4
+    D3 | tree_d5_b2_3/identity/mm | 5 | 2 | 16 | identity | 36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2 | {"order": "identity", "pruning": "off"} | 9.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_3/identity/ab | 5 | 2 | 16 | identity | 36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2 | {"order": "identity", "pruning": "on"} | 9.0 | 29 | 28 | 2 | 6 | 14 | 4
+    D3 | tree_d5_b2_3/reversed/mm | 5 | 2 | 16 | reversed | 36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2 | {"order": "reversed", "pruning": "off"} | 9.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_3/reversed/ab | 5 | 2 | 16 | reversed | 36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2 | {"order": "reversed", "pruning": "on"} | 9.0 | 25 | 24 | 4 | 4 | 11 | 4
+    D3 | tree_d5_b2_3/rotate/mm | 5 | 2 | 16 | rotate | 36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2 | {"order": "rotate", "pruning": "off"} | 9.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_3/rotate/ab | 5 | 2 | 16 | rotate | 36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2 | {"order": "rotate", "pruning": "on"} | 9.0 | 25 | 24 | 4 | 4 | 11 | 4
+    D3 | tree_d5_b2_3/greedy/mm | 5 | 2 | 16 | greedy | 36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2 | {"order": "greedy", "pruning": "off"} | 9.0 | 31 | 30 | 0 | 0 | 16 | 4
+    D3 | tree_d5_b2_3/greedy/ab | 5 | 2 | 16 | greedy | 36d95eac849d9e7edb18f353fca52f4e061b6eaa944de0c164396f687a93e4b2 | {"order": "greedy", "pruning": "on"} | 9.0 | 30 | 29 | 1 | 6 | 15 | 4
+    D3 | tree_d5_b3_0/identity/mm | 5 | 3 | 81 | identity | 55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254 | {"order": "identity", "pruning": "off"} | 6.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_0/identity/ab | 5 | 3 | 81 | identity | 55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254 | {"order": "identity", "pruning": "on"} | 6.0 | 71 | 70 | 23 | 16 | 40 | 4
+    D3 | tree_d5_b3_0/reversed/mm | 5 | 3 | 81 | reversed | 55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254 | {"order": "reversed", "pruning": "off"} | 6.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_0/reversed/ab | 5 | 3 | 81 | reversed | 55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254 | {"order": "reversed", "pruning": "on"} | 6.0 | 79 | 78 | 12 | 10 | 49 | 4
+    D3 | tree_d5_b3_0/rotate/mm | 5 | 3 | 81 | rotate | 55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254 | {"order": "rotate", "pruning": "off"} | 6.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_0/rotate/ab | 5 | 3 | 81 | rotate | 55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254 | {"order": "rotate", "pruning": "on"} | 6.0 | 84 | 83 | 19 | 14 | 50 | 4
+    D3 | tree_d5_b3_0/greedy/mm | 5 | 3 | 81 | greedy | 55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254 | {"order": "greedy", "pruning": "off"} | 6.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_0/greedy/ab | 5 | 3 | 81 | greedy | 55d4d97fac81747d152b2022150ef38b3883b43cde4a570de1e00f6b84d89254 | {"order": "greedy", "pruning": "on"} | 6.0 | 81 | 80 | 13 | 16 | 50 | 4
+    D3 | tree_d5_b3_1/identity/mm | 5 | 3 | 81 | identity | 821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a | {"order": "identity", "pruning": "off"} | 7.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_1/identity/ab | 5 | 3 | 81 | identity | 821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a | {"order": "identity", "pruning": "on"} | 7.0 | 69 | 68 | 22 | 16 | 39 | 4
+    D3 | tree_d5_b3_1/reversed/mm | 5 | 3 | 81 | reversed | 821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a | {"order": "reversed", "pruning": "off"} | 7.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_1/reversed/ab | 5 | 3 | 81 | reversed | 821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a | {"order": "reversed", "pruning": "on"} | 7.0 | 90 | 89 | 16 | 13 | 55 | 4
+    D3 | tree_d5_b3_1/rotate/mm | 5 | 3 | 81 | rotate | 821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a | {"order": "rotate", "pruning": "off"} | 7.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_1/rotate/ab | 5 | 3 | 81 | rotate | 821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a | {"order": "rotate", "pruning": "on"} | 7.0 | 77 | 76 | 17 | 13 | 46 | 4
+    D3 | tree_d5_b3_1/greedy/mm | 5 | 3 | 81 | greedy | 821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a | {"order": "greedy", "pruning": "off"} | 7.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_1/greedy/ab | 5 | 3 | 81 | greedy | 821a0702c7c3c953a0a8da3a0301bf43dbce98a442608a70a29aaadeebfb4f6a | {"order": "greedy", "pruning": "on"} | 7.0 | 80 | 79 | 11 | 16 | 50 | 4
+    D3 | tree_d5_b3_2/identity/mm | 5 | 3 | 81 | identity | bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974 | {"order": "identity", "pruning": "off"} | 8.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_2/identity/ab | 5 | 3 | 81 | identity | bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974 | {"order": "identity", "pruning": "on"} | 8.0 | 81 | 80 | 16 | 15 | 49 | 4
+    D3 | tree_d5_b3_2/reversed/mm | 5 | 3 | 81 | reversed | bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974 | {"order": "reversed", "pruning": "off"} | 8.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_2/reversed/ab | 5 | 3 | 81 | reversed | bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974 | {"order": "reversed", "pruning": "on"} | 8.0 | 56 | 55 | 17 | 11 | 32 | 4
+    D3 | tree_d5_b3_2/rotate/mm | 5 | 3 | 81 | rotate | bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974 | {"order": "rotate", "pruning": "off"} | 8.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_2/rotate/ab | 5 | 3 | 81 | rotate | bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974 | {"order": "rotate", "pruning": "on"} | 8.0 | 81 | 80 | 19 | 15 | 48 | 4
+    D3 | tree_d5_b3_2/greedy/mm | 5 | 3 | 81 | greedy | bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974 | {"order": "greedy", "pruning": "off"} | 8.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_2/greedy/ab | 5 | 3 | 81 | greedy | bce8504302c35cdc2d84baf8036605031942cbcc9b1512420e109b90b35d7974 | {"order": "greedy", "pruning": "on"} | 8.0 | 90 | 89 | 7 | 15 | 58 | 4
+    D3 | tree_d5_b3_3/identity/mm | 5 | 3 | 81 | identity | c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9 | {"order": "identity", "pruning": "off"} | 10.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_3/identity/ab | 5 | 3 | 81 | identity | c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9 | {"order": "identity", "pruning": "on"} | 10.0 | 103 | 102 | 18 | 16 | 63 | 4
+    D3 | tree_d5_b3_3/reversed/mm | 5 | 3 | 81 | reversed | c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9 | {"order": "reversed", "pruning": "off"} | 10.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_3/reversed/ab | 5 | 3 | 81 | reversed | c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9 | {"order": "reversed", "pruning": "on"} | 10.0 | 59 | 58 | 17 | 11 | 34 | 4
+    D3 | tree_d5_b3_3/rotate/mm | 5 | 3 | 81 | rotate | c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9 | {"order": "rotate", "pruning": "off"} | 10.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_3/rotate/ab | 5 | 3 | 81 | rotate | c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9 | {"order": "rotate", "pruning": "on"} | 10.0 | 71 | 70 | 20 | 15 | 41 | 4
+    D3 | tree_d5_b3_3/greedy/mm | 5 | 3 | 81 | greedy | c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9 | {"order": "greedy", "pruning": "off"} | 10.0 | 121 | 120 | 0 | 0 | 81 | 4
+    D3 | tree_d5_b3_3/greedy/ab | 5 | 3 | 81 | greedy | c21076835b74405332c7d382f0c4f88e9f925a9f203b9abc0a252dc52e6391b9 | {"order": "greedy", "pruning": "on"} | 10.0 | 113 | 112 | 8 | 16 | 73 | 4
+    D3 | tree_d6_b3_0/identity/mm | 6 | 3 | 243 | identity | e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21 | {"order": "identity", "pruning": "off"} | 10.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_0/identity/ab | 6 | 3 | 243 | identity | e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21 | {"order": "identity", "pruning": "on"} | 10.0 | 135 | 134 | 58 | 38 | 71 | 5
+    D3 | tree_d6_b3_0/reversed/mm | 6 | 3 | 243 | reversed | e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21 | {"order": "reversed", "pruning": "off"} | 10.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_0/reversed/ab | 6 | 3 | 243 | reversed | e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21 | {"order": "reversed", "pruning": "on"} | 10.0 | 194 | 193 | 50 | 42 | 113 | 5
+    D3 | tree_d6_b3_0/rotate/mm | 6 | 3 | 243 | rotate | e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21 | {"order": "rotate", "pruning": "off"} | 10.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_0/rotate/ab | 6 | 3 | 243 | rotate | e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21 | {"order": "rotate", "pruning": "on"} | 10.0 | 193 | 192 | 63 | 48 | 108 | 5
+    D3 | tree_d6_b3_0/greedy/mm | 6 | 3 | 243 | greedy | e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21 | {"order": "greedy", "pruning": "off"} | 10.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_0/greedy/ab | 6 | 3 | 243 | greedy | e9ee3962c1aaf74984632b97b1f2b6e8aa551fdd089779e45872097eb37aec21 | {"order": "greedy", "pruning": "on"} | 10.0 | 166 | 165 | 27 | 38 | 102 | 5
+    D3 | tree_d6_b3_1/identity/mm | 6 | 3 | 243 | identity | da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead | {"order": "identity", "pruning": "off"} | 10.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_1/identity/ab | 6 | 3 | 243 | identity | da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead | {"order": "identity", "pruning": "on"} | 10.0 | 212 | 211 | 71 | 48 | 118 | 5
+    D3 | tree_d6_b3_1/reversed/mm | 6 | 3 | 243 | reversed | da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead | {"order": "reversed", "pruning": "off"} | 10.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_1/reversed/ab | 6 | 3 | 243 | reversed | da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead | {"order": "reversed", "pruning": "on"} | 10.0 | 160 | 159 | 60 | 45 | 87 | 5
+    D3 | tree_d6_b3_1/rotate/mm | 6 | 3 | 243 | rotate | da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead | {"order": "rotate", "pruning": "off"} | 10.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_1/rotate/ab | 6 | 3 | 243 | rotate | da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead | {"order": "rotate", "pruning": "on"} | 10.0 | 196 | 195 | 57 | 47 | 112 | 5
+    D3 | tree_d6_b3_1/greedy/mm | 6 | 3 | 243 | greedy | da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead | {"order": "greedy", "pruning": "off"} | 10.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_1/greedy/ab | 6 | 3 | 243 | greedy | da84afa29c380db9675a07be2d0596549fef9ed30c62a2ff097222986aa00ead | {"order": "greedy", "pruning": "on"} | 10.0 | 250 | 249 | 33 | 48 | 156 | 5
+    D3 | tree_d6_b3_2/identity/mm | 6 | 3 | 243 | identity | 86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1 | {"order": "identity", "pruning": "off"} | 11.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_2/identity/ab | 6 | 3 | 243 | identity | 86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1 | {"order": "identity", "pruning": "on"} | 11.0 | 168 | 167 | 61 | 42 | 92 | 5
+    D3 | tree_d6_b3_2/reversed/mm | 6 | 3 | 243 | reversed | 86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1 | {"order": "reversed", "pruning": "off"} | 11.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_2/reversed/ab | 6 | 3 | 243 | reversed | 86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1 | {"order": "reversed", "pruning": "on"} | 11.0 | 175 | 174 | 51 | 44 | 100 | 5
+    D3 | tree_d6_b3_2/rotate/mm | 6 | 3 | 243 | rotate | 86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1 | {"order": "rotate", "pruning": "off"} | 11.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_2/rotate/ab | 6 | 3 | 243 | rotate | 86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1 | {"order": "rotate", "pruning": "on"} | 11.0 | 143 | 142 | 56 | 40 | 77 | 5
+    D3 | tree_d6_b3_2/greedy/mm | 6 | 3 | 243 | greedy | 86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1 | {"order": "greedy", "pruning": "off"} | 11.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_2/greedy/ab | 6 | 3 | 243 | greedy | 86344dae93986246e3bac76c998b725b162a716b962a79cc210371e4c08414f1 | {"order": "greedy", "pruning": "on"} | 11.0 | 191 | 190 | 38 | 42 | 115 | 5
+    D3 | tree_d6_b3_3/identity/mm | 6 | 3 | 243 | identity | f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e | {"order": "identity", "pruning": "off"} | 12.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_3/identity/ab | 6 | 3 | 243 | identity | f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e | {"order": "identity", "pruning": "on"} | 12.0 | 152 | 151 | 65 | 43 | 80 | 5
+    D3 | tree_d6_b3_3/reversed/mm | 6 | 3 | 243 | reversed | f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e | {"order": "reversed", "pruning": "off"} | 12.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_3/reversed/ab | 6 | 3 | 243 | reversed | f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e | {"order": "reversed", "pruning": "on"} | 12.0 | 130 | 129 | 54 | 36 | 69 | 5
+    D3 | tree_d6_b3_3/rotate/mm | 6 | 3 | 243 | rotate | f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e | {"order": "rotate", "pruning": "off"} | 12.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_3/rotate/ab | 6 | 3 | 243 | rotate | f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e | {"order": "rotate", "pruning": "on"} | 12.0 | 184 | 183 | 51 | 42 | 106 | 5
+    D3 | tree_d6_b3_3/greedy/mm | 6 | 3 | 243 | greedy | f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e | {"order": "greedy", "pruning": "off"} | 12.0 | 364 | 363 | 0 | 0 | 243 | 5
+    D3 | tree_d6_b3_3/greedy/ab | 6 | 3 | 243 | greedy | f17d195eaa5bbb20625a3583591b53cb7eba8499e7844f69965f8e8db2097f4e | {"order": "greedy", "pruning": "on"} | 12.0 | 180 | 179 | 37 | 43 | 108 | 5
+  d3_summary                   {"cases": 24, "pruning_ratio_best_order": {"min": 0.357143, "max": 1.0, "mean": 0.692374}, "order_spread_visited_nodes": {"min": 0, "max": 90, "mean": 17.917}}
+  d4_depth: 14 条记录
+    group | label | changed | value | best_target | visited_nodes | generated_edges | pruned_edges | cutoffs | leaf_reads | max_depth
+    D4 | H=0/mm | {"depth": 0, "pruning": "off"} | 0.0 | None | 1 | 0 | 0 | 0 | 1 | 0
+    D4 | H=0/ab | {"depth": 0, "pruning": "on"} | 0.0 | None | 1 | 0 | 0 | 0 | 1 | 0
+    D4 | H=1/mm | {"depth": 1, "pruning": "off"} | 2.0 | T2 | 5 | 4 | 0 | 0 | 4 | 1
+    D4 | H=1/ab | {"depth": 1, "pruning": "on"} | 2.0 | T2 | 5 | 4 | 0 | 0 | 4 | 1
+    D4 | H=2/mm | {"depth": 2, "pruning": "off"} | -1.0 | T2 | 17 | 16 | 0 | 0 | 12 | 2
+    D4 | H=2/ab | {"depth": 2, "pruning": "on"} | -1.0 | T2 | 13 | 12 | 4 | 2 | 8 | 2
+    D4 | H=3/mm | {"depth": 3, "pruning": "off"} | 2.0 | T2 | 41 | 40 | 0 | 0 | 24 | 3
+    D4 | H=3/ab | {"depth": 3, "pruning": "on"} | 2.0 | T2 | 26 | 25 | 7 | 5 | 13 | 3
+    D4 | H=4/mm | {"depth": 4, "pruning": "off"} | 3.0 | T3 | 65 | 64 | 0 | 0 | 24 | 4
+    D4 | H=4/ab | {"depth": 4, "pruning": "on"} | 3.0 | T3 | 47 | 46 | 6 | 12 | 16 | 4
+    D4 | H=5/mm | {"depth": 5, "pruning": "off"} | 3.0 | T3 | 65 | 64 | 0 | 0 | 24 | 4
+    D4 | H=5/ab | {"depth": 5, "pruning": "on"} | 3.0 | T3 | 47 | 46 | 6 | 12 | 16 | 4
+    D4 | H=6/mm | {"depth": 6, "pruning": "off"} | 3.0 | T3 | 65 | 64 | 0 | 0 | 24 | 4
+    D4 | H=6/ab | {"depth": 6, "pruning": "on"} | 3.0 | T3 | 47 | 46 | 6 | 12 | 16 | 4
+  d9_q4_timing                 {"H=2": {"repeats": 3, "seconds_samples": [0.000188, 0.000142, 0.000136], "seconds_mean": 0.000155, "seconds_min": 0.000136, "seconds_max": 0.000188, "second...
+  d5_scale: 18 条记录
+    group | label | rows | cols | wall_prob | input_fingerprint | steps_zero | expanded_zero | steps_manhattan | expanded_manhattan | ratio
+    D5 | maze_5x5_p20_reach_0 | 5 | 5 | 0.2 | a684afce6dc4b71efea901038e3ec1c8f74e43792aabce96601d40203ee495d3 | 8 | 23 | 8 | 9 | 0.391304
+    D5 | maze_5x5_p20_reach_2 | 5 | 5 | 0.2 | 4311cb06f116018ce0349887f5928d95e885fa25f1b31dc1901fdb4d089d0ca2 | 8 | 21 | 8 | 13 | 0.619048
+    D5 | maze_5x5_p20_reach_4 | 5 | 5 | 0.2 | 775b6155306a53f6a8bd698aaadc3fef5526eae6fa802ed73f68dca74e095467 | 8 | 23 | 8 | 10 | 0.434783
+    D5 | maze_5x5_p35_reach_0 | 5 | 5 | 0.35 | 5f8699123428ba5ac451e00734dd00ea7c39721dd2e97e2c56cea789f1af75ca | 8 | 20 | 8 | 9 | 0.45
+    D5 | maze_5x5_p35_reach_2 | 5 | 5 | 0.35 | bb7a60da8573edb9865f8b984b826e87162570e2cec47d453fdbc4d02683d966 | 8 | 18 | 8 | 9 | 0.5
+    D5 | maze_5x5_p35_reach_4 | 5 | 5 | 0.35 | f78f858532a942876edcbebd8457210df5d30cf70451988c93718f0d70dc84bf | 8 | 11 | 8 | 10 | 0.909091
+    D5 | maze_20x20_p20_reach_0 | 20 | 20 | 0.2 | cfc298be5d3e9e1a7e4c157e9c89b1c16ff60237a321af5dd818093e2738ca03 | 38 | 327 | 38 | 62 | 0.189602
+    D5 | maze_20x20_p20_reach_2 | 20 | 20 | 0.2 | 63c21da4266a2b9e76f575fa8a3a0eb13247fc6139aa74f172ea964a6e95c30c | 38 | 340 | 38 | 53 | 0.155882
+    D5 | maze_20x20_p20_reach_4 | 20 | 20 | 0.2 | 2312ff2157c625c2100e10ffbdc5401c1326fe06aab13b05059741ed689e177b | 38 | 307 | 38 | 61 | 0.198697
+    D5 | maze_20x20_p35_reach_0 | 20 | 20 | 0.35 | 21e8d5ac357f751e984313ee012a27cded05dc168f97da1bc247f2bcbb2d3f18 | 38 | 260 | 38 | 48 | 0.184615
+    D5 | maze_20x20_p35_reach_2 | 20 | 20 | 0.35 | 2c45f88149c93dd31c9ea0eced34aa43b0315ab323efa9dcc7421374f5ce4fe3 | 38 | 208 | 38 | 71 | 0.341346
+    D5 | maze_20x20_p35_reach_4 | 20 | 20 | 0.35 | 8f1d41c86627b6acf86380cab490e8d2b8dbcbf82c207ddf1d28176fcff20108 | 38 | 249 | 38 | 103 | 0.413655
+    D5 | maze_41x41_p20_reach_0 | 41 | 41 | 0.2 | b45908e2626ed958590803e5b80c94bf456d85e103d1c80346d959c7941f1bbd | 80 | 1355 | 80 | 203 | 0.149815
+    D5 | maze_41x41_p20_reach_2 | 41 | 41 | 0.2 | 44f4a43b7b9c75c0ff6f804aa084d1c2fe53ea0a92b19e5a7cb04df398adfd1c | 80 | 1353 | 80 | 179 | 0.132299
+    D5 | maze_41x41_p20_reach_4 | 41 | 41 | 0.2 | 6c99cd2206df1a15632b6451c7f9f5500820bb9adb5142ff260f626d6a939cf9 | 80 | 1369 | 80 | 156 | 0.113952
+    D5 | maze_41x41_p35_reach_0 | 41 | 41 | 0.35 | 2f86134f3934f096aa0a3363fa32c81b5f4d6f7777cd2d088cf31618dd8c59e5 | 80 | 1028 | 80 | 217 | 0.211089
+    D5 | maze_41x41_p35_reach_2 | 41 | 41 | 0.35 | 1a109df5ce66b2e0b893cda8dd26b767457a920f6c515427119142f9ed02e08d | 80 | 884 | 80 | 285 | 0.322398
+    D5 | maze_41x41_p35_reach_4 | 41 | 41 | 0.35 | ead95d66508f00761ea29f5f26a6f08f0747003ccd8bcca3955a4ab36891f1aa | 80 | 1093 | 80 | 320 | 0.292772
+  d5_ratio_by_size             {"20x20": {"n": 6, "min": 0.155882, "max": 0.413655, "mean": 0.2473}, "41x41": {"n": 6, "min": 0.113952, "max": 0.322398, "mean": 0.203721}, "5x5": {"n": 6, ...
+  d6_order: 12 条记录
+    group | label | order | depth | pruning | changed | value | best_target | visited_nodes | generated_edges | pruned_edges | cutoffs | leaf_reads | max_depth
+    D6 | asc/H=2/mm | asc | 2 | off | {"order": "asc", "depth": 2, "pruning": "off"} | -1.0 | T2 | 17 | 16 | 0 | 0 | 12 | 2
+    D6 | asc/H=2/ab | asc | 2 | on | {"order": "asc", "depth": 2, "pruning": "on"} | -1.0 | T2 | 13 | 12 | 4 | 2 | 8 | 2
+    D6 | asc/H=4/mm | asc | 4 | off | {"order": "asc", "depth": 4, "pruning": "off"} | 3.0 | T3 | 65 | 64 | 0 | 0 | 24 | 4
+    D6 | asc/H=4/ab | asc | 4 | on | {"order": "asc", "depth": 4, "pruning": "on"} | 3.0 | T3 | 47 | 46 | 6 | 12 | 16 | 4
+    D6 | desc/H=2/mm | desc | 2 | off | {"order": "desc", "depth": 2, "pruning": "off"} | -1.0 | T2 | 17 | 16 | 0 | 0 | 12 | 2
+    D6 | desc/H=2/ab | desc | 2 | on | {"order": "desc", "depth": 2, "pruning": "on"} | -1.0 | T2 | 16 | 15 | 1 | 1 | 11 | 2
+    D6 | desc/H=4/mm | desc | 4 | off | {"order": "desc", "depth": 4, "pruning": "off"} | 3.0 | T3 | 65 | 64 | 0 | 0 | 24 | 4
+    D6 | desc/H=4/ab | desc | 4 | on | {"order": "desc", "depth": 4, "pruning": "on"} | 3.0 | T3 | 46 | 45 | 5 | 12 | 16 | 4
+    D6 | trace_desc/H=2/mm | trace_desc | 2 | off | {"order": "trace_desc", "depth": 2, "pruning": "off"} | -1.0 | T2 | 17 | 16 | 0 | 0 | 12 | 2
+    D6 | trace_desc/H=2/ab | trace_desc | 2 | on | {"order": "trace_desc", "depth": 2, "pruning": "on"} | -1.0 | T2 | 11 | 10 | 6 | 3 | 6 | 2
+    D6 | trace_desc/H=4/mm | trace_desc | 4 | off | {"order": "trace_desc", "depth": 4, "pruning": "off"} | 3.0 | T3 | 65 | 64 | 0 | 0 | 24 | 4
+    D6 | trace_desc/H=4/ab | trace_desc | 4 | on | {"order": "trace_desc", "depth": 4, "pruning": "on"} | 3.0 | T3 | 37 | 36 | 8 | 12 | 12 | 4
+  d7_pruning: 20 条记录
+    group | label | leaf_count | input_fingerprint | changed | value | visited_nodes | generated_edges | pruned_edges | cutoffs | leaf_reads | max_depth
+    D7 | tree_d3_b2_0/mm | 4 | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"pruning": "off"} | 15.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D7 | tree_d3_b2_0/ab | 4 | 08ccbf2c6c6d38e858c69468734dc4ac73d7f41a09153e7f4edc7825816d98f5 | {"pruning": "on"} | 15.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D7 | tree_d3_b2_1/mm | 4 | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"pruning": "off"} | 8.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D7 | tree_d3_b2_1/ab | 4 | d4635ac3b49f9d0067abdb02a5af59342502b0b80bf3a7231fb012c6f4e298ed | {"pruning": "on"} | 8.0 | 6 | 5 | 1 | 1 | 3 | 2
+    D7 | tree_d3_b2_2/mm | 4 | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"pruning": "off"} | 4.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D7 | tree_d3_b2_2/ab | 4 | c6a33a84e9117a8bcb4eca18323f66a33428e86474f39b8f3393f8a3a9e7d2e5 | {"pruning": "on"} | 4.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D7 | tree_d3_b2_3/mm | 4 | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"pruning": "off"} | 17.0 | 7 | 6 | 0 | 0 | 4 | 2
+    D7 | tree_d3_b2_3/ab | 4 | 5cd1b452e7a17db2ca7b4aa0140a165f2c776194e14f83df8cc6a96e90b9bb14 | {"pruning": "on"} | 17.0 | 7 | 6 | 0 | 1 | 4 | 2
+    D7 | tree_d3_b3_0/mm | 9 | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D7 | tree_d3_b3_0/ab | 9 | e074ecbd066b588590e23c76a529fde58aee6d5612e3997c3f1463c0302a0c6c | {"pruning": "on"} | 10.0 | 11 | 10 | 2 | 2 | 7 | 2
+    D7 | tree_d3_b3_1/mm | 9 | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"pruning": "off"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D7 | tree_d3_b3_1/ab | 9 | 6b377da974b57d72cce63b5bd8d84b6424e05043d92fa0d531ea3bc09f54de42 | {"pruning": "on"} | 10.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D7 | tree_d3_b3_2/mm | 9 | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D7 | tree_d3_b3_2/ab | 9 | 364774e8a4aa9bd309e5b996b8ad5e8762b0af49558110ae22631b08f355c300 | {"pruning": "on"} | 6.0 | 10 | 9 | 3 | 2 | 6 | 2
+    D7 | tree_d3_b3_3/mm | 9 | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"pruning": "off"} | 6.0 | 13 | 12 | 0 | 0 | 9 | 2
+    D7 | tree_d3_b3_3/ab | 9 | 35affe48774d3f711cd9a6558c36b6e7203abc779e15a7459d4757ff0d2a9255 | {"pruning": "on"} | 6.0 | 10 | 9 | 3 | 2 | 6 | 2
+    D7 | q4/H=2/mm | None | None | {"depth": 2, "pruning": "off"} | -1.0 | 17 | 16 | 0 | 0 | 12 | 2
+    D7 | q4/H=2/ab | None | None | {"depth": 2, "pruning": "on"} | -1.0 | 13 | 12 | 4 | 2 | 8 | 2
+    D7 | q4/H=4/mm | None | None | {"depth": 4, "pruning": "off"} | 3.0 | 65 | 64 | 0 | 0 | 24 | 4
+    D7 | q4/H=4/ab | None | None | {"depth": 4, "pruning": "on"} | 3.0 | 47 | 46 | 6 | 12 | 16 | 4
+  d8_heuristics: 6 条记录
+    group | input | label | changed | found | cost | steps | path | expanded_nodes | generated_nodes | pushes | duplicate_pops | max_frontier_size | max_depth | expansion_order_sha256 | optimal
+    D8 | 题面 5x5（wall_prob=-） | pdf/zero(w=1.0) | {"heuristic": "zero", "weight": 1.0} | True | 7.0 | 8 | [[0, 0], [1, 0], [2, 0], [3, 0], [3, 1], [3, 2], [4, 2], [4, 3], [4, 4]] | 15 | 32 | 24 | 0 | 10 | 8 | bdf47e5e593c2f7e9d57be99012f74ce12b08d5b7d11f3a9693c52826900334c | True
+    D8 | 题面 5x5（wall_prob=-） | pdf/manhattan(w=1.0) | {"heuristic": "manhattan", "weight": 1.0} | True | 7.0 | 8 | [[0, 0], [1, 0], [2, 0], [3, 0], [3, 1], [3, 2], [4, 2], [4, 3], [4, 4]] | 9 | 18 | 16 | 0 | 8 | 8 | bfe6c1aa15e64b6d68d13b19fd97a0bbed717f58c54d0752dc84b9949ae7ca2f | True
+    D8 | 题面 5x5（wall_prob=-） | pdf/min_weight(w=1.0) | {"heuristic": "min_weight", "weight": 1.0} | True | 7.0 | 8 | [[0, 0], [1, 0], [2, 0], [3, 0], [3, 1], [3, 2], [4, 2], [4, 3], [4, 4]] | 15 | 32 | 24 | 0 | 10 | 8 | bdf47e5e593c2f7e9d57be99012f74ce12b08d5b7d11f3a9693c52826900334c | True
+    D8 | 题面 5x5（wall_prob=-） | pdf/manhattan(w=1.2) | {"heuristic": "manhattan", "weight": 1.2} | True | 7.0 | 8 | [[0, 0], [1, 0], [2, 0], [3, 0], [3, 1], [3, 2], [4, 2], [4, 3], [4, 4]] | 9 | 18 | 16 | 0 | 8 | 8 | bfe6c1aa15e64b6d68d13b19fd97a0bbed717f58c54d0752dc84b9949ae7ca2f | True
+    D8 | 题面 5x5（wall_prob=-） | pdf/manhattan(w=1.5) | {"heuristic": "manhattan", "weight": 1.5} | True | 7.0 | 8 | [[0, 0], [1, 0], [2, 0], [3, 0], [3, 1], [3, 2], [4, 2], [4, 3], [4, 4]] | 9 | 18 | 16 | 0 | 8 | 8 | bfe6c1aa15e64b6d68d13b19fd97a0bbed717f58c54d0752dc84b9949ae7ca2f | True
+    D8 | 题面 5x5（wall_prob=-） | pdf/manhattan(w=2.0) | {"heuristic": "manhattan", "weight": 2.0} | True | 7.0 | 8 | [[0, 0], [1, 0], [2, 0], [3, 0], [3, 1], [3, 2], [4, 2], [4, 3], [4, 4]] | 9 | 18 | 16 | 0 | 8 | 8 | bfe6c1aa15e64b6d68d13b19fd97a0bbed717f58c54d0752dc84b9949ae7ca2f | True
+  d8_weighted_astar_large: 10 条记录
+    group | input | label | input_fingerprint | changed | optimal_reference | found | cost | steps | path | expanded_nodes | generated_nodes | pushes | duplicate_pops | max_frontier_size | max_depth | expansion_order_sha256
+    D8 | 41x41 自设加权地形 | weighted_41x41_p20_0/manhattan(w=1.0) | 018a86c6426883424241aa8eefc8db202bbb2605ec972adce863ea1b2807a94b | {"heuristic": "manhattan", "weight": 1.0} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 87 | 152 | 150 | 0 | 64 | 80 | e5e38615513b65188e6213576f9555fb8b15ec54cc9966c33ec087b3143e6569
+    D8 | 41x41 自设加权地形 | weighted_41x41_p20_0/manhattan(w=1.2) | 018a86c6426883424241aa8eefc8db202bbb2605ec972adce863ea1b2807a94b | {"heuristic": "manhattan", "weight": 1.2} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 87 | 152 | 150 | 0 | 64 | 80 | e5e38615513b65188e6213576f9555fb8b15ec54cc9966c33ec087b3143e6569
+    D8 | 41x41 自设加权地形 | weighted_41x41_p20_0/manhattan(w=1.5) | 018a86c6426883424241aa8eefc8db202bbb2605ec972adce863ea1b2807a94b | {"heuristic": "manhattan", "weight": 1.5} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 87 | 152 | 150 | 0 | 64 | 80 | e5e38615513b65188e6213576f9555fb8b15ec54cc9966c33ec087b3143e6569
+    D8 | 41x41 自设加权地形 | weighted_41x41_p20_0/manhattan(w=2.0) | 018a86c6426883424241aa8eefc8db202bbb2605ec972adce863ea1b2807a94b | {"heuristic": "manhattan", "weight": 2.0} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 87 | 152 | 150 | 0 | 64 | 80 | e5e38615513b65188e6213576f9555fb8b15ec54cc9966c33ec087b3143e6569
+    D8 | 41x41 自设加权地形 | weighted_41x41_p20_0/manhattan(w=3.0) | 018a86c6426883424241aa8eefc8db202bbb2605ec972adce863ea1b2807a94b | {"heuristic": "manhattan", "weight": 3.0} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 89 | 157 | 154 | 0 | 66 | 80 | 7a76593cc6c22eb9e17eb57b8f325ee4f8183c8fc79f058c8e88e81f21e7198a
+    D8 | 41x41 自设加权地形 | weighted_41x41_p35_1/manhattan(w=1.0) | baa31dde6d70a0ddff4ed24eb1c47b7eae99eab8c77adb747ccd181830adce39 | {"heuristic": "manhattan", "weight": 1.0} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 81 | 130 | 131 | 0 | 51 | 80 | db0297d93a9b7170021b91bb3104d0dc4d86608c8c94b2d650cdbb6eeb25f77f
+    D8 | 41x41 自设加权地形 | weighted_41x41_p35_1/manhattan(w=1.2) | baa31dde6d70a0ddff4ed24eb1c47b7eae99eab8c77adb747ccd181830adce39 | {"heuristic": "manhattan", "weight": 1.2} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 81 | 130 | 131 | 0 | 51 | 80 | db0297d93a9b7170021b91bb3104d0dc4d86608c8c94b2d650cdbb6eeb25f77f
+    D8 | 41x41 自设加权地形 | weighted_41x41_p35_1/manhattan(w=1.5) | baa31dde6d70a0ddff4ed24eb1c47b7eae99eab8c77adb747ccd181830adce39 | {"heuristic": "manhattan", "weight": 1.5} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 81 | 130 | 131 | 0 | 51 | 80 | db0297d93a9b7170021b91bb3104d0dc4d86608c8c94b2d650cdbb6eeb25f77f
+    D8 | 41x41 自设加权地形 | weighted_41x41_p35_1/manhattan(w=2.0) | baa31dde6d70a0ddff4ed24eb1c47b7eae99eab8c77adb747ccd181830adce39 | {"heuristic": "manhattan", "weight": 2.0} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 81 | 130 | 131 | 0 | 51 | 80 | db0297d93a9b7170021b91bb3104d0dc4d86608c8c94b2d650cdbb6eeb25f77f
+    D8 | 41x41 自设加权地形 | weighted_41x41_p35_1/manhattan(w=3.0) | baa31dde6d70a0ddff4ed24eb1c47b7eae99eab8c77adb747ccd181830adce39 | {"heuristic": "manhattan", "weight": 3.0} | 79.0 | True | 79.0 | 80 | [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [0, 7], [0, 8], [0, 9], [0, 10], [0, 11], [0, 12], [0, 13], [0, 14], [0, 15], [0, 16], [0, 17], [0, ... | 81 | 130 | 131 | 0 | 51 | 80 | db0297d93a9b7170021b91bb3104d0dc4d86608c8c94b2d650cdbb6eeb25f77f
+  d9_q2_timing: 2 条记录
+    group | label | changed | expanded_nodes | cost | repeats | seconds_samples | seconds_mean | seconds_min | seconds_max | seconds_spread
+    D9 | q2_pdf/zero | {"heuristic": "zero"} | 15 | 7.0 | 3 | [0.0001, 8.2e-05, 8.1e-05] | 8.8e-05 | 8.1e-05 | 0.0001 | 1.9e-05
+    D9 | q2_pdf/manhattan | {"heuristic": "manhattan"} | 9 | 7.0 | 3 | [6e-05, 5.8e-05, 5.4e-05] | 5.8e-05 | 5.4e-05 | 6e-05 | 6e-06
+  d9_spread_ratio              {"q2_pdf/zero": 0.2159, "q2_pdf/manhattan": 0.1034}
+  e1_tie_break: 36 条记录
+    label | rows | cols | reachable | input_fingerprint | steps_True | expanded_True | steps_False | expanded_False | same_steps | same_expanded
+    maze_5x5_p20_reach_0 | 5 | 5 | True | a684afce6dc4b71efea901038e3ec1c8f74e43792aabce96601d40203ee495d3 | 8 | 9 | 8 | 20 | True | False
+    maze_5x5_p20_sealed_1 | 5 | 5 | False | 1c3f95effa58791803cbc0aa7de54c023a1a24fdd10f8fd31d864a0c9a13162e | None | 19 | None | 19 | True | True
+    maze_5x5_p20_reach_2 | 5 | 5 | True | 4311cb06f116018ce0349887f5928d95e885fa25f1b31dc1901fdb4d089d0ca2 | 8 | 13 | 8 | 19 | True | False
+    maze_5x5_p20_sealed_3 | 5 | 5 | False | 1eb90bb06166c387bfe63721be13d163a846eca396114888002d6da302fd982d | None | 16 | None | 16 | True | True
+    maze_5x5_p20_reach_4 | 5 | 5 | True | 775b6155306a53f6a8bd698aaadc3fef5526eae6fa802ed73f68dca74e095467 | 8 | 10 | 8 | 21 | True | False
+    maze_5x5_p20_sealed_5 | 5 | 5 | False | 602792c33330d0b359520d70ac17e20d09316235b84d985833dc26ae0d4a3248 | None | 0 | None | 0 | True | True
+    maze_5x5_p35_reach_0 | 5 | 5 | True | 5f8699123428ba5ac451e00734dd00ea7c39721dd2e97e2c56cea789f1af75ca | 8 | 9 | 8 | 20 | True | False
+    maze_5x5_p35_sealed_1 | 5 | 5 | False | 5058ac82c465de825d6cb56ef48ad448c83f988f33000c23da7045dbde660b98 | None | 0 | None | 0 | True | True
+    maze_5x5_p35_reach_2 | 5 | 5 | True | bb7a60da8573edb9865f8b984b826e87162570e2cec47d453fdbc4d02683d966 | 8 | 9 | 8 | 18 | True | False
+    maze_5x5_p35_sealed_3 | 5 | 5 | False | ca62c3dbc769143a23a438abde122954cca71dbacb66d3753621defdd30323e6 | None | 12 | None | 12 | True | True
+    maze_5x5_p35_reach_4 | 5 | 5 | True | f78f858532a942876edcbebd8457210df5d30cf70451988c93718f0d70dc84bf | 8 | 10 | 8 | 10 | True | True
+    maze_5x5_p35_sealed_5 | 5 | 5 | False | aa9dc55ecefd52c93e830106c223f1aaff8362fffacdee1b4556e1fdaa3e3efb | None | 0 | None | 0 | True | True
+    maze_20x20_p20_reach_0 | 20 | 20 | True | cfc298be5d3e9e1a7e4c157e9c89b1c16ff60237a321af5dd818093e2738ca03 | 38 | 62 | 38 | 282 | True | False
+    maze_20x20_p20_sealed_1 | 20 | 20 | False | 70f7bd71bb5cb2e1d894e2cc99d9ffb862781359c61478266df72bcb958b2169 | None | 304 | None | 304 | True | True
+    maze_20x20_p20_reach_2 | 20 | 20 | True | 63c21da4266a2b9e76f575fa8a3a0eb13247fc6139aa74f172ea964a6e95c30c | 38 | 53 | 38 | 305 | True | False
+    maze_20x20_p20_sealed_3 | 20 | 20 | False | ee460cdc2844777858d7730d7474fd86960e0666bd726a5446fecd334bf22da5 | None | 323 | None | 323 | True | True
+    maze_20x20_p20_reach_4 | 20 | 20 | True | 2312ff2157c625c2100e10ffbdc5401c1326fe06aab13b05059741ed689e177b | 38 | 61 | 38 | 236 | True | False
+    maze_20x20_p20_sealed_5 | 20 | 20 | False | 10afc0c586228c92dffdcd4d0a9f9bd371409e337d8605e1ada4f6c10736694c | None | 313 | None | 313 | True | True
+    maze_20x20_p35_reach_0 | 20 | 20 | True | 21e8d5ac357f751e984313ee012a27cded05dc168f97da1bc247f2bcbb2d3f18 | 38 | 48 | 38 | 170 | True | False
+    maze_20x20_p35_sealed_1 | 20 | 20 | False | dfaa4a0c598027dfd2a05a5441064e01f552d780aa4572d4b9efd0f3555a29ea | None | 219 | None | 219 | True | True
+    maze_20x20_p35_reach_2 | 20 | 20 | True | 2c45f88149c93dd31c9ea0eced34aa43b0315ab323efa9dcc7421374f5ce4fe3 | 38 | 71 | 38 | 75 | True | False
+    maze_20x20_p35_sealed_3 | 20 | 20 | False | c030ecfb7551ed7fbd4fcca67d149b68a6fcb809108aacf5725316954a0fa3bd | None | 155 | None | 155 | True | True
+    maze_20x20_p35_reach_4 | 20 | 20 | True | 8f1d41c86627b6acf86380cab490e8d2b8dbcbf82c207ddf1d28176fcff20108 | 38 | 103 | 38 | 109 | True | False
+    maze_20x20_p35_sealed_5 | 20 | 20 | False | 376998148392fb2d90c718ed145f36cb320ebe168cdce5b2ee53c107368dd477 | None | 0 | None | 0 | True | True
+    maze_41x41_p20_reach_0 | 41 | 41 | True | b45908e2626ed958590803e5b80c94bf456d85e103d1c80346d959c7941f1bbd | 80 | 203 | 80 | 996 | True | False
+    maze_41x41_p20_sealed_1 | 41 | 41 | False | 202a71c22de58b797d32463188ae9c9cd952a0367b12c0ba88276cd605f11a30 | None | 0 | None | 0 | True | True
+    maze_41x41_p20_reach_2 | 41 | 41 | True | 44f4a43b7b9c75c0ff6f804aa084d1c2fe53ea0a92b19e5a7cb04df398adfd1c | 80 | 179 | 80 | 997 | True | False
+    maze_41x41_p20_sealed_3 | 41 | 41 | False | 6a5c336fcbee792665abd0f7b16be6f7ae7cf29b2c9b5825f8a5fb988f10775b | None | 1319 | None | 1319 | True | True
+    maze_41x41_p20_reach_4 | 41 | 41 | True | 6c99cd2206df1a15632b6451c7f9f5500820bb9adb5142ff260f626d6a939cf9 | 80 | 156 | 80 | 1113 | True | False
+    maze_41x41_p20_sealed_5 | 41 | 41 | False | f520388c08e89d1e2c797b17f3a81f2c5a6c13790473ff4b58c3ce47ba9ffb32 | None | 1330 | None | 1330 | True | True
+    maze_41x41_p35_reach_0 | 41 | 41 | True | 2f86134f3934f096aa0a3363fa32c81b5f4d6f7777cd2d088cf31618dd8c59e5 | 80 | 217 | 80 | 322 | True | False
+    maze_41x41_p35_sealed_1 | 41 | 41 | False | a648e6754a4172a18fdb32ac69932aad317feb12852229b87363da16d9e40208 | None | 925 | None | 925 | True | True
+    maze_41x41_p35_reach_2 | 41 | 41 | True | 1a109df5ce66b2e0b893cda8dd26b767457a920f6c515427119142f9ed02e08d | 80 | 285 | 80 | 371 | True | False
+    maze_41x41_p35_sealed_3 | 41 | 41 | False | dd2e1b45beb304ad14769cb814bae78d7b5688e2f27c04cc795ec0f43cb0da0e | None | 909 | None | 909 | True | True
+    maze_41x41_p35_reach_4 | 41 | 41 | True | ead95d66508f00761ea29f5f26a6f08f0747003ccd8bcca3955a4ab36891f1aa | 80 | 320 | 80 | 394 | True | False
+    maze_41x41_p35_sealed_5 | 41 | 41 | False | 0ce140af1a6c98cae29159b3c4a3b23a4231b8e157badbeae252b12e1c00080c | None | 1050 | None | 1050 | True | True
+  e1_summary                   {"cases": 36, "cases_with_different_expanded": 17, "max_expanded_gap": 957, "examples": [{"label": "maze_41x41_p20_reach_4", "tie_true": 156, "tie_false": 11...
+  e2_scale: 12 条记录
+    label | rows | cols | wall_prob | expanded_zero | expanded_manhattan | ratio | opens | input_fingerprint
+    maze_20x20_p20_reach_0 | 20 | 20 | 0.2 | 327 | 62 | 0.189602 | 328 | cfc298be5d3e9e1a7e4c157e9c89b1c16ff60237a321af5dd818093e2738ca03
+    maze_20x20_p20_reach_2 | 20 | 20 | 0.2 | 340 | 53 | 0.155882 | 340 | 63c21da4266a2b9e76f575fa8a3a0eb13247fc6139aa74f172ea964a6e95c30c
+    maze_20x20_p20_reach_4 | 20 | 20 | 0.2 | 307 | 61 | 0.198697 | 309 | 2312ff2157c625c2100e10ffbdc5401c1326fe06aab13b05059741ed689e177b
+    maze_20x20_p35_reach_0 | 20 | 20 | 0.35 | 260 | 48 | 0.184615 | 276 | 21e8d5ac357f751e984313ee012a27cded05dc168f97da1bc247f2bcbb2d3f18
+    maze_20x20_p35_reach_2 | 20 | 20 | 0.35 | 208 | 71 | 0.341346 | 267 | 2c45f88149c93dd31c9ea0eced34aa43b0315ab323efa9dcc7421374f5ce4fe3
+    maze_20x20_p35_reach_4 | 20 | 20 | 0.35 | 249 | 103 | 0.413655 | 269 | 8f1d41c86627b6acf86380cab490e8d2b8dbcbf82c207ddf1d28176fcff20108
+    maze_41x41_p20_reach_0 | 41 | 41 | 0.2 | 1355 | 203 | 0.149815 | 1361 | b45908e2626ed958590803e5b80c94bf456d85e103d1c80346d959c7941f1bbd
+    maze_41x41_p20_reach_2 | 41 | 41 | 0.2 | 1353 | 179 | 0.132299 | 1354 | 44f4a43b7b9c75c0ff6f804aa084d1c2fe53ea0a92b19e5a7cb04df398adfd1c
+    maze_41x41_p20_reach_4 | 41 | 41 | 0.2 | 1369 | 156 | 0.113952 | 1374 | 6c99cd2206df1a15632b6451c7f9f5500820bb9adb5142ff260f626d6a939cf9
+    maze_41x41_p35_reach_0 | 41 | 41 | 0.35 | 1028 | 217 | 0.211089 | 1128 | 2f86134f3934f096aa0a3363fa32c81b5f4d6f7777cd2d088cf31618dd8c59e5
+    maze_41x41_p35_reach_2 | 41 | 41 | 0.35 | 884 | 285 | 0.322398 | 1115 | 1a109df5ce66b2e0b893cda8dd26b767457a920f6c515427119142f9ed02e08d
+    maze_41x41_p35_reach_4 | 41 | 41 | 0.35 | 1093 | 320 | 0.292772 | 1142 | ead95d66508f00761ea29f5f26a6f08f0747003ccd8bcca3955a4ab36891f1aa
+  e3_degenerate: 5 条记录
+    case | answer | steps | expected_note
+    start_equals_goal | [[0, 0]] | 0 | [start] 单元素路径（U3 口径）
+    unreachable_maze | None | None | found=False -> Q1 输出 []，Q2 输出 -1
+    single_node_tree | None | None | None
+    treasures_exhausted | None | None | None
+    empty_grid | None | None | None
+  e4_ratio_distribution        {"n": 18, "min": 0.113952, "max": 0.909091, "mean": 0.333908, "stdev": 0.198046, "worst_cases": [{"group": "D5", "label": "maze_5x5_p35_reach_4", "rows": 5, ...
+  groups_executed              ["d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "d9", "e1", "e2", "e3", "e4"]
+  assertions_by_group          {"d1": 45, "d2": 12, "d3": 48, "d4": 15, "d5": 18, "d6": 5, "d7": 18, "d8": 0, "d9": 0, "e1": 2, "e2": 1, "e3": 5, "e4": 1}
+
+[断言] 共 173 条，通过 173，失败 0
+  [PASS] D1[zero]：无未声明的配置差异  <- {}
+  [PASS] D1[zero]：声明与实际一致  <- {}
+  [PASS] D1[zero]：最短步数一致（正确性优先）
+  [PASS] D1[manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[manhattan]：声明与实际一致  <- {}
+  [PASS] D1[manhattan]：最短步数一致（正确性优先）
+  [PASS] D1[min_weight]：无未声明的配置差异  <- {}
+  [PASS] D1[min_weight]：声明与实际一致  <- {}
+  [PASS] D1[min_weight]：最短步数一致（正确性优先）
+  [PASS] D1[maze_41x41_p20_reach_0/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_reach_0/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_reach_0]：两启发函数步数一致  <- 80 vs 80
+  [PASS] D1[maze_41x41_p20_sealed_1/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_sealed_1/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_sealed_1]：两启发函数步数一致  <- None vs None
+  [PASS] D1[maze_41x41_p20_reach_2/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_reach_2/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_reach_2]：两启发函数步数一致  <- 80 vs 80
+  [PASS] D1[maze_41x41_p20_sealed_3/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_sealed_3/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_sealed_3]：两启发函数步数一致  <- None vs None
+  [PASS] D1[maze_41x41_p20_reach_4/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_reach_4/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_reach_4]：两启发函数步数一致  <- 80 vs 80
+  [PASS] D1[maze_41x41_p20_sealed_5/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_sealed_5/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p20_sealed_5]：两启发函数步数一致  <- None vs None
+  [PASS] D1[maze_41x41_p35_reach_0/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_reach_0/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_reach_0]：两启发函数步数一致  <- 80 vs 80
+  [PASS] D1[maze_41x41_p35_sealed_1/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_sealed_1/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_sealed_1]：两启发函数步数一致  <- None vs None
+  [PASS] D1[maze_41x41_p35_reach_2/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_reach_2/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_reach_2]：两启发函数步数一致  <- 80 vs 80
+  [PASS] D1[maze_41x41_p35_sealed_3/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_sealed_3/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_sealed_3]：两启发函数步数一致  <- None vs None
+  [PASS] D1[maze_41x41_p35_reach_4/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_reach_4/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_reach_4]：两启发函数步数一致  <- 80 vs 80
+  [PASS] D1[maze_41x41_p35_sealed_5/zero]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_sealed_5/manhattan]：无未声明的配置差异  <- {}
+  [PASS] D1[maze_41x41_p35_sealed_5]：两启发函数步数一致  <- None vs None
+  [PASS] D2[maze_41x41_p20_reach_0]：两种队列返回值一致
+  [PASS] D2[maze_41x41_p20_reach_0]：两种队列的扩展顺序逐项相同（对照只剩数据结构开销）  <- 7862c69df12e vs 7862c69df12e（节点数 203 vs 203）
+  [PASS] D2[maze_41x41_p20_reach_0]：两种队列扩展节点数一致  <- 203 vs 203
+  [PASS] D2[maze_41x41_p20_reach_2]：两种队列返回值一致
+  [PASS] D2[maze_41x41_p20_reach_2]：两种队列的扩展顺序逐项相同（对照只剩数据结构开销）  <- 453e29b16e63 vs 453e29b16e63（节点数 179 vs 179）
+  [PASS] D2[maze_41x41_p20_reach_2]：两种队列扩展节点数一致  <- 179 vs 179
+  [PASS] D2[maze_41x41_p20_reach_4]：两种队列返回值一致
+  [PASS] D2[maze_41x41_p20_reach_4]：两种队列的扩展顺序逐项相同（对照只剩数据结构开销）  <- 14c5ec2c059d vs 14c5ec2c059d（节点数 156 vs 156）
+  [PASS] D2[maze_41x41_p20_reach_4]：两种队列扩展节点数一致  <- 156 vs 156
+  [PASS] D2[pdf_maze]：两种队列返回值一致
+  [PASS] D2[pdf_maze]：两种队列的扩展顺序逐项相同（对照只剩数据结构开销）  <- 57b2f7d6b892 vs 57b2f7d6b892（节点数 14 vs 14）
+  [PASS] D2[pdf_maze]：两种队列扩展节点数一致  <- 14 vs 14
+  [PASS] D3[tree_d3_b2_0]：四种顺序 × 两种算法结果全同  <- values={15.0}
+  [PASS] D3[tree_d3_b2_0]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d3_b2_1]：四种顺序 × 两种算法结果全同  <- values={8.0}
+  [PASS] D3[tree_d3_b2_1]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d3_b2_2]：四种顺序 × 两种算法结果全同  <- values={4.0}
+  [PASS] D3[tree_d3_b2_2]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d3_b2_3]：四种顺序 × 两种算法结果全同  <- values={17.0}
+  [PASS] D3[tree_d3_b2_3]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d3_b3_0]：四种顺序 × 两种算法结果全同  <- values={10.0}
+  [PASS] D3[tree_d3_b3_0]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d3_b3_1]：四种顺序 × 两种算法结果全同  <- values={10.0}
+  [PASS] D3[tree_d3_b3_1]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d3_b3_2]：四种顺序 × 两种算法结果全同  <- values={6.0}
+  [PASS] D3[tree_d3_b3_2]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d3_b3_3]：四种顺序 × 两种算法结果全同  <- values={6.0}
+  [PASS] D3[tree_d3_b3_3]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d4_b3_0]：四种顺序 × 两种算法结果全同  <- values={8.0}
+  [PASS] D3[tree_d4_b3_0]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d4_b3_1]：四种顺序 × 两种算法结果全同  <- values={12.0}
+  [PASS] D3[tree_d4_b3_1]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d4_b3_2]：四种顺序 × 两种算法结果全同  <- values={9.0}
+  [PASS] D3[tree_d4_b3_2]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d4_b3_3]：四种顺序 × 两种算法结果全同  <- values={15.0}
+  [PASS] D3[tree_d4_b3_3]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d5_b2_0]：四种顺序 × 两种算法结果全同  <- values={8.0}
+  [PASS] D3[tree_d5_b2_0]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d5_b2_1]：四种顺序 × 两种算法结果全同  <- values={13.0}
+  [PASS] D3[tree_d5_b2_1]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d5_b2_2]：四种顺序 × 两种算法结果全同  <- values={10.0}
+  [PASS] D3[tree_d5_b2_2]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d5_b2_3]：四种顺序 × 两种算法结果全同  <- values={9.0}
+  [PASS] D3[tree_d5_b2_3]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d5_b3_0]：四种顺序 × 两种算法结果全同  <- values={6.0}
+  [PASS] D3[tree_d5_b3_0]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d5_b3_1]：四种顺序 × 两种算法结果全同  <- values={7.0}
+  [PASS] D3[tree_d5_b3_1]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d5_b3_2]：四种顺序 × 两种算法结果全同  <- values={8.0}
+  [PASS] D3[tree_d5_b3_2]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d5_b3_3]：四种顺序 × 两种算法结果全同  <- values={10.0}
+  [PASS] D3[tree_d5_b3_3]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d6_b3_0]：四种顺序 × 两种算法结果全同  <- values={10.0}
+  [PASS] D3[tree_d6_b3_0]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d6_b3_1]：四种顺序 × 两种算法结果全同  <- values={10.0}
+  [PASS] D3[tree_d6_b3_1]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d6_b3_2]：四种顺序 × 两种算法结果全同  <- values={11.0}
+  [PASS] D3[tree_d6_b3_2]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D3[tree_d6_b3_3]：四种顺序 × 两种算法结果全同  <- values={12.0}
+  [PASS] D3[tree_d6_b3_3]：Alpha-beta 访问节点数不超过 Minimax
+  [PASS] D4[H=0]：Minimax 与 Alpha-beta 同解
+  [PASS] D4[H=0]：两者最优首步相同
+  [PASS] D4[H=1]：Minimax 与 Alpha-beta 同解
+  [PASS] D4[H=1]：两者最优首步相同
+  [PASS] D4[H=2]：Minimax 与 Alpha-beta 同解
+  [PASS] D4[H=2]：两者最优首步相同
+  [PASS] D4[H=3]：Minimax 与 Alpha-beta 同解
+  [PASS] D4[H=3]：两者最优首步相同
+  [PASS] D4[H=4]：Minimax 与 Alpha-beta 同解
+  [PASS] D4[H=4]：两者最优首步相同
+  [PASS] D4[H=5]：Minimax 与 Alpha-beta 同解
+  [PASS] D4[H=5]：两者最优首步相同
+  [PASS] D4[H=6]：Minimax 与 Alpha-beta 同解
+  [PASS] D4[H=6]：两者最优首步相同
+  [PASS] D4：H≥4 与 H=4 结果相同（完全搜索）  <- {'H=0/mm': 0.0, 'H=1/mm': 2.0, 'H=2/mm': -1.0, 'H=3/mm': 2.0, 'H=4/mm': 3.0, 'H=5/mm': 3.0, 'H=6/mm': 3.0}
+  [PASS] D5[maze_5x5_p20_reach_0]：两启发函数步数一致
+  [PASS] D5[maze_5x5_p20_reach_2]：两启发函数步数一致
+  [PASS] D5[maze_5x5_p20_reach_4]：两启发函数步数一致
+  [PASS] D5[maze_5x5_p35_reach_0]：两启发函数步数一致
+  [PASS] D5[maze_5x5_p35_reach_2]：两启发函数步数一致
+  [PASS] D5[maze_5x5_p35_reach_4]：两启发函数步数一致
+  [PASS] D5[maze_20x20_p20_reach_0]：两启发函数步数一致
+  [PASS] D5[maze_20x20_p20_reach_2]：两启发函数步数一致
+  [PASS] D5[maze_20x20_p20_reach_4]：两启发函数步数一致
+  [PASS] D5[maze_20x20_p35_reach_0]：两启发函数步数一致
+  [PASS] D5[maze_20x20_p35_reach_2]：两启发函数步数一致
+  [PASS] D5[maze_20x20_p35_reach_4]：两启发函数步数一致
+  [PASS] D5[maze_41x41_p20_reach_0]：两启发函数步数一致
+  [PASS] D5[maze_41x41_p20_reach_2]：两启发函数步数一致
+  [PASS] D5[maze_41x41_p20_reach_4]：两启发函数步数一致
+  [PASS] D5[maze_41x41_p35_reach_0]：两启发函数步数一致
+  [PASS] D5[maze_41x41_p35_reach_2]：两启发函数步数一致
+  [PASS] D5[maze_41x41_p35_reach_4]：两启发函数步数一致
+  [PASS] D6[H=2/mm]：三种顺序结果与首步全同  <- values={(-1.0, 'T2')}
+  [PASS] D6[H=2/ab]：三种顺序结果与首步全同  <- values={(-1.0, 'T2')}
+  [PASS] D6[H=4/mm]：三种顺序结果与首步全同  <- values={(3.0, 'T3')}
+  [PASS] D6[H=4/ab]：三种顺序结果与首步全同  <- values={(3.0, 'T3')}
+  [PASS] D6[H=4/ab]：顺序确实改变了访问节点数  <- visited={'asc': 47, 'desc': 46, 'trace_desc': 37}
+  [PASS] D7[tree_d3_b2_0]：剪枝不改变博弈值
+  [PASS] D7[tree_d3_b2_0]：Alpha-beta 不读取更多叶子
+  [PASS] D7[tree_d3_b2_1]：剪枝不改变博弈值
+  [PASS] D7[tree_d3_b2_1]：Alpha-beta 不读取更多叶子
+  [PASS] D7[tree_d3_b2_2]：剪枝不改变博弈值
+  [PASS] D7[tree_d3_b2_2]：Alpha-beta 不读取更多叶子
+  [PASS] D7[tree_d3_b2_3]：剪枝不改变博弈值
+  [PASS] D7[tree_d3_b2_3]：Alpha-beta 不读取更多叶子
+  [PASS] D7[tree_d3_b3_0]：剪枝不改变博弈值
+  [PASS] D7[tree_d3_b3_0]：Alpha-beta 不读取更多叶子
+  [PASS] D7[tree_d3_b3_1]：剪枝不改变博弈值
+  [PASS] D7[tree_d3_b3_1]：Alpha-beta 不读取更多叶子
+  [PASS] D7[tree_d3_b3_2]：剪枝不改变博弈值
+  [PASS] D7[tree_d3_b3_2]：Alpha-beta 不读取更多叶子
+  [PASS] D7[tree_d3_b3_3]：剪枝不改变博弈值
+  [PASS] D7[tree_d3_b3_3]：Alpha-beta 不读取更多叶子
+  [PASS] D7[q4 H=2]：剪枝不改变博弈值
+  [PASS] D7[q4 H=4]：剪枝不改变博弈值
+  [PASS] E1：全部用例下平局规则不改变最短步数（含无解）  <- 不同=[]
+  [PASS] E1：存在节点数随平局规则改变的用例（否则该对照形同虚设）  <- 有差异用例数=17/36
+  [PASS] E2：全部大用例上曼哈顿的扩展数都少于 h=0  <- 不满足=[]
+  [PASS] E3[start=goal]：返回单元素路径
+  [PASS] E3[unreachable]：found=False（由调用方转成 [] / -1）
+  [PASS] E3[single tree]：返回该叶值
+  [PASS] E3[取尽]：H=9 与 H=4 同解（取完即终止）
+  [PASS] E3[空网格]：Grid 构造空网格时抛 ValueError  <- 网格为空
+  [PASS] E4：比值分布已记录且样本数 ≥ 12  <- n=18
+  [PASS] 执行的分组集合等于请求的分组集合  <- actual=['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'e1', 'e2', 'e3', 'e4'] expected=['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'e1', 'e2', 'e3', 'e4']
+  [PASS] 每个实验行都带计数类指标（expanded/visited nodes）  <- 缺失=[]
+  [PASS] 每个实验行声明的 changed 键都在 FACTOR_KEYS 内  <- 违规=[]
+
+[说明与未验证项]
+  - D3 汇总：24 个自设树上，最优顺序的剪枝比（Alpha-beta/Minimax 访问数）最小 0.357、最大 1.000、均值 0.692；同一树内不同顺序的访问节点数极差最大 90。
+  - D9 时间口径：Q4 搜索耗时极小（H=4 约 0.000522 s 量级），时间差异在该量级上受进程调度影响；结论一律以计数类指标为准。
+  - D5/E4：h=0 与曼哈顿的扩展节点数比值按规模分布 —— {'20x20': {'n': 6, 'min': 0.155882, 'max': 0.413655, 'mean': 0.2473}, '41x41': {'n': 6, 'min': 0.113952, 'max': 0.322398, 'mean': 0.203721}, '5x5': {'n': 6, 'min': 0.391304, 'max': 0.909091, 'mean': 0.550704}}。报告必须给分布而非单一用例。
+  - D8（题面 5×5）：以 h=0 的最小代价 7.0 为最优基准；实测各配置均保持最优：{'pdf/zero(w=1.0)': True, 'pdf/manhattan(w=1.0)': True, 'pdf/min_weight(w=1.0)': True, 'pdf/manhattan(w=1.2)': True, 'pdf/manhattan(w=1.5)': True, 'pdf/manhattan(w=2.0)': True}。**该用例规模过小，加权 A* 的代价未被观察到**，故加权对照改用自设 41×41 输入。
+  - D8（41×41 加权地形）：w=1.0 的扩展节点数为 [87, 81]；w>1 的配置中保持最优 8/8。**实测结论：加权 A* 在本实验的输入上没有降低节点数**（多数配置的扩展数与 w=1.0 完全相同，w=3.0 甚至略增）。原因：题目二地图以代价 1 的格子为主，且 E 的进入代价为 0，曼哈顿距离已接近真实剩余代价（本身就接近精确），w>1 无从带来额外信息。该结论属**负结果**，如实记录；它同时说明「加权 A* 有用」不是普遍规律，而依赖启发函数的初始信息量。
+  - D9：Q2 题面图（5×5，规模极小）上重复 3 次的耗时极差/均值为 {'q2_pdf/zero': 0.2159, 'q2_pdf/manhattan': 0.1034}。该比值说明：在小规模输入上时间差异主要来自测量波动，因此结论一律以计数类指标（expanded_nodes）为准。
+  - E1：17/36 个自设迷宫用例的扩展节点数随平局规则改变，最大差 957 个节点。结论：报告引用节点数必须声明平局规则（与 WORKFLOW.md 3.5 一致）。
+  - E2：在 12 个 20×20/41×41 用例上，曼哈顿/h=0 的扩展节点数比值范围 0.114~0.414。
+  - E4：18 个自设迷宫上「曼哈顿/h=0 扩展节点数」比值分布：最小 0.114、最大 0.909、均值 0.334。只报其中任一单个数字都会造成选择性偏差。

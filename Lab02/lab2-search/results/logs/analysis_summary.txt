@@ -1,0 +1,172 @@
+========================================================================================
+产物: analysis_summary
+阶段: 阶段 6   脚本: run_analysis.py
+命令: python run_analysis.py
+开始: 2026-10-16T01:42:20+08:00   结束: 2026-10-16T01:42:23+08:00   耗时: 2.634s
+退出码: 0
+环境: python 3.11.17 | Windows-10-10.0.26200-SP0 | conda=lab2-search
+========================================================================================
+
+[输入与指纹]
+  seed                         42
+
+[参数]
+  figures_dir                  results/figures
+  dpi                          140
+  note                         所有图的数据均由图内现算得到，并与 results/logs/ 的产物一致
+
+[结果]
+  figures: 8 条记录
+    file | bytes | sha256
+    fig01_q1_search_process.png | 60585 | 8dff7cdf4ef268c8
+    fig02_q1_heuristic_nodes.png | 102621 | 92fd9b4ed1d8c434
+    fig03_q2_cost_accumulation.png | 92371 | 273469bae3719217
+    fig04_q2_heuristic_compare.png | 79912 | 46adbdf77241f667
+    fig05_q3_pruning_tree.png | 85895 | 98ab41fa6ce8b3c9
+    fig06_q3_order_pruning.png | 192693 | 04d1b26aa4c377e9
+    fig07_q4_depth.png | 114251 | dbc561db5cb0ebd4
+    fig08_q4_matrix_order.png | 83183 | 8943242b2a296c0e
+  fig02_rows: 18 条记录
+    size | wall_prob | zero | manhattan
+    5x5 | 0.2 | 23 | 9
+    5x5 | 0.2 | 21 | 13
+    5x5 | 0.2 | 23 | 10
+    5x5 | 0.35 | 20 | 9
+    5x5 | 0.35 | 18 | 9
+    5x5 | 0.35 | 11 | 10
+    20x20 | 0.2 | 327 | 62
+    20x20 | 0.2 | 340 | 53
+    20x20 | 0.2 | 307 | 61
+    20x20 | 0.35 | 260 | 48
+    20x20 | 0.35 | 208 | 71
+    20x20 | 0.35 | 249 | 103
+    41x41 | 0.2 | 1355 | 203
+    41x41 | 0.2 | 1353 | 179
+    41x41 | 0.2 | 1369 | 156
+    41x41 | 0.35 | 1028 | 217
+    41x41 | 0.35 | 884 | 285
+    41x41 | 0.35 | 1093 | 320
+  fig03_cost_accumulation      {"path": [[0, 0], [1, 0], [2, 0], [3, 0], [3, 1], [3, 2], [4, 2], [4, 3], [4, 4]], "entry_cost": [0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0], "cumulative":...
+  fig05_pruning                {"minimax_visited": 15, "alpha_beta_visited": 14, "cutoffs": 2, "value": 5.0}
+  fig06_rows: 96 条记录
+    shape | depth | branching | leaf_count | order | minimax | alpha_beta
+    d3_b2 | 3 | 2 | 4 | identity | 7 | 7
+    d3_b2 | 3 | 2 | 4 | reversed | 7 | 6
+    d3_b2 | 3 | 2 | 4 | rotate | 7 | 6
+    d3_b2 | 3 | 2 | 4 | greedy | 7 | 7
+    d3_b2 | 3 | 2 | 4 | identity | 7 | 6
+    d3_b2 | 3 | 2 | 4 | reversed | 7 | 7
+    d3_b2 | 3 | 2 | 4 | rotate | 7 | 7
+    d3_b2 | 3 | 2 | 4 | greedy | 7 | 7
+    d3_b2 | 3 | 2 | 4 | identity | 7 | 7
+    d3_b2 | 3 | 2 | 4 | reversed | 7 | 7
+    d3_b2 | 3 | 2 | 4 | rotate | 7 | 7
+    d3_b2 | 3 | 2 | 4 | greedy | 7 | 7
+    d3_b2 | 3 | 2 | 4 | identity | 7 | 7
+    d3_b2 | 3 | 2 | 4 | reversed | 7 | 7
+    d3_b2 | 3 | 2 | 4 | rotate | 7 | 7
+    d3_b2 | 3 | 2 | 4 | greedy | 7 | 7
+    d3_b3 | 3 | 3 | 9 | identity | 13 | 11
+    d3_b3 | 3 | 3 | 9 | reversed | 13 | 13
+    d3_b3 | 3 | 3 | 9 | rotate | 13 | 12
+    d3_b3 | 3 | 3 | 9 | greedy | 13 | 12
+    d3_b3 | 3 | 3 | 9 | identity | 13 | 13
+    d3_b3 | 3 | 3 | 9 | reversed | 13 | 11
+    d3_b3 | 3 | 3 | 9 | rotate | 13 | 11
+    d3_b3 | 3 | 3 | 9 | greedy | 13 | 13
+    d3_b3 | 3 | 3 | 9 | identity | 13 | 10
+    d3_b3 | 3 | 3 | 9 | reversed | 13 | 13
+    d3_b3 | 3 | 3 | 9 | rotate | 13 | 11
+    d3_b3 | 3 | 3 | 9 | greedy | 13 | 12
+    d3_b3 | 3 | 3 | 9 | identity | 13 | 10
+    d3_b3 | 3 | 3 | 9 | reversed | 13 | 13
+    d3_b3 | 3 | 3 | 9 | rotate | 13 | 13
+    d3_b3 | 3 | 3 | 9 | greedy | 13 | 12
+    d4_b3 | 4 | 3 | 27 | identity | 40 | 33
+    d4_b3 | 4 | 3 | 27 | reversed | 40 | 33
+    d4_b3 | 4 | 3 | 27 | rotate | 40 | 31
+    d4_b3 | 4 | 3 | 27 | greedy | 40 | 38
+    d4_b3 | 4 | 3 | 27 | identity | 40 | 33
+    d4_b3 | 4 | 3 | 27 | reversed | 40 | 29
+    d4_b3 | 4 | 3 | 27 | rotate | 40 | 33
+    d4_b3 | 4 | 3 | 27 | greedy | 40 | 37
+    d4_b3 | 4 | 3 | 27 | identity | 40 | 29
+    d4_b3 | 4 | 3 | 27 | reversed | 40 | 32
+    d4_b3 | 4 | 3 | 27 | rotate | 40 | 28
+    d4_b3 | 4 | 3 | 27 | greedy | 40 | 35
+    d4_b3 | 4 | 3 | 27 | identity | 40 | 30
+    d4_b3 | 4 | 3 | 27 | reversed | 40 | 27
+    d4_b3 | 4 | 3 | 27 | rotate | 40 | 30
+    d4_b3 | 4 | 3 | 27 | greedy | 40 | 33
+    d5_b2 | 5 | 2 | 16 | identity | 31 | 27
+    d5_b2 | 5 | 2 | 16 | reversed | 31 | 23
+    d5_b2 | 5 | 2 | 16 | rotate | 31 | 23
+    d5_b2 | 5 | 2 | 16 | greedy | 31 | 28
+    d5_b2 | 5 | 2 | 16 | identity | 31 | 23
+    d5_b2 | 5 | 2 | 16 | reversed | 31 | 28
+    d5_b2 | 5 | 2 | 16 | rotate | 31 | 28
+    d5_b2 | 5 | 2 | 16 | greedy | 31 | 23
+    d5_b2 | 5 | 2 | 16 | identity | 31 | 27
+    d5_b2 | 5 | 2 | 16 | reversed | 31 | 26
+    d5_b2 | 5 | 2 | 16 | rotate | 31 | 26
+    d5_b2 | 5 | 2 | 16 | greedy | 31 | 28
+    d5_b2 | 5 | 2 | 16 | identity | 31 | 29
+    d5_b2 | 5 | 2 | 16 | reversed | 31 | 25
+    d5_b2 | 5 | 2 | 16 | rotate | 31 | 25
+    d5_b2 | 5 | 2 | 16 | greedy | 31 | 30
+    d5_b3 | 5 | 3 | 81 | identity | 121 | 71
+    d5_b3 | 5 | 3 | 81 | reversed | 121 | 79
+    d5_b3 | 5 | 3 | 81 | rotate | 121 | 84
+    d5_b3 | 5 | 3 | 81 | greedy | 121 | 81
+    d5_b3 | 5 | 3 | 81 | identity | 121 | 69
+    d5_b3 | 5 | 3 | 81 | reversed | 121 | 90
+    d5_b3 | 5 | 3 | 81 | rotate | 121 | 77
+    d5_b3 | 5 | 3 | 81 | greedy | 121 | 80
+    d5_b3 | 5 | 3 | 81 | identity | 121 | 81
+    d5_b3 | 5 | 3 | 81 | reversed | 121 | 56
+    d5_b3 | 5 | 3 | 81 | rotate | 121 | 81
+    d5_b3 | 5 | 3 | 81 | greedy | 121 | 90
+    d5_b3 | 5 | 3 | 81 | identity | 121 | 103
+    d5_b3 | 5 | 3 | 81 | reversed | 121 | 59
+    d5_b3 | 5 | 3 | 81 | rotate | 121 | 71
+    d5_b3 | 5 | 3 | 81 | greedy | 121 | 113
+    d6_b3 | 6 | 3 | 243 | identity | 364 | 135
+    d6_b3 | 6 | 3 | 243 | reversed | 364 | 194
+    d6_b3 | 6 | 3 | 243 | rotate | 364 | 193
+    d6_b3 | 6 | 3 | 243 | greedy | 364 | 166
+    d6_b3 | 6 | 3 | 243 | identity | 364 | 212
+    d6_b3 | 6 | 3 | 243 | reversed | 364 | 160
+    d6_b3 | 6 | 3 | 243 | rotate | 364 | 196
+    d6_b3 | 6 | 3 | 243 | greedy | 364 | 250
+    d6_b3 | 6 | 3 | 243 | identity | 364 | 168
+    d6_b3 | 6 | 3 | 243 | reversed | 364 | 175
+    d6_b3 | 6 | 3 | 243 | rotate | 364 | 143
+    d6_b3 | 6 | 3 | 243 | greedy | 364 | 191
+    d6_b3 | 6 | 3 | 243 | identity | 364 | 152
+    d6_b3 | 6 | 3 | 243 | reversed | 364 | 130
+    d6_b3 | 6 | 3 | 243 | rotate | 364 | 184
+    d6_b3 | 6 | 3 | 243 | greedy | 364 | 180
+  fig07_rows: 7 条记录
+    depth | value | minimax | alpha_beta
+    0 | 0.0 | 1 | 1
+    1 | 2.0 | 5 | 5
+    2 | -1.0 | 17 | 13
+    3 | 2.0 | 41 | 26
+    4 | 3.0 | 65 | 47
+    5 | 3.0 | 65 | 47
+    6 | 3.0 | 65 | 47
+
+[断言] 共 10 条，通过 10，失败 0
+  [PASS] 存在可用的中文字体  <- 使用 Microsoft YaHei
+  [PASS] 图 fig01_q1_search_process.png 已落盘且非空  <- bytes=60585
+  [PASS] 图 fig02_q1_heuristic_nodes.png 已落盘且非空  <- bytes=102621
+  [PASS] 图 fig03_q2_cost_accumulation.png 已落盘且非空  <- bytes=92371
+  [PASS] 图 fig04_q2_heuristic_compare.png 已落盘且非空  <- bytes=79912
+  [PASS] 图 fig05_q3_pruning_tree.png 已落盘且非空  <- bytes=85895
+  [PASS] 图 fig06_q3_order_pruning.png 已落盘且非空  <- bytes=192693
+  [PASS] 图 fig07_q4_depth.png 已落盘且非空  <- bytes=114251
+  [PASS] 图 fig08_q4_matrix_order.png 已落盘且非空  <- bytes=83183
+  [PASS] 出图数量  <- actual=8 expected=8
+
+[说明与未验证项]
+  - **视觉检查未在本脚本内完成**：本脚本只保证图已落盘且非空（字节数 > 5KB）。按 ../WORKFLOW.md 阶段 6 的要求，逐张打开检查（无重叠、无裁切、中文可读）的结果记录在 results/logs/figure_visual_review.*，不得用脚本成功代替视觉验收。

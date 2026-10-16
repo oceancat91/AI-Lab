@@ -1,0 +1,1221 @@
+{
+  "name": "analysis_summary",
+  "stage": "阶段 6",
+  "script": "run_analysis.py",
+  "command": "python run_analysis.py",
+  "started_at": "2026-10-16T01:42:20+08:00",
+  "finished_at": "2026-10-16T01:42:23+08:00",
+  "elapsed_seconds": 2.634,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {
+    "seed": 42
+  },
+  "params": {
+    "figures_dir": "results/figures",
+    "dpi": 140,
+    "note": "所有图的数据均由图内现算得到，并与 results/logs/ 的产物一致"
+  },
+  "results": {
+    "figures": [
+      {
+        "file": "fig01_q1_search_process.png",
+        "bytes": 60585,
+        "sha256": "8dff7cdf4ef268c8"
+      },
+      {
+        "file": "fig02_q1_heuristic_nodes.png",
+        "bytes": 102621,
+        "sha256": "92fd9b4ed1d8c434"
+      },
+      {
+        "file": "fig03_q2_cost_accumulation.png",
+        "bytes": 92371,
+        "sha256": "273469bae3719217"
+      },
+      {
+        "file": "fig04_q2_heuristic_compare.png",
+        "bytes": 79912,
+        "sha256": "46adbdf77241f667"
+      },
+      {
+        "file": "fig05_q3_pruning_tree.png",
+        "bytes": 85895,
+        "sha256": "98ab41fa6ce8b3c9"
+      },
+      {
+        "file": "fig06_q3_order_pruning.png",
+        "bytes": 192693,
+        "sha256": "04d1b26aa4c377e9"
+      },
+      {
+        "file": "fig07_q4_depth.png",
+        "bytes": 114251,
+        "sha256": "dbc561db5cb0ebd4"
+      },
+      {
+        "file": "fig08_q4_matrix_order.png",
+        "bytes": 83183,
+        "sha256": "8943242b2a296c0e"
+      }
+    ],
+    "fig02_rows": [
+      {
+        "size": "5x5",
+        "wall_prob": 0.2,
+        "zero": 23,
+        "manhattan": 9
+      },
+      {
+        "size": "5x5",
+        "wall_prob": 0.2,
+        "zero": 21,
+        "manhattan": 13
+      },
+      {
+        "size": "5x5",
+        "wall_prob": 0.2,
+        "zero": 23,
+        "manhattan": 10
+      },
+      {
+        "size": "5x5",
+        "wall_prob": 0.35,
+        "zero": 20,
+        "manhattan": 9
+      },
+      {
+        "size": "5x5",
+        "wall_prob": 0.35,
+        "zero": 18,
+        "manhattan": 9
+      },
+      {
+        "size": "5x5",
+        "wall_prob": 0.35,
+        "zero": 11,
+        "manhattan": 10
+      },
+      {
+        "size": "20x20",
+        "wall_prob": 0.2,
+        "zero": 327,
+        "manhattan": 62
+      },
+      {
+        "size": "20x20",
+        "wall_prob": 0.2,
+        "zero": 340,
+        "manhattan": 53
+      },
+      {
+        "size": "20x20",
+        "wall_prob": 0.2,
+        "zero": 307,
+        "manhattan": 61
+      },
+      {
+        "size": "20x20",
+        "wall_prob": 0.35,
+        "zero": 260,
+        "manhattan": 48
+      },
+      {
+        "size": "20x20",
+        "wall_prob": 0.35,
+        "zero": 208,
+        "manhattan": 71
+      },
+      {
+        "size": "20x20",
+        "wall_prob": 0.35,
+        "zero": 249,
+        "manhattan": 103
+      },
+      {
+        "size": "41x41",
+        "wall_prob": 0.2,
+        "zero": 1355,
+        "manhattan": 203
+      },
+      {
+        "size": "41x41",
+        "wall_prob": 0.2,
+        "zero": 1353,
+        "manhattan": 179
+      },
+      {
+        "size": "41x41",
+        "wall_prob": 0.2,
+        "zero": 1369,
+        "manhattan": 156
+      },
+      {
+        "size": "41x41",
+        "wall_prob": 0.35,
+        "zero": 1028,
+        "manhattan": 217
+      },
+      {
+        "size": "41x41",
+        "wall_prob": 0.35,
+        "zero": 884,
+        "manhattan": 285
+      },
+      {
+        "size": "41x41",
+        "wall_prob": 0.35,
+        "zero": 1093,
+        "manhattan": 320
+      }
+    ],
+    "fig03_cost_accumulation": {
+      "path": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "entry_cost": [
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "cumulative": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        7.0
+      ],
+      "total": 7.0
+    },
+    "fig05_pruning": {
+      "minimax_visited": 15,
+      "alpha_beta_visited": 14,
+      "cutoffs": 2,
+      "value": 5.0
+    },
+    "fig06_rows": [
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "identity",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "reversed",
+        "minimax": 7,
+        "alpha_beta": 6
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "rotate",
+        "minimax": 7,
+        "alpha_beta": 6
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "greedy",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "identity",
+        "minimax": 7,
+        "alpha_beta": 6
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "reversed",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "rotate",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "greedy",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "identity",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "reversed",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "rotate",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "greedy",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "identity",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "reversed",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "rotate",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b2",
+        "depth": 3,
+        "branching": 2,
+        "leaf_count": 4,
+        "order": "greedy",
+        "minimax": 7,
+        "alpha_beta": 7
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "identity",
+        "minimax": 13,
+        "alpha_beta": 11
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "reversed",
+        "minimax": 13,
+        "alpha_beta": 13
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "rotate",
+        "minimax": 13,
+        "alpha_beta": 12
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "greedy",
+        "minimax": 13,
+        "alpha_beta": 12
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "identity",
+        "minimax": 13,
+        "alpha_beta": 13
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "reversed",
+        "minimax": 13,
+        "alpha_beta": 11
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "rotate",
+        "minimax": 13,
+        "alpha_beta": 11
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "greedy",
+        "minimax": 13,
+        "alpha_beta": 13
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "identity",
+        "minimax": 13,
+        "alpha_beta": 10
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "reversed",
+        "minimax": 13,
+        "alpha_beta": 13
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "rotate",
+        "minimax": 13,
+        "alpha_beta": 11
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "greedy",
+        "minimax": 13,
+        "alpha_beta": 12
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "identity",
+        "minimax": 13,
+        "alpha_beta": 10
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "reversed",
+        "minimax": 13,
+        "alpha_beta": 13
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "rotate",
+        "minimax": 13,
+        "alpha_beta": 13
+      },
+      {
+        "shape": "d3_b3",
+        "depth": 3,
+        "branching": 3,
+        "leaf_count": 9,
+        "order": "greedy",
+        "minimax": 13,
+        "alpha_beta": 12
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "identity",
+        "minimax": 40,
+        "alpha_beta": 33
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "reversed",
+        "minimax": 40,
+        "alpha_beta": 33
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "rotate",
+        "minimax": 40,
+        "alpha_beta": 31
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "greedy",
+        "minimax": 40,
+        "alpha_beta": 38
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "identity",
+        "minimax": 40,
+        "alpha_beta": 33
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "reversed",
+        "minimax": 40,
+        "alpha_beta": 29
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "rotate",
+        "minimax": 40,
+        "alpha_beta": 33
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "greedy",
+        "minimax": 40,
+        "alpha_beta": 37
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "identity",
+        "minimax": 40,
+        "alpha_beta": 29
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "reversed",
+        "minimax": 40,
+        "alpha_beta": 32
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "rotate",
+        "minimax": 40,
+        "alpha_beta": 28
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "greedy",
+        "minimax": 40,
+        "alpha_beta": 35
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "identity",
+        "minimax": 40,
+        "alpha_beta": 30
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "reversed",
+        "minimax": 40,
+        "alpha_beta": 27
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "rotate",
+        "minimax": 40,
+        "alpha_beta": 30
+      },
+      {
+        "shape": "d4_b3",
+        "depth": 4,
+        "branching": 3,
+        "leaf_count": 27,
+        "order": "greedy",
+        "minimax": 40,
+        "alpha_beta": 33
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "identity",
+        "minimax": 31,
+        "alpha_beta": 27
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "reversed",
+        "minimax": 31,
+        "alpha_beta": 23
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "rotate",
+        "minimax": 31,
+        "alpha_beta": 23
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "greedy",
+        "minimax": 31,
+        "alpha_beta": 28
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "identity",
+        "minimax": 31,
+        "alpha_beta": 23
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "reversed",
+        "minimax": 31,
+        "alpha_beta": 28
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "rotate",
+        "minimax": 31,
+        "alpha_beta": 28
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "greedy",
+        "minimax": 31,
+        "alpha_beta": 23
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "identity",
+        "minimax": 31,
+        "alpha_beta": 27
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "reversed",
+        "minimax": 31,
+        "alpha_beta": 26
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "rotate",
+        "minimax": 31,
+        "alpha_beta": 26
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "greedy",
+        "minimax": 31,
+        "alpha_beta": 28
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "identity",
+        "minimax": 31,
+        "alpha_beta": 29
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "reversed",
+        "minimax": 31,
+        "alpha_beta": 25
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "rotate",
+        "minimax": 31,
+        "alpha_beta": 25
+      },
+      {
+        "shape": "d5_b2",
+        "depth": 5,
+        "branching": 2,
+        "leaf_count": 16,
+        "order": "greedy",
+        "minimax": 31,
+        "alpha_beta": 30
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "identity",
+        "minimax": 121,
+        "alpha_beta": 71
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "reversed",
+        "minimax": 121,
+        "alpha_beta": 79
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "rotate",
+        "minimax": 121,
+        "alpha_beta": 84
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "greedy",
+        "minimax": 121,
+        "alpha_beta": 81
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "identity",
+        "minimax": 121,
+        "alpha_beta": 69
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "reversed",
+        "minimax": 121,
+        "alpha_beta": 90
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "rotate",
+        "minimax": 121,
+        "alpha_beta": 77
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "greedy",
+        "minimax": 121,
+        "alpha_beta": 80
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "identity",
+        "minimax": 121,
+        "alpha_beta": 81
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "reversed",
+        "minimax": 121,
+        "alpha_beta": 56
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "rotate",
+        "minimax": 121,
+        "alpha_beta": 81
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "greedy",
+        "minimax": 121,
+        "alpha_beta": 90
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "identity",
+        "minimax": 121,
+        "alpha_beta": 103
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "reversed",
+        "minimax": 121,
+        "alpha_beta": 59
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "rotate",
+        "minimax": 121,
+        "alpha_beta": 71
+      },
+      {
+        "shape": "d5_b3",
+        "depth": 5,
+        "branching": 3,
+        "leaf_count": 81,
+        "order": "greedy",
+        "minimax": 121,
+        "alpha_beta": 113
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "identity",
+        "minimax": 364,
+        "alpha_beta": 135
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "reversed",
+        "minimax": 364,
+        "alpha_beta": 194
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "rotate",
+        "minimax": 364,
+        "alpha_beta": 193
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "greedy",
+        "minimax": 364,
+        "alpha_beta": 166
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "identity",
+        "minimax": 364,
+        "alpha_beta": 212
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "reversed",
+        "minimax": 364,
+        "alpha_beta": 160
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "rotate",
+        "minimax": 364,
+        "alpha_beta": 196
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "greedy",
+        "minimax": 364,
+        "alpha_beta": 250
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "identity",
+        "minimax": 364,
+        "alpha_beta": 168
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "reversed",
+        "minimax": 364,
+        "alpha_beta": 175
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "rotate",
+        "minimax": 364,
+        "alpha_beta": 143
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "greedy",
+        "minimax": 364,
+        "alpha_beta": 191
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "identity",
+        "minimax": 364,
+        "alpha_beta": 152
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "reversed",
+        "minimax": 364,
+        "alpha_beta": 130
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "rotate",
+        "minimax": 364,
+        "alpha_beta": 184
+      },
+      {
+        "shape": "d6_b3",
+        "depth": 6,
+        "branching": 3,
+        "leaf_count": 243,
+        "order": "greedy",
+        "minimax": 364,
+        "alpha_beta": 180
+      }
+    ],
+    "fig07_rows": [
+      {
+        "depth": 0,
+        "value": 0.0,
+        "minimax": 1,
+        "alpha_beta": 1
+      },
+      {
+        "depth": 1,
+        "value": 2.0,
+        "minimax": 5,
+        "alpha_beta": 5
+      },
+      {
+        "depth": 2,
+        "value": -1.0,
+        "minimax": 17,
+        "alpha_beta": 13
+      },
+      {
+        "depth": 3,
+        "value": 2.0,
+        "minimax": 41,
+        "alpha_beta": 26
+      },
+      {
+        "depth": 4,
+        "value": 3.0,
+        "minimax": 65,
+        "alpha_beta": 47
+      },
+      {
+        "depth": 5,
+        "value": 3.0,
+        "minimax": 65,
+        "alpha_beta": 47
+      },
+      {
+        "depth": 6,
+        "value": 3.0,
+        "minimax": 65,
+        "alpha_beta": 47
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "label": "存在可用的中文字体",
+      "passed": true,
+      "detail": "使用 Microsoft YaHei"
+    },
+    {
+      "label": "图 fig01_q1_search_process.png 已落盘且非空",
+      "passed": true,
+      "detail": "bytes=60585"
+    },
+    {
+      "label": "图 fig02_q1_heuristic_nodes.png 已落盘且非空",
+      "passed": true,
+      "detail": "bytes=102621"
+    },
+    {
+      "label": "图 fig03_q2_cost_accumulation.png 已落盘且非空",
+      "passed": true,
+      "detail": "bytes=92371"
+    },
+    {
+      "label": "图 fig04_q2_heuristic_compare.png 已落盘且非空",
+      "passed": true,
+      "detail": "bytes=79912"
+    },
+    {
+      "label": "图 fig05_q3_pruning_tree.png 已落盘且非空",
+      "passed": true,
+      "detail": "bytes=85895"
+    },
+    {
+      "label": "图 fig06_q3_order_pruning.png 已落盘且非空",
+      "passed": true,
+      "detail": "bytes=192693"
+    },
+    {
+      "label": "图 fig07_q4_depth.png 已落盘且非空",
+      "passed": true,
+      "detail": "bytes=114251"
+    },
+    {
+      "label": "图 fig08_q4_matrix_order.png 已落盘且非空",
+      "passed": true,
+      "detail": "bytes=83183"
+    },
+    {
+      "label": "出图数量",
+      "passed": true,
+      "detail": "actual=8 expected=8"
+    }
+  ],
+  "summary": {
+    "assertions_total": 10,
+    "assertions_passed": 10,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "**视觉检查未在本脚本内完成**：本脚本只保证图已落盘且非空（字节数 > 5KB）。按 ../WORKFLOW.md 阶段 6 的要求，逐张打开检查（无重叠、无裁切、中文可读）的结果记录在 results/logs/figure_visual_review.*，不得用脚本成功代替视觉验收。"
+  ]
+}

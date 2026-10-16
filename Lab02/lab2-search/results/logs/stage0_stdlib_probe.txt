@@ -1,0 +1,27 @@
+========================================================================================
+产物: stage0_stdlib_probe
+阶段: 阶段 0   脚本: run_stage0.py
+命令: python run_stage0.py
+开始: 2026-10-16T01:25:29+08:00   结束: 2026-10-16T01:25:29+08:00   耗时: 0.0015s
+退出码: 0
+环境: python 3.11.17 | Windows-10-10.0.26200-SP0 | conda=lab2-search
+========================================================================================
+
+[结果]
+  observations                 {"heapq_tuple_pop_order": ["d", "b", "c", "a"], "heapq_identical_prefix_order": ["x", "y"], "heapq_tie_seq_order": ["first", "second", "third"], "random_seed...
+
+[断言] 共 10 条，通过 10，失败 0
+  [PASS] heapq 元组按 (f, h, seq) 逐元素升序弹出  <- actual=['d', 'b', 'c', 'a'] expected=['d', 'b', 'c', 'a']
+  [PASS] heapq 前缀完全相同的元组按第四元素比较（此处 str 可比）  <- actual=['x', 'y'] expected=['x', 'y']
+  [PASS] 前缀相同且第四元素不可比时 heapq 抛 TypeError（故必须放 tie_seq 兜底）  <- raised TypeError
+  [PASS] f、h 相同时由 tie_seq 决定顺序（先进先出，确定性）  <- actual=['first', 'second', 'third'] expected=['first', 'second', 'third']
+  [PASS] random.Random(SEED) 两次构造得到相同序列  <- actual=[0.6394267984578837, 0.025010755222666936, 0.27502931836911926, 0.22321073814882275, 0.7364712141640124] expected=[0.6394267984578837, 0.025010755222666936, 0.27502931836911926, 0.22321073814882275, 0.7364712141640124]
+  [PASS] 不同种子产生不同序列（排除「恒等实现」）
+  [PASS] 字典插入顺序不影响 JSON 指纹（sort_keys 生效）  <- actual='8be6697fdc044108c2e91ef3b03b539bd11dea8400eea420de57b6ecc1ecd1eb' expected='8be6697fdc044108c2e91ef3b03b539bd11dea8400eea420de57b6ecc1ecd1eb'
+  [PASS] 同一对象重复计算指纹一致  <- actual='8be6697fdc044108c2e91ef3b03b539bd11dea8400eea420de57b6ecc1ecd1eb' expected='8be6697fdc044108c2e91ef3b03b539bd11dea8400eea420de57b6ecc1ecd1eb'
+  [PASS] itertools.count 从 0 开始递增  <- actual=[0, 1, 2, 3] expected=[0, 1, 2, 3]
+  [PASS] 相对路径相对于当前工作目录解析（与 config.ROOT 一致）
+
+[说明与未验证项]
+  - 结论：A* 优先队列必须以 (f, h, tie_seq, node) 入堆，tie_seq 保证任意输入下都可比较；该设计已在 astar.py 中实现。
+  - 本探针只验证标准库的**行为假设**，不产生任何算法性能结论；A* 与博弈搜索的指标一律来自 run_q*.py 与 run_experiments.py。

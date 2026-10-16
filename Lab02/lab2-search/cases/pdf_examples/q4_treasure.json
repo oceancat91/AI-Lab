@@ -1,0 +1,166 @@
+{
+  "case_id": "q4_pdf_treasure",
+  "question": "Q4",
+  "title": "题目四 竞争环境下的宝藏分配（PDF 第 14-15 页测试用例）",
+  "source": {
+    "kind": "pdf_text",
+    "document": "../../../实验二要求_new.pdf",
+    "pages": [
+      14,
+      15
+    ],
+    "note": "地图与宝藏价值取自 PDF 第 14 页。宝藏价值表格在纯文本抽取时会丢列（T2/T3 的价值被抽到别处），已用该页渲染图逐项核对，见 WORKFLOW.md U5 与 tmp/requirements/pages/page_14.png。"
+  },
+  "encoding": {
+    "grid": "List[List[str|int]]，'X' 为障碍，数字为进入该格的代价，'A'/'B'/'T1'..'T4' 所在格代价为 1",
+    "start_goal": "Tuple[int, int] 的 [row, col]",
+    "expected": "对应任务 3：H=2 与 H=4 下的最优首步与收益差 U"
+  },
+  "board": [
+    [
+      "A",
+      1,
+      1,
+      "X",
+      2,
+      1,
+      "T1"
+    ],
+    [
+      1,
+      "X",
+      6,
+      "X",
+      1,
+      "X",
+      1
+    ],
+    [
+      1,
+      1,
+      "T2",
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      "X",
+      1,
+      "X",
+      8,
+      "X",
+      1,
+      "X"
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      "T3",
+      1,
+      1
+    ],
+    [
+      1,
+      "X",
+      9,
+      "X",
+      1,
+      "X",
+      1
+    ],
+    [
+      "T4",
+      1,
+      1,
+      "X",
+      1,
+      1,
+      "B"
+    ]
+  ],
+  "player_a": {
+    "name": "A",
+    "position": [
+      0,
+      0
+    ],
+    "role": "MAX"
+  },
+  "player_b": {
+    "name": "B",
+    "position": [
+      6,
+      6
+    ],
+    "role": "MIN"
+  },
+  "treasures": [
+    {
+      "name": "T1",
+      "position": [
+        0,
+        6
+      ],
+      "value": 9
+    },
+    {
+      "name": "T2",
+      "position": [
+        2,
+        2
+      ],
+      "value": 6
+    },
+    {
+      "name": "T3",
+      "position": [
+        4,
+        4
+      ],
+      "value": 7
+    },
+    {
+      "name": "T4",
+      "position": [
+        6,
+        0
+      ],
+      "value": 7
+    }
+  ],
+  "rules": {
+    "movement": "上下左右，进入某格的代价为该格数值；A/B/T 所在格代价为 1",
+    "gain": "Gain(p, Ti) = Vi - d(p, Ti)，d 为最小移动代价",
+    "utility": "U = Score_A - Score_B；A 最大化 U，B 最小化 U；到达搜索深度或宝藏取完时以当前 U 作为评价值",
+    "turn_order": "A -> B -> A -> B，共四回合；每回合只选一个宝藏，获取后更新玩家位置",
+    "notes": [
+      "经过其他宝藏不自动收集",
+      "已获取宝藏的位置仍可通行",
+      "另一玩家不阻挡寻路"
+    ]
+  },
+  "expected": {
+    "distance_matrix_nodes": [
+      "A",
+      "B",
+      "T1",
+      "T2",
+      "T3",
+      "T4"
+    ],
+    "H2": {
+      "best_target": "T2",
+      "best_value": -1
+    },
+    "H4": {
+      "best_target": "T3",
+      "best_value": 3
+    },
+    "depth_semantics": "H = 双方合计的选择步数（ply）。该口径由本文件的期望输出验证：只有按合计步数解释时 H=2/H=4 才同时复现 (T2,-1) 与 (T3,3)，见 WORKFLOW.md 3.4。",
+    "note": "PDF 第 15 页未给出距离矩阵本身，只要求「输出 6x6 距离矩阵」；矩阵由程序用 A* 现算，不得硬编码。"
+  },
+  "sha256": "2db9b90b4dc6c0162568386aa88b1fbfa191385557b695d2dc6c3191b698637b"
+}

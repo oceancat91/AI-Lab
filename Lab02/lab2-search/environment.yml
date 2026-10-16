@@ -1,0 +1,19 @@
+# 实验二环境定义（权威）
+#
+# 创建与使用（在 lab2-search/ 目录下）：
+#     conda env create -f environment.yml
+#     conda activate lab2-search
+#     python run_stage0.py
+#
+# 说明：
+# - 算法全部用标准库实现（heapq / itertools / random / json / hashlib / argparse），
+#   因此本实验**不需要**任何搜索或博弈相关的第三方库，也不引入 numpy 以外的科学计算依赖。
+# - matplotlib 仅用于阶段 6 的绘图；numpy 是 matplotlib 的传递依赖。
+# - 版本约束取「当前实测可用的下限」，实测环境记录见 environment-lock.txt
+#   （由 `conda list -n lab2-search --explicit` 生成，供他人在同平台精确复现）。
+name: lab2-search
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - matplotlib>=3.11

@@ -1,0 +1,155 @@
+{
+  "name": "cases_inventory",
+  "stage": "阶段 1",
+  "script": "run_cases.py",
+  "command": "python run_cases.py",
+  "started_at": "2026-10-16T16:23:53+08:00",
+  "finished_at": "2026-10-16T16:23:53+08:00",
+  "elapsed_seconds": 0.0586,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {
+    "pdf_example_dir": "cases/pdf_examples",
+    "official_dir": "cases/official",
+    "official_case_count": 0,
+    "pdf_example_files": 5
+  },
+  "params": {
+    "seal_placeholder": "SEAL_ME"
+  },
+  "results": {
+    "cases": [
+      {
+        "category": "pdf_example",
+        "file": "cases/pdf_examples/q1_maze.json",
+        "case_id": "q1_pdf_maze",
+        "question": "Q1",
+        "title": "题目一 迷宫寻路（PDF 第 3-5 页测试用例）",
+        "sha256_recorded": "663fdbbc731a377a7783dfc7377d78eeaf5e9c6f1f302ecd7b8f046f08f294ec",
+        "sha256_actual": "663fdbbc731a377a7783dfc7377d78eeaf5e9c6f1f302ecd7b8f046f08f294ec",
+        "sha256_ok": true,
+        "bytes": 1815
+      },
+      {
+        "category": "pdf_example",
+        "file": "cases/pdf_examples/q2_weighted.json",
+        "case_id": "q2_pdf_weighted",
+        "question": "Q2",
+        "title": "题目二 加权地形（PDF 第 5-7 页测试用例）",
+        "sha256_recorded": "23acda1c67cc16bad4b8fd6b5c55ae1d5521bb8b251e6604905ab09e09004e1d",
+        "sha256_actual": "23acda1c67cc16bad4b8fd6b5c55ae1d5521bb8b251e6604905ab09e09004e1d",
+        "sha256_ok": true,
+        "bytes": 2269
+      },
+      {
+        "category": "pdf_example",
+        "file": "cases/pdf_examples/q3_tree.json",
+        "case_id": "q3_pdf_tree",
+        "question": "Q3",
+        "title": "题目三 极大极小博弈树（PDF 第 8-13 页测试用例）",
+        "sha256_recorded": "53799eec1a214348dbe6c34e0148eba1801e6ef7f2b54ceea9ffcafe55ebee68",
+        "sha256_actual": "53799eec1a214348dbe6c34e0148eba1801e6ef7f2b54ceea9ffcafe55ebee68",
+        "sha256_ok": true,
+        "bytes": 2996
+      },
+      {
+        "category": "pdf_example",
+        "file": "cases/pdf_examples/q3_tree_pdf_input_variant.json",
+        "case_id": "q3_pdf_input_variant",
+        "question": "Q3",
+        "title": "题目三 PDF 第 10-11 页 JSON 输入的字面结构（8 叶变体）",
+        "sha256_recorded": "8d9c58538590ba805ebbf3eba13194b3bc3db58a7f32fcbe7b71ce99bd55499b",
+        "sha256_actual": "8d9c58538590ba805ebbf3eba13194b3bc3db58a7f32fcbe7b71ce99bd55499b",
+        "sha256_ok": true,
+        "bytes": 2532
+      },
+      {
+        "category": "pdf_example",
+        "file": "cases/pdf_examples/q4_treasure.json",
+        "case_id": "q4_pdf_treasure",
+        "question": "Q4",
+        "title": "题目四 竞争环境下的宝藏分配（PDF 第 14-15 页测试用例）",
+        "sha256_recorded": "2db9b90b4dc6c0162568386aa88b1fbfa191385557b695d2dc6c3191b698637b",
+        "sha256_actual": "2db9b90b4dc6c0162568386aa88b1fbfa191385557b695d2dc6c3191b698637b",
+        "sha256_ok": true,
+        "bytes": 3459
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "label": "题面用例文件数（Q1-Q4 各一个主用例）",
+      "passed": true,
+      "detail": "actual=4 expected=4"
+    },
+    {
+      "label": "题面用例指纹一致：q1_pdf_maze",
+      "passed": true,
+      "detail": "recorded=663fdbbc731a actual=663fdbbc731a"
+    },
+    {
+      "label": "题面用例指纹一致：q2_pdf_weighted",
+      "passed": true,
+      "detail": "recorded=23acda1c67cc actual=23acda1c67cc"
+    },
+    {
+      "label": "题面用例指纹一致：q3_pdf_tree",
+      "passed": true,
+      "detail": "recorded=53799eec1a21 actual=53799eec1a21"
+    },
+    {
+      "label": "题面用例指纹一致：q3_pdf_input_variant",
+      "passed": true,
+      "detail": "recorded=8d9c58538590 actual=8d9c58538590"
+    },
+    {
+      "label": "题面用例指纹一致：q4_pdf_treasure",
+      "passed": true,
+      "detail": "recorded=2db9b90b4dc6 actual=2db9b90b4dc6"
+    },
+    {
+      "label": "全部用例文件均无解析错误",
+      "passed": true,
+      "detail": "出错文件=[]"
+    },
+    {
+      "label": "题面用例覆盖四个题目（主用例）",
+      "passed": true,
+      "detail": "actual=['Q1', 'Q2', 'Q3', 'Q4'] expected=['Q1', 'Q2', 'Q3', 'Q4']"
+    },
+    {
+      "label": "存在 Q3 的结构变体留证文件（PDF 第 10-11 页 JSON 字面结构）",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "（占位检查）官方用例目录存在",
+      "passed": true,
+      "detail": "目录=official"
+    },
+    {
+      "label": "题面用例均来自 PDF 正文而非自造",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "assertions_total": 11,
+    "assertions_passed": 11,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "cases/official/ 为空 —— 这是**冗余接入位，不是验收前提**（WORKFLOW.md U1，判定已修正）。PDF 第 2 页「所有题目的测试用例已给出」与第 17 页「给定测试样例的正确性是基础要求」指的是 PDF 正文内印出的四个用例与预期输出（Q1 P4/P5、Q2 P6–P7、Q3 P9–P13、Q4 P15），它们已在 cases/pdf_examples/ 登记指纹并在 run_q1–run_q4 中全部复现。因此本实验**可以说「给定测试样例已通过」**；本条只在助教另行下发独立用例文件时才有意义。",
+    "I/O 格式按 PDF 正文的表示法实现（Q1/Q2 的 List[List[str|int]] 网格、Q3 的嵌套树字典、Q4 的棋盘与宝藏表）。若日后的独立用例采用函数签名或 stdin/stdout 形式，需要适配层；算法层不受影响（用例层与算法层已分离）。",
+    "自设用例（cases/self_designed/）与题面用例在同一清单中分类标注，不再混称「测试用例」；分类字段为 category。"
+  ]
+}

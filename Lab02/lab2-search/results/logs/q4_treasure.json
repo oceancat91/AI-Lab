@@ -1,0 +1,647 @@
+{
+  "name": "q4_treasure",
+  "stage": "阶段 3",
+  "script": "run_q4.py",
+  "command": "python run_q4.py",
+  "started_at": "2026-10-16T01:47:41+08:00",
+  "finished_at": "2026-10-16T01:47:41+08:00",
+  "elapsed_seconds": 0.0816,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {
+    "case_file": "cases/pdf_examples/q4_treasure.json",
+    "case_sha256": "2db9b90b4dc6c0162568386aa88b1fbfa191385557b695d2dc6c3191b698637b",
+    "board_fingerprint": "627d430e463009e50cc762d9de6d3334ac041fdd568919667033c330b2017a81",
+    "treasure_values": {
+      "T1": {
+        "position": [
+          0,
+          6
+        ],
+        "value": 9
+      },
+      "T2": {
+        "position": [
+          2,
+          2
+        ],
+        "value": 6
+      },
+      "T3": {
+        "position": [
+          4,
+          4
+        ],
+        "value": 7
+      },
+      "T4": {
+        "position": [
+          6,
+          0
+        ],
+        "value": 7
+      }
+    }
+  },
+  "params": {
+    "depths": [
+      2,
+      4
+    ],
+    "depth_semantics": "H = 双方合计的选择步数（ply），已由 PDF 期望输出验证",
+    "orders": [
+      "asc",
+      "desc",
+      "trace_desc"
+    ],
+    "tie_break": "博弈搜索平局取先出现者（与状态展开顺序一致）"
+  },
+  "results": {
+    "distance_matrix": {
+      "nodes": [
+        "A",
+        "B",
+        "T1",
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "matrix": {
+        "A": {
+          "A": 0.0,
+          "B": 12.0,
+          "T1": 10.0,
+          "T2": 4.0,
+          "T3": 8.0,
+          "T4": 8.0
+        },
+        "B": {
+          "A": 12.0,
+          "B": 0.0,
+          "T1": 8.0,
+          "T2": 8.0,
+          "T3": 4.0,
+          "T4": 10.0
+        },
+        "T1": {
+          "A": 10.0,
+          "B": 8.0,
+          "T1": 0.0,
+          "T2": 6.0,
+          "T3": 6.0,
+          "T4": 12.0
+        },
+        "T2": {
+          "A": 4.0,
+          "B": 8.0,
+          "T1": 6.0,
+          "T2": 0.0,
+          "T3": 6.0,
+          "T4": 6.0
+        },
+        "T3": {
+          "A": 8.0,
+          "B": 4.0,
+          "T1": 6.0,
+          "T2": 6.0,
+          "T3": 0.0,
+          "T4": 6.0
+        },
+        "T4": {
+          "A": 8.0,
+          "B": 10.0,
+          "T1": 12.0,
+          "T2": 6.0,
+          "T3": 6.0,
+          "T4": 0.0
+        }
+      },
+      "symmetric": true,
+      "asymmetric_pairs": []
+    },
+    "state_representation": {
+      "initial": {
+        "pos_a": [
+          0,
+          0
+        ],
+        "pos_b": [
+          6,
+          6
+        ],
+        "remaining": [
+          "T1",
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "score_a": 0.0,
+        "score_b": 0.0,
+        "utility": 0.0,
+        "to_move": "A",
+        "depth": 0,
+        "ply_limit": 2
+      },
+      "signature": "q4|(0, 0)|(6, 6)|T1,T2,T3,T4|0.000000|0.000000|A",
+      "fields_required_by_pdf": [
+        "pos_a（A 位置）",
+        "pos_b（B 位置）",
+        "remaining（剩余宝藏）",
+        "score_a/score_b（累计收益）",
+        "to_move（当前玩家）"
+      ]
+    },
+    "search_by_depth": [
+      {
+        "depth": 2,
+        "algorithm": "Minimax",
+        "best_target": "T2",
+        "value": -1.0,
+        "visited_nodes": 17,
+        "generated_edges": 16,
+        "pruned_edges": 0,
+        "cutoffs": 0,
+        "leaf_reads": 12,
+        "expected_target": "T2",
+        "expected_value": -1
+      },
+      {
+        "depth": 2,
+        "algorithm": "Alpha-beta",
+        "best_target": "T2",
+        "value": -1.0,
+        "visited_nodes": 13,
+        "generated_edges": 12,
+        "pruned_edges": 4,
+        "cutoffs": 2,
+        "leaf_reads": 8,
+        "expected_target": "T2",
+        "expected_value": -1
+      },
+      {
+        "depth": 4,
+        "algorithm": "Minimax",
+        "best_target": "T3",
+        "value": 3.0,
+        "visited_nodes": 65,
+        "generated_edges": 64,
+        "pruned_edges": 0,
+        "cutoffs": 0,
+        "leaf_reads": 24,
+        "expected_target": "T3",
+        "expected_value": 3
+      },
+      {
+        "depth": 4,
+        "algorithm": "Alpha-beta",
+        "best_target": "T3",
+        "value": 3.0,
+        "visited_nodes": 47,
+        "generated_edges": 46,
+        "pruned_edges": 6,
+        "cutoffs": 12,
+        "leaf_reads": 16,
+        "expected_target": "T3",
+        "expected_value": 3
+      }
+    ],
+    "depth_decision_difference": {
+      "H2": {
+        "best_target": "T2",
+        "best_value": -1
+      },
+      "H4": {
+        "best_target": "T3",
+        "best_value": 3
+      },
+      "target_changed": true,
+      "value_delta": 4
+    },
+    "depth_scan": [
+      {
+        "depth": 0,
+        "minimax": {
+          "value": 0.0,
+          "best_target": null,
+          "visited_nodes": 1,
+          "pruned_edges": 0
+        },
+        "alpha_beta": {
+          "value": 0.0,
+          "best_target": null,
+          "visited_nodes": 1,
+          "pruned_edges": 0
+        }
+      },
+      {
+        "depth": 1,
+        "minimax": {
+          "value": 2.0,
+          "best_target": "T2",
+          "visited_nodes": 5,
+          "pruned_edges": 0
+        },
+        "alpha_beta": {
+          "value": 2.0,
+          "best_target": "T2",
+          "visited_nodes": 5,
+          "pruned_edges": 0
+        }
+      },
+      {
+        "depth": 2,
+        "minimax": {
+          "value": -1.0,
+          "best_target": "T2",
+          "visited_nodes": 17,
+          "pruned_edges": 0
+        },
+        "alpha_beta": {
+          "value": -1.0,
+          "best_target": "T2",
+          "visited_nodes": 13,
+          "pruned_edges": 4
+        }
+      },
+      {
+        "depth": 3,
+        "minimax": {
+          "value": 2.0,
+          "best_target": "T2",
+          "visited_nodes": 41,
+          "pruned_edges": 0
+        },
+        "alpha_beta": {
+          "value": 2.0,
+          "best_target": "T2",
+          "visited_nodes": 26,
+          "pruned_edges": 7
+        }
+      },
+      {
+        "depth": 4,
+        "minimax": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 65,
+          "pruned_edges": 0
+        },
+        "alpha_beta": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 47,
+          "pruned_edges": 6
+        }
+      },
+      {
+        "depth": 5,
+        "minimax": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 65,
+          "pruned_edges": 0
+        },
+        "alpha_beta": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 47,
+          "pruned_edges": 6
+        }
+      },
+      {
+        "depth": 6,
+        "minimax": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 65,
+          "pruned_edges": 0
+        },
+        "alpha_beta": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 47,
+          "pruned_edges": 6
+        }
+      }
+    ],
+    "order_effect": [
+      {
+        "order": "asc",
+        "depth": 2,
+        "minimax": {
+          "value": -1.0,
+          "best_target": "T2",
+          "visited_nodes": 17,
+          "pruned_edges": 0,
+          "cutoffs": 0
+        },
+        "alpha_beta": {
+          "value": -1.0,
+          "best_target": "T2",
+          "visited_nodes": 13,
+          "pruned_edges": 4,
+          "cutoffs": 2
+        }
+      },
+      {
+        "order": "asc",
+        "depth": 4,
+        "minimax": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 65,
+          "pruned_edges": 0,
+          "cutoffs": 0
+        },
+        "alpha_beta": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 47,
+          "pruned_edges": 6,
+          "cutoffs": 12
+        }
+      },
+      {
+        "order": "desc",
+        "depth": 2,
+        "minimax": {
+          "value": -1.0,
+          "best_target": "T2",
+          "visited_nodes": 17,
+          "pruned_edges": 0,
+          "cutoffs": 0
+        },
+        "alpha_beta": {
+          "value": -1.0,
+          "best_target": "T2",
+          "visited_nodes": 16,
+          "pruned_edges": 1,
+          "cutoffs": 1
+        }
+      },
+      {
+        "order": "desc",
+        "depth": 4,
+        "minimax": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 65,
+          "pruned_edges": 0,
+          "cutoffs": 0
+        },
+        "alpha_beta": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 46,
+          "pruned_edges": 5,
+          "cutoffs": 12
+        }
+      },
+      {
+        "order": "trace_desc",
+        "depth": 2,
+        "minimax": {
+          "value": -1.0,
+          "best_target": "T2",
+          "visited_nodes": 17,
+          "pruned_edges": 0,
+          "cutoffs": 0
+        },
+        "alpha_beta": {
+          "value": -1.0,
+          "best_target": "T2",
+          "visited_nodes": 11,
+          "pruned_edges": 6,
+          "cutoffs": 3
+        }
+      },
+      {
+        "order": "trace_desc",
+        "depth": 4,
+        "minimax": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 65,
+          "pruned_edges": 0,
+          "cutoffs": 0
+        },
+        "alpha_beta": {
+          "value": 3.0,
+          "best_target": "T3",
+          "visited_nodes": 37,
+          "pruned_edges": 8,
+          "cutoffs": 12
+        }
+      }
+    ],
+    "reference_h2": {
+      "best_target": "T2",
+      "value": -1.0
+    },
+    "memo_comparison_H4": {
+      "plain": {
+        "value": 3.0,
+        "counters": {
+          "visited_nodes": 47,
+          "generated_edges": 46,
+          "pruned_edges": 6,
+          "leaf_reads": 16,
+          "cutoffs": 12,
+          "cache_hits": 0,
+          "max_depth": 4
+        }
+      },
+      "memo": {
+        "value": 3.0,
+        "counters": {
+          "visited_nodes": 47,
+          "generated_edges": 46,
+          "pruned_edges": 6,
+          "leaf_reads": 16,
+          "cutoffs": 12,
+          "cache_hits": 0,
+          "max_depth": 4
+        }
+      }
+    }
+  },
+  "assertions": [
+    {
+      "label": "距离矩阵规模为 6×6",
+      "passed": true,
+      "detail": "actual=[6, 6] expected=[6, 6]"
+    },
+    {
+      "label": "距离矩阵对称（无向移动）",
+      "passed": true,
+      "detail": "不对称对=[]"
+    },
+    {
+      "label": "对角线为 0（同点距离按定义取 0）",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "全部 30 个有序对均由 A* 求得并与 Dijkstra 一致",
+      "passed": true,
+      "detail": "不一致=[]"
+    },
+    {
+      "label": "有序对数量（6×6 去掉对角线 = 30）",
+      "passed": true,
+      "detail": "actual=30 expected=30"
+    },
+    {
+      "label": "距离矩阵与 WORKFLOW.md 3.4 的诊断值逐条一致（实现未漂移）",
+      "passed": true,
+      "detail": "不一致=[]"
+    },
+    {
+      "label": "状态四要素齐备（PDF 任务 2：双方位置、剩余宝藏、累计收益、当前玩家）",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "初始剩余宝藏为四个",
+      "passed": true,
+      "detail": "actual=4 expected=4"
+    },
+    {
+      "label": "初始玩家为 A（MAX）",
+      "passed": true,
+      "detail": "actual='A' expected='A'"
+    },
+    {
+      "label": "H=2 Minimax：最优首步与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual='T2' expected='T2'"
+    },
+    {
+      "label": "H=2 Minimax：最优收益差 U 与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual=-1.0 expected=-1"
+    },
+    {
+      "label": "H=2 Alpha-beta：最优首步与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual='T2' expected='T2'"
+    },
+    {
+      "label": "H=2 Alpha-beta：最优收益差 U 与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual=-1.0 expected=-1"
+    },
+    {
+      "label": "H=2：Minimax 与 Alpha-beta 的 U 相同（剪枝不改变博弈值）",
+      "passed": true,
+      "detail": "actual=-1.0 expected=-1.0"
+    },
+    {
+      "label": "H=2：Minimax 与 Alpha-beta 的最优首步相同",
+      "passed": true,
+      "detail": "actual='T2' expected='T2'"
+    },
+    {
+      "label": "H=4 Minimax：最优首步与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual='T3' expected='T3'"
+    },
+    {
+      "label": "H=4 Minimax：最优收益差 U 与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual=3.0 expected=3"
+    },
+    {
+      "label": "H=4 Alpha-beta：最优首步与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual='T3' expected='T3'"
+    },
+    {
+      "label": "H=4 Alpha-beta：最优收益差 U 与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual=3.0 expected=3"
+    },
+    {
+      "label": "H=4：Minimax 与 Alpha-beta 的 U 相同（剪枝不改变博弈值）",
+      "passed": true,
+      "detail": "actual=3.0 expected=3.0"
+    },
+    {
+      "label": "H=4：Minimax 与 Alpha-beta 的最优首步相同",
+      "passed": true,
+      "detail": "actual='T3' expected='T3'"
+    },
+    {
+      "label": "H=2 与 H=4 给出**不同**的首步（截断搜索误导的证据）",
+      "passed": true,
+      "detail": "H2=T2 H4=T3"
+    },
+    {
+      "label": "H ≥ 4 的结果与 H=4 完全相同（4 个宝藏取完即终止 → H=4 是完全搜索）",
+      "passed": true,
+      "detail": "H4=(3.0, 'T3') H5=(3.0, 'T3') H6=(3.0, 'T3')"
+    },
+    {
+      "label": "H=2：三种访问顺序下 Alpha-beta 的 U 完全相同（顺序不改变博弈值）",
+      "passed": true,
+      "detail": "values={-1.0}"
+    },
+    {
+      "label": "H=2：三种访问顺序下最优首步完全相同",
+      "passed": true,
+      "detail": "targets={'T2'}"
+    },
+    {
+      "label": "H=4：三种访问顺序下 Alpha-beta 的 U 完全相同（顺序不改变博弈值）",
+      "passed": true,
+      "detail": "values={3.0}"
+    },
+    {
+      "label": "H=4：三种访问顺序下最优首步完全相同",
+      "passed": true,
+      "detail": "targets={'T3'}"
+    },
+    {
+      "label": "H=4：访问顺序**确实**改变了 Alpha-beta 的访问节点数（否则该对照形同虚设）",
+      "passed": true,
+      "detail": "visited_by_order={'asc': 47, 'desc': 46, 'trace_desc': 37}"
+    },
+    {
+      "label": "H=2 与不经过搜索引擎的手写实现一致（首步）",
+      "passed": true,
+      "detail": "actual='T2' expected='T2'"
+    },
+    {
+      "label": "H=2 与不经过搜索引擎的手写实现一致（U）",
+      "passed": true,
+      "detail": "actual=-1.0 expected=-1"
+    },
+    {
+      "label": "置换表版本与普通 Alpha-beta 的 U 相同",
+      "passed": true,
+      "detail": "actual=3.0 expected=3.0"
+    }
+  ],
+  "summary": {
+    "assertions_total": 31,
+    "assertions_passed": 31,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "距离矩阵为**程序用 A* 现算**的结果（不硬编码）。完整路径也一并落盘，便于报告展示单条 d(A,Ti) 的计算过程。",
+    "H=2 实测：Minimax 访问 17 个节点、Alpha-beta 访问 13 个（剪枝 2 次，未生成的边 4 条）。",
+    "H=4 实测：Minimax 访问 65 个节点、Alpha-beta 访问 47 个（剪枝 12 次，未生成的边 6 条）。",
+    "H=4 各顺序的 Alpha-beta 访问节点数：{'asc': 47, 'desc': 46, 'trace_desc': 37}。该差异就是“访问顺序影响剪枝效果”的实测证据。",
+    "置换表实测：访问节点 47 → 47，命中 0 次（H=4）。该数据是创新点 F2 在自设更大博弈规模上继续验证的起点。",
+    "未验证项：PDF 未给出距离矩阵本身，故矩阵只能与「A* 与 Dijkstra 相互一致」以及「WORKFLOW.md 3.4 的诊断值」对照；不存在官方矩阵可比。"
+  ]
+}

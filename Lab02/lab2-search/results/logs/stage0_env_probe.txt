@@ -1,0 +1,27 @@
+========================================================================================
+产物: stage0_env_probe
+阶段: 阶段 0   脚本: run_stage0.py
+命令: python run_stage0.py
+开始: 2026-10-16T01:25:29+08:00   结束: 2026-10-16T01:25:29+08:00   耗时: 0.5327s
+退出码: 0
+环境: python 3.11.17 | Windows-10-10.0.26200-SP0 | conda=lab2-search
+========================================================================================
+
+[输入与指纹]
+  root_relpath                 .
+  results_dir                  results
+  environment_yml_exists       True
+  environment_yml_sha256       7895da961eb6ddc78b237a4c6404e67abe3fc778e59ad75d8a998f207fdc14e0
+
+[结果]
+  environment                  {"python_version": "3.11.17", "python_executable_basename": "python.exe", "conda_default_env": "lab2-search", "conda_prefix_basename": "lab2-search", "platfo...
+  third_party                  {"matplotlib": "3.11.2", "numpy": "2.4.6"}
+
+[断言] 共 4 条，通过 4，失败 0
+  [PASS] 从 lab2-search/ 目录运行（相对路径前提）  <- cwd=D:\HuaweiMoveData\Users\32002\Desktop\当代人工智能\Lab2\lab2-search root=D:\HuaweiMoveData\Users\32002\Desktop\当代人工智能\Lab2\lab2-search
+  [PASS] 解释器为 conda 环境 lab2-search  <- CONDA_DEFAULT_ENV='lab2-search'
+  [PASS] Python 版本为 3.11.x  <- version=3.11.17
+  [PASS] environment.yml 存在且已记录指纹
+
+[说明与未验证项]
+  - matplotlib/numpy 仅阶段 6 绘图使用；算法层只依赖标准库，故其缺失不影响阶段 0–5 的结论。

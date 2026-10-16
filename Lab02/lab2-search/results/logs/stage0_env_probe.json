@@ -1,0 +1,72 @@
+{
+  "name": "stage0_env_probe",
+  "stage": "阶段 0",
+  "script": "run_stage0.py",
+  "command": "python run_stage0.py",
+  "started_at": "2026-10-16T01:25:29+08:00",
+  "finished_at": "2026-10-16T01:25:29+08:00",
+  "elapsed_seconds": 0.5327,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {
+    "root_relpath": ".",
+    "results_dir": "results",
+    "environment_yml_exists": true,
+    "environment_yml_sha256": "7895da961eb6ddc78b237a4c6404e67abe3fc778e59ad75d8a998f207fdc14e0"
+  },
+  "params": {},
+  "results": {
+    "environment": {
+      "python_version": "3.11.17",
+      "python_executable_basename": "python.exe",
+      "conda_default_env": "lab2-search",
+      "conda_prefix_basename": "lab2-search",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "machine": "AMD64",
+      "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+    },
+    "third_party": {
+      "matplotlib": "3.11.2",
+      "numpy": "2.4.6"
+    }
+  },
+  "assertions": [
+    {
+      "label": "从 lab2-search/ 目录运行（相对路径前提）",
+      "passed": true,
+      "detail": "cwd=D:\\HuaweiMoveData\\Users\\32002\\Desktop\\当代人工智能\\Lab2\\lab2-search root=D:\\HuaweiMoveData\\Users\\32002\\Desktop\\当代人工智能\\Lab2\\lab2-search"
+    },
+    {
+      "label": "解释器为 conda 环境 lab2-search",
+      "passed": true,
+      "detail": "CONDA_DEFAULT_ENV='lab2-search'"
+    },
+    {
+      "label": "Python 版本为 3.11.x",
+      "passed": true,
+      "detail": "version=3.11.17"
+    },
+    {
+      "label": "environment.yml 存在且已记录指纹",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "assertions_total": 4,
+    "assertions_passed": 4,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "matplotlib/numpy 仅阶段 6 绘图使用；算法层只依赖标准库，故其缺失不影响阶段 0–5 的结论。"
+  ]
+}

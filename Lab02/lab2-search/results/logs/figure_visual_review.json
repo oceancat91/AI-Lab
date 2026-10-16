@@ -1,0 +1,287 @@
+{
+  "name": "figure_visual_review",
+  "stage": "阶段 6",
+  "script": "run_figure_review.py",
+  "command": "python run_figure_review.py",
+  "started_at": "2026-10-16T01:42:34+08:00",
+  "finished_at": "2026-10-16T01:42:34+08:00",
+  "elapsed_seconds": 0.0605,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {},
+  "params": {
+    "method": "由 agent 逐张打开 PNG 目视检查（中文可读性 / 重叠裁切 / 数字一致性）",
+    "figures_dir": "results/figures",
+    "note": "本记录不修改任何图；若图被重新生成导致指纹变化，将报 ERROR 要求重新验收。"
+  },
+  "results": {
+    "review": [
+      {
+        "file": "fig01_q1_search_process.png",
+        "exists": true,
+        "sha256_16": "8dff7cdf4ef268c8",
+        "readable": true,
+        "layout": true,
+        "data_ok": true,
+        "note": "两子图清晰：左为网格与最短路径（步数 7），右为扩展顺序编号。中文轴标签与标题正常显示，无障碍格与路径着色不冲突。"
+      },
+      {
+        "file": "fig02_q1_heuristic_nodes.png",
+        "exists": true,
+        "sha256_16": "92fd9b4ed1d8c434",
+        "readable": true,
+        "layout": true,
+        "data_ok": true,
+        "note": "左图对数轴上柱内标注数值（19/10、282/66、1180/227）可读；右图三条比值曲线与图例清晰，虚线为比值 1.0 参考线。"
+      },
+      {
+        "file": "fig03_q2_cost_accumulation.png",
+        "exists": true,
+        "sha256_16": "273469bae3719217",
+        "readable": true,
+        "layout": true,
+        "data_ok": true,
+        "note": "左图第 8 步柱高为 0（进入 E 免费），已在轴标签与标题中说明；右图累计代价末点 7 与最小总代价虚线重合，端点标注 (0,0) 与 (4,4) 未裁切。"
+      },
+      {
+        "file": "fig04_q2_heuristic_compare.png",
+        "exists": true,
+        "sha256_16": "46adbdf77241f667",
+        "readable": true,
+        "layout": true,
+        "data_ok": true,
+        "note": "**首轮视觉检查发现缺陷**：标题里出现了字面 Markdown 星号（**不可采纳**），已删除星号后重新出图。右图逐格标注 h=…>h*=… 可读，25 格中 20 格为红色（违反）。"
+      },
+      {
+        "file": "fig05_q3_pruning_tree.png",
+        "exists": true,
+        "sha256_16": "98ab41fa6ce8b3c9",
+        "readable": true,
+        "layout": true,
+        "data_ok": true,
+        "note": "**首轮视觉检查发现缺陷**：共享子树 max2 被画了两条边（DAG 而非树），已改为「先判重再画边」并重新出图，同时补一行说明共享结构。访问次序 #0~#13 共 14 个标注，与 Alpha-beta 访问 14 个节点一致。"
+      },
+      {
+        "file": "fig06_q3_order_pruning.png",
+        "exists": true,
+        "sha256_16": "04d1b26aa4c377e9",
+        "readable": true,
+        "layout": true,
+        "data_ok": true,
+        "note": "左图剪枝比随树规模下降（d3_b2 约 0.96~1.00 → d6_b3 约 0.45~0.54），右图对数轴展示绝对开销量级；四种顺序的图例与曲线均清晰。"
+      },
+      {
+        "file": "fig07_q4_depth.png",
+        "exists": true,
+        "sha256_16": "dbc561db5cb0ebd4",
+        "readable": true,
+        "layout": true,
+        "data_ok": true,
+        "note": "左图显示 H≥4 后两种算法的访问数饱和；右图 U 随深度在 0/2/−1/2/3 间变化，标注数值未与曲线重叠。"
+      },
+      {
+        "file": "fig08_q4_matrix_order.png",
+        "exists": true,
+        "sha256_16": "8943242b2a296c0e",
+        "readable": true,
+        "layout": true,
+        "data_ok": true,
+        "note": "左图 6×6 热力图含色条与全部数值标注，对角为 0；右图三组顺序在 H=2/H=4 下的访问数（13/47、16/46、11/37）与产物一致。"
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "label": "图存在：fig01_q1_search_process.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "中文可读：fig01_q1_search_process.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "无重叠/裁切：fig01_q1_search_process.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图内数字与产物一致：fig01_q1_search_process.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图存在：fig02_q1_heuristic_nodes.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "中文可读：fig02_q1_heuristic_nodes.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "无重叠/裁切：fig02_q1_heuristic_nodes.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图内数字与产物一致：fig02_q1_heuristic_nodes.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图存在：fig03_q2_cost_accumulation.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "中文可读：fig03_q2_cost_accumulation.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "无重叠/裁切：fig03_q2_cost_accumulation.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图内数字与产物一致：fig03_q2_cost_accumulation.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图存在：fig04_q2_heuristic_compare.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "中文可读：fig04_q2_heuristic_compare.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "无重叠/裁切：fig04_q2_heuristic_compare.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图内数字与产物一致：fig04_q2_heuristic_compare.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图存在：fig05_q3_pruning_tree.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "中文可读：fig05_q3_pruning_tree.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "无重叠/裁切：fig05_q3_pruning_tree.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图内数字与产物一致：fig05_q3_pruning_tree.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图存在：fig06_q3_order_pruning.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "中文可读：fig06_q3_order_pruning.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "无重叠/裁切：fig06_q3_order_pruning.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图内数字与产物一致：fig06_q3_order_pruning.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图存在：fig07_q4_depth.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "中文可读：fig07_q4_depth.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "无重叠/裁切：fig07_q4_depth.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图内数字与产物一致：fig07_q4_depth.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图存在：fig08_q4_matrix_order.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "中文可读：fig08_q4_matrix_order.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "无重叠/裁切：fig08_q4_matrix_order.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "图内数字与产物一致：fig08_q4_matrix_order.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "验收覆盖全部 8 张图",
+      "passed": true,
+      "detail": "actual=8 expected=8"
+    },
+    {
+      "label": "验收的图集合等于出图脚本产出的集合",
+      "passed": true,
+      "detail": "actual=['fig01_q1_search_process.png', 'fig02_q1_heuristic_nodes.png', 'fig03_q2_cost_accumulation.png', 'fig04_q2_heuristic_compare.png', 'fig05_q3_pruning_tree.png', 'fig06_q3_order_pruning.png', 'fig07_q4_depth.png', 'fig08_q4_matrix_order.png'] expected=['fig01_q1_search_process.png', 'fig02_q1_heuristic_nodes.png', 'fig03_q2_cost_accumulation.png', 'fig04_q2_heuristic_compare.png', 'fig05_q3_pruning_tree.png', 'fig06_q3_order_pruning.png', 'fig07_q4_depth.png', 'fig08_q4_matrix_order.png']"
+    },
+    {
+      "label": "所有图自出图以来未被修改（指纹一致）",
+      "passed": true,
+      "detail": "指纹变化=[]（需重新做视觉验收）"
+    }
+  ],
+  "summary": {
+    "assertions_total": 35,
+    "assertions_passed": 35,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "验收结论：8 张图全部通过（中文可读、无重叠裁切、数字与产物一致）。过程中发现并修复了 2 处真实缺陷：fig04 标题残留 Markdown 星号、fig05 共享子树被重复画边；两处均重新出图后再次目视确认。"
+  ]
+}

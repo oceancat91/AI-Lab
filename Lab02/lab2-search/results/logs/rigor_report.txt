@@ -1,0 +1,225 @@
+========================================================================================
+实验二严谨性自检报告
+脚本: check_rigor.py   环境: python 3.11.17   耗时: 0.7 s
+结论: ERROR=0 WARN=0 INFO=8 PASS=176
+========================================================================================
+
+## 1 目录与文件完整性
+  [PASS ] 存在 config.py
+  [PASS ] 存在 rigor.py
+  [PASS ] 存在 harness.py
+  [PASS ] 存在 selfcases.py
+  [PASS ] 存在 astar.py
+  [PASS ] 存在 game_tree.py
+  [PASS ] 存在 treasure_game.py
+  [PASS ] 存在 environment.yml
+  [PASS ] 存在 run_stage0.py
+  [PASS ] 存在 run_cases.py
+  [PASS ] 存在 run_q1.py
+  [PASS ] 存在 run_q2.py
+  [PASS ] 存在 run_q3.py
+  [PASS ] 存在 run_q4.py
+  [PASS ] 存在 check_rigor.py
+  [PASS ] 存在目录 cases/pdf_examples
+  [PASS ] 存在目录 cases/official
+  [PASS ] 存在目录 cases/self_designed
+  [PASS ] 存在目录 results/logs
+  [PASS ] 存在目录 results/figures
+
+## 2 阶段 0 环境与探针
+  [PASS ] 阶段 0 环境探针产物存在
+  [PASS ] 阶段 0 标准库探针产物存在
+  [PASS ] 环境探针无失败断言  <- {'assertions_total': 4, 'assertions_passed': 4, 'assertions_failed': 0, 'failed_labels': []}
+  [PASS ] 环境探针记录了 Python 版本与平台
+  [PASS ] 环境探针解释器版本与本次运行一致  <- 产物=3.11.17 本次=3.11.17
+  [PASS ] 标准库探针无失败断言  <- {'assertions_total': 10, 'assertions_passed': 10, 'assertions_failed': 0, 'failed_labels': []}
+  [PASS ] 记录了 heapq 弹出顺序实测
+  [PASS ] 记录了 heapq 前缀不可比时抛 TypeError 的实测
+  [PASS ] 记录了随机种子可复现性实测
+  [PASS ] 环境定义 environment.yml 存在且已记录指纹
+  [PASS ] 当前解释器为 lab2-search 环境  <- CONDA_DEFAULT_ENV='lab2-search'
+
+## 3 用例清单与指纹
+  [PASS ] 用例清单产物存在
+  [PASS ] 用例文件存在：q1_pdf_maze
+  [PASS ] 用例指纹仍一致：q1_pdf_maze  <- recorded=663fdbbc731a actual=663fdbbc731a
+  [PASS ] 用例文件存在：q2_pdf_weighted
+  [PASS ] 用例指纹仍一致：q2_pdf_weighted  <- recorded=23acda1c67cc actual=23acda1c67cc
+  [PASS ] 用例文件存在：q3_pdf_tree
+  [PASS ] 用例指纹仍一致：q3_pdf_tree  <- recorded=53799eec1a21 actual=53799eec1a21
+  [PASS ] 用例文件存在：q3_pdf_input_variant
+  [PASS ] 用例指纹仍一致：q3_pdf_input_variant  <- recorded=8d9c58538590 actual=8d9c58538590
+  [PASS ] 用例文件存在：q4_pdf_treasure
+  [PASS ] 用例指纹仍一致：q4_pdf_treasure  <- recorded=2db9b90b4dc6 actual=2db9b90b4dc6
+  [PASS ] 题面用例覆盖 Q1-Q4  <- questions=['Q1', 'Q2', 'Q3', 'Q4']
+  [INFO ] cases/official/ 为空（冗余项，不阻塞任何阶段）  <- PDF 正文的四个用例与预期输出已在四题产物中核验；本条不构成未完成项。若日后收到独立用例文件，用 run_cases.py --seal 登记指纹后补跑即可。
+  [INFO ] 用例分类计数  <- {"pdf_example": 5, "official": 0, "self_designed": 0}
+
+## 4 Q1 产物
+  [PASS ] Q1 产物无失败断言  <- failed=0 labels=[]
+  [PASS ] Q1 产物记录退出码为 0  <- exit_code=0
+  [PASS ] 复算最短步数与产物一致  <- 复算=7 产物=7
+  [PASS ] 复算扩展节点数与产物一致  <- 复算=14 产物=14
+  [PASS ] 最短步数等于期望 7
+  [PASS ] 复算路径合法
+  [PASS ] 复算步数与 BFS 一致
+  [PASS ] 产物记录了平局规则
+  [PASS ] 边界用例均标注为自设  <- n=6
+
+## 5 Q2 产物
+  [PASS ] Q2 产物无失败断言  <- failed=0 labels=[]
+  [PASS ] Q2 产物记录退出码为 0  <- exit_code=0
+  [PASS ] 复算最小代价与产物一致  <- 复算=7.0 产物=7.0
+  [PASS ] 最小代价等于期望 7
+  [PASS ] A* 与 Dijkstra 复算一致
+  [PASS ] 无序对：无解哨兵为 -1 且与 Q1 的 [] 不同
+  [PASS ] 记录了可采纳性违反的格子清单  <- violating_count=20
+  [PASS ] 复算可采纳性违反数量与产物一致  <- 复算=20 产物=20
+  [PASS ] 记录了「E 视为 0」的口径敏感性（7 vs 8）  <- {'goal_cost_0': 7.0, 'goal_cost_1': 8.0}
+
+## 6 Q3 产物
+  [PASS ] Q3 产物无失败断言  <- failed=0 labels=[]
+  [PASS ] Q3 产物记录退出码为 0  <- exit_code=0
+  [PASS ] 复算 Minimax 值与产物一致  <- 复算=5.0 产物=5.0
+  [PASS ] 复算根值等于期望 5
+  [PASS ] 产物记录唯一叶子对象数为 6（共享结构已还原）  <- unique_leaves=6
+  [PASS ] 产物记录了 PDF 内部结构歧义（U4）
+  [PASS ] 记录了访问顺序对照（≥3 种顺序）  <- orders=['identity', 'reversed', 'rotate', 'greedy']
+  [PASS ] 访问顺序不改变博弈值
+  [PASS ] 自设树用例数 ≥ 12  <- n=24
+  [PASS ] 存在规模大于题面树的自设用例（叶子 > 6）  <- leaf_counts=[4, 9, 16, 27, 81, 243]
+
+## 7 Q4 产物
+  [PASS ] Q4 产物无失败断言  <- failed=0 labels=[]
+  [PASS ] Q4 产物记录退出码为 0  <- exit_code=0
+  [PASS ] 复算距离矩阵与产物逐条一致  <- 不一致=[]
+  [PASS ] H=2 Minimax 首步与期望一致  <- actual=T2 expected=T2
+  [PASS ] H=2 Minimax 收益差与期望一致  <- actual=-1.0 expected=-1
+  [PASS ] H=2 Alpha-beta 首步与期望一致  <- actual=T2 expected=T2
+  [PASS ] H=2 Alpha-beta 收益差与期望一致  <- actual=-1.0 expected=-1
+  [PASS ] H=4 Minimax 首步与期望一致  <- actual=T3 expected=T3
+  [PASS ] H=4 Minimax 收益差与期望一致  <- actual=3.0 expected=3
+  [PASS ] H=4 Alpha-beta 首步与期望一致  <- actual=T3 expected=T3
+  [PASS ] H=4 Alpha-beta 收益差与期望一致  <- actual=3.0 expected=3
+  [PASS ] H=2 Minimax 与 Alpha-beta 同解
+  [PASS ] H=4 Minimax 与 Alpha-beta 同解
+  [PASS ] H≥4 与 H=4 结果相同（完全搜索深度）  <- by_depth={0: 0.0, 1: 2.0, 2: -1.0, 3: 2.0, 4: 3.0, 5: 3.0, 6: 3.0}
+  [PASS ] 距离矩阵未被硬编码（源码中无 6×6 字面矩阵）
+  [PASS ] 状态表示含 PDF 要求的四要素
+
+## 8 算法唯一实现入口
+  [PASS ] astar.py 中定义了 astar  <- 实际定义位置=['astar.py']
+  [PASS ] astar.py 中定义了 bfs_shortest_steps  <- 实际定义位置=['astar.py']
+  [PASS ] astar.py 中定义了 bidirectional_astar  <- 实际定义位置=['astar.py']
+  [PASS ] astar.py 中定义了 dijkstra  <- 实际定义位置=['astar.py']
+  [PASS ] game_tree.py 中定义了 alpha_beta  <- 实际定义位置=['game_tree.py']
+  [PASS ] game_tree.py 中定义了 alpha_beta_memo  <- 实际定义位置=['game_tree.py']
+  [PASS ] game_tree.py 中定义了 game_search  <- 实际定义位置=['game_tree.py']
+  [PASS ] game_tree.py 中定义了 minimax  <- 实际定义位置=['game_tree.py']
+  [PASS ] 搜索函数仅在登记的模块中实现（无第二份实现）  <- 违规=[]
+  [PASS ] 题目脚本未自行实现搜索函数  <- 违规=[]
+  [INFO ] AST 扫描的模块数  <- 18
+
+## 9 指标口径与平局规则
+  [PASS ] 主指标为计数类（expanded_nodes）
+  [PASS ] 声明了平局打破规则
+  [PASS ] 声明了时间仅为量级参考
+  [PASS ] 声明了不做统计显著性检验
+  [PASS ] q1_maze 产物已声明参数
+  [PASS ] q1_maze 产物已记录环境
+  [PASS ] q2_weighted 产物已声明参数
+  [PASS ] q2_weighted 产物已记录环境
+  [PASS ] q3_game_tree 产物已声明参数
+  [PASS ] q3_game_tree 产物已记录环境
+  [PASS ] q4_treasure 产物已声明参数
+  [PASS ] q4_treasure 产物已记录环境
+
+## 10 数据与产物纪律
+  [PASS ] 源码中无 Windows 绝对路径字面量  <- 违规=[]
+  [PASS ] results/logs 中无非法后缀文件  <- 文件=[]
+  [PASS ] 源码文件无 UTF-8 BOM  <- 带 BOM=[]（编码问题会伪装成语法错误，本实验实际踩过一次：用 PowerShell 改写 Python 文件会写入 BOM）
+  [PASS ] 无残留的临时诊断脚本  <- 文件=[]
+  [PASS ] 每个 JSON 产物都有同名 txt  <- 缺少=[]
+  [INFO ] cases/official/ 为空（冗余项，已在第 3 节申报）  <- U1
+
+## 11 实验矩阵与稳健性
+  [PASS ] 对照实验产物无失败断言  <- {'assertions_total': 173, 'assertions_passed': 173, 'assertions_failed': 0, 'failed_labels': []}
+  [PASS ] 对照实验产物退出码为 0
+  [PASS ] 执行的分组集合等于请求的分组集合  <- actual=['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'e1', 'e2', 'e3', 'e4'] expected=['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'e1', 'e2', 'e3', 'e4']
+  [PASS ] 全部 13 个分组均已执行  <- executed=['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'e1', 'e2', 'e3', 'e4']
+  [PASS ] D1 启发函数（题面） 有产物记录  <- key=d1_pdf_maze n=3
+  [PASS ] D1 启发函数（大规模） 有产物记录  <- key=d1_large_mazes n=24
+  [PASS ] D2 优先队列 有产物记录  <- key=d2_queue n=8
+  [PASS ] D3 顺序×剪枝 有产物记录  <- key=d3_order_x_pruning n=192
+  [PASS ] D4 深度 有产物记录  <- key=d4_depth n=14
+  [PASS ] D5 规模 有产物记录  <- key=d5_scale n=18
+  [PASS ] D6 顺序 有产物记录  <- key=d6_order n=12
+  [PASS ] D7 剪枝开关 有产物记录  <- key=d7_pruning n=20
+  [PASS ] D8 启发函数口径 有产物记录  <- key=d8_heuristics n=6
+  [PASS ] E1 平局规则 有产物记录  <- key=e1_tie_break n=36
+  [PASS ] E2 规模边界 有产物记录  <- key=e2_scale n=12
+  [PASS ] E3 退化输入 有产物记录  <- key=e3_degenerate n=5
+  [PASS ] 每个实验行都声明了改动的变量  <- 缺失=[]
+  [PASS ] d1_large_mazes：两启发函数的步数一致  <- []
+  [PASS ] d5_scale：两启发函数的步数一致  <- []
+  [PASS ] 创新实验产物无失败断言  <- {'assertions_total': 197, 'assertions_passed': 197, 'assertions_failed': 0, 'failed_labels': []}
+  [PASS ] F1 双向 A* 有产物记录
+  [PASS ] F2 置换表 有产物记录
+  [PASS ] F3 访问顺序 有产物记录
+  [PASS ] F4 迭代加深 有产物记录
+  [PASS ] F1：双向与单向搜索的步数全部一致  <- []
+
+## 12 图表与视觉验收
+  [PASS ] 视觉验收产物存在
+  [PASS ] 验收的图集合等于出图脚本产出的集合  <- actual=['fig01_q1_search_process.png', 'fig02_q1_heuristic_nodes.png', 'fig03_q2_cost_accumulation.png', 'fig04_q2_heuristic_compare.png', 'fig05_q3_pruning_tree.png', 'fig06_q3_order_pruning.png', 'fig07_q4_depth.png', 'fig08_q4_matrix_order.png'] expected=['fig01_q1_search_process.png', 'fig02_q1_heuristic_nodes.png', 'fig03_q2_cost_accumulation.png', 'fig04_q2_heuristic_compare.png', 'fig05_q3_pruning_tree.png', 'fig06_q3_order_pruning.png', 'fig07_q4_depth.png', 'fig08_q4_matrix_order.png']
+  [PASS ] 视觉验收无失败断言  <- {'assertions_total': 35, 'assertions_passed': 35, 'assertions_failed': 0, 'failed_labels': []}
+  [PASS ] 全部图文件仍然存在  <- []
+  [PASS ] 图自出图以来指纹未变（视觉验收仍有效）  <- 指纹变化=[]
+
+## 13 声明与产物一致
+  [PASS ] 距离矩阵中 d(A,T2)=4 已写入文档  <- d(A,T2)=4.0
+  [PASS ] 距离矩阵中 d(B,T3)=4 与文档一致  <- actual=4.0
+  [PASS ] Q1 最短步数 7 与文档一致  <- actual=7
+  [PASS ] Q3 期望值 5 与文档一致  <- actual=5.0
+  [INFO ] 文档数字对账范围为抽查项  <- 本项只抽查关键数字；完整对账在阶段 8 由报告逐项核对完成。
+
+## 14 报告与 README
+  [PASS ] REPORT.md 存在
+  [PASS ] README.md 存在
+  [PASS ] 报告覆盖 第 1 项：算法设计与实验设置
+  [PASS ] 报告覆盖 第 2 项：题目一
+  [PASS ] 报告覆盖 第 3 项：题目二
+  [PASS ] 报告覆盖 第 4 项：题目三
+  [PASS ] 报告覆盖 第 5 项：题目四
+  [PASS ] 报告覆盖 第 6 项：自设对照实验与拓展
+  [PASS ] 报告覆盖 第 7 项：图表展示与独立思考
+  [PASS ] 报告列出「局限与未验证项」
+  [PASS ] 报告声明 Q1 步数 7
+  [PASS ] 报告声明 Q1 扩展节点数 14
+  [PASS ] 报告声明 Q2 代价 7
+  [PASS ] 报告声明「E 当普通格则为 8」
+  [PASS ] 报告声明可采纳性违反 20 格
+  [PASS ] 报告声明 Q3 根值 5
+  [PASS ] 报告声明 Q3 访问数 15 / 14
+  [PASS ] 报告声明 H=2 首步 T2 与 U=-1
+  [PASS ] 报告声明 H=4 首步 T3 与 U=3
+  [PASS ] 报告声明 H=4 顺序访问数 47/46/37  <- 实际={'asc': 47, 'desc': 46, 'trace_desc': 37}
+  [PASS ] 报告声明平局规则最大节点差 957
+  [PASS ] 报告声明 41×41 比值均值 0.204
+  [PASS ] 报告声明置换表最大命中 215
+  [PASS ] 报告声明置换表减少 2.3%~6.1%
+  [PASS ] 报告声明双向 A* 更差例数 19
+  [PASS ] README 说明 环境创建方式
+  [PASS ] README 说明 自检命令
+  [PASS ] README 说明 题目一入口
+  [INFO ] 对账范围  <- 本项机械核对报告中的关键数字与产物一致；文字表述的准确性由人工审阅。
+
+## 未执行分组
+  [INFO ] 阶段 5 稳健性 尚未产出（robustness）
+
+## 覆盖范围申报
+  [INFO ] 常规模式未做：① 全量重跑自设用例；② 逐条复算实验矩阵全部配置；③ 图像视觉检查。需要时用 --deep，或由阶段脚本自身的断言覆盖。
+
+========================================================================================
+无 ERROR。WARN 必须逐条给出正当理由；无法解释的 WARN 视为未通过。
+========================================================================================

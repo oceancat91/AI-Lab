@@ -1,0 +1,117 @@
+{
+  "name": "stage0_stdlib_probe",
+  "stage": "阶段 0",
+  "script": "run_stage0.py",
+  "command": "python run_stage0.py",
+  "started_at": "2026-10-16T01:25:29+08:00",
+  "finished_at": "2026-10-16T01:25:29+08:00",
+  "elapsed_seconds": 0.0015,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {},
+  "params": {},
+  "results": {
+    "observations": {
+      "heapq_tuple_pop_order": [
+        "d",
+        "b",
+        "c",
+        "a"
+      ],
+      "heapq_identical_prefix_order": [
+        "x",
+        "y"
+      ],
+      "heapq_tie_seq_order": [
+        "first",
+        "second",
+        "third"
+      ],
+      "random_seed_sequence": [
+        0.639426798458,
+        0.025010755223,
+        0.275029318369,
+        0.223210738149,
+        0.736471214164
+      ],
+      "json_fingerprint": "8be6697fdc044108c2e91ef3b03b539bd11dea8400eea420de57b6ecc1ecd1eb",
+      "itertools_count": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "relative_path_example": "results\\logs"
+    }
+  },
+  "assertions": [
+    {
+      "label": "heapq 元组按 (f, h, seq) 逐元素升序弹出",
+      "passed": true,
+      "detail": "actual=['d', 'b', 'c', 'a'] expected=['d', 'b', 'c', 'a']"
+    },
+    {
+      "label": "heapq 前缀完全相同的元组按第四元素比较（此处 str 可比）",
+      "passed": true,
+      "detail": "actual=['x', 'y'] expected=['x', 'y']"
+    },
+    {
+      "label": "前缀相同且第四元素不可比时 heapq 抛 TypeError（故必须放 tie_seq 兜底）",
+      "passed": true,
+      "detail": "raised TypeError"
+    },
+    {
+      "label": "f、h 相同时由 tie_seq 决定顺序（先进先出，确定性）",
+      "passed": true,
+      "detail": "actual=['first', 'second', 'third'] expected=['first', 'second', 'third']"
+    },
+    {
+      "label": "random.Random(SEED) 两次构造得到相同序列",
+      "passed": true,
+      "detail": "actual=[0.6394267984578837, 0.025010755222666936, 0.27502931836911926, 0.22321073814882275, 0.7364712141640124] expected=[0.6394267984578837, 0.025010755222666936, 0.27502931836911926, 0.22321073814882275, 0.7364712141640124]"
+    },
+    {
+      "label": "不同种子产生不同序列（排除「恒等实现」）",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "字典插入顺序不影响 JSON 指纹（sort_keys 生效）",
+      "passed": true,
+      "detail": "actual='8be6697fdc044108c2e91ef3b03b539bd11dea8400eea420de57b6ecc1ecd1eb' expected='8be6697fdc044108c2e91ef3b03b539bd11dea8400eea420de57b6ecc1ecd1eb'"
+    },
+    {
+      "label": "同一对象重复计算指纹一致",
+      "passed": true,
+      "detail": "actual='8be6697fdc044108c2e91ef3b03b539bd11dea8400eea420de57b6ecc1ecd1eb' expected='8be6697fdc044108c2e91ef3b03b539bd11dea8400eea420de57b6ecc1ecd1eb'"
+    },
+    {
+      "label": "itertools.count 从 0 开始递增",
+      "passed": true,
+      "detail": "actual=[0, 1, 2, 3] expected=[0, 1, 2, 3]"
+    },
+    {
+      "label": "相对路径相对于当前工作目录解析（与 config.ROOT 一致）",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "assertions_total": 10,
+    "assertions_passed": 10,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "结论：A* 优先队列必须以 (f, h, tie_seq, node) 入堆，tie_seq 保证任意输入下都可比较；该设计已在 astar.py 中实现。",
+    "本探针只验证标准库的**行为假设**，不产生任何算法性能结论；A* 与博弈搜索的指标一律来自 run_q*.py 与 run_experiments.py。"
+  ]
+}

@@ -1,0 +1,878 @@
+{
+  "name": "q2_weighted",
+  "stage": "阶段 1-2",
+  "script": "run_q2.py",
+  "command": "python run_q2.py",
+  "started_at": "2026-10-16T01:47:36+08:00",
+  "finished_at": "2026-10-16T01:47:36+08:00",
+  "elapsed_seconds": 0.0635,
+  "exit_code": 0,
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "inputs": {
+    "case_file": "cases/pdf_examples/q2_weighted.json",
+    "case_sha256": "23acda1c67cc16bad4b8fd6b5c55ae1d5521bb8b251e6604905ab09e09004e1d",
+    "cost_encoding": {
+      "start_cost": 0,
+      "goal_cost": 0,
+      "note": "PDF 第 7 页明文：「最后一步没有代价，即可以将 E 视为 0」。起点代价不参与计算（不需要进入起点）。二者均已在 WORKFLOW.md 3.2 用期望值 7 交叉验证：若把 E 当普通格取 1，最小代价会变成 8。"
+    }
+  },
+  "params": {
+    "heuristic": "manhattan",
+    "tie_break": true,
+    "unreachable_sentinel": -1,
+    "case_source": "PDF 第 5-7 页（cases/pdf_examples/q2_weighted.json）"
+  },
+  "results": {
+    "pdf_case": {
+      "input": {
+        "start": [
+          0,
+          0
+        ],
+        "goal": [
+          4,
+          4
+        ],
+        "rows": 5,
+        "cols": 5,
+        "grid_fingerprint": "1c532ec3a6455db6aab1ba3bf1d94a6400e2db390a9fd2b5611eeeea58789ffd"
+      },
+      "search": {
+        "found": true,
+        "cost": 7.0,
+        "steps": 8,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "heuristic": "manhattan",
+        "tie_break": true,
+        "queue": "heapq",
+        "start": [
+          0,
+          0
+        ],
+        "goal": [
+          4,
+          4
+        ],
+        "stats": {
+          "expanded_nodes": 9,
+          "generated_nodes": 18,
+          "pushes": 16,
+          "improvements": 15,
+          "duplicate_pops": 0,
+          "max_frontier_size": 8,
+          "max_depth": 8
+        }
+      },
+      "answer": 7,
+      "expected_cost": 7
+    },
+    "cost_accumulation": [
+      {
+        "step": 0,
+        "cell": [
+          0,
+          0
+        ],
+        "entry_cost": 0.0,
+        "cumulative_cost": 0.0,
+        "note": "起点：站在起点不需要进入，不计代价"
+      },
+      {
+        "step": 1,
+        "cell": [
+          1,
+          0
+        ],
+        "entry_cost": 1.0,
+        "cumulative_cost": 1.0,
+        "note": ""
+      },
+      {
+        "step": 2,
+        "cell": [
+          2,
+          0
+        ],
+        "entry_cost": 1.0,
+        "cumulative_cost": 2.0,
+        "note": ""
+      },
+      {
+        "step": 3,
+        "cell": [
+          3,
+          0
+        ],
+        "entry_cost": 1.0,
+        "cumulative_cost": 3.0,
+        "note": ""
+      },
+      {
+        "step": 4,
+        "cell": [
+          3,
+          1
+        ],
+        "entry_cost": 1.0,
+        "cumulative_cost": 4.0,
+        "note": ""
+      },
+      {
+        "step": 5,
+        "cell": [
+          3,
+          2
+        ],
+        "entry_cost": 1.0,
+        "cumulative_cost": 5.0,
+        "note": ""
+      },
+      {
+        "step": 6,
+        "cell": [
+          4,
+          2
+        ],
+        "entry_cost": 1.0,
+        "cumulative_cost": 6.0,
+        "note": ""
+      },
+      {
+        "step": 7,
+        "cell": [
+          4,
+          3
+        ],
+        "entry_cost": 1.0,
+        "cumulative_cost": 7.0,
+        "note": ""
+      },
+      {
+        "step": 8,
+        "cell": [
+          4,
+          4
+        ],
+        "entry_cost": 0.0,
+        "cumulative_cost": 7.0,
+        "note": "E 视为 0"
+      }
+    ],
+    "cross_check": {
+      "manhattan": {
+        "cost": 7.0,
+        "expanded_nodes": 9,
+        "pushes": 16
+      },
+      "zero_heuristic_dijkstra": {
+        "cost": 7.0,
+        "expanded_nodes": 15,
+        "pushes": 24
+      }
+    },
+    "admissibility": {
+      "min_entry_cost_all_traversable": 0.0,
+      "violating_count": 20,
+      "violating_cells": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "h_manhattan": 8,
+          "h_star": 7.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            0,
+            3
+          ],
+          "h_manhattan": 5,
+          "h_star": 4.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            0,
+            4
+          ],
+          "h_manhattan": 4,
+          "h_star": 3.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "h_manhattan": 7,
+          "h_star": 6.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            1,
+            2
+          ],
+          "h_manhattan": 5,
+          "h_star": 4.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            1,
+            3
+          ],
+          "h_manhattan": 4,
+          "h_star": 3.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            1,
+            4
+          ],
+          "h_manhattan": 3,
+          "h_star": 2.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            0
+          ],
+          "h_manhattan": 6,
+          "h_star": 5.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            1
+          ],
+          "h_manhattan": 5,
+          "h_star": 4.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            2
+          ],
+          "h_manhattan": 4,
+          "h_star": 3.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            3
+          ],
+          "h_manhattan": 3,
+          "h_star": 2.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            4
+          ],
+          "h_manhattan": 2,
+          "h_star": 1.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            0
+          ],
+          "h_manhattan": 5,
+          "h_star": 4.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            1
+          ],
+          "h_manhattan": 4,
+          "h_star": 3.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            2
+          ],
+          "h_manhattan": 3,
+          "h_star": 2.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            3
+          ],
+          "h_manhattan": 2,
+          "h_star": 1.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            4
+          ],
+          "h_manhattan": 1,
+          "h_star": 0.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            4,
+            1
+          ],
+          "h_manhattan": 3,
+          "h_star": 2.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            4,
+            2
+          ],
+          "h_manhattan": 2,
+          "h_star": 1.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            4,
+            3
+          ],
+          "h_manhattan": 1,
+          "h_star": 0.0,
+          "overestimate": true
+        }
+      ],
+      "cells": [
+        {
+          "cell": [
+            0,
+            0
+          ],
+          "h_manhattan": 8,
+          "h_star": 7.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            0,
+            1
+          ],
+          "h_manhattan": 7,
+          "h_star": 7.0,
+          "overestimate": false
+        },
+        {
+          "cell": [
+            0,
+            2
+          ],
+          "h_manhattan": 6,
+          "h_star": 7.0,
+          "overestimate": false
+        },
+        {
+          "cell": [
+            0,
+            3
+          ],
+          "h_manhattan": 5,
+          "h_star": 4.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            0,
+            4
+          ],
+          "h_manhattan": 4,
+          "h_star": 3.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            1,
+            0
+          ],
+          "h_manhattan": 7,
+          "h_star": 6.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            1,
+            1
+          ],
+          "h_manhattan": 6,
+          "h_star": 7.0,
+          "overestimate": false
+        },
+        {
+          "cell": [
+            1,
+            2
+          ],
+          "h_manhattan": 5,
+          "h_star": 4.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            1,
+            3
+          ],
+          "h_manhattan": 4,
+          "h_star": 3.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            1,
+            4
+          ],
+          "h_manhattan": 3,
+          "h_star": 2.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            0
+          ],
+          "h_manhattan": 6,
+          "h_star": 5.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            1
+          ],
+          "h_manhattan": 5,
+          "h_star": 4.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            2
+          ],
+          "h_manhattan": 4,
+          "h_star": 3.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            3
+          ],
+          "h_manhattan": 3,
+          "h_star": 2.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            2,
+            4
+          ],
+          "h_manhattan": 2,
+          "h_star": 1.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            0
+          ],
+          "h_manhattan": 5,
+          "h_star": 4.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            1
+          ],
+          "h_manhattan": 4,
+          "h_star": 3.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            2
+          ],
+          "h_manhattan": 3,
+          "h_star": 2.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            3
+          ],
+          "h_manhattan": 2,
+          "h_star": 1.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            3,
+            4
+          ],
+          "h_manhattan": 1,
+          "h_star": 0.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            4,
+            0
+          ],
+          "h_manhattan": 4,
+          "h_star": 5.0,
+          "overestimate": false
+        },
+        {
+          "cell": [
+            4,
+            1
+          ],
+          "h_manhattan": 3,
+          "h_star": 2.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            4,
+            2
+          ],
+          "h_manhattan": 2,
+          "h_star": 1.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            4,
+            3
+          ],
+          "h_manhattan": 1,
+          "h_star": 0.0,
+          "overestimate": true
+        },
+        {
+          "cell": [
+            4,
+            4
+          ],
+          "h_manhattan": 0,
+          "h_star": 0.0,
+          "overestimate": false
+        }
+      ]
+    },
+    "heuristic_consistency": [
+      {
+        "case": "start_equals_goal",
+        "manhattan_cost": 0.0,
+        "dijkstra_cost": 0.0,
+        "same": true,
+        "expanded_manhattan": 1,
+        "expanded_dijkstra": 1
+      },
+      {
+        "case": "cheap_detour_beats_direct",
+        "manhattan_cost": 5.0,
+        "dijkstra_cost": 5.0,
+        "same": true,
+        "expanded_manhattan": 7,
+        "expanded_dijkstra": 11
+      },
+      {
+        "case": "single_step_expensive",
+        "manhattan_cost": 8.0,
+        "dijkstra_cost": 8.0,
+        "same": true,
+        "expanded_manhattan": 3,
+        "expanded_dijkstra": 3
+      },
+      {
+        "case": "goal_entry_cost_zero",
+        "manhattan_cost": 1.0,
+        "dijkstra_cost": 1.0,
+        "same": true,
+        "expanded_manhattan": 3,
+        "expanded_dijkstra": 3
+      },
+      {
+        "case": "all_ones_grid",
+        "manhattan_cost": 4.0,
+        "dijkstra_cost": 4.0,
+        "same": true,
+        "expanded_manhattan": 6,
+        "expanded_dijkstra": 12
+      }
+    ],
+    "min_weight_heuristic": {
+      "definition": "min(所有可通行格进入代价) × 曼哈顿距离",
+      "min_weight": 0.0,
+      "cost": 7.0,
+      "expanded_nodes": 15
+    },
+    "boundary_cases": [
+      {
+        "case": "start_equals_goal",
+        "answer": 0,
+        "found": true,
+        "expected": 0,
+        "expanded_nodes": 1,
+        "self_designed": true
+      },
+      {
+        "case": "unreachable_by_walls",
+        "answer": -1,
+        "found": false,
+        "expected": -1,
+        "expanded_nodes": 4,
+        "self_designed": true
+      },
+      {
+        "case": "cheap_detour_beats_direct",
+        "answer": 5,
+        "found": true,
+        "expected": 5,
+        "expanded_nodes": 7,
+        "self_designed": true
+      },
+      {
+        "case": "single_step_expensive",
+        "answer": 8,
+        "found": true,
+        "expected": 8,
+        "expanded_nodes": 3,
+        "self_designed": true
+      },
+      {
+        "case": "goal_entry_cost_zero",
+        "answer": 1,
+        "found": true,
+        "expected": 1,
+        "expanded_nodes": 3,
+        "self_designed": true
+      },
+      {
+        "case": "all_ones_grid",
+        "answer": 4,
+        "found": true,
+        "expected": 4,
+        "expanded_nodes": 6,
+        "self_designed": true
+      }
+    ],
+    "free_goal_property": {
+      "grid": "3x5，除 E 外每格代价 1，E 代价 0",
+      "steps": 6,
+      "cost": 5.0,
+      "cost_equals_steps_minus_1": true
+    },
+    "goal_cost_sensitivity": {
+      "goal_cost_0": 7.0,
+      "goal_cost_1": 8.0
+    }
+  },
+  "assertions": [
+    {
+      "label": "题面用例找到路径",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "最小代价与 PDF 期望一致",
+      "passed": true,
+      "detail": "actual=7 expected=7"
+    },
+    {
+      "label": "路径合法（连续、不穿障碍、无重复）",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "路径代价累计值等于搜索结果 cost",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0 tol=1e-09"
+    },
+    {
+      "label": "PDF 给出的示例路径按同一规则累加也为 7",
+      "passed": true,
+      "detail": "actual=7.0 expected=7 tol=1e-09"
+    },
+    {
+      "label": "代价累计过程末项等于总代价",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0 tol=1e-09"
+    },
+    {
+      "label": "h=0（Dijkstra）独立复核最小代价一致",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0 tol=1e-09"
+    },
+    {
+      "label": "尽管曼哈顿不可采纳，在全部自设用例上 A* 与 Dijkstra 仍同解",
+      "passed": true,
+      "detail": "不同解用例=[]"
+    },
+    {
+      "label": "保下界启发函数 min_weight 的最小代价与曼哈顿一致",
+      "passed": true,
+      "detail": "actual=7.0 expected=7.0 tol=1e-09"
+    },
+    {
+      "label": "边界用例 start_equals_goal：返回值",
+      "passed": true,
+      "detail": "actual=0 expected=0"
+    },
+    {
+      "label": "边界用例 start_equals_goal：路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "边界用例 unreachable_by_walls：返回值",
+      "passed": true,
+      "detail": "actual=-1 expected=-1"
+    },
+    {
+      "label": "边界用例 cheap_detour_beats_direct：返回值",
+      "passed": true,
+      "detail": "actual=5 expected=5"
+    },
+    {
+      "label": "边界用例 cheap_detour_beats_direct：路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "边界用例 single_step_expensive：返回值",
+      "passed": true,
+      "detail": "actual=8 expected=8"
+    },
+    {
+      "label": "边界用例 single_step_expensive：路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "边界用例 goal_entry_cost_zero：返回值",
+      "passed": true,
+      "detail": "actual=1 expected=1"
+    },
+    {
+      "label": "边界用例 goal_entry_cost_zero：路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "边界用例 all_ones_grid：返回值",
+      "passed": true,
+      "detail": "actual=4 expected=4"
+    },
+    {
+      "label": "边界用例 all_ones_grid：步数（与代价不同，差 1 即 E 的免费步）",
+      "passed": true,
+      "detail": "actual=5 expected=5"
+    },
+    {
+      "label": "边界用例 all_ones_grid：路径合法",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "label": "全 1 地形 + E 免费时「总代价 = 步数 - 1」（免费的最后一步）",
+      "passed": true,
+      "detail": "steps=6 cost=5.0"
+    },
+    {
+      "label": "口径敏感性：把 E 当普通格（代价 1）会得到不同结果，说明「E 视为 0」确实生效而非空转",
+      "passed": true,
+      "detail": "goal_cost=0 -> 7.0；goal_cost=1 -> 8.0"
+    },
+    {
+      "label": "其中 goal_cost=0 与 PDF 期望 7 一致",
+      "passed": true,
+      "detail": "actual=7 expected=7"
+    }
+  ],
+  "summary": {
+    "assertions_total": 24,
+    "assertions_passed": 24,
+    "assertions_failed": 0,
+    "failed_labels": []
+  },
+  "notes": [
+    "本题面用例上扩展节点数：曼哈顿 9，h=0 15。用例只有 5×5，差异有限；效率类结论须用自设更大输入（见 run_experiments.py D5）。",
+    "可采纳性实测结论：曼哈顿距离在本题**不是可采纳的**——实测 20 个格子上 h_manhattan(n) > h*(n)（h* 由 Dijkstra 逐格现算）。根因是 E 的进入代价被规定为 0，使 h*(n) 可以**小于步数**，而曼哈顿距离隐含「每步至少 1」。",
+    "违反的分布（用于说明这不是「个例」）：高估格子为 [(0, 0), (0, 3), (0, 4), (1, 0), (1, 2), (1, 3), (1, 4), (2, 0), (2, 1), (2, 2), (2, 3), (2, 4), (3, 0), (3, 1), (3, 2), (3, 3), (3, 4), (4, 1), (4, 2), (4, 3)]。即高估并不局限于与 E 相邻的格，而是任何「剩余路线经过高代价格、且最后一步免费」都会被高估。",
+    "但这不等于「结果一定错」：本次 A* 仍返回最小代价 7，与 Dijkstra 一致。「可采纳性被破坏」与「本用例结果是否最优」是两件事，报告中必须分开陈述。",
+    "上一条是**实测观察**，不是理论保证：不可采纳的启发函数在别的用例上可能给出次优解。本实验未做「构造次优反例」的搜索，因此不能宣称「本题用曼哈顿距离总是得到最优解」。",
+    "注意 min_weight 的取值来源：题目二把 E 的进入代价设为 0，因此「全图最小可通行代价」= 0，min_weight 启发函数退化为 h≡0（实测扩展节点数 = 15，与 Dijkstra 相同）。这说明保下界与「信息量」是两回事：可采纳但不具信息量的启发函数没有剪枝价值。",
+    "边界用例均为**自设**，已在产物中标注 self_designed=True。"
+  ]
+}

@@ -1,0 +1,1128 @@
+{
+  "script": "check_rigor.py",
+  "deep": false,
+  "generated_at": "2026-10-16T17:40:35+08:00",
+  "environment": {
+    "python_version": "3.11.17",
+    "python_executable_basename": "python.exe",
+    "conda_default_env": "lab2-search",
+    "conda_prefix_basename": "lab2-search",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD"
+  },
+  "counts": {
+    "ERROR": 0,
+    "WARN": 0,
+    "INFO": 8,
+    "PASS": 176
+  },
+  "rows": [
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 config.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 rigor.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 harness.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 selfcases.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 astar.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 game_tree.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 treasure_game.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 environment.yml",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 run_stage0.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 run_cases.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 run_q1.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 run_q2.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 run_q3.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 run_q4.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在 check_rigor.py",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在目录 cases/pdf_examples",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在目录 cases/official",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在目录 cases/self_designed",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在目录 results/logs",
+      "detail": ""
+    },
+    {
+      "section": "1 目录与文件完整性",
+      "level": "PASS",
+      "label": "存在目录 results/figures",
+      "detail": ""
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "阶段 0 环境探针产物存在",
+      "detail": ""
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "阶段 0 标准库探针产物存在",
+      "detail": ""
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "环境探针无失败断言",
+      "detail": "{'assertions_total': 4, 'assertions_passed': 4, 'assertions_failed': 0, 'failed_labels': []}"
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "环境探针记录了 Python 版本与平台",
+      "detail": ""
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "环境探针解释器版本与本次运行一致",
+      "detail": "产物=3.11.17 本次=3.11.17"
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "标准库探针无失败断言",
+      "detail": "{'assertions_total': 10, 'assertions_passed': 10, 'assertions_failed': 0, 'failed_labels': []}"
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "记录了 heapq 弹出顺序实测",
+      "detail": ""
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "记录了 heapq 前缀不可比时抛 TypeError 的实测",
+      "detail": ""
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "记录了随机种子可复现性实测",
+      "detail": ""
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "环境定义 environment.yml 存在且已记录指纹",
+      "detail": ""
+    },
+    {
+      "section": "2 阶段 0 环境与探针",
+      "level": "PASS",
+      "label": "当前解释器为 lab2-search 环境",
+      "detail": "CONDA_DEFAULT_ENV='lab2-search'"
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例清单产物存在",
+      "detail": ""
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例文件存在：q1_pdf_maze",
+      "detail": ""
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例指纹仍一致：q1_pdf_maze",
+      "detail": "recorded=663fdbbc731a actual=663fdbbc731a"
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例文件存在：q2_pdf_weighted",
+      "detail": ""
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例指纹仍一致：q2_pdf_weighted",
+      "detail": "recorded=23acda1c67cc actual=23acda1c67cc"
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例文件存在：q3_pdf_tree",
+      "detail": ""
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例指纹仍一致：q3_pdf_tree",
+      "detail": "recorded=53799eec1a21 actual=53799eec1a21"
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例文件存在：q3_pdf_input_variant",
+      "detail": ""
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例指纹仍一致：q3_pdf_input_variant",
+      "detail": "recorded=8d9c58538590 actual=8d9c58538590"
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例文件存在：q4_pdf_treasure",
+      "detail": ""
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "用例指纹仍一致：q4_pdf_treasure",
+      "detail": "recorded=2db9b90b4dc6 actual=2db9b90b4dc6"
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "PASS",
+      "label": "题面用例覆盖 Q1-Q4",
+      "detail": "questions=['Q1', 'Q2', 'Q3', 'Q4']"
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "INFO",
+      "label": "cases/official/ 为空（冗余项，不阻塞任何阶段）",
+      "detail": "PDF 正文的四个用例与预期输出已在四题产物中核验；本条不构成未完成项。若日后收到独立用例文件，用 run_cases.py --seal 登记指纹后补跑即可。"
+    },
+    {
+      "section": "3 用例清单与指纹",
+      "level": "INFO",
+      "label": "用例分类计数",
+      "detail": "{\"pdf_example\": 5, \"official\": 0, \"self_designed\": 0}"
+    },
+    {
+      "section": "4 Q1 产物",
+      "level": "PASS",
+      "label": "Q1 产物无失败断言",
+      "detail": "failed=0 labels=[]"
+    },
+    {
+      "section": "4 Q1 产物",
+      "level": "PASS",
+      "label": "Q1 产物记录退出码为 0",
+      "detail": "exit_code=0"
+    },
+    {
+      "section": "4 Q1 产物",
+      "level": "PASS",
+      "label": "复算最短步数与产物一致",
+      "detail": "复算=7 产物=7"
+    },
+    {
+      "section": "4 Q1 产物",
+      "level": "PASS",
+      "label": "复算扩展节点数与产物一致",
+      "detail": "复算=14 产物=14"
+    },
+    {
+      "section": "4 Q1 产物",
+      "level": "PASS",
+      "label": "最短步数等于期望 7",
+      "detail": ""
+    },
+    {
+      "section": "4 Q1 产物",
+      "level": "PASS",
+      "label": "复算路径合法",
+      "detail": ""
+    },
+    {
+      "section": "4 Q1 产物",
+      "level": "PASS",
+      "label": "复算步数与 BFS 一致",
+      "detail": ""
+    },
+    {
+      "section": "4 Q1 产物",
+      "level": "PASS",
+      "label": "产物记录了平局规则",
+      "detail": ""
+    },
+    {
+      "section": "4 Q1 产物",
+      "level": "PASS",
+      "label": "边界用例均标注为自设",
+      "detail": "n=6"
+    },
+    {
+      "section": "5 Q2 产物",
+      "level": "PASS",
+      "label": "Q2 产物无失败断言",
+      "detail": "failed=0 labels=[]"
+    },
+    {
+      "section": "5 Q2 产物",
+      "level": "PASS",
+      "label": "Q2 产物记录退出码为 0",
+      "detail": "exit_code=0"
+    },
+    {
+      "section": "5 Q2 产物",
+      "level": "PASS",
+      "label": "复算最小代价与产物一致",
+      "detail": "复算=7.0 产物=7.0"
+    },
+    {
+      "section": "5 Q2 产物",
+      "level": "PASS",
+      "label": "最小代价等于期望 7",
+      "detail": ""
+    },
+    {
+      "section": "5 Q2 产物",
+      "level": "PASS",
+      "label": "A* 与 Dijkstra 复算一致",
+      "detail": ""
+    },
+    {
+      "section": "5 Q2 产物",
+      "level": "PASS",
+      "label": "无序对：无解哨兵为 -1 且与 Q1 的 [] 不同",
+      "detail": ""
+    },
+    {
+      "section": "5 Q2 产物",
+      "level": "PASS",
+      "label": "记录了可采纳性违反的格子清单",
+      "detail": "violating_count=20"
+    },
+    {
+      "section": "5 Q2 产物",
+      "level": "PASS",
+      "label": "复算可采纳性违反数量与产物一致",
+      "detail": "复算=20 产物=20"
+    },
+    {
+      "section": "5 Q2 产物",
+      "level": "PASS",
+      "label": "记录了「E 视为 0」的口径敏感性（7 vs 8）",
+      "detail": "{'goal_cost_0': 7.0, 'goal_cost_1': 8.0}"
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "Q3 产物无失败断言",
+      "detail": "failed=0 labels=[]"
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "Q3 产物记录退出码为 0",
+      "detail": "exit_code=0"
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "复算 Minimax 值与产物一致",
+      "detail": "复算=5.0 产物=5.0"
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "复算根值等于期望 5",
+      "detail": ""
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "产物记录唯一叶子对象数为 6（共享结构已还原）",
+      "detail": "unique_leaves=6"
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "产物记录了 PDF 内部结构歧义（U4）",
+      "detail": ""
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "记录了访问顺序对照（≥3 种顺序）",
+      "detail": "orders=['identity', 'reversed', 'rotate', 'greedy']"
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "访问顺序不改变博弈值",
+      "detail": ""
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "自设树用例数 ≥ 12",
+      "detail": "n=24"
+    },
+    {
+      "section": "6 Q3 产物",
+      "level": "PASS",
+      "label": "存在规模大于题面树的自设用例（叶子 > 6）",
+      "detail": "leaf_counts=[4, 9, 16, 27, 81, 243]"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "Q4 产物无失败断言",
+      "detail": "failed=0 labels=[]"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "Q4 产物记录退出码为 0",
+      "detail": "exit_code=0"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "复算距离矩阵与产物逐条一致",
+      "detail": "不一致=[]"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=2 Minimax 首步与期望一致",
+      "detail": "actual=T2 expected=T2"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=2 Minimax 收益差与期望一致",
+      "detail": "actual=-1.0 expected=-1"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=2 Alpha-beta 首步与期望一致",
+      "detail": "actual=T2 expected=T2"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=2 Alpha-beta 收益差与期望一致",
+      "detail": "actual=-1.0 expected=-1"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=4 Minimax 首步与期望一致",
+      "detail": "actual=T3 expected=T3"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=4 Minimax 收益差与期望一致",
+      "detail": "actual=3.0 expected=3"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=4 Alpha-beta 首步与期望一致",
+      "detail": "actual=T3 expected=T3"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=4 Alpha-beta 收益差与期望一致",
+      "detail": "actual=3.0 expected=3"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=2 Minimax 与 Alpha-beta 同解",
+      "detail": ""
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H=4 Minimax 与 Alpha-beta 同解",
+      "detail": ""
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "H≥4 与 H=4 结果相同（完全搜索深度）",
+      "detail": "by_depth={0: 0.0, 1: 2.0, 2: -1.0, 3: 2.0, 4: 3.0, 5: 3.0, 6: 3.0}"
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "距离矩阵未被硬编码（源码中无 6×6 字面矩阵）",
+      "detail": ""
+    },
+    {
+      "section": "7 Q4 产物",
+      "level": "PASS",
+      "label": "状态表示含 PDF 要求的四要素",
+      "detail": ""
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "astar.py 中定义了 astar",
+      "detail": "实际定义位置=['astar.py']"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "astar.py 中定义了 bfs_shortest_steps",
+      "detail": "实际定义位置=['astar.py']"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "astar.py 中定义了 bidirectional_astar",
+      "detail": "实际定义位置=['astar.py']"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "astar.py 中定义了 dijkstra",
+      "detail": "实际定义位置=['astar.py']"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "game_tree.py 中定义了 alpha_beta",
+      "detail": "实际定义位置=['game_tree.py']"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "game_tree.py 中定义了 alpha_beta_memo",
+      "detail": "实际定义位置=['game_tree.py']"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "game_tree.py 中定义了 game_search",
+      "detail": "实际定义位置=['game_tree.py']"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "game_tree.py 中定义了 minimax",
+      "detail": "实际定义位置=['game_tree.py']"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "搜索函数仅在登记的模块中实现（无第二份实现）",
+      "detail": "违规=[]"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "PASS",
+      "label": "题目脚本未自行实现搜索函数",
+      "detail": "违规=[]"
+    },
+    {
+      "section": "8 算法唯一实现入口",
+      "level": "INFO",
+      "label": "AST 扫描的模块数",
+      "detail": "18"
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "主指标为计数类（expanded_nodes）",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "声明了平局打破规则",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "声明了时间仅为量级参考",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "声明了不做统计显著性检验",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "q1_maze 产物已声明参数",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "q1_maze 产物已记录环境",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "q2_weighted 产物已声明参数",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "q2_weighted 产物已记录环境",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "q3_game_tree 产物已声明参数",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "q3_game_tree 产物已记录环境",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "q4_treasure 产物已声明参数",
+      "detail": ""
+    },
+    {
+      "section": "9 指标口径与平局规则",
+      "level": "PASS",
+      "label": "q4_treasure 产物已记录环境",
+      "detail": ""
+    },
+    {
+      "section": "10 数据与产物纪律",
+      "level": "PASS",
+      "label": "源码中无 Windows 绝对路径字面量",
+      "detail": "违规=[]"
+    },
+    {
+      "section": "10 数据与产物纪律",
+      "level": "PASS",
+      "label": "results/logs 中无非法后缀文件",
+      "detail": "文件=[]"
+    },
+    {
+      "section": "10 数据与产物纪律",
+      "level": "PASS",
+      "label": "源码文件无 UTF-8 BOM",
+      "detail": "带 BOM=[]（编码问题会伪装成语法错误，本实验实际踩过一次：用 PowerShell 改写 Python 文件会写入 BOM）"
+    },
+    {
+      "section": "10 数据与产物纪律",
+      "level": "PASS",
+      "label": "无残留的临时诊断脚本",
+      "detail": "文件=[]"
+    },
+    {
+      "section": "10 数据与产物纪律",
+      "level": "PASS",
+      "label": "每个 JSON 产物都有同名 txt",
+      "detail": "缺少=[]"
+    },
+    {
+      "section": "10 数据与产物纪律",
+      "level": "INFO",
+      "label": "cases/official/ 为空（冗余项，已在第 3 节申报）",
+      "detail": "U1"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "对照实验产物无失败断言",
+      "detail": "{'assertions_total': 173, 'assertions_passed': 173, 'assertions_failed': 0, 'failed_labels': []}"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "对照实验产物退出码为 0",
+      "detail": ""
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "执行的分组集合等于请求的分组集合",
+      "detail": "actual=['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'e1', 'e2', 'e3', 'e4'] expected=['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'e1', 'e2', 'e3', 'e4']"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "全部 13 个分组均已执行",
+      "detail": "executed=['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'e1', 'e2', 'e3', 'e4']"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "D1 启发函数（题面） 有产物记录",
+      "detail": "key=d1_pdf_maze n=3"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "D1 启发函数（大规模） 有产物记录",
+      "detail": "key=d1_large_mazes n=24"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "D2 优先队列 有产物记录",
+      "detail": "key=d2_queue n=8"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "D3 顺序×剪枝 有产物记录",
+      "detail": "key=d3_order_x_pruning n=192"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "D4 深度 有产物记录",
+      "detail": "key=d4_depth n=14"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "D5 规模 有产物记录",
+      "detail": "key=d5_scale n=18"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "D6 顺序 有产物记录",
+      "detail": "key=d6_order n=12"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "D7 剪枝开关 有产物记录",
+      "detail": "key=d7_pruning n=20"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "D8 启发函数口径 有产物记录",
+      "detail": "key=d8_heuristics n=6"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "E1 平局规则 有产物记录",
+      "detail": "key=e1_tie_break n=36"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "E2 规模边界 有产物记录",
+      "detail": "key=e2_scale n=12"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "E3 退化输入 有产物记录",
+      "detail": "key=e3_degenerate n=5"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "每个实验行都声明了改动的变量",
+      "detail": "缺失=[]"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "d1_large_mazes：两启发函数的步数一致",
+      "detail": "[]"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "d5_scale：两启发函数的步数一致",
+      "detail": "[]"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "创新实验产物无失败断言",
+      "detail": "{'assertions_total': 197, 'assertions_passed': 197, 'assertions_failed': 0, 'failed_labels': []}"
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "F1 双向 A* 有产物记录",
+      "detail": ""
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "F2 置换表 有产物记录",
+      "detail": ""
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "F3 访问顺序 有产物记录",
+      "detail": ""
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "F4 迭代加深 有产物记录",
+      "detail": ""
+    },
+    {
+      "section": "11 实验矩阵与稳健性",
+      "level": "PASS",
+      "label": "F1：双向与单向搜索的步数全部一致",
+      "detail": "[]"
+    },
+    {
+      "section": "12 图表与视觉验收",
+      "level": "PASS",
+      "label": "视觉验收产物存在",
+      "detail": ""
+    },
+    {
+      "section": "12 图表与视觉验收",
+      "level": "PASS",
+      "label": "验收的图集合等于出图脚本产出的集合",
+      "detail": "actual=['fig01_q1_search_process.png', 'fig02_q1_heuristic_nodes.png', 'fig03_q2_cost_accumulation.png', 'fig04_q2_heuristic_compare.png', 'fig05_q3_pruning_tree.png', 'fig06_q3_order_pruning.png', 'fig07_q4_depth.png', 'fig08_q4_matrix_order.png'] expected=['fig01_q1_search_process.png', 'fig02_q1_heuristic_nodes.png', 'fig03_q2_cost_accumulation.png', 'fig04_q2_heuristic_compare.png', 'fig05_q3_pruning_tree.png', 'fig06_q3_order_pruning.png', 'fig07_q4_depth.png', 'fig08_q4_matrix_order.png']"
+    },
+    {
+      "section": "12 图表与视觉验收",
+      "level": "PASS",
+      "label": "视觉验收无失败断言",
+      "detail": "{'assertions_total': 35, 'assertions_passed': 35, 'assertions_failed': 0, 'failed_labels': []}"
+    },
+    {
+      "section": "12 图表与视觉验收",
+      "level": "PASS",
+      "label": "全部图文件仍然存在",
+      "detail": "[]"
+    },
+    {
+      "section": "12 图表与视觉验收",
+      "level": "PASS",
+      "label": "图自出图以来指纹未变（视觉验收仍有效）",
+      "detail": "指纹变化=[]"
+    },
+    {
+      "section": "13 声明与产物一致",
+      "level": "PASS",
+      "label": "距离矩阵中 d(A,T2)=4 已写入文档",
+      "detail": "d(A,T2)=4.0"
+    },
+    {
+      "section": "13 声明与产物一致",
+      "level": "PASS",
+      "label": "距离矩阵中 d(B,T3)=4 与文档一致",
+      "detail": "actual=4.0"
+    },
+    {
+      "section": "13 声明与产物一致",
+      "level": "PASS",
+      "label": "Q1 最短步数 7 与文档一致",
+      "detail": "actual=7"
+    },
+    {
+      "section": "13 声明与产物一致",
+      "level": "PASS",
+      "label": "Q3 期望值 5 与文档一致",
+      "detail": "actual=5.0"
+    },
+    {
+      "section": "13 声明与产物一致",
+      "level": "INFO",
+      "label": "文档数字对账范围为抽查项",
+      "detail": "本项只抽查关键数字；完整对账在阶段 8 由报告逐项核对完成。"
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "REPORT.md 存在",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "README.md 存在",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告覆盖 第 1 项：算法设计与实验设置",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告覆盖 第 2 项：题目一",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告覆盖 第 3 项：题目二",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告覆盖 第 4 项：题目三",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告覆盖 第 5 项：题目四",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告覆盖 第 6 项：自设对照实验与拓展",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告覆盖 第 7 项：图表展示与独立思考",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告列出「局限与未验证项」",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明 Q1 步数 7",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明 Q1 扩展节点数 14",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明 Q2 代价 7",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明「E 当普通格则为 8」",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明可采纳性违反 20 格",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明 Q3 根值 5",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明 Q3 访问数 15 / 14",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明 H=2 首步 T2 与 U=-1",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明 H=4 首步 T3 与 U=3",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明 H=4 顺序访问数 47/46/37",
+      "detail": "实际={'asc': 47, 'desc': 46, 'trace_desc': 37}"
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明平局规则最大节点差 957",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明 41×41 比值均值 0.204",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明置换表最大命中 215",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明置换表减少 2.3%~6.1%",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "报告声明双向 A* 更差例数 19",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "README 说明 环境创建方式",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "README 说明 自检命令",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "PASS",
+      "label": "README 说明 题目一入口",
+      "detail": ""
+    },
+    {
+      "section": "14 报告与 README",
+      "level": "INFO",
+      "label": "对账范围",
+      "detail": "本项机械核对报告中的关键数字与产物一致；文字表述的准确性由人工审阅。"
+    },
+    {
+      "section": "未执行分组",
+      "level": "INFO",
+      "label": "阶段 5 稳健性 尚未产出（robustness）",
+      "detail": ""
+    },
+    {
+      "section": "覆盖范围申报",
+      "level": "INFO",
+      "label": "常规模式未做：① 全量重跑自设用例；② 逐条复算实验矩阵全部配置；③ 图像视觉检查。需要时用 --deep，或由阶段脚本自身的断言覆盖。",
+      "detail": ""
+    }
+  ],
+  "elapsed_seconds": 0.748,
+  "conclusion": "PASS"
+}
