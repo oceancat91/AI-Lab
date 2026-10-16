@@ -55,9 +55,9 @@
 
 ```
 Lab1/                                        仓库根（原 data-Project1/）
-├── 实验一要求.pdf                             要求来源（原版，页数已被更新覆盖）
 ├── AGENTS.md · .gitignore · README.md
 └── Lab01/                                   实验一
+    ├── 实验一要求.pdf                         要求来源（原版，页数已被更新覆盖）
     ├── AGENTS.md                             实验一的 agent 行为约束
     ├── WORKFLOW.md                           本文件
     └── lab1-text-classification/              代码、数据与产物；脚本必须在此目录下运行
