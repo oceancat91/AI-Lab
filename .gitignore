@@ -48,14 +48,16 @@ WORKFLOW.md
 !Lab02/WORKFLOW.md
 
 # 已跟踪的实验摘要继续保留，庞杂的本地控制台和旧验收记录不新增发布
-# 注意：路径必须跟随实际目录（Lab01 与 Lab02 若移动目录，此处需同步修改）
-/Lab01/results/logs/*
-!/Lab01/results/logs/cleanup_validation.json
-!/Lab01/results/logs/cleanup_validation.txt
+# 注意：路径必须跟随实际目录（实验一代码已移入 lab1-text-classification/，
+# 实验二代码在 lab2-search/；目录再移动时此处需同步修改，否则规则会静默失效）
+/Lab01/lab1-text-classification/results/logs/*
+!/Lab01/lab1-text-classification/results/logs/cleanup_validation.json
+!/Lab01/lab1-text-classification/results/logs/cleanup_validation.txt
 
 # 实验二的 Python 缓存与诊断脚本不发布（experiments/innovation 等实验证据仍入库）
 /Lab02/lab2-search/__pycache__/
 /Lab02/tmp/
+/Lab01/lab1-text-classification/__pycache__/
 
 # 本机凭据
 .env

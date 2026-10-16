@@ -4,32 +4,45 @@
 
 ## 目录结构
 
-- `Lab01/`：实验一（文本分类）的完整交付 —— 代码、数据、实验记录、图表与报告。
-- `Lab02/`：实验二（搜索算法）的完整交付 —— A*、Minimax 与 Alpha-beta 剪枝的实现、对照实验、图表与报告。
+两个实验采用同一形态：实验级文档（`AGENTS.md`、`WORKFLOW.md`、要求 PDF）在实验目录下，
+**代码与数据放在实验目录内的代码子目录中，脚本必须在代码子目录内运行**（内部使用相对路径）。
 
-各实验之间相互独立，均自带环境定义与运行说明；请在对应目录内运行。
+```
+Lab01/                            实验一（文本分类）
+├── AGENTS.md · WORKFLOW.md       实验级文档
+└── lab1-text-classification/     代码、数据、产物、报告
+
+Lab02/                            实验二（搜索算法）
+├── AGENTS.md · WORKFLOW.md       实验级文档
+├── 实验二要求_new.pdf
+└── lab2-search/                  代码、产物、报告
+```
+
+各实验相互独立，均自带环境定义与运行说明。
 
 ---
 
 ## Lab01 · 文本分类
 
-代码和数据位于 `Lab01/`。从该目录运行：
+代码和数据位于 `Lab01/lab1-text-classification/`，**脚本必须在该目录内运行**（内部使用相对路径）。
+从该目录运行：
 
 ```powershell
-Set-Location ./Lab01
+Set-Location ./Lab01/lab1-text-classification
 conda env create -f environment.yml
 conda run --no-capture-output -n project1 python run_final.py
 ```
 
 此命令使用仓库中已有的验证实验记录选择方案，并在全部有标签数据上重新训练。
-需要从头完成数据探索、基线和对照实验时，按[完整运行说明](Lab01/README.md)执行。
+需要从头完成数据探索、基线和对照实验时，按[完整运行说明](Lab01/lab1-text-classification/README.md)执行。
 
 ### Lab01 文件
 
-- `Lab01/`：12 个核心 Python 脚本、conda 环境定义、课程 CSV 和 `predictions.csv`。
-- `Lab01/results/logs/`：支撑模型比较的实验摘要、逐类指标及精简后的验证记录。
-- `Lab01/results/figures/`：实验图表。
-- [报告内容](Lab01/REPORT.md)和[报告 PDF](Lab01/output/pdf/Lab1_report.pdf)。
+- `Lab01/lab1-text-classification/`：12 个核心 Python 脚本、conda 环境定义、课程 CSV 和 `predictions.csv`。
+- `Lab01/lab1-text-classification/results/logs/`：支撑模型比较的实验摘要、逐类指标及精简后的验证记录。
+- `Lab01/lab1-text-classification/results/figures/`：实验图表。
+- [报告内容](Lab01/lab1-text-classification/REPORT.md)和[报告 PDF](Lab01/lab1-text-classification/output/pdf/Lab1_report.pdf)。
+- [工作规范](Lab01/WORKFLOW.md)｜[要求原文](Lab01/实验一要求.pdf)。
 
 朴素贝叶斯和线性 SVM 是两个主要模型，逻辑回归和 MLP 作为已有对照保留。
 清理移除了自检、文档生成、打包和模板脚本，保留实验从数据加载到训练、选参和预测所需的代码。

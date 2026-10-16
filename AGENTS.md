@@ -13,7 +13,7 @@
 - 读完后确认：当前处于阶段 0–8 的哪一步、上一阶段的完成判据是否满足、本次要跑哪些实验。
 - 明确本次目标、拟改动的文件、验证方式；不顺手修改本次范围外的文件。
 - 遇到要求冲突（`AGENTS.md` / `WORKFLOW.md` / PDF / 教师后续更新），比较来源与时效后取**最新且来源更高**者，并在文档中注明原要求、新要求与来源；不要默默取用其中一个，也不要默认 PDF 一定最新（本实验已出现报告页数被教师更新覆盖的先例）。
-- 各实验自带环境定义与运行说明，脚本在各自代码目录内运行（内部使用相对路径）。实验一代码目录为 `Lab01/`，实验二为 `Lab02/lab2-search/`。
+- 各实验自带环境定义与运行说明，脚本在各自**代码子目录**内运行（内部使用相对路径）。实验一为 `Lab01/lab1-text-classification/`，实验二为 `Lab02/lab2-search/`。
 
 ## 2. 证据规则
 
@@ -35,7 +35,7 @@
 
 ## 4. 环境纪律
 
-- 只用 conda，不用 pip。各实验的 `environment.yml` 是环境的权威定义（`Lab01/environment.yml`；实验二为 `Lab02/lab2-search/environment.yml` 与 `environment-lock.txt`）。
+- 只用 conda，不用 pip。各实验的 `environment.yml` 是环境的权威定义（实验一为 `Lab01/lab1-text-classification/environment.yml`；实验二为 `Lab02/lab2-search/environment.yml` 与 `environment-lock.txt`）。
 - 不得移除实验一环境里三条 BLAS pin（`libblas` / `libcblas` / `liblapack` 的 `=*=*openblas`）。换成 MKL 会导致首次 BLAS 调用原生崩溃。
 - 不得用 `pip freeze` 生成依赖清单：本环境会输出本地构建路径，他人无法安装。
 - 需要新依赖时，记录版本约束并同步更新对应实验的 `environment.yml`，说明用途。
@@ -46,7 +46,7 @@
 - 结果落盘到 `results/`，不只留在终端输出里。
 - 训练中间产物（模型、词表、特征矩阵）**不得**作为可复用资产提交；诊断用拟合对象用完即弃。
 - 保持相对路径，禁止绝对路径（PDF 明确反对）。
-- 所有随机性通过 `config.py` 的 `SEED` 控制（`Lab01/config.py`、`Lab02/lab2-search/config.py`），不在脚本内散落魔数。
+- 所有随机性通过 `config.py` 的 `SEED` 控制（实验一为 `Lab01/lab1-text-classification/config.py`、实验二为 `Lab02/lab2-search/config.py`），不在脚本内散落魔数。
 - 不在提交物中放置密钥、私人材料、虚拟环境、缓存或大体积数据。
 
 ## 6. 监控与自检

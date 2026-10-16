@@ -54,51 +54,54 @@
 ## 2. 目录与运行位置
 
 ```
-Lab1/                              仓库根（原 data-Project1/）
-├── 实验一要求.pdf                   要求来源（原版，页数已被更新覆盖）
+Lab1/                                        仓库根（原 data-Project1/）
+├── 实验一要求.pdf                             要求来源（原版，页数已被更新覆盖）
 ├── AGENTS.md · .gitignore · README.md
-└── Lab01/                         实验一的代码与数据；脚本必须在此目录下运行
-    ├── AGENTS.md                   实验一的 agent 行为约束
-    ├── WORKFLOW.md                 本文件
-    ├── train_data.csv
-    ├── test_data_unlabeled.csv
-    ├── predictions.csv             提交文件
-    ├── TUNING.md                   教师提供的调参讲义
-    ├── config.py                   全局配置：种子、路径、指标
-    ├── run_eda.py                  阶段 1
-    ├── data_split.py               阶段 2：唯一的数据加载与划分入口
-    ├── run_split.py                阶段 2：执行划分并落盘证据
-    ├── features.py                 阶段 3：唯一的文本范围与特征化入口
-    ├── run_features.py             阶段 3：A0 特征化并落盘证据
-    ├── models.py                   阶段 4–5：唯一的模型构造入口
-    ├── evaluation.py               阶段 4：唯一的指标口径入口
-    ├── run_baseline.py             阶段 4：A0 基线 + 下限参考并落盘证据
-    ├── experiments.py              阶段 5：对照实验注册表 + 共享执行机制（不含 main）
-    ├── run_experiments.py          阶段 5：按分组执行对照实验并落盘证据
-    ├── run_final.py                阶段 6–7：全量重拟合与预测
-    ├── REPORT.md                   实验报告正文
-    ├── environment.yml             环境定义（权威）
-    ├── output/pdf/Lab1_report.pdf  报告 PDF
-    └── results/
-        ├── figures/                5 张 EDA 图 + 后续报告图
-        └── logs/
-            ├── eda_summary.* · split_summary.* · feature_summary.*
-            ├── baseline_summary.* · baseline_per_class.csv · baseline_confusion_matrix.csv
-            ├── experiments_abc.* · experiments_d.* · experiments_f1.*   阶段 5a/5b 的对照实验
-            ├── experiments_table.csv                    合并表（51 行 = 30 + 15 + 6）
-            ├── seed_robustness.*                        阶段 5b 的 E1 种子稳健性
-            ├── val_size_robustness.*                    阶段 5b 的 E2 划分比例稳健性
-            └── model_timing_probe.txt                   算力上限的实测依据
+└── Lab01/                                   实验一
+    ├── AGENTS.md                             实验一的 agent 行为约束
+    ├── WORKFLOW.md                           本文件
+    └── lab1-text-classification/              代码、数据与产物；脚本必须在此目录下运行
+        ├── train_data.csv
+        ├── test_data_unlabeled.csv
+        ├── predictions.csv                   提交文件
+        ├── TUNING.md                         教师提供的调参讲义
+        ├── config.py                         全局配置：种子、路径、指标
+        ├── run_eda.py                        阶段 1
+        ├── data_split.py                     阶段 2：唯一的数据加载与划分入口
+        ├── run_split.py                      阶段 2：执行划分并落盘证据
+        ├── features.py                       阶段 3：唯一的文本范围与特征化入口
+        ├── run_features.py                   阶段 3：A0 特征化并落盘证据
+        ├── models.py                         阶段 4–5：唯一的模型构造入口
+        ├── evaluation.py                     阶段 4：唯一的指标口径入口
+        ├── run_baseline.py                   阶段 4：A0 基线 + 下限参考并落盘证据
+        ├── experiments.py                    阶段 5：对照实验注册表 + 共享执行机制（不含 main）
+        ├── run_experiments.py                阶段 5：按分组执行对照实验并落盘证据
+        ├── run_final.py                      阶段 6–7：全量重拟合与预测
+        ├── REPORT.md                         实验报告正文
+        ├── environment.yml                   环境定义（权威）
+        ├── output/pdf/Lab1_report.pdf        报告 PDF
+        └── results/
+            ├── figures/                      5 张 EDA 图 + 后续报告图
+            └── logs/
+                ├── eda_summary.* · split_summary.* · feature_summary.*
+                ├── baseline_summary.* · baseline_per_class.csv · baseline_confusion_matrix.csv
+                ├── experiments_abc.* · experiments_d.* · experiments_f1.*   阶段 5a/5b 的对照实验
+                ├── experiments_table.csv                    合并表（51 行 = 30 + 15 + 6）
+                ├── seed_robustness.*                        阶段 5b 的 E1 种子稳健性
+                ├── val_size_robustness.*                    阶段 5b 的 E2 划分比例稳健性
+                └── model_timing_probe.txt                   算力上限的实测依据
 
 以下文件在交付清理时删除，不在当前仓库中（当时的相对位置见括号）：
-  draft_main.py（教师模板，Lab01/draft_main.py）
-  check_rigor.py（严谨性自检，Lab01/check_rigor.py）
-  PLANNING.md（Lab01/PLANNING.md）
+  draft_main.py（教师模板，实验室一级）
+  check_rigor.py（严谨性自检，实验室一级）
+  PLANNING.md（实验室一级）
   其报告与运行记录仍留在 results/logs/（rigor_report.txt、
   rigor_stage*_console.txt、repro_stage*_rigor_*.txt），但生成它们的脚本已不随交付发布。
+  注：这些记录中的 `../AGENTS.md`、`../WORKFLOW.md` 一类相对路径，
+  是按「代码目录的上一层」书写的**当时**口径；目录整理后代码目录又下移了一层。
 ```
 
-- 脚本使用**相对路径**，必须在 `Lab01/` 目录下运行（当时的 `draft_main.py` 同样如此）。
+- 脚本使用**相对路径**，必须在 `lab1-text-classification/` 目录下运行（当时的 `draft_main.py` 同样如此）。
 - `draft_main.py` 是教师模板，**不修改、不作为本实验的实现**。它使用 `SVC()` 默认的 rbf 核且没有验证集与实验记录，直接照抄不能满足本实验的完整训练和验证要求；本项目未实测该模板的验证性能。（该文件已在交付清理时删除，此约束保留作为当时的决策记录。）
 - 阶段 6 开始前的 `predictions.csv` 是全 `0` 占位模板（2457 行），不可提交。无标签测试集没有可核实的 accuracy；不能把「均衡十分类下随机猜测的理论期望约 10%」当作该占位文件的实测得分。
 
