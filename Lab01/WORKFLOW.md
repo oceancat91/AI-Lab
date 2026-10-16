@@ -1,10 +1,19 @@
-﻿# 实验一 · 文本分类 工作规范
+# 实验一 · 文本分类 工作规范
 
 本文件是实验一的执行手册：记录实验一的硬性要求（`实验一要求.pdf` 及其后续更新）、已核实的数据事实、阶段协议与实验矩阵。目标是让每次改动可审查、每个结论有证据、每步结果可复现。
 
 - 要求来源：`实验一要求.pdf`（助教 余婧，布置于 2025-09-17，截止 2025-10-15 23:59:59）。
-- 行为约束见根目录 `AGENTS.md`；**每次实验前须先完整读一遍 `AGENTS.md` 与本文件**。严谨性自检脚本为 [`data-Project1/check_rigor.py`](data-Project1/check_rigor.py)。
+- 行为约束见仓库根 `AGENTS.md` 与本目录 `AGENTS.md`；**每次实验前须先完整读一遍这两份 `AGENTS.md` 与本文件**。
 - 三者冲突时，优先级：用户当前指示 > 最新教师要求 > PDF > 本文件 > 其他。
+
+> **归档说明（目录整理后补记）**：本文件写于目录整理之前，正文里的路径按当时的结构书写。整理后：
+> - 仓库根为 `Lab1/`（原 `data-Project1/` 上层），实验一的代码与数据在 `Lab01/` 下（即本文件所在目录）。
+>   正文中形如 `Lab01/xxx` 的路径均相对于本目录。
+> - `draft_main.py`（教师模板）、`check_rigor.py` 与 `PLANNING.md` 已在交付清理时删除，**不在当前仓库中**。
+>   因此正文中关于「运行 `check_rigor.py`」「自检第 N 节」的段落属于**当时的执行记录**，现在无法复跑；
+>   引用其通过数字（如 `ERROR=0`）时应说明对应脚本已不随交付发布，不得表述为「当前检查通过」。
+> - `results/logs/` 下的 `*.json` 与部分 `*.txt` 为本机验证记录，未随仓库发布（见仓库根 `.gitignore`）；
+>   正文引用这些文件时以本地磁盘为准。
 
 ---
 
@@ -45,31 +54,33 @@
 ## 2. 目录与运行位置
 
 ```
-data-Project1/                       项目根目录
-├── 实验一要求.pdf                    要求来源（原版，页数已被更新覆盖）
-├── WORKFLOW.md                      本文件
-├── AGENTS.md                        agent 行为约束
-└── data-Project1/                   数据与代码，脚本必须在此目录下运行
+Lab1/                              仓库根（原 data-Project1/）
+├── 实验一要求.pdf                   要求来源（原版，页数已被更新覆盖）
+├── AGENTS.md · .gitignore · README.md
+└── Lab01/                         实验一的代码与数据；脚本必须在此目录下运行
+    ├── AGENTS.md                   实验一的 agent 行为约束
+    ├── WORKFLOW.md                 本文件
     ├── train_data.csv
     ├── test_data_unlabeled.csv
-    ├── predictions.csv              提交文件
-    ├── draft_main.py                教师提供的起点代码（不修改）
-    ├── TUNING.md                    教师提供的调参讲义
-    ├── config.py                    全局配置：种子、路径、指标
-    ├── run_eda.py                   阶段 1
-    ├── data_split.py                阶段 2：唯一的数据加载与划分入口
-    ├── run_split.py                 阶段 2：执行划分并落盘证据
-    ├── features.py                  阶段 3：唯一的文本范围与特征化入口
-    ├── run_features.py              阶段 3：A0 特征化并落盘证据
-    ├── models.py                    阶段 4–5：唯一的模型构造入口
-    ├── evaluation.py                阶段 4：唯一的指标口径入口
-    ├── run_baseline.py              阶段 4：A0 基线 + 下限参考并落盘证据
-    ├── experiments.py               阶段 5：对照实验注册表 + 共享执行机制（不含 main）
-    ├── run_experiments.py           阶段 5：按分组执行对照实验并落盘证据
-    ├── check_rigor.py               严谨性自检
-    ├── environment.yml              环境定义（权威）
+    ├── predictions.csv             提交文件
+    ├── TUNING.md                   教师提供的调参讲义
+    ├── config.py                   全局配置：种子、路径、指标
+    ├── run_eda.py                  阶段 1
+    ├── data_split.py               阶段 2：唯一的数据加载与划分入口
+    ├── run_split.py                阶段 2：执行划分并落盘证据
+    ├── features.py                 阶段 3：唯一的文本范围与特征化入口
+    ├── run_features.py             阶段 3：A0 特征化并落盘证据
+    ├── models.py                   阶段 4–5：唯一的模型构造入口
+    ├── evaluation.py               阶段 4：唯一的指标口径入口
+    ├── run_baseline.py             阶段 4：A0 基线 + 下限参考并落盘证据
+    ├── experiments.py              阶段 5：对照实验注册表 + 共享执行机制（不含 main）
+    ├── run_experiments.py          阶段 5：按分组执行对照实验并落盘证据
+    ├── run_final.py                阶段 6–7：全量重拟合与预测
+    ├── REPORT.md                   实验报告正文
+    ├── environment.yml             环境定义（权威）
+    ├── output/pdf/Lab1_report.pdf  报告 PDF
     └── results/
-        ├── figures/                 5 张 EDA 图 + 后续报告图
+        ├── figures/                5 张 EDA 图 + 后续报告图
         └── logs/
             ├── eda_summary.* · split_summary.* · feature_summary.*
             ├── baseline_summary.* · baseline_per_class.csv · baseline_confusion_matrix.csv
@@ -77,19 +88,25 @@ data-Project1/                       项目根目录
             ├── experiments_table.csv                    合并表（51 行 = 30 + 15 + 6）
             ├── seed_robustness.*                        阶段 5b 的 E1 种子稳健性
             ├── val_size_robustness.*                    阶段 5b 的 E2 划分比例稳健性
-            ├── model_timing_probe.txt                   算力上限的实测依据
-            └── rigor_report.txt                         check_rigor.py 的报告
+            └── model_timing_probe.txt                   算力上限的实测依据
+
+以下文件在交付清理时删除，不在当前仓库中（当时的相对位置见括号）：
+  draft_main.py（教师模板，Lab01/draft_main.py）
+  check_rigor.py（严谨性自检，Lab01/check_rigor.py）
+  PLANNING.md（Lab01/PLANNING.md）
+  其报告与运行记录仍留在 results/logs/（rigor_report.txt、
+  rigor_stage*_console.txt、repro_stage*_rigor_*.txt），但生成它们的脚本已不随交付发布。
 ```
 
-- 脚本使用**相对路径**，必须在 `data-Project1/` 内层目录下运行（`draft_main.py` 同样如此）。
-- `draft_main.py` 是教师模板，**不修改、不作为本实验的实现**。它使用 `SVC()` 默认的 rbf 核且没有验证集与实验记录，直接照抄不能满足本实验的完整训练和验证要求；本项目未实测该模板的验证性能。
+- 脚本使用**相对路径**，必须在 `Lab01/` 目录下运行（当时的 `draft_main.py` 同样如此）。
+- `draft_main.py` 是教师模板，**不修改、不作为本实验的实现**。它使用 `SVC()` 默认的 rbf 核且没有验证集与实验记录，直接照抄不能满足本实验的完整训练和验证要求；本项目未实测该模板的验证性能。（该文件已在交付清理时删除，此约束保留作为当时的决策记录。）
 - 阶段 6 开始前的 `predictions.csv` 是全 `0` 占位模板（2457 行），不可提交。无标签测试集没有可核实的 accuracy；不能把「均衡十分类下随机猜测的理论期望约 10%」当作该占位文件的实测得分。
 
 ---
 
 ## 3. 数据事实（阶段 1 已核实）
 
-以下为 `run_eda.py` 实测结果，详见 [`data-Project1/results/logs/eda_summary.txt`](data-Project1/results/logs/eda_summary.txt)。
+以下为 `run_eda.py` 实测结果，详见 [`Lab01/results/logs/eda_summary.txt`](Lab01/results/logs/eda_summary.txt)。
 
 | 项目 | 实测值 |
 |---|---|
