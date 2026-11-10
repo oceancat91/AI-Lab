@@ -1,0 +1,44 @@
+{
+  "protocol": {
+    "seed": 42,
+    "split_seed": 42,
+    "order_seed": 43,
+    "augment_seed": 44,
+    "batch_size": 256,
+    "epochs": 20,
+    "channels": [
+      16,
+      32,
+      64
+    ],
+    "optimizer": "SGD",
+    "lr": 0.1,
+    "min_lr": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 2,
+    "schedule": "cosine",
+    "loss": "cross_entropy",
+    "dtype": "float32"
+  },
+  "experiments": {
+    "A": {
+      "architecture": "plain",
+      "augmentation": "none"
+    },
+    "B": {
+      "architecture": "plain",
+      "augmentation": "crop_flip"
+    },
+    "C": {
+      "architecture": "residual",
+      "augmentation": "none"
+    },
+    "D": {
+      "architecture": "residual",
+      "augmentation": "crop_flip"
+    }
+  },
+  "created_utc": "2026-11-09T13:29:26.748168+00:00",
+  "selection": "validation_accuracy desc, validation_loss asc, parameters asc, id asc"
+}

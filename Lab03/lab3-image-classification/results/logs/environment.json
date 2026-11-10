@@ -1,0 +1,15 @@
+{
+  "python": "3.11.18",
+  "platform": "Windows",
+  "machine": "AMD64",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+  "logical_cpus": 12,
+  "torch": "2.5.1",
+  "torchvision": "0.20.1",
+  "numpy": "1.26.4",
+  "matplotlib": "3.9.4",
+  "cuda_available": false,
+  "device": "cpu",
+  "convolution_backward_finite": true,
+  "time_utc": "2026-11-09T13:29:26.746174+00:00"
+}

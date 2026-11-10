@@ -1,0 +1,19 @@
+{
+  "stage": 3,
+  "time_utc": "2026-11-09T14:20:57.989286+00:00",
+  "checks": [
+    "source_pdf",
+    "../AGENTS.md",
+    "../WORKFLOW.md",
+    "environment.yml",
+    "config.py",
+    "environment",
+    "split",
+    "data_integrity",
+    "invariants",
+    "runtime",
+    "run_A"
+  ],
+  "errors": [],
+  "scope": "mechanical checks only; visual and scientific interpretation separately reviewed"
+}

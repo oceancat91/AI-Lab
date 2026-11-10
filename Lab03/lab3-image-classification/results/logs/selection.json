@@ -1,0 +1,14 @@
+{
+  "id": "D",
+  "config": {
+    "architecture": "residual",
+    "augmentation": "crop_flip"
+  },
+  "best_epoch": 19,
+  "best_val_accuracy": 0.8572,
+  "best_val_loss": 0.4182548194885254,
+  "checkpoint_sha256": "30af5b7287f3aa87302a3c099d8bde9c10cc642192716c20a401ef8733caf8b7",
+  "test_used": false,
+  "frozen_utc": "2026-11-10T06:19:44.007457+00:00",
+  "selection_rule": "accuracy desc, loss asc, parameters asc, id asc"
+}

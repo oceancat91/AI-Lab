@@ -1,0 +1,62 @@
+{
+  "count": 10000,
+  "all_images_equal": true,
+  "all_labels_equal": true,
+  "classes_equal": true,
+  "independent_reader": "torchvision.datasets.CIFAR10 0.20.1",
+  "examples": [
+    {
+      "index": 2532,
+      "official_label": 0,
+      "label_name": "airplane"
+    },
+    {
+      "index": 9227,
+      "official_label": 1,
+      "label_name": "automobile"
+    },
+    {
+      "index": 2226,
+      "official_label": 2,
+      "label_name": "bird"
+    },
+    {
+      "index": 2405,
+      "official_label": 3,
+      "label_name": "cat"
+    },
+    {
+      "index": 5292,
+      "official_label": 4,
+      "label_name": "deer"
+    },
+    {
+      "index": 5642,
+      "official_label": 5,
+      "label_name": "dog"
+    },
+    {
+      "index": 4786,
+      "official_label": 6,
+      "label_name": "frog"
+    },
+    {
+      "index": 9635,
+      "official_label": 7,
+      "label_name": "horse"
+    },
+    {
+      "index": 7559,
+      "official_label": 8,
+      "label_name": "ship"
+    },
+    {
+      "index": 5416,
+      "official_label": 9,
+      "label_name": "truck"
+    }
+  ],
+  "interpretation": "Confirms image/label alignment with the official files; does not establish semantic label correctness.",
+  "relabeling_performed": false,
+  "model_reevaluated": false
+}

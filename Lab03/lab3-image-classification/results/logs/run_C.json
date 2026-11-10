@@ -1,0 +1,53 @@
+{
+  "id": "C",
+  "config": {
+    "architecture": "residual",
+    "augmentation": "none"
+  },
+  "training_protocol": {
+    "seed": 42,
+    "split_seed": 42,
+    "order_seed": 43,
+    "augment_seed": 44,
+    "batch_size": 256,
+    "epochs": 20,
+    "channels": [
+      16,
+      32,
+      64
+    ],
+    "optimizer": "SGD",
+    "lr": 0.1,
+    "min_lr": 0.001,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 2,
+    "schedule": "cosine",
+    "loss": "cross_entropy",
+    "dtype": "float32"
+  },
+  "source_sha256": {
+    "config.py": "f02ff297eb5aabf9d19501324d1516bd1376bb4b851b7ca07f802cfc4c7c5c67",
+    "data.py": "2258f8595abed1970154b1eb5854afa1e1c2fb6ae80fd72c20ad2a34bc784384",
+    "models.py": "7685cc88dcf667879cf25d1bba1ead0af23f1d2c1c2d604818ff3dd2e2cf8bb6",
+    "engine.py": "345c3416755290b8062b9963d9bf92ee96a19ffda7087fbb8b01f4c81e02fe8c"
+  },
+  "split_sha256": "e4a18c783f1da9f2ee9a013657268d8d9cee3bb185339aa7c33233c76f909856",
+  "parameters": 75786,
+  "threads": 6,
+  "status": "complete",
+  "started_utc": "2026-11-09T14:09:04.422993+00:00",
+  "command": "python run_pipeline.py train --runs C",
+  "best_epoch": 19,
+  "best_val_accuracy": 0.8184,
+  "best_val_loss": 0.5528793197631836,
+  "completed_epochs": 20,
+  "finished_utc": "2026-11-09T14:20:57.964896+00:00",
+  "seconds": 713.5386970000036,
+  "checkpoint_sha256": "f43dc6bd7644130bbb7f6461135c160af7c8b995304158cbb7163ca1f7c6f71a",
+  "clean_train": {
+    "loss": 0.10992997436523437,
+    "accuracy": 0.9805777777777778,
+    "count": 45000
+  }
+}

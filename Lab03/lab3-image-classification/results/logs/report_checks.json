@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "report_sha256": "d8a9ef2eff98f22b64ddd75f6c27328e1a0ce7c1511abb373a6b620335831dd6",
+  "positive_control": "unchanged report accepted",
+  "negative_controls": [
+    {
+      "mutation": "overall_accuracy",
+      "rejected": true,
+      "reason": "report overall accuracy missing"
+    },
+    {
+      "mutation": "correct_count",
+      "rejected": true,
+      "reason": "report correct count missing"
+    },
+    {
+      "mutation": "macro_f1",
+      "rejected": true,
+      "reason": "report macro F1 missing"
+    },
+    {
+      "mutation": "class_accuracy",
+      "rejected": true,
+      "reason": "report class accuracy missing"
+    },
+    {
+      "mutation": "validation_accuracy",
+      "rejected": true,
+      "reason": "report validation accuracy missing"
+    },
+    {
+      "mutation": "selected_model",
+      "rejected": true,
+      "reason": "report selected model missing"
+    }
+  ],
+  "scope": "One in-memory textual mutation at a time; delivered artifacts were not modified."
+}

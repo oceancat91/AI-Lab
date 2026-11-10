@@ -1,0 +1,9 @@
+{
+  "url": "https://cave.cs.toronto.edu/kriz/cifar-10-python.tar.gz",
+  "bytes": 170498071,
+  "workers": 8,
+  "chunk_size": 4194304,
+  "seconds": 251.6631953716278,
+  "official_md5_verified": true,
+  "reason": "official server single-connection throughput was slow; byte-range transport only"
+}

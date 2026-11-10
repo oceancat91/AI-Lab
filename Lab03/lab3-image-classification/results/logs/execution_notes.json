@@ -1,0 +1,44 @@
+{
+  "notes": [
+    {
+      "stage": 0,
+      "issue": "The conda shell wrapper did not launch correctly on this host.",
+      "resolution": "Invoked the same conda manager through base Python with python -m conda; no pip installation."
+    },
+    {
+      "stage": 1,
+      "issue": "The legacy official download hostname stalled; the current official hostname had low single-connection throughput.",
+      "resolution": "Downloaded non-overlapping byte ranges from cave.cs.toronto.edu and verified the assembled archive against the official MD5. Source data was not changed."
+    },
+    {
+      "stage": 2,
+      "issue": "Initial test run: 9 tests passed; the sealed-test guard test hit a Windows sandbox permission error while cleaning an unnecessary temporary directory.",
+      "resolution": "Use a verified non-existing relative path for the sealed-test guard. No file creation/deletion is needed to test the pre-load rejection. The assertion remains unchanged. Formal training had not started."
+    },
+    {
+      "stage": 7,
+      "issue": "Grad-CAM metadata initially reused target for two meanings.",
+      "resolution": "Separated official target from explained_class; verified all four explained classes equal predictions. Heatmap computation and trained models were unchanged."
+    },
+    {
+      "stage": 7,
+      "issue": "Highest-confidence errors exposed possible semantic label issues.",
+      "resolution": "Independently decoded all 10000 test images and labels with torchvision. No mismatch found; kept official labels and original score."
+    },
+    {
+      "stage": 7,
+      "issue": "The initial PDF used reader-dependent CJK font substitution.",
+      "resolution": "Embedded a Microsoft YaHei subset and re-rendered/reviewed all seven pages; no font warnings in final render."
+    },
+    {
+      "stage": 8,
+      "issue": "Preliminary environment comparison did not validate the reference prefix existed.",
+      "resolution": "Added conda-meta/Python existence checks and reran the final audit against the actual original environment after report acceptance."
+    },
+    {
+      "stage": 8,
+      "issue": "Git auto-normalization would change CRLF evidence bytes and break stored SHA256 links after cloning.",
+      "resolution": "Marked hashed text evidence as -text while keeping Python source eol=lf; verify staged and freshly checked-out bytes before publication. Training source, model states and measured results are unchanged."
+    }
+  ]
+}

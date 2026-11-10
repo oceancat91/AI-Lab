@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "review_date": "2026-11-10",
+  "reviewer": "Codex visual inspection",
+  "method": "All five figures and seven PDF pages inspected via view_image; PDF rendered with Poppler at 115 dpi. After final wording changes, pages 2 and 6 re-inspected; other five PNGs were byte-identical to the inspected rendering.",
+  "pdf_sha256": "ae21f1766ffa73884f60965e9b31cb651441b52a1b8ee30e4faa89fffcc6130f",
+  "figure_sha256": {
+    "ablation.png": "7f7c6aa6b12c32d0b60c057c33bd3e5301787586d486b625a2454b1bb375ba31",
+    "confusion_matrix.png": "acce95341c2c7947531d84d6bc4a465c8ab8c73890075cae86b0c7c51f74289c",
+    "gradcam.png": "681a981afc685a31a1ef22385f510f1229683f97be2814a24a6fff5dd99b4dd9",
+    "learning_curves.png": "8082605d2c9605e8cb5083f680014e53d7b7c53913b567e49355469102423392",
+    "misclassified.png": "262e134d3546b08f21afc5590a995a636c6caf23d83c0fe34da0fa18e16a6d73"
+  },
+  "pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "checks": [
+    "No clipping or overlap",
+    "Chinese glyphs visible and font subset embedded",
+    "Axes/legends/units readable",
+    "Confusion matrix orientation and 1000-per-class counts correct",
+    "Examples retain official labels; questionable labels explicitly discussed",
+    "Grad-CAM target labels match predictions",
+    "Footers and page numbering consistent"
+  ],
+  "render_sha256": {
+    "page-1.png": "482990c44e7b06c51519638b9bc4b5a7e0389d86d7646f46c0452204d9c81b14",
+    "page-2.png": "d6aad3819746c8f90f943b62452772d19a71ec1936646a2d797e58ced80a9098",
+    "page-3.png": "41395a8ec509d110ce284d0ca993e74a9a4fbc0806bca29468147f3e68b69dc7",
+    "page-4.png": "a12283dad7b233f6773c254613d28f030c72746f94ee26fa4a6b948aa169bc4b",
+    "page-5.png": "150c27f4015743353fba089425b21e7d87b855f5413880e3fc7de5d717be0e7f",
+    "page-6.png": "d91f7e9fd35c7e6b13e44c5f12af068e297f53b87e58b6a5026e2a0218665619",
+    "page-7.png": "b55bf65ffc5e84c33ac0d24f4b12bfee00b1e9df6e3146f4b7e6f5ef67f46265"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "seconds": 3.1966263999997864,
+  "python": "3.11.18",
+  "torch": "2.5.1",
+  "numpy": "1.26.4",
+  "checks": [
+    "training data file hashes",
+    "split indices identical",
+    "training mean/std identical",
+    "test CSV metrics recalculated",
+    "training source fingerprints identical",
+    "four-step synthetic training losses and state SHA256 identical"
+  ],
+  "smoke": {
+    "losses": [
+      2.570028781890869,
+      2.3745310306549072,
+      2.088181972503662,
+      1.812904953956604
+    ],
+    "state_sha256": "ab44900e9f5776eb39db5b7e1eac2760b123bb3591fc05bbaa3ac892cea82854",
+    "steps": 4,
+    "samples": 16,
+    "seed": 45,
+    "scope": "synthetic short training only, not full CIFAR-10 reproduction"
+  },
+  "scope": "data/metrics/source audit and short replay",
+  "independent_environment": true,
+  "full_80_epoch_retraining_in_second_environment": false
+}

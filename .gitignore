@@ -63,3 +63,10 @@ WORKFLOW.md
 .env
 .env.*
 !.env.example
+
+# 实验三：提交规范与证据，不提交下载数据和模型缓存
+!Lab03/
+!Lab03/AGENTS.md
+!Lab03/WORKFLOW.md
+/Lab03/lab3-image-classification/data/
+/Lab03/lab3-image-classification/checkpoints/

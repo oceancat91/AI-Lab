@@ -4,7 +4,7 @@
 
 ## 目录结构
 
-两个实验采用同一形态：实验级文档（`AGENTS.md`、`WORKFLOW.md`、要求 PDF）在实验目录下，
+三个实验采用同一形态：实验级文档（`AGENTS.md`、`WORKFLOW.md`、要求 PDF）在实验目录下，
 **代码与数据放在实验目录内的代码子目录中，脚本必须在代码子目录内运行**（内部使用相对路径）。
 
 ```
@@ -16,6 +16,11 @@ Lab02/                            实验二（搜索算法）
 ├── AGENTS.md · WORKFLOW.md       实验级文档
 ├── 实验二要求_new.pdf
 └── lab2-search/                  代码、产物、报告
+
+Lab03/                            作业三（CIFAR-10 图像分类）
+├── AGENTS.md · WORKFLOW.md       实验执行规范与预注册协议
+├── 当代人工智能作业三.pdf
+└── lab3-image-classification/    代码、实测证据、图表与报告
 ```
 
 各实验相互独立，均自带环境定义与运行说明。
@@ -86,3 +91,24 @@ conda run --no-capture-output -n lab2-search python check_rigor.py  # 自检：E
 - `Lab02/lab2-search/results/figures/`：8 张报告用图（含目视验收记录）。
 - [报告内容](Lab02/lab2-search/REPORT.md)｜[运行说明](Lab02/lab2-search/README.md)｜
   [工作规范](Lab02/WORKFLOW.md)｜[要求原文](Lab02/实验二要求_new.pdf)
+
+## Lab03 · CIFAR-10 图像分类
+
+自行实现普通 CNN 与残差 CNN，完成架构 × 数据增强的四组对照。
+官方训练数据按类别划分 45,000/5,000，只用验证集选择配置与轮次，最终在官方 10,000 张测试图像上评估。
+报告包含训练曲线、总体和逐类准确率、混淆矩阵、误分类分析与 Grad-CAM。
+本次四组各完成 20 轮，验证集选出的残差 CNN＋数据增强方案测试准确率为 **84.98%**（8498/10000），
+macro-F1 为 0.848740；所有样本按官方标签计分。
+
+```powershell
+Set-Location ./Lab03/lab3-image-classification
+conda env create -f environment.yml
+conda activate lab3-image-classification
+python reproduce.py --mode full
+```
+
+完整复现在独立目录运行，保留已有实验记录。下载数据与模型检查点不入库。
+详见 [运行说明](Lab03/lab3-image-classification/README.md)、[实验报告](Lab03/lab3-image-classification/REPORT.md)、
+[报告 PDF](Lab03/lab3-image-classification/output/pdf/Lab3_report.pdf)、
+[工作流程](Lab03/WORKFLOW.md)与[执行规范](Lab03/AGENTS.md)。
+GitHub 发布与课程坚果云提交是不同操作。

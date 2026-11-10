@@ -1,0 +1,124 @@
+{
+  "local_acceptance_date": "2026-11-10",
+  "local_acceptance_passed": true,
+  "training": {
+    "runs": 4,
+    "epochs_each": 20,
+    "total_epochs": 80,
+    "train_count": 45000,
+    "val_count": 5000
+  },
+  "selected_id": "D",
+  "selected_epoch": 19,
+  "validation_accuracy": 0.8572,
+  "test": {
+    "accuracy": 0.8498,
+    "correct": 8498,
+    "count": 10000,
+    "macro_f1": 0.8487400626927977
+  },
+  "verification": {
+    "functional_tests": 10,
+    "report_negative_controls": 6,
+    "final_stage_checks": 28,
+    "all_stage_errors": 0,
+    "independent_environment": true,
+    "full_training_repeated_in_second_environment": false,
+    "visual_figures": 5,
+    "visual_pdf_pages": 7,
+    "cjk_font_embedded": true,
+    "staged_content_files_verified": 64,
+    "staged_bytes_match_working_tree": true,
+    "fresh_git_checkout_stage_8_checks": 28,
+    "fresh_git_checkout_errors": 0
+  },
+  "requirements_evidence": {
+    "designed_cnn": [
+      "models.py",
+      "results/logs/tests.json"
+    ],
+    "train_validation_split": [
+      "data.py",
+      "results/logs/split.json"
+    ],
+    "training_and_validation": [
+      "engine.py",
+      "results/tables/history_A.csv",
+      "results/tables/history_B.csv",
+      "results/tables/history_C.csv",
+      "results/tables/history_D.csv"
+    ],
+    "test_accuracy": [
+      "results/logs/test_metrics.json",
+      "results/tables/test_predictions.csv"
+    ],
+    "curves_confusion_per_class": [
+      "results/figures/learning_curves.png",
+      "results/figures/confusion_matrix.png",
+      "results/tables/per_class.csv"
+    ],
+    "error_analysis": [
+      "REPORT.md",
+      "results/figures/misclassified.png",
+      "results/logs/image_label_audit.json"
+    ],
+    "extensions": [
+      "results/tables/comparison.csv",
+      "results/figures/ablation.png",
+      "results/figures/gradcam.png"
+    ],
+    "report_and_reproduction": [
+      "README.md",
+      "REPORT.md",
+      "output/pdf/Lab3_report.pdf",
+      "results/logs/reproduction.json"
+    ]
+  },
+  "publication_target": "https://github.com/oceancat91/AI-Lab.git (main)",
+  "publication_receipt": "Remote commit verification is performed after this artifact is committed; consult Git history and delivery message.",
+  "course_upload_performed": false,
+  "not_claimed": [
+    "multi-seed statistical significance",
+    "full 80-epoch retraining in second environment",
+    "semantic relabeling of suspected dataset label issues"
+  ],
+  "submission_scan": {
+    "problems": [],
+    "candidate_file_count_before_receipt": 66,
+    "total_bytes_before_receipt": 5986281,
+    "largest_files": [
+      {
+        "path": "Lab03/lab3-image-classification/results/tables/test_predictions.csv",
+        "bytes": 2437087
+      },
+      {
+        "path": "Lab03/lab3-image-classification/output/pdf/Lab3_report.pdf",
+        "bytes": 1410307
+      },
+      {
+        "path": "Lab03/lab3-image-classification/results/logs/split.json",
+        "bytes": 589540
+      },
+      {
+        "path": "Lab03/当代人工智能作业三.pdf",
+        "bytes": 466550
+      },
+      {
+        "path": "Lab03/lab3-image-classification/results/figures/learning_curves.png",
+        "bytes": 428927
+      },
+      {
+        "path": "Lab03/lab3-image-classification/results/figures/confusion_matrix.png",
+        "bytes": 136989
+      },
+      {
+        "path": "Lab03/lab3-image-classification/results/figures/misclassified.png",
+        "bytes": 113959
+      },
+      {
+        "path": "Lab03/lab3-image-classification/results/figures/gradcam.png",
+        "bytes": 110948
+      }
+    ]
+  }
+}

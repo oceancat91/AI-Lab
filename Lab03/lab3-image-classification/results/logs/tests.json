@@ -1,0 +1,5 @@
+{
+  "tests": 10,
+  "failures": 0,
+  "output": "test_metrics_against_hand_computation (__main__.Invariants.test_metrics_against_hand_computation) ... ok\ntest_models_gradients_and_eval_state (__main__.Invariants.test_models_gradients_and_eval_state) ... ok\ntest_prediction_negative_controls (__main__.Invariants.test_prediction_negative_controls) ... ok\ntest_repeated_short_training_is_deterministic (__main__.Invariants.test_repeated_short_training_is_deterministic) ... ok\ntest_selection_ties_and_schedule (__main__.Invariants.test_selection_ties_and_schedule) ... ok\ntest_split_and_negative_leakage (__main__.Invariants.test_split_and_negative_leakage) ... ok\ntest_test_set_is_sealed (__main__.Invariants.test_test_set_is_sealed) ... ok\ntest_training_only_statistics (__main__.Invariants.test_training_only_statistics) ... ok\ntest_transform_determinism_and_augmentation (__main__.Invariants.test_transform_determinism_and_augmentation) ... ok\ntest_uneven_final_batch_weighting (__main__.Invariants.test_uneven_final_batch_weighting) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 9.376s\n\nOK\n"
+}

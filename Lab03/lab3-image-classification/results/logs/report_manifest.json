@@ -1,0 +1,18 @@
+{
+  "pdf_sha256": "ae21f1766ffa73884f60965e9b31cb651441b52a1b8ee30e4faa89fffcc6130f",
+  "markdown_sha256": "d8a9ef2eff98f22b64ddd75f6c27328e1a0ce7c1511abb373a6b620335831dd6",
+  "section_count": 7,
+  "font": "Lab3CJK",
+  "embedded_cjk_font": true,
+  "inputs": {
+    "analysis.json": "f125fdcb3a30cce512d9c16fe28b1f123e6103cfa8d8aa76c423268de0621294",
+    "image_label_audit.json": "bf49f9109fbb2b423e6a3f67096ebea4ae2b7f805e057700696487350b1f0a30",
+    "observations.json": "515a61e54753d79ce7a6ca74437bdd18b8e7c47df5161fd2a348707d1da97f0b",
+    "run_A.json": "72840e4c733df602e58f6def22f461b216872b7497f7ffe267aba0a1891fd950",
+    "run_B.json": "68dcdff34bdbc76b92c9151552f61fa779a3ba035cfc13782a81f261dbb9cd69",
+    "run_C.json": "3bb4d17d5f85842e1cbf90beb0b90546923625f31d630f8c53f99172e03d6d97",
+    "run_D.json": "7f108141b80def6f167e00d8a2c88e17ad85b4f9d1fcd33e41f6685882a9a3c5",
+    "selection.json": "29b563472a39ee26cee401e0b783781261d667be84393bd458e2a7c4279cad79",
+    "test_metrics.json": "d2a63ee020222e787359a71c9fc0510534e87604ca0d6ebaf3c8af89c6c259f8"
+  }
+}

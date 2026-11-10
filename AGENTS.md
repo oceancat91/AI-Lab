@@ -1,11 +1,11 @@
 # Agent 实验行为规范
 
-本仓库是「当代人工智能实验课」的实验现场，按实验分目录：`Lab01/`（文本分类）、`Lab02/`（搜索算法）。目标是结论有证据、过程可复现、提交者能解释每一步。
+本仓库是「当代人工智能实验课」的实验现场，按实验分目录：`Lab01/`（文本分类）、`Lab02/`（搜索算法）、`Lab03/`（CIFAR-10 图像分类）。目标是结论有证据、过程可复现、提交者能解释每一步。
 
-- 任务事实、阶段协议与实验矩阵见各实验自己的 `WORKFLOW.md`（`Lab01/WORKFLOW.md`、`Lab02/WORKFLOW.md`）；要求的来源与时效（含教师对 PDF 的后续更新）见其第 1 节。
+- 任务事实、阶段协议与实验矩阵见各实验自己的 `WORKFLOW.md`（`Lab01/WORKFLOW.md`、`Lab02/WORKFLOW.md`、`Lab03/WORKFLOW.md`）；要求的来源与时效（含教师对 PDF 的后续更新）见其第 1 节。
 - 用户当前明确指示优先于本文件。
 - 本文件是仓库级通用约束；各实验目录下的 `AGENTS.md` 是更具体的补充，冲突时以更具体者为准。
-- 机械校验由各实验的 `check_rigor.py` 执行（`Lab02/lab2-search/check_rigor.py` 已就绪；实验一的自检脚本在清理时移除，缺自检的实验须在交付中说明）。
+- 机械校验由各实验的 `check_rigor.py` 执行（实验二入口 `Lab02/lab2-search/check_rigor.py`；实验三入口 `Lab03/lab3-image-classification/check_rigor.py --stage N`；实验一的自检脚本在清理时移除，缺自检的实验须在交付中说明）。
 
 ## 1. 开始工作
 
