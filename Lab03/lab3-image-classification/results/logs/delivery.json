@@ -1,5 +1,5 @@
 {
-  "local_acceptance_date": "2026-11-10",
+  "local_acceptance_date": "2026-11-11",
   "local_acceptance_passed": true,
   "training": {
     "runs": 4,
@@ -19,18 +19,20 @@
   },
   "verification": {
     "functional_tests": 10,
-    "report_negative_controls": 6,
+    "report_negative_controls": 13,
     "final_stage_checks": 28,
     "all_stage_errors": 0,
     "independent_environment": true,
     "full_training_repeated_in_second_environment": false,
     "visual_figures": 5,
-    "visual_pdf_pages": 7,
+    "visual_pdf_pages": 5,
     "cjk_font_embedded": true,
-    "staged_content_files_verified": 64,
+    "staged_content_files_verified": 65,
     "staged_bytes_match_working_tree": true,
     "fresh_git_checkout_stage_8_checks": 28,
-    "fresh_git_checkout_errors": 0
+    "fresh_git_checkout_errors": 0,
+    "opening_repository_uri": "https://github.com/oceancat91/AI-Lab",
+    "fresh_checkout_report_rebuild_identical": true
   },
   "requirements_evidence": {
     "designed_cnn": [
@@ -83,9 +85,10 @@
     "semantic relabeling of suspected dataset label issues"
   ],
   "submission_scan": {
+    "scope": "Tracked Lab03 files; byte totals exclude this receipt.",
     "problems": [],
-    "candidate_file_count_before_receipt": 66,
-    "total_bytes_before_receipt": 5986281,
+    "files_excluding_receipt": 64,
+    "total_bytes_excluding_receipt": 5904917,
     "largest_files": [
       {
         "path": "Lab03/lab3-image-classification/results/tables/test_predictions.csv",
@@ -93,7 +96,7 @@
       },
       {
         "path": "Lab03/lab3-image-classification/output/pdf/Lab3_report.pdf",
-        "bytes": 1410307
+        "bytes": 1343954
       },
       {
         "path": "Lab03/lab3-image-classification/results/logs/split.json",

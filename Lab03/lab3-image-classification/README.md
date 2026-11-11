@@ -1,5 +1,7 @@
 # Lab03 · CIFAR-10 图像分类
 
+[五页实验报告（PDF）](output/pdf/Lab3_report.pdf) · [报告网页版](REPORT.md) · [GitHub 仓库](https://github.com/oceancat91/AI-Lab)
+
 自行实现小型普通 CNN 与残差 CNN，通过 2×2 实验比较架构和数据增强。
 完整要求、预注册协议与阶段门禁见 [WORKFLOW](../WORKFLOW.md) 和 [执行规范](../AGENTS.md)。
 所有命令均在本目录执行；仅用 conda 安装依赖。
@@ -78,7 +80,7 @@ audit 会重新验证训练数据、划分和统计量；从 10,000 行预测独
 
 ## 产物与报告
 
-- [实验报告](REPORT.md) / [报告 PDF](output/pdf/Lab3_report.pdf)：原理、设置、四组对照、曲线、混淆矩阵、逐类准确率、误例和 Grad-CAM。
+- 报告第 1 页给出数据、模型和训练方案，第 2 页比较四组训练曲线，第 3 页给出混淆矩阵与逐类准确率，第 4 页分析误例，第 5 页说明 Grad-CAM 和复现方法。
 - `results/tables/history_A-D.csv`：全部 80 轮 train/validation loss、accuracy、样本数、学习率和时间。
 - `results/tables/comparison.csv`：所有候选，不隐藏较差结果。
 - `results/tables/test_predictions.csv`：官方顺序的索引、真值、预测、置信度及十类概率。
@@ -91,7 +93,10 @@ audit 会重新验证训练数据、划分和统计量；从 10,000 行预测独
 
 ```powershell
 python build_report.py
+python test_report.py
 ```
+
+生成器在写入前检查 PDF 页数上限（5 页），以及 PDF 与 Markdown 开头的 GitHub 仓库链接。`test_report.py` 核对两种版本的实验数值，并用超页、错链和错值样例复查验收规则。
 
 PDF 在 Windows 上自动嵌入系统微软雅黑的字体子集；其他平台可用 `LAB3_REPORT_FONT`
 指定允许嵌入的中文 TTF/TTC 字体。未提供时使用 PDF 的 STSong CID 字体，阅读器可能需要替代字体。

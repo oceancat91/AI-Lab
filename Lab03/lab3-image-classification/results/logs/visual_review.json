@@ -1,9 +1,9 @@
 {
   "passed": true,
-  "review_date": "2026-11-10",
+  "review_date": "2026-11-11",
   "reviewer": "Codex visual inspection",
-  "method": "All five figures and seven PDF pages inspected via view_image; PDF rendered with Poppler at 115 dpi. After final wording changes, pages 2 and 6 re-inspected; other five PNGs were byte-identical to the inspected rendering.",
-  "pdf_sha256": "ae21f1766ffa73884f60965e9b31cb651441b52a1b8ee30e4faa89fffcc6130f",
+  "method": "Inspected all final pages rendered by Poppler at 125 dpi, including all five figures at their published size. Verified the opening URI and rectangle with PyMuPDF.",
+  "pdf_sha256": "af51244a5f0776f7c151e9bad2fe4be632818cd3d34751eb967b3bc3b9612db4",
   "figure_sha256": {
     "ablation.png": "7f7c6aa6b12c32d0b60c057c33bd3e5301787586d486b625a2454b1bb375ba31",
     "confusion_matrix.png": "acce95341c2c7947531d84d6bc4a465c8ab8c73890075cae86b0c7c51f74289c",
@@ -16,26 +16,22 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
   ],
+  "opening_repository_uri": "https://github.com/oceancat91/AI-Lab",
   "checks": [
-    "No clipping or overlap",
-    "Chinese glyphs visible and font subset embedded",
-    "Axes/legends/units readable",
-    "Confusion matrix orientation and 1000-per-class counts correct",
-    "Examples retain official labels; questionable labels explicitly discussed",
-    "Grad-CAM target labels match predictions",
-    "Footers and page numbering consistent"
+    "Title followed by a visible, underlined link to the requested repository",
+    "Chinese text, charts, tables, captions and footers are legible without clipping or overlap",
+    "Four training histories have loss and accuracy panels and train/validation legends",
+    "Confusion matrix axes and all ten class rows are readable",
+    "Error examples and Grad-CAM labels match the accompanying discussion",
+    "All pages are numbered in order and Chinese font subsets are embedded"
   ],
   "render_sha256": {
-    "page-1.png": "482990c44e7b06c51519638b9bc4b5a7e0389d86d7646f46c0452204d9c81b14",
-    "page-2.png": "d6aad3819746c8f90f943b62452772d19a71ec1936646a2d797e58ced80a9098",
-    "page-3.png": "41395a8ec509d110ce284d0ca993e74a9a4fbc0806bca29468147f3e68b69dc7",
-    "page-4.png": "a12283dad7b233f6773c254613d28f030c72746f94ee26fa4a6b948aa169bc4b",
-    "page-5.png": "150c27f4015743353fba089425b21e7d87b855f5413880e3fc7de5d717be0e7f",
-    "page-6.png": "d91f7e9fd35c7e6b13e44c5f12af068e297f53b87e58b6a5026e2a0218665619",
-    "page-7.png": "b55bf65ffc5e84c33ac0d24f4b12bfee00b1e9df6e3146f4b7e6f5ef67f46265"
+    "page-1.png": "3a1af26018a1f9dc8c729711b2a553b023ddb9849ade919592ddedf19f677613",
+    "page-2.png": "dbc2f46bfe9dc692bc877b08ec26322ff91f3ca3d67290998359f7d73f8b03a2",
+    "page-3.png": "dd2235bb407207aa6131e8365dac8e1bba6de1b5754b5640d8c0847594027ec3",
+    "page-4.png": "b778de7fe1f6ec40f089d8e2bbb3d15c225dd388adacaf34dbafacb1f0bb7fcc",
+    "page-5.png": "7d67f233b793ed334098deee1b0e8c873c087e333f3512cf12ca6da726cfb78d"
   }
 }

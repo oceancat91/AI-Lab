@@ -1,18 +1,22 @@
 {
-  "pdf_sha256": "ae21f1766ffa73884f60965e9b31cb651441b52a1b8ee30e4faa89fffcc6130f",
-  "markdown_sha256": "d8a9ef2eff98f22b64ddd75f6c27328e1a0ce7c1511abb373a6b620335831dd6",
-  "section_count": 7,
+  "pdf_sha256": "af51244a5f0776f7c151e9bad2fe4be632818cd3d34751eb967b3bc3b9612db4",
+  "markdown_sha256": "06e09db2ee5e0400035a482977692d10d5ae3d0b9f77cebf3dd120f5867eacf5",
+  "page_count": 5,
+  "repository_url": "https://github.com/oceancat91/AI-Lab",
+  "section_count": 5,
   "font": "Lab3CJK",
   "embedded_cjk_font": true,
   "inputs": {
     "analysis.json": "f125fdcb3a30cce512d9c16fe28b1f123e6103cfa8d8aa76c423268de0621294",
     "image_label_audit.json": "bf49f9109fbb2b423e6a3f67096ebea4ae2b7f805e057700696487350b1f0a30",
-    "observations.json": "515a61e54753d79ce7a6ca74437bdd18b8e7c47df5161fd2a348707d1da97f0b",
+    "observations.json": "142cf92e54631217e407f139b15ec24006e3479609afb5b9548a8ac60a691011",
+    "runtime.json": "e520b3bb0180e38c19692d0b20c0ed377b8774335f8338f8dc8b3ece396e4c4c",
+    "selection.json": "29b563472a39ee26cee401e0b783781261d667be84393bd458e2a7c4279cad79",
+    "split.json": "e4a18c783f1da9f2ee9a013657268d8d9cee3bb185339aa7c33233c76f909856",
+    "test_metrics.json": "d2a63ee020222e787359a71c9fc0510534e87604ca0d6ebaf3c8af89c6c259f8",
     "run_A.json": "72840e4c733df602e58f6def22f461b216872b7497f7ffe267aba0a1891fd950",
     "run_B.json": "68dcdff34bdbc76b92c9151552f61fa779a3ba035cfc13782a81f261dbb9cd69",
     "run_C.json": "3bb4d17d5f85842e1cbf90beb0b90546923625f31d630f8c53f99172e03d6d97",
-    "run_D.json": "7f108141b80def6f167e00d8a2c88e17ad85b4f9d1fcd33e41f6685882a9a3c5",
-    "selection.json": "29b563472a39ee26cee401e0b783781261d667be84393bd458e2a7c4279cad79",
-    "test_metrics.json": "d2a63ee020222e787359a71c9fc0510534e87604ca0d6ebaf3c8af89c6c259f8"
+    "run_D.json": "7f108141b80def6f167e00d8a2c88e17ad85b4f9d1fcd33e41f6685882a9a3c5"
   }
 }

@@ -1,7 +1,8 @@
 {
   "passed": true,
-  "report_sha256": "d8a9ef2eff98f22b64ddd75f6c27328e1a0ce7c1511abb373a6b620335831dd6",
-  "positive_control": "unchanged report accepted",
+  "report_sha256": "06e09db2ee5e0400035a482977692d10d5ae3d0b9f77cebf3dd120f5867eacf5",
+  "pdf_sha256": "af51244a5f0776f7c151e9bad2fe4be632818cd3d34751eb967b3bc3b9612db4",
+  "positive_control": "Delivered Markdown and PDF accepted; one- and five-page fixtures accepted.",
   "negative_controls": [
     {
       "mutation": "overall_accuracy",
@@ -32,7 +33,42 @@
       "mutation": "selected_model",
       "rejected": true,
       "reason": "report selected model missing"
+    },
+    {
+      "mutation": "six_pages",
+      "rejected": true,
+      "reason": "report has 6 pages, expected 1 to 5"
+    },
+    {
+      "mutation": "plain_pdf_url",
+      "rejected": true,
+      "reason": "PDF opening is missing the clickable repository link"
+    },
+    {
+      "mutation": "wrong_pdf_url",
+      "rejected": true,
+      "reason": "PDF opening is missing the clickable repository link"
+    },
+    {
+      "mutation": "pdf_link_on_second_page",
+      "rejected": true,
+      "reason": "PDF opening is missing the clickable repository link"
+    },
+    {
+      "mutation": "pdf_link_at_bottom",
+      "rejected": true,
+      "reason": "PDF opening is missing the clickable repository link"
+    },
+    {
+      "mutation": "plain_markdown_url",
+      "rejected": true,
+      "reason": "Markdown opening is missing the repository link"
+    },
+    {
+      "mutation": "late_markdown_link",
+      "rejected": true,
+      "reason": "Markdown opening is missing the repository link"
     }
   ],
-  "scope": "One in-memory textual mutation at a time; delivered artifacts were not modified."
+  "scope": "In-memory mutations of report claims, links and pagination."
 }

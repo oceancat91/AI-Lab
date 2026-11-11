@@ -8,6 +8,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 PDF_HASH = 'b80b838fb193a10be179c25d49bff077c10b00959e2ddc9a520baadad21f78fe'
+REPOSITORY_URL = 'https://github.com/oceancat91/AI-Lab'
+REPORT_MAX_PAGES = 5
 
 
 def sha256(path):
@@ -62,6 +64,29 @@ def validate_report_claims(text, metrics, selection, runs):
     for row in runs:
         assert f'{100 * row["best_val_accuracy"]:.2f}%' in text, 'report validation accuracy missing'
     assert f'配置 {selection["id"]}' in text, 'report selected model missing'
+
+
+def validate_report_format(markdown, pdf):
+    count = len(pdf.pages)
+    if not 1 <= count <= REPORT_MAX_PAGES:
+        raise AssertionError(f'report has {count} pages, expected 1 to {REPORT_MAX_PAGES}')
+    lines = (line.strip() for line in markdown.splitlines() if line.strip())
+    opening = next(lines, '')
+    if opening.startswith('# '):
+        opening = next(lines, '')
+    if f']({REPOSITORY_URL})' not in opening and f'<{REPOSITORY_URL}>' not in opening:
+        raise AssertionError('Markdown opening is missing the repository link')
+
+    first = pdf.pages[0]
+    # The published template places the active link in the opening area beneath the title.
+    opening_bottom = float(first.cropbox.top) - float(first.cropbox.height) / 4
+    for ref in first.get('/Annots', []):
+        annotation = ref.get_object()
+        action = annotation.get('/A', {})
+        if (annotation.get('/Subtype') == '/Link' and action.get('/S') == '/URI'
+                and action.get('/URI') == REPOSITORY_URL and float(annotation['/Rect'][1]) >= opening_bottom):
+            return
+    raise AssertionError('PDF opening is missing the clickable repository link')
 
 
 def run(stage):
@@ -143,11 +168,13 @@ def run(stage):
             m = read_json('results/logs/test_metrics.json')
             s = read_json('results/logs/selection.json')
             runs = [read_json(f'results/logs/run_{k}.json') for k in 'ABCD']
-            validate_report_claims(Path('REPORT.md').read_text(encoding='utf-8'), m, s, runs)
+            markdown = Path('REPORT.md').read_text(encoding='utf-8')
+            validate_report_claims(markdown, m, s, runs)
             pdf = PdfReader('output/pdf/Lab3_report.pdf')
-            require(len(pdf.pages) == 7, 'unexpected report pagination')
-            require(f'{100*m["accuracy"]:.2f}%' in ''.join(p.extract_text() for p in pdf.pages), 'PDF accuracy missing')
+            validate_report_format(markdown, pdf)
+            validate_report_claims(''.join(p.extract_text() for p in pdf.pages), m, s, runs)
             manifest = read_json('results/logs/report_manifest.json')
+            require(manifest['page_count'] == len(pdf.pages), 'report page count changed')
             require(manifest['pdf_sha256'] == sha256('output/pdf/Lab3_report.pdf'), 'PDF changed')
             require(manifest['markdown_sha256'] == sha256('REPORT.md'), 'report changed')
             for name, expected in manifest['inputs'].items():
@@ -157,6 +184,8 @@ def run(stage):
             review = read_json('results/logs/visual_review.json')
             require(review['passed'] is True, 'not reviewed')
             require(review['pdf_sha256'] == sha256('output/pdf/Lab3_report.pdf'), 'PDF changed since review')
+            count = read_json('results/logs/report_manifest.json')['page_count']
+            require(review['pages'] == list(range(1, count + 1)), 'incomplete visual page review')
             require(review['figure_sha256'] == read_json('results/logs/analysis.json')['figure_sha256'], 'figures changed since review')
         check('visual_review', visual_check)
         def explanation_check():
