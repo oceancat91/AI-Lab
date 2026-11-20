@@ -18,9 +18,9 @@ Lab02/                            实验二（搜索算法）
 └── lab2-search/                  代码、产物、报告
 
 Lab03/                            作业三（CIFAR-10 图像分类）
-├── AGENTS.md · WORKFLOW.md       实验执行规范与预注册协议
+├── AGENTS.md · WORKFLOW.md       实验级文档
 ├── 当代人工智能作业三.pdf
-└── lab3-image-classification/    代码、实测证据、图表与报告
+└── lab3-image-classification/    代码、产物、报告
 ```
 
 各实验相互独立，均自带环境定义与运行说明。
@@ -97,15 +97,12 @@ conda run --no-capture-output -n lab2-search python check_rigor.py  # 自检：E
 ## Lab03 · CIFAR-10 图像分类
 
 实验三自行实现普通 CNN 与残差 CNN，完成数据加载、训练验证、测试评估和误分类分析，
-并通过架构 × 数据增强的 2×2 对照比较泛化表现。代码和实验记录位于
+并通过架构 × 数据增强的 2×2 对照比较泛化表现。输入为 32×32 RGB 图像，官方训练数据按类别划分为
+45,000 张训练、5,000 张验证，归一化统计量仅在训练子集计算；两种网络共用三阶段卷积结构（通道 16/32/64）、
+SGD 优化器和含预热的余弦学习率调度，固定种子 42、批大小 256，各训练 20 轮，增强采用随机裁剪与水平翻转，
+配置与轮次由验证集选择、冻结后在官方 10,000 张测试图像上评估。代码和实验记录位于
 `Lab03/lab3-image-classification/`，**脚本必须在该目录内运行**（内部则使用相对路径）。
-
-输入为 32×32 RGB 图像。官方训练数据按类别划分为 45,000 张训练、5,000 张验证，
-归一化统计量仅在训练子集计算。两种网络共用三阶段卷积结构（通道 16/32/64）、
-SGD 优化器和含预热的余弦学习率调度，固定种子 42、批大小 256，各训练 20 轮。
-数据增强采用随机裁剪与水平翻转；配置与轮次由验证集选择，冻结后在官方 10,000 张测试图像上评估。
-
-从代码目录启动完整复现，环境支持 CPU 运行：
+从该目录运行：
 
 ```powershell
 Set-Location ./Lab03/lab3-image-classification
@@ -114,10 +111,10 @@ conda run --no-capture-output -n lab3-image-classification python reproduce.py -
 ```
 
 此命令在 `Lab03/tmp/reproduction/` 下建立独立副本，依次完成数据下载与校验、实现自检、
-四组训练、验证选模、测试评估和五张图的生成。首次运行需下载约 163 MiB 数据；
+四组训练、验证选模、测试评估和五张图的生成；首次运行需下载约 163 MiB 数据，
 已有本地数据时可加 `--use-local-data`。新运行的图表经目视分析后可生成对应报告。
 
-已有结果的复核流程在原代码目录、上述环境创建后运行：
+最小验证流程（已有结果的复核，环境创建后运行）：
 
 ```powershell
 conda run --no-capture-output -n lab3-image-classification python -c "from data import download; download()"
@@ -126,22 +123,22 @@ conda run --no-capture-output -n lab3-image-classification python check_rigor.py
 ```
 
 `audit` 复算数据划分、训练均值和标准差、逐样本预测指标，并重放四步合成数据训练；
-`full` 执行完整 80 轮训练。分阶段命令与同平台依赖锁文件的用法见[完整运行说明](Lab03/lab3-image-classification/README.md)。
+`full` 执行完整 80 轮训练。分阶段命令与依赖锁文件的用法见[完整运行说明](Lab03/lab3-image-classification/README.md)。
 
 ### Lab03 文件
 
-- `Lab03/lab3-image-classification/` 包含 12 个 Python 脚本、`environment.yml` 与 `environment-lock.txt`。
-  `data.py` 负责数据与增强，`models.py` 定义两种 CNN，`engine.py` 实现共享训练与评估，
-  `run_pipeline.py` 提供分阶段入口，`reproduce.py` 提供完整复现与结果复核。
-- `Lab03/lab3-image-classification/results/logs/` 保存划分与源码指纹、四组运行记录、选模记录、
+- `Lab03/lab3-image-classification/`：12 个 Python 脚本、conda 环境定义与锁文件。`data.py` 负责数据与增强，
+  `models.py` 定义两种 CNN，`engine.py` 实现共享训练与评估，`run_pipeline.py` 提供分阶段入口，
+  `reproduce.py` 提供完整复现与结果复核。
+- `Lab03/lab3-image-classification/results/logs/`：划分与源码指纹、四组运行记录、选模记录、
   总体和逐类测试指标、独立环境复核及图像解码审计结果。
-- `Lab03/lab3-image-classification/results/tables/` 保存 `history_A.csv` 至 `history_D.csv` 的全部 80 轮记录、
+- `Lab03/lab3-image-classification/results/tables/`：`history_A.csv` 至 `history_D.csv` 的全部 80 轮记录、
   `comparison.csv` 四组比较、`per_class.csv` 逐类指标和 `test_predictions.csv` 的 10,000 行预测。
-- `Lab03/lab3-image-classification/results/figures/` 包含五张报告用图，分别展示训练曲线、四组对照、
+- `Lab03/lab3-image-classification/results/figures/`：五张报告用图，分别展示训练曲线、四组对照、
   混淆矩阵、误分类样本和 Grad-CAM，并有对应目视验收记录。
 - [报告内容](Lab03/lab3-image-classification/REPORT.md)｜[报告 PDF](Lab03/lab3-image-classification/output/pdf/Lab3_report.pdf)｜
-  [运行说明](Lab03/lab3-image-classification/README.md)
-- [工作流程](Lab03/WORKFLOW.md)｜[执行规范](Lab03/AGENTS.md)｜[要求原文](Lab03/当代人工智能作业三.pdf)
+  [运行说明](Lab03/lab3-image-classification/README.md)｜[工作规范](Lab03/WORKFLOW.md)｜
+  [执行规范](Lab03/AGENTS.md)｜[要求原文](Lab03/当代人工智能作业三.pdf)
 
 四组最佳验证准确率分别为 A（普通 CNN，无增强）82.56%、B（普通 CNN，裁剪与翻转）84.84%、
 C（残差 CNN，无增强）81.84%、D（残差 CNN，裁剪与翻转）85.72%。
