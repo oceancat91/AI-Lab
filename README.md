@@ -98,7 +98,7 @@ conda run --no-capture-output -n lab2-search python check_rigor.py  # 自检：E
 
 实验三自行实现普通 CNN 与残差 CNN，完成数据加载、训练验证、测试评估和误分类分析，
 并通过架构 × 数据增强的 2×2 对照比较泛化表现。代码和实验记录位于
-`Lab03/lab3-image-classification/`，**脚本必须在该目录内运行**（内部使用相对路径）。
+`Lab03/lab3-image-classification/`，**脚本必须在该目录内运行**（内部则使用相对路径）。
 
 输入为 32×32 RGB 图像。官方训练数据按类别划分为 45,000 张训练、5,000 张验证，
 归一化统计量仅在训练子集计算。两种网络共用三阶段卷积结构（通道 16/32/64）、
